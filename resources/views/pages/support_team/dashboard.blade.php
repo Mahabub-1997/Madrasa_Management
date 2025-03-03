@@ -5,7 +5,7 @@
     @if(Qs::userIsTeamSA())
        <div class="row">
            <div class="col-sm-6 col-xl-3">
-               <div class="card card-body bg-blue-400 has-bg-image">
+               <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6)">
                    <div class="media">
                        <div class="media-body">
                            <h3 class="mb-0">{{ $users->where('user_type', 'student')->count() }}</h3>
@@ -20,7 +20,7 @@
            </div>
 
            <div class="col-sm-6 col-xl-3">
-               <div class="card card-body bg-danger-400 has-bg-image">
+               <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6);">
                    <div class="media">
                        <div class="media-body">
                            <h3 class="mb-0">{{ $users->where('user_type', 'teacher')->count() }}</h3>
@@ -35,7 +35,7 @@
            </div>
 
            <div class="col-sm-6 col-xl-3">
-               <div class="card card-body bg-success-400 has-bg-image">
+               <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6)">
                    <div class="media">
                        <div class="mr-3 align-self-center">
                            <i class="icon-pointer icon-3x opacity-75"></i>
@@ -43,14 +43,14 @@
 
                        <div class="media-body text-right">
                            <h3 class="mb-0">{{ $users->where('user_type', 'admin')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Total Administrators</span>
+                           <span class="text-uppercase font-size-xs">Administrators</span>
                        </div>
                    </div>
                </div>
            </div>
 
            <div class="col-sm-6 col-xl-3">
-               <div class="card card-body bg-indigo-400 has-bg-image">
+               <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6)">
                    <div class="media">
                        <div class="mr-3 align-self-center">
                            <i class="icon-user icon-3x opacity-75"></i>
@@ -67,13 +67,13 @@
        @endif
 
     {{--Events Calendar Begins--}}
-    <div class="card">
-        <div class="card-header header-elements-inline">
+    <div class="card border-success">
+        <div class="card-header header-elements-inline bg-blue-400" style="background-color: #a3d7a5">
             <h5 class="card-title">School Events Calendar</h5>
          {!! Qs::getPanelOptions() !!}
         </div>
 
-        <div class="card-body">
+        <div class="card-body" >
             <div class="fullcalendar-basic"></div>
         </div>
     </div>

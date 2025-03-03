@@ -9,7 +9,10 @@
     <meta name="author" content="CJ Inspired">
 
     <title> @yield('page_title') | {{ config('app.name') }} </title>
-
+    <style>
+        .sidebar-main { background: linear-gradient(270deg, #1a202c, #3b82f6);  box-shadow: 10px 10px 6px rgba(19, 19, 19, 0.19);}
+        .navbar { background: linear-gradient(270deg, #1a202c,#bbe1bd, #3b82f6); box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.19); }
+    </style>
     @include('partials.inc_top')
 </head>
 
