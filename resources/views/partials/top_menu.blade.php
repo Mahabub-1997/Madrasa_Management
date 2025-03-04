@@ -33,7 +33,22 @@
 			<span class="navbar-text ml-md-3 mr-md-auto"></span>
 
         <ul class="navbar-nav">
-
+            <li class="nav-item dropdown dropdown-user">
+                <a href="{{route('notice_board.index')}}" class="navbar-nav-link d-flex align-items-center">
+                    @php
+                    $noticeboard = Qs::getNotices();
+                    @endphp
+                    @if(isset($noticeboard))
+                        <div class="text-carousel">
+                            <div class="text-carousel-inner" style="animation: slideText {{ count($noticeboard) * 8 }}s linear infinite;">
+                                @foreach($noticeboard as $notice)
+                                    <span>{{ $notice }}</span>
+                                    @if(!$loop->last) <span class="separator">|</span> @endif
+                                @endforeach
+                        </div>
+                    @endif
+                </a>
+            </li>
             <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
                     <img style="width: 38px; height:38px;" src="{{ Auth::user()->photo }}" class="rounded-circle" alt="photo">

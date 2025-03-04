@@ -2,9 +2,11 @@
 
 namespace App\Helpers;
 
+use App\Models\NoticeBoard;
 use App\Models\Setting;
 use App\Models\StudentRecord;
 use App\Models\Subject;
+use Carbon\Carbon;
 use Hashids\Hashids;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,6 +29,15 @@ class Qs
     public static function getAppCode()
     {
         return self::getSetting('system_title') ?: 'CJ';
+    }
+    public static function getNotices()
+    {
+        $today = Carbon::today();
+        return NoticeBoard::whereDate('start_date', '<=', $today)
+        ->whereDate('end_date', '>=', $today)
+        ->where('status', 'active')
+        ->limit(10)
+        ->get()->pluck('title');
     }
 
     public static function getDefaultUserImage()

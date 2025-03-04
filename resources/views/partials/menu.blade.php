@@ -50,6 +50,12 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('notice_board.index') }}" class="nav-link {{ (Route::is('NoticeBoard.index')) ? 'active' : '' }}">
+                        <i class="icon-home4"></i>
+                        <span>Notice Board</span>
+                    </a>
+                </li>
 
                 {{--Academics--}}
                 @if(Qs::userIsAcademic())
