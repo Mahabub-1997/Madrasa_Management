@@ -18,7 +18,7 @@ class CreateSalariesTable extends Migration
             $table->integer('user_id');
             $table->integer('receiver');
             $table->string('purpose')->default('salary');
-            $table->string('amount')->default(0);
+            $table->bigInteger('amount')->default(0);
             $table->string('month');
             $table->string('year');
             $table->enum('type',['yearly', 'monthly'])->default('monthly');
