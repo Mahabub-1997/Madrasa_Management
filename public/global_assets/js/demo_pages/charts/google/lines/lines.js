@@ -54,7 +54,7 @@ var GoogleLineBasic = function() {
 
             // Data
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses'],
+                ['Year', 'Sales', 'Expense'],
                 ['2004',  1000,      400],
                 ['2005',  1170,      460],
                 ['2006',  660,       1120],
@@ -80,7 +80,7 @@ var GoogleLineBasic = function() {
                     }
                 },
                 vAxis: {
-                    title: 'Sales and Expenses',
+                    title: 'Sales and Expense',
                     titleTextStyle: {
                         fontSize: 13,
                         italic: false

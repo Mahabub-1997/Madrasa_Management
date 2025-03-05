@@ -630,7 +630,7 @@ var EchartsBarsTornados = function() {
                     color: 'transparent'
                 }
             };
-            var dataStyle = { 
+            var dataStyle = {
                 normal: {
                     barBorderRadius: 3,
                     label: {
@@ -983,7 +983,7 @@ var EchartsBarsTornados = function() {
 
                 // Add legend
                 legend: {
-                    data: ['Profit', 'Expenses', 'Income'],
+                    data: ['Profit', 'Expense', 'Income'],
                     itemHeight: 8,
                     itemGap: 20,
                     textStyle: {
@@ -1095,7 +1095,7 @@ var EchartsBarsTornados = function() {
                         data: [320, 302, 341, 374, 390, 450, 420]
                     },
                     {
-                        name: 'Expenses',
+                        name: 'Expense',
                         type: 'bar',
                         stack: 'Total',
                         itemStyle: {

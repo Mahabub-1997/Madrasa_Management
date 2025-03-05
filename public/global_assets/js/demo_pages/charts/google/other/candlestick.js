@@ -113,7 +113,7 @@ var GoogleCandlestickChart = function() {
                     }
                 },
                 vAxis: {
-                    title: 'Income and Expenses',
+                    title: 'Income and Expense',
                     titleTextStyle: {
                         fontSize: 13,
                         italic: false

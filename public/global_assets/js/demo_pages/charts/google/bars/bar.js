@@ -54,7 +54,7 @@ var GoogleBarBasic = function() {
 
             // Data
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses'],
+                ['Year', 'Sales', 'Expense'],
                 ['2004',  1000,      400],
                 ['2005',  1170,      460],
                 ['2006',  660,       1120],

@@ -83,7 +83,7 @@ var GoogleColumnStacked = function() {
                     }
                 },
                 vAxis: {
-                    title: 'Sales and Expenses',
+                    title: 'Sales and Expense',
                     titleTextStyle: {
                         fontSize: 13,
                         italic: false
