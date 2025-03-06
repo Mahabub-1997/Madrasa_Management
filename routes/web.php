@@ -148,6 +148,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('payments', 'PaymentController');
 
     });
+    Route::resource('salaries', 'SalaryController');
 
     /************************ AJAX ****************************/
     Route::group(['prefix' => 'ajax'], function() {
