@@ -485,7 +485,7 @@ var EchartsColumnsWaterfalls = function() {
                                 barBorderColor: '#FF7043',
                                 barBorderWidth: 6,
                                 label: {
-                                    show: true, 
+                                    show: true,
                                     position: 'top',
                                     formatter: function (params) {
                                         for (var i = 0, l = columns_thermometer_options.xAxis[0].data.length; i < l; i++) {
@@ -921,7 +921,7 @@ var EchartsColumnsWaterfalls = function() {
 
                 // Add legend
                 legend: {
-                    data: ['Expenses', 'Income'],
+                    data: ['Expense', 'Income'],
                     itemHeight: 8,
                     itemGap: 20,
                     textStyle: {
@@ -1035,7 +1035,7 @@ var EchartsColumnsWaterfalls = function() {
                         data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
                     },
                     {
-                        name: 'Expenses',
+                        name: 'Expense',
                         type: 'bar',
                         stack: 'Total',
                         itemStyle: {

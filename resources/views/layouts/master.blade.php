@@ -38,7 +38,7 @@
         }
 
         @keyframes slideText {
-            0% { transform: translateX(25%); } /* Start immediately */
+            0% { transform: translateX(300%); } /* Start immediately */
             100% { transform: translateX(-100%); } /* Moves text from right to left */
         }
     </style>

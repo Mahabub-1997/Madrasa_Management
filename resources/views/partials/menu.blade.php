@@ -91,8 +91,8 @@
                                 </ul>
 
                             </li>
-                            <li class="nav-item {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.edit', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'nav-item-expanded' : '' }}">
-                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.create', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'active' : '' }}">Expense</a>
+                            <li class="nav-item {{ in_array(Route::currentRouteName(), ['expense.index', 'expense.create', 'expense.edit', 'expense.manage', 'expense.show', 'expense.invoice']) ? 'nav-item-expanded' : '' }}">
+                                <a href="{{route('expenses.index')}}" class="nav-link {{ in_array(Route::currentRouteName(), ['expense.index', 'expense.edit', 'expense.create', 'expense.manage', 'expense.show', 'expense.invoice']) ? 'active' : '' }}">Expense</a>
                             </li>
                             <li class="nav-item {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.edit', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'nav-item-expanded' : '' }}">
                                 <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.create', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'active' : '' }}">Salary</a>

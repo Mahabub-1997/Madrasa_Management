@@ -137,6 +137,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::resource('students', 'StudentRecordController');
         Route::resource('notice_board', 'NoticeBoardController');
+        Route::resource('expenses', 'ExpensesController');
         Route::resource('users', 'UserController');
         Route::resource('classes', 'MyClassController');
         Route::resource('sections', 'SectionController');

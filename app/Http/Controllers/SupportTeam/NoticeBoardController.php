@@ -9,25 +9,17 @@ use Illuminate\Http\Request;
 
 class NoticeBoardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $notices = NoticeBoard::all();
         return view('pages.support_team.Notice_board.list',['notices'=>$notices]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+
     }
 
     public function store(Request $request)
@@ -44,48 +36,37 @@ class NoticeBoardController extends Controller
         return Qs::jsonStoreOk();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+
+        $notice = NoticeBoard::findOrFail($id);
+        return view('pages.support_team.Notice_board.edit', compact('notice'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        //
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+            'priority' => 'required|in:important,normal',
+            'status' => 'required|in:active,inactive',
+        ]);
+        $notice = NoticeBoard::findOrFail($id);
+        $notice->update($validated);
+        return Qs::UpdateOk('notice_board.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function destroy($id)
     {
-        //
+        $notice = NoticeBoard::find($id);
+        $notice->delete();
+
+        return QS::DeleteOk('notice_board.index');
     }
 }

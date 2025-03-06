@@ -17,7 +17,7 @@ class CreateExpensesTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('purpose');
-            $table->string('amount')->default(0);
+            $table->bigInteger('amount')->default(0);
             $table->string('month');
             $table->string('year');
             $table->enum('type',['yearly', 'monthly'])->default('monthly');
