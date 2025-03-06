@@ -46,17 +46,21 @@
                                             </a>
 
                                             <div class="dropdown-menu dropdown-menu-left">
-                                                <a href="{{ route('notice_board.show', Qs::hash($val->id)) }}" class="dropdown-item"><i class="icon-eye"></i> View Profile</a>
+                                                {{--Edit--}}
                                                 @if(Qs::userIsTeamSA())
-                                                    <a href="{{ route('notice_board.edit',($val->id))}}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
-                                                    <a href="{{ route('st.reset_pass', Qs::hash($val->id)) }}" class="dropdown-item"><i class="icon-lock"></i> Reset password</a>
+                                                    <a href="{{ route('notice_board.edit', $val->id) }}" class="dropdown-item">
+                                                        <i class="icon-pencil"></i> Edit
+                                                    </a>
                                                 @endif
-                                                <a target="_blank" href="{{ route('marks.year_selector', Qs::hash($val->id)) }}" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>
-
                                                 {{--Delete--}}
                                                 @if(Qs::userIsSuperAdmin())
-                                                    <a id="{{ ($val->id) }}" onclick="confirmDelete(this.id)" href="{{route('notice_board.destroy', $val->id)}}" class="dropdown-item"><i class="icon-trash"></i> Delete</a>
-                                                    <form method="post" id="item-delete-{{ Qs::hash($val->id) }}" action="{{ route('notice_board.destroy', Qs::hash($val->id)) }}" class="hidden">@csrf @method('delete')</form>
+                                                    <a id="delete-{{ $val->id }}" onclick="confirmDelete('{{ $val->id }}')" href="#" class="dropdown-item">
+                                                        <i class="icon-trash"></i> Delete
+                                                    </a>
+                                                    <form method="post" id="item-delete-{{ $val->id }}" action="{{ route('notice_board.destroy', $val->id) }}" class="hidden">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
                                                 @endif
                                             </div>
                                         </div>

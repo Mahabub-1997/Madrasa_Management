@@ -9,7 +9,7 @@
         </div>
 
         <div class="card-body">
-            <form class="ajax-store" method="post" action="{{ route('notice_board.update', $notice->id) }}">
+            <form method="post" action="{{ route('notice_board.update', $notice->id) }}">
                 @csrf
                 @method('PUT')
 
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="text-right">
-                    <button type="submit" class="btn btn-primary">Update Notice <i class="icon-paperplane ml-2"></i></button>
+                    <button type="submit"  class="btn btn-primary">Update Notice <i class="icon-paperplane ml-2"></i></button>
                 </div>
             </form>
         </div>

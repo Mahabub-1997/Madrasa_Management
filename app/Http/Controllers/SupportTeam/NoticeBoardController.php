@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\SupportTeam;
 
-use App\Helpers\Qs;
+
 use App\Http\Controllers\Controller;
 use App\Models\NoticeBoard;
 use Illuminate\Http\Request;
+use App\Helpers\Qs;
 
 class NoticeBoardController extends Controller
 {
@@ -30,7 +31,7 @@ class NoticeBoardController extends Controller
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
             'priority' => $request->priority,
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
         ];
         NoticeBoard::insert($data);
         return Qs::jsonStoreOk();
@@ -57,8 +58,10 @@ class NoticeBoardController extends Controller
         ]);
         $notice = NoticeBoard::findOrFail($id);
         $notice->update($validated);
-        return Qs::UpdateOk('notice_board.index');
+
+        return Qs::updateOk('notice_board.index');
     }
+
 
 
 

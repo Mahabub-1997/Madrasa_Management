@@ -50,7 +50,6 @@
                                             </a>
 
                                             <div class="dropdown-menu dropdown-menu-left">
-                                                <a href="{{ route('expenses.show', $val->id) }}" class="dropdown-item"><i class="icon-eye"></i> View</a>
                                                 <a href="{{ route('expenses.edit', $val->id) }}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
 
                                                 {{-- Delete --}}

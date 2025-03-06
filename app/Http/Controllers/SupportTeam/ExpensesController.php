@@ -64,7 +64,7 @@ class ExpensesController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'purpose' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0',
             'month' => 'required|integer|between:1,12',
@@ -73,13 +73,7 @@ class ExpensesController extends Controller
         ]);
 
         $expense = Expense::findOrFail($id);
-        $expense->update([
-            'purpose' => $request->purpose,
-            'amount' => $request->amount,
-            'month' => $request->month,
-            'year' => $request->year,
-            'type' => $request->type,
-        ]);
+        $expense->update($validatedData);
 
         return Qs::updateOk('expenses.index');
     }
