@@ -21,6 +21,7 @@ class CreatePaymentRecordsTable extends Migration
             $table->integer('amt_paid')->nullable();
             $table->integer('balance')->nullable();
             $table->tinyInteger('paid')->default(0);
+            $table->string('month');
             $table->string('year');
             $table->timestamps();
         });

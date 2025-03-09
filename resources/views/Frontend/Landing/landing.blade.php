@@ -1,0 +1,621 @@
+@extends('Frontend.Layouts.master')
+@section('title')
+    Muslihul Ummah
+@endsection
+@section('links')
+    <link href="{{asset('/')}}frontend/css/bootstrap.css" rel="stylesheet">
+    <!-- DL Menu CSS -->
+    <link href="{{asset('/')}}frontend/js/dl-menu/component.css" rel="stylesheet">
+    <!-- SLICK SLIDER CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/')}}frontend/css/slick.css"/>
+    <!-- Font Awesome StyleSheet CSS -->
+    <link href="{{asset('/')}}frontend/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Font Awesome StyleSheet CSS -->
+    <link href="{{asset('/')}}frontend/css/svg.css" rel="stylesheet">
+    <!-- Pretty Photo CSS -->
+    <link href="{{asset('/')}}frontend/css/prettyPhoto.css" rel="stylesheet">
+    <!-- Shortcodes CSS -->
+    <link href="{{asset('/')}}frontend/css/shortcodes.css" rel="stylesheet">
+    <!-- Widget CSS -->
+    <link href="{{asset('/')}}frontend/css/widget.css" rel="stylesheet">
+    <!-- Typography CSS -->
+    <link href="{{asset('/')}}frontend/css/typography.css" rel="stylesheet">
+    <!-- Custom Main StyleSheet CSS -->
+    <link href="{{asset('/')}}frontend/style.css" rel="stylesheet">
+    <!-- Color CSS -->
+    <link href="{{asset('/')}}frontend/css/color.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
+@endsection
+
+
+@section('content')
+    <div class="iq_content_wrap">
+
+        <!--Get Best Knowledge Wrap Start-->
+        <section class="iq_best_knowledge_bg">
+            <!--Best Knowledge Description Wrap Start-->
+            <div class="col-md-6 col-sm-offset-6 col-md-offset-6">
+                <div class="iq_knowledge_des">
+                    <!--Heading Wrap Start-->
+                    <div class="iq_heading_1 text-left">
+                        <h4 class="bestTitle">Best <span>Knowledge from Us</span><br></h4>
+                    </div>
+                    <!--Heading Wrap End-->
+                    <h5 class="bestSubTitle">Have the courage to have firm belief in Allah</h5>
+                    <p class="bestDescription">Having firm belief in Allah is the foundation of our faith. He is the Almighty, the solver of all our problems. During the toughest times in life, be patient and seek help from Allah. Allah is always with His servants and will never disappoint you. Keep your faith, success will come.</p>
+                    <a class="button iq_link_1" href="#">Join Us</a>
+                </div>
+            </div>
+            <!--Best Knowledge Description Wrap End-->
+        </section>
+
+        <!--Get Best Knowledge Wrap End-->
+        <!--Our Featured Courses Wrap Start-->
+        <section>
+            <div class="container">
+                <!--Heading Wrap Start-->
+                <div class="iq_heading_1 text-center">
+                    <h4 class="ourFeaturedTitle">Our <span>Featured Courses</span></h4>
+                    <p class="ourFeaturedDescription">Our featured courses include Nazira Quran, Hifz-ul-Quran, Tafsir and Hadith education, Arabic language, and an integrated curriculum combining Islamic ethics with modern educational methods.</p>
+                </div>
+                <!--Heading Wrap End-->
+
+                <!--Tab Menu Wrap Start-->
+                <div class="iq_tab_menu">
+                    <ul id="tabs" data-tabs="tabs">
+                        <li class=" active"><a class="ourFeaturedDescriptionList1" data-toggle="tab" href="#featured">Featured</a></li>
+                        <li><a class="ourFeaturedDescriptionList1 " data-toggle="tab" href="#popular">Popular</a></li>
+                    </ul>
+                </div>
+                <!--Tab Menu Wrap End-->
+
+                <!--Tab Menu Detail Wrap Start-->
+                <div id="my-tab-content" class="tab-content">
+                    <div class="row tab-pane active" id="featured">
+                        <!--Courses List Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="iq_course_list">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/pic-2.webp" style="max-height: 180px" alt="Image Here">
+                                </figure>
+                                <div class="iq_course_list_des">
+                                    <div class="iq_course_icon">
+                                        <span class="icon-student"></span>
+                                    </div>
+                                    <h5><a class="courseList1" href="#">Ibtidai Course</a></h5>
+                                    <p class="courseListDescription1">The Ibtidai program includes Nazira Quran, prayer education, Arabic alphabets, basic Islamic knowledge, and primary character development education.</p>
+                                    <ul>
+                                        <li>
+                                            <!--RATING AREA START-->
+                                            <div class="rating_down">
+                                                <div class="rating_up" style="width:100%;"></div>
+                                            </div>
+                                            <!--RATING AREA End-->
+                                        </li>
+                                        <li class="Reviews">101 Reviews</li>
+                                        <li><i class="fa fa-user"></i>3.1 k</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Courses List End-->
+                        <!--Courses List Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="iq_course_list">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/pic-3.jpg" style="max-height: 180px" alt="Image Here">
+                                </figure>
+                                <div class="iq_course_list_des">
+                                    <div class="iq_course_icon">
+                                        <span class="icon-lecture"></span>
+                                    </div>
+                                    <h5><a class="courseList2" href="#">Dakhil Course</a></h5>
+                                    <p class="courseListDescription2">The Dakhil program provides an integrated curriculum including Quran, Hadith, Arabic, Islamic history, Fiqh, Tafsir, and science and general education.</p>
+                                    <ul>
+                                        <li>
+                                            <!--RATING AREA START-->
+                                            <div class="rating_down">
+                                                <div class="rating_up" style="width:100%;"></div>
+                                            </div>
+                                            <!--RATING AREA End-->
+                                        </li>
+                                        <li class="Reviews">101 Reviews</li>
+                                        <li><i class="fa fa-user"></i>3.1 k</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Courses List End-->
+                        <!--Courses List Start-->
+                        <div class="col-md-4 hidden-sm">
+                            <div class="iq_course_list">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/pic-4.jpg" style="max-height: 180px" alt="Image Here">
+                                </figure>
+                                <div class="iq_course_list_des">
+                                    <div class="iq_course_icon">
+                                        <span class="icon-molecule"></span>
+                                    </div>
+                                    <h5><a class="courseList3" href="#">Alim Course</a></h5>
+                                    <p class="courseListDescription3">The Alim program provides advanced Tafsir, Hadith, Fiqh, Usulul Fiqh, Arabic literature, Islamic philosophy, and modern subject matter education.</p>
+                                    <ul>
+                                        <li>
+                                            <!--RATING AREA START-->
+                                            <div class="rating_down">
+                                                <div class="rating_up" style="width:100%;"></div>
+                                            </div>
+                                            <!--RATING AREA End-->
+                                        </li>
+                                        <li class="Reviews"></li>
+                                        <li><i class="fa fa-user"></i>3.1 k</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Courses List End-->
+                    </div>
+                    <div class="row tab-pane" id="popular">
+                        <!--Courses List Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="iq_course_list">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/featured-course-01.jpg" alt="Image Here">
+                                </figure>
+                                <div class="iq_course_list_des">
+                                    <div class="iq_course_icon">
+                                        <span class="icon-doctor-2"></span>
+                                    </div>
+                                    <h5><a href="#">Neuroscience Courses</a></h5>
+                                    <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum.</p>
+                                    <ul>
+                                        <li>
+                                            <!--RATING AREA START-->
+                                            <div class="rating_down">
+                                                <div class="rating_up" style="width:100%;"></div>
+                                            </div>
+                                            <!--RATING AREA End-->
+                                        </li>
+                                        <li >101 Reviews</li>
+                                        <li><i class="fa fa-user"></i>3.1 k</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Courses List End-->
+                        <!--Courses List Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="iq_course_list">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/featured-course-02.jpg" alt="Image Here">
+                                </figure>
+                                <div class="iq_course_list_des">
+                                    <div class="iq_course_icon">
+                                        <span class="icon-debate"></span>
+                                    </div>
+                                    <h5><a href="#">Politics Courses</a></h5>
+                                    <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum.</p>
+                                    <ul>
+                                        <li>
+                                            <!--RATING AREA START-->
+                                            <div class="rating_down">
+                                                <div class="rating_up" style="width:100%;"></div>
+                                            </div>
+                                            <!--RATING AREA End-->
+                                        </li>
+                                        <li class="Reviews">101 Reviews</li>
+                                        <li><i class="fa fa-user"></i>3.1 k</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Courses List End-->
+                        <!--Courses List Start-->
+                        <div class="col-md-4 hidden-sm">
+                            <div class="iq_course_list">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/featured-course-03.jpg" alt="Image Here">
+                                </figure>
+                                <div class="iq_course_list_des">
+                                    <div class="iq_course_icon">
+                                        <span class="icon-medical-3"></span>
+                                    </div>
+                                    <h5><a href="#">Zoology Courses</a></h5>
+                                    <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum.</p>
+                                    <ul>
+                                        <li>
+                                            <!--RATING AREA START-->
+                                            <div class="rating_down">
+                                                <div class="rating_up" style="width:100%;"></div>
+                                            </div>
+                                            <!--RATING AREA End-->
+                                        </li>
+                                        <li>101 Reviews</li>
+                                        <li><i class="fa fa-user"></i>3.1 k</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Courses List End-->
+                    </div>
+                </div>
+                <!--Tab Menu Detail Wrap End-->
+            </div>
+        </section>
+
+        <!--Our Featured Courses Wrap End-->
+        <!--Our Gallery Wrap Start-->
+        <section class="iq_gallery_bg">
+            <!--Heading Wrap Start-->
+            <div class="iq_heading_1 text-center">
+                <h4 class="gallaryTitle">Our <span>Gallery</span></h4>
+                <p class="galleryDescription">Our gallery features Islamic lectures, quotes from the Holy Quran, and beautiful sayings from Hadith to reflect the profound knowledge, values, and way of life in Islam.
+                    <br>Hidden in each image is the peace, love, and compassion of Islam. Visit our gallery to be inspired and find knowledge and motivation.</p>
+            </div>
+            <!--Heading Wrap End-->
+
+            <!--Gallery Menu Wrap Start-->
+            <div id="filters" class="iq_gallery_menu">
+                <ul id="filterable-item-filter-1">
+                    <li><a class="galleryDescription1 active" data-value="all">All</a></li>
+                    <li><a  class="galleryDescription2" data-value="1">Ibtedayi Program</a></li>
+                    <li><a  class="galleryDescription3" data-value="2">Dakhil Program</a></li>
+                    <li><a class="galleryDescription4" data-value="3">Alim Program</a></li>
+                    <li><a class="galleryDescription5" data-value="4">Fazil Program</a></li>
+                    <li><a class="galleryDescription6" data-value="5">Kamil Program</a></li>
+                </ul>
+            </div>
+            <!--Gallery Menu Wrap End-->
+
+            <div id="filterable-item-holder-1" class="filterable_container main-gallery">
+                <!--Gallery List Wrap Start-->
+                <div class="col-md-4 col-sm-6 filterable-item all 1 2 3">
+                    <div class="thumb">
+                        <figure>
+                            <img href="{{asset('/')}}frontend/extra-images/teacher-09.jpg" style="max-height: 400px" alt="Image Here">
+                            <figcaption class="overlay1">
+                                <div class="link-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                    <h6>Lorem Ipsum</h6>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!--Gallery List Wrap End-->
+
+                <!--Gallery List Wrap Start-->
+                <div class="col-md-4 col-sm-6 filterable-item all 1 5">
+                    <div class="thumb">
+                        <figure>
+                            <img href="{{asset('/')}}frontend/extra-images/teacher-10.jpg" style="max-height: 400px" alt="Image Here">
+                            <figcaption class="overlay1">
+                                <div class="link-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                    <h6>Lorem Ipsum</h6>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!--Gallery List Wrap End-->
+
+                <!--Gallery List Wrap Start-->
+                <div class="col-md-4 col-sm-6 filterable-item all 1 2 5">
+                    <div class="thumb">
+                        <figure>
+                            <img href="{{asset('/')}}frontend/extra-images/teacher-11.jpg" style="max-height: 400px" alt="Image Here">
+                            <figcaption class="overlay1">
+                                <div class="link-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                    <h6>Lorem Ipsum</h6>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!--Gallery List Wrap End-->
+
+                <!--Gallery List Wrap Start-->
+                <div class="col-md-4 col-sm-6 filterable-item all 2 4">
+                    <div class="thumb">
+                        <figure>
+                            <img href="{{asset('/')}}frontend/extra-images/teacher-13.jpg" style="max-height: 400px" alt="Image Here">
+                            <figcaption class="overlay1">
+                                <div class="link-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                    <h6>Lorem Ipsum</h6>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!--Gallery List Wrap End-->
+
+                <!--Gallery List Wrap Start-->
+                <div class="col-md-4 col-sm-6 filterable-item all 1 2">
+                    <div class="thumb">
+                        <figure>
+                            <img href="{{asset('/')}}frontend/extra-images/teacher-14.jpg" style="max-height: 400px" alt="Image Here">
+                            <figcaption class="overlay1">
+                                <div class="link-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                    <h6>Lorem Ipsum</h6>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!--Gallery List Wrap End-->
+
+                <!--Gallery List Wrap Start-->
+                <div class="col-md-4 col-sm-6 filterable-item all 1 3">
+                    <div class="thumb">
+                        <figure>
+                            <img href="{{asset('/')}}frontend/extra-images/galary-06.jpg" style="max-height: 400px" alt="Image Here">
+                            <figcaption class="overlay1">
+                                <div class="link-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                    <h6>Lorem Ipsum</h6>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <!--Gallery List Wrap End-->
+            </div>
+
+            <div class="load-more">
+                <a class="button iq_link_1" href="#">Load More</a>
+            </div>
+        </section>
+
+        <!--Our Gallery Wrap End-->
+
+        <!--Number Counter Wrap Start-->
+        <section class="iq_number_count_bg">
+            <div class="container">
+                <div class="row">
+                    <!--Number Counter Start-->
+                    <div class="col-md-3 col-sm-3">
+                        <div class="iq_counter">
+                            <i class="icon-lecture">
+                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span><span class="path37"></span><span class="path38"></span>
+                            </i>
+                            <span class="counterTeacher">123</span>
+                            <h6 class="totalTeacher" >Total Teachers</h6>
+                        </div>
+                    </div>
+                    <!--Number Counter End-->
+                    <!--Number Counter Start-->
+                    <div class="col-md-3 col-sm-3">
+                        <div class="iq_counter">
+                            <i class="icon-books">
+                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span>
+                            </i>
+                            <span class="counterSubject">12</span>
+                            <h6 class="totalSubject">Total Subjects</h6>
+                        </div>
+                    </div>
+                    <!--Number Counter End-->
+                    <!--Number Counter Start-->
+                    <div class="col-md-3 col-sm-3">
+                        <div class="iq_counter">
+                            <i class="icon-drawing">
+                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span>
+                            </i>
+                            <span class="counterGold">56</span>
+                            <h6 class="totalGold">Total Gold Medals</h6>
+                        </div>
+                    </div>
+                    <!--Number Counter End-->
+                    <!--Number Counter Start-->
+                    <div class="col-md-3 col-sm-3">
+                        <div class="iq_counter">
+                            <i class="icon-diploma-1">
+                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span>
+                            </i>
+                            <span class="counterStudent">7892</span>
+                            <h6 class="totalStudent">Total Ongoing Students</h6>
+                        </div>
+                    </div>
+                    <!--Number Counter End-->
+                </div>
+            </div>
+        </section>
+
+        <!--Number Counter Wrap End-->
+        <!--Our Teacher Wrap Start-->
+        <section>
+            <div class="container">
+                <!--Heading Wrap Start-->
+                <div class="iq_heading_1 text-center">
+                    <h4 class="ourTeacherTitle">Our <span></span> Teachers</h4>
+                    <p class="ourTeacherDescription">Our teachers provide deep knowledge about the peace, justice, and humanitarian values of Islam.</p>
+
+                </div>
+                <!--Heading Wrap End-->
+                <!--Teacher Wrap List Start-->
+                <div class="row">
+                    <!--Teacher Thumb Start-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="iq_teacher_style_1">
+                            <figure>
+                                <img href="{{asset('/')}}frontend/extra-images/teacher-10.jpg" alt="Image Here">
+                            </figure>
+                            <div class="text">
+                                <h4><a class="teacherName1" href="#">Dr. Mamunul Haque</a></h4>
+                                <h6 class="teacherSubTitle1">Language Instructor</h6>
+                                <p class="teacherDescription1">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <ul class="iq_footer_social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Teacher Thumb End-->
+                    <!--Teacher Thumb Start-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="iq_teacher_style_1">
+                            <div class="text">
+                                <h4><a class="teacherName2" href="#">Khalid Saifullah</a></h4>
+                                <h6 class="teacherSubTitle2">Vice Principal</h6>
+                                <p class="teacherDescription2">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <ul class="iq_footer_social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                            <figure>
+                                <img href="{{asset('/')}}frontend/extra-images/teacher-09.jpg" alt="Image Here">
+                            </figure>
+                        </div>
+                    </div>
+                    <!--Teacher Thumb End-->
+                    <!--Teacher Thumb Start-->
+                    <div class="col-md-4 hidden-sm">
+                        <div class="iq_teacher_style_1">
+                            <figure>
+                                <img href="{{asset('/')}}frontend/extra-images/teacher-11.jpg" alt="Image Here">
+                            </figure>
+                            <div class="text">
+                                <h4><a class="teacherName3" href="#">Dr. Mostak Ahmed</a></h4>
+                                <h6 class="teacherSubTitle3" >Manager</h6>
+                                <p class="teacherDescription3">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <ul class="iq_footer_social">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Teacher Thumb End-->
+                </div>
+                <!--Teacher Wrap List End-->
+            </div>
+        </section>
+
+        <!--Our Teacher Wrap End-->
+
+        <!--Testimonial Slider Wrap Start-->
+        <section>
+            <div class="container">
+                <!--Heading 1 Start-->
+                <div class="iq_heading_1 text-center">
+                    <h4 class="formerTeacherTitle">Former Teacher's <span> Expression </span></h4>
+                    <p class="formerTeacherDescription">I am extremely proud to have worked as a teacher at this institution. <br> While working here, I not only spread the light of knowledge among students but also taught them humanitarian values.</p>
+                </div>
+                <!--Heading 1 End-->
+                <!--Testimonial Slider Start-->
+                <div class="testimonial-slider">
+                    <!--Testimonial Start-->
+                    <div>
+                        <div class="testimonial">
+                            <p>“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
+                            <div class="coures_instractor_thumb">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/teacher-11.jpg" style="max-height: 50px" alt="">
+                                </figure>
+                                <div class="thumb_capstion">
+                                    <h5><a class="teacherName3" href="#">Dr. Mostak Ahmed</a></h5>
+                                    <p class="formerStudent">Former Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Testimonial End-->
+                    <!--Testimonial Start-->
+                    <div>
+                        <div class="testimonial">
+                            <p class="formerStudentDescription1">“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
+                            <div class="coures_instractor_thumb">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/teacher-10.jpg" style="max-height: 50px" alt="">
+                                </figure>
+                                <div class="thumb_capstion">
+                                    <h5><a class="teacherName1" href="#">Dr. Mamunul Haque</a></h5>
+                                    <p class="formerStudent">Former Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Testimonial End-->
+                    <!--Testimonial Start-->
+                    <div>
+                        <div class="testimonial">
+                            <p class="formerStudentDescription2">“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
+                            <div class="coures_instractor_thumb">
+                                <figure>
+                                    <img href="{{asset('/')}}frontend/extra-images/teacher-09.jpg" style="max-height: 50px" alt="">
+                                </figure>
+                                <div class="thumb_capstion">
+                                    <h5><a class="teacherName2" href="#">Khalid Saifullah</a></h5>
+                                    <p class="formerStudent" >Former Student</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Testimonial End-->
+                </div>
+                <!--Testimonial Slider End-->
+            </div>
+        </section>
+
+        <!--Testimonial Slider Wrap End-->
+    </div>
+@endsection
+
+
+@section('scripts')
+    <script href="public/frontend/js/localization.js"></script>
+    <!--iqoniq Wrapper End-->
+    <!--Javascript Library-->
+    <script href="{{asset('/')}}frontend/js/jquery.js"></script>
+    <!--Bootstrap core JavaScript-->
+    <script href="{{asset('/')}}frontend/js/bootstrap.min.js"></script>
+    <!--SLICK SLIDER JavaScript-->
+    <script href="{{asset('/')}}frontend/js/slick.min.js"></script>
+    <!--Dl Menu Script-->
+    <script href="{{asset('/')}}frontend/js/dl-menu/modernizr.custom.js"></script>
+    <script href="{{asset('/')}}frontend/js/dl-menu/jquery.dlmenu.js"></script>
+    <!--Pretty Photo JavaScript-->
+    <script href="{{asset('/')}}frontend/js/jquery.prettyPhoto.js"></script>
+    <!--Image Filterable JavaScript-->
+    <script href="{{asset('/')}}frontend/js/jquery-filterable.js"></script>
+    <!--Number Count (Waypoints) JavaScript-->
+    <script href="{{asset('/')}}frontend/js/waypoints-min.js"></script>
+    <!--Custom JavaScript-->
+    <script href="{{asset('/')}}frontend/js/custom.js"></script>
+    <script>
+        $('.slider').slick({
+            slidesToShow: 1, // Show one slide at a time
+            slidesToScroll: 1, // Scroll one slide at a time
+            autoplay: true, // Enable auto sliding
+            autoplaySpeed: 5000, // Delay before the next slide (5000ms = 5 seconds)
+            speed: 1000, // Transition speed between slides (1000ms = 1 second)
+            dots: true, // Enable dots for navigation
+            arrows: true // Show navigation arrows
+        });
+
+        $(document).ready(function() {
+
+
+
+            console.log('chutiye');
+            $('#mg-responsive-navigation').dlmenu();
+        })
+    </script>
+@endsection
