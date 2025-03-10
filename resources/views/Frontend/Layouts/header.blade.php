@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Logo Wrap Start -->
         <div class="iq_logo " style="margin-top: 10px">
-            <a href="#"><img href="{{asset('/')}}frontend/images//logo.png" alt="Iqoniq Themes" height="100" width="100"></a>
+            <a href="#"><img src="{{ asset('frontend/images/logo.png')}}" alt="Iqoniq Themes" height="95" width="85"></a>
         </div>
         <!-- Logo Wrap Start -->
         <!-- Top Strip Wrap Start -->
@@ -28,7 +28,7 @@
             <div class="navigation-wrapper pull-left">
                 <div class="navigation pull-left">
                     <ul>
-                        <li ><a class="manuHome1" href="index.html"></a></li>
+                        <li ><a class="manuHome1" href="index.html">Home</a></li>
 
                         <li><a class="manuCurriculum" href="#">Curriculum</a>
                             <ul class=" children">
@@ -137,14 +137,14 @@
         <li class="">
             <!--Banner Thumb START-->
             <a href="#" data-rel="prettyphoto[]" target="_blank">
-                <img href="{{asset('/')}}frontend/extra-images/banner-04.jpeg" alt="Image here">
-                <div class="iq-caption-wrapper text-left">
+                <img src="{{ asset('frontend/extra-images/banner-100.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">                <div class="iq-caption-wrapper text-left">
                     <div class="iq_banner_caption container">
                         <div class="iq-caption">
                             <div class="bismillah iq-caption-title"></div>
                             <div  class="welcome iq-caption-text" style="font-weight: bold"></div>
                             <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
-                            <div class="iq_link_1">Read More</div>                                    </div>
+                            <div class="iq_link_1">Read More</div>
+                        </div>
                     </div>
                 </div>
             </a>
@@ -153,7 +153,7 @@
         <li class="">
             <!--Banner Thumb START-->
             <a href="#" data-rel="prettyphoto[]" target="_blank">
-                <img href="{{asset('/')}}frontend/extra-images/banner-06.jpg" alt="Image here">
+                <img src="{{ asset('frontend/extra-images/banner101.jpeg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
                 <div class="iq-caption-wrapper text-left">
                     <div class="iq_banner_caption container">
                         <div class="iq-caption">
@@ -170,7 +170,7 @@
         <li class="">
             <!--Banner Thumb START-->
             <a href="#" data-rel="prettyphoto[]" target="_blank">
-                <img href="{{asset('/')}}frontend/extra-images/banner-07.jpg" style="max-height: 670px" alt="Image here">
+                <img src="{{ asset('frontend/extra-images/banner-07.jpg') }}" style="max-height: 670px" alt="Image here">
                 <div class="iq-caption-wrapper">
                     <div class="iq_banner_caption container">
                         <div class="iq-caption text-left">

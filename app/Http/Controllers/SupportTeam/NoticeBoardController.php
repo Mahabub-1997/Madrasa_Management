@@ -10,17 +10,10 @@ use App\Helpers\Qs;
 
 class NoticeBoardController extends Controller
 {
-
     public function index()
     {
         $notices = NoticeBoard::all();
         return view('pages.support_team.Notice_board.list',['notices'=>$notices]);
-    }
-
-
-    public function create()
-    {
-
     }
 
     public function store(Request $request)

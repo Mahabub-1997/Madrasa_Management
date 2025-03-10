@@ -26,6 +26,8 @@
     <link href="{{asset('/')}}frontend/css/color.css" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
+
+
 @endsection
 
 
@@ -77,7 +79,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/pic-2.webp" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/pic-2.webp') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -104,7 +106,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/pic-3.jpg" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/pic-3.jpg') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -131,7 +133,7 @@
                         <div class="col-md-4 hidden-sm">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/pic-4.jpg" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/pic-4.jpg') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -160,7 +162,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/featured-course-01.jpg" alt="Image Here">
+                                    <img  src="{{ asset('frontend/extra-images/featured-course-01.jpg') }}"  alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -187,7 +189,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/featured-course-02.jpg" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/featured-course-02.jpg') }}"  alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -214,7 +216,7 @@
                         <div class="col-md-4 hidden-sm">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/featured-course-03.jpg" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/featured-course-03.jpg') }}"  alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -272,7 +274,7 @@
                 <div class="col-md-4 col-sm-6 filterable-item all 1 2 3">
                     <div class="thumb">
                         <figure>
-                            <img href="{{asset('/')}}frontend/extra-images/teacher-09.jpg" style="max-height: 400px" alt="Image Here">
+                            <img src="{{ asset('frontend/extra-images/teacher-09.jpg') }}" style="max-height: 400px" alt="Image Here">
                             <figcaption class="overlay1">
                                 <div class="link-wrapper">
                                     <a href="#"><i class="fa fa-search"></i></a>
@@ -289,7 +291,7 @@
                 <div class="col-md-4 col-sm-6 filterable-item all 1 5">
                     <div class="thumb">
                         <figure>
-                            <img href="{{asset('/')}}frontend/extra-images/teacher-10.jpg" style="max-height: 400px" alt="Image Here">
+                            <img src="{{ asset('frontend/extra-images/teacher-10.jpg') }}" style="max-height: 400px" alt="Image Here">
                             <figcaption class="overlay1">
                                 <div class="link-wrapper">
                                     <a href="#"><i class="fa fa-search"></i></a>
@@ -306,7 +308,7 @@
                 <div class="col-md-4 col-sm-6 filterable-item all 1 2 5">
                     <div class="thumb">
                         <figure>
-                            <img href="{{asset('/')}}frontend/extra-images/teacher-11.jpg" style="max-height: 400px" alt="Image Here">
+                            <img src="{{ asset('frontend/extra-images/teacher-11.jpg') }}" style="max-height: 400px" alt="Image Here">
                             <figcaption class="overlay1">
                                 <div class="link-wrapper">
                                     <a href="#"><i class="fa fa-search"></i></a>
@@ -323,7 +325,7 @@
                 <div class="col-md-4 col-sm-6 filterable-item all 2 4">
                     <div class="thumb">
                         <figure>
-                            <img href="{{asset('/')}}frontend/extra-images/teacher-13.jpg" style="max-height: 400px" alt="Image Here">
+                            <img src="{{ asset('frontend/extra-images/teacher-13.jpg') }}" style="max-height: 400px" alt="Image Here">
                             <figcaption class="overlay1">
                                 <div class="link-wrapper">
                                     <a href="#"><i class="fa fa-search"></i></a>
@@ -340,7 +342,7 @@
                 <div class="col-md-4 col-sm-6 filterable-item all 1 2">
                     <div class="thumb">
                         <figure>
-                            <img href="{{asset('/')}}frontend/extra-images/teacher-14.jpg" style="max-height: 400px" alt="Image Here">
+                            <img src="{{ asset('frontend/extra-images/teacher-14.jpg') }}" style="max-height: 400px" alt="Image Here">
                             <figcaption class="overlay1">
                                 <div class="link-wrapper">
                                     <a href="#"><i class="fa fa-search"></i></a>
@@ -357,7 +359,7 @@
                 <div class="col-md-4 col-sm-6 filterable-item all 1 3">
                     <div class="thumb">
                         <figure>
-                            <img href="{{asset('/')}}frontend/extra-images/galary-06.jpg" style="max-height: 400px" alt="Image Here">
+                            <img src="{{ asset('frontend/extra-images/galary-06.jpg') }}" style="max-height: 400px" alt="Image Here">
                             <figcaption class="overlay1">
                                 <div class="link-wrapper">
                                     <a href="#"><i class="fa fa-search"></i></a>
@@ -447,7 +449,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <figure>
-                                <img href="{{asset('/')}}frontend/extra-images/teacher-10.jpg" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-10.jpg') }}" alt="Image Here">
                             </figure>
                             <div class="text">
                                 <h4><a class="teacherName1" href="#">Dr. Mamunul Haque</a></h4>
@@ -478,7 +480,7 @@
                                 </ul>
                             </div>
                             <figure>
-                                <img href="{{asset('/')}}frontend/extra-images/teacher-09.jpg" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-09.jpg') }}" alt="Image Here">
                             </figure>
                         </div>
                     </div>
@@ -487,7 +489,7 @@
                     <div class="col-md-4 hidden-sm">
                         <div class="iq_teacher_style_1">
                             <figure>
-                                <img href="{{asset('/')}}frontend/extra-images/teacher-11.jpg" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-11.jpg') }}" alt="Image Here">
                             </figure>
                             <div class="text">
                                 <h4><a class="teacherName3" href="#">Dr. Mostak Ahmed</a></h4>
@@ -527,7 +529,7 @@
                             <p>“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
                             <div class="coures_instractor_thumb">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/teacher-11.jpg" style="max-height: 50px" alt="">
+                                    <img src="{{ asset('frontend/extra-images/teacher-11.jpg') }}" style="max-height: 50px" alt="">
                                 </figure>
                                 <div class="thumb_capstion">
                                     <h5><a class="teacherName3" href="#">Dr. Mostak Ahmed</a></h5>
@@ -543,7 +545,7 @@
                             <p class="formerStudentDescription1">“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
                             <div class="coures_instractor_thumb">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/teacher-10.jpg" style="max-height: 50px" alt="">
+                                    <img src="{{ asset('frontend/extra-images/teacher-10.jpg') }}" style="max-height: 50px" alt="">
                                 </figure>
                                 <div class="thumb_capstion">
                                     <h5><a class="teacherName1" href="#">Dr. Mamunul Haque</a></h5>
@@ -559,7 +561,7 @@
                             <p class="formerStudentDescription2">“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
                             <div class="coures_instractor_thumb">
                                 <figure>
-                                    <img href="{{asset('/')}}frontend/extra-images/teacher-09.jpg" style="max-height: 50px" alt="">
+                                    <img src="{{ asset('frontend/extra-images/teacher-09.jpg') }}" style="max-height: 50px" alt="">
                                 </figure>
                                 <div class="thumb_capstion">
                                     <h5><a class="teacherName2" href="#">Khalid Saifullah</a></h5>
@@ -580,37 +582,38 @@
 
 
 @section('scripts')
-    <script href="public/frontend/js/localization.js"></script>
+    <script src="{{asset('/')}}frontend/js/localization.js"></script>
     <!--iqoniq Wrapper End-->
     <!--Javascript Library-->
-    <script href="{{asset('/')}}frontend/js/jquery.js"></script>
+    <script src="{{asset('/')}}frontend/js/jquery.js"></script>
     <!--Bootstrap core JavaScript-->
-    <script href="{{asset('/')}}frontend/js/bootstrap.min.js"></script>
+    <script src="{{asset('/')}}frontend/js/bootstrap.min.js"></script>
     <!--SLICK SLIDER JavaScript-->
-    <script href="{{asset('/')}}frontend/js/slick.min.js"></script>
+    <script src="{{asset('/')}}frontend/js/slick.min.js"></script>
     <!--Dl Menu Script-->
-    <script href="{{asset('/')}}frontend/js/dl-menu/modernizr.custom.js"></script>
-    <script href="{{asset('/')}}frontend/js/dl-menu/jquery.dlmenu.js"></script>
+    <script src="{{asset('/')}}frontend/js/dl-menu/modernizr.custom.js"></script>
+    <script src="{{asset('/')}}frontend/js/dl-menu/jquery.dlmenu.js"></script>
     <!--Pretty Photo JavaScript-->
-    <script href="{{asset('/')}}frontend/js/jquery.prettyPhoto.js"></script>
+    <script src="{{asset('/')}}frontend/js/jquery.prettyPhoto.js"></script>
     <!--Image Filterable JavaScript-->
-    <script href="{{asset('/')}}frontend/js/jquery-filterable.js"></script>
+    <script src="{{asset('/')}}frontend/js/jquery-filterable.js"></script>
     <!--Number Count (Waypoints) JavaScript-->
-    <script href="{{asset('/')}}frontend/js/waypoints-min.js"></script>
+    <script src="{{asset('/')}}frontend/js/waypoints-min.js"></script>
     <!--Custom JavaScript-->
-    <script href="{{asset('/')}}frontend/js/custom.js"></script>
+    <script src="{{asset('/')}}frontend/js/custom.js"></script>
+
     <script>
-        $('.slider').slick({
-            slidesToShow: 1, // Show one slide at a time
-            slidesToScroll: 1, // Scroll one slide at a time
-            autoplay: true, // Enable auto sliding
-            autoplaySpeed: 5000, // Delay before the next slide (5000ms = 5 seconds)
-            speed: 1000, // Transition speed between slides (1000ms = 1 second)
-            dots: true, // Enable dots for navigation
-            arrows: true // Show navigation arrows
-        });
 
         $(document).ready(function() {
+            $('.slider').slick({
+                slidesToShow: 1, // Show one slide at a time
+                slidesToScroll: 1, // Scroll one slide at a time
+                autoplay: true, // Enable auto sliding
+                autoplaySpeed: 5000, // Delay before the next slide (5000ms = 5 seconds)
+                speed: 1000, // Transition speed between slides (1000ms = 1 second)
+                dots: true, // Enable dots for navigation
+                arrows: true // Show navigation arrows
+            });
 
 
 
@@ -618,4 +621,6 @@
             $('#mg-responsive-navigation').dlmenu();
         })
     </script>
+
+
 @endsection

@@ -9,22 +9,12 @@ use Illuminate\Http\Request;
 
 class ExpensesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $expenses = Expense::all();
         return view('pages.support_team.Expense.list',['expenses'=>$expenses]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
@@ -33,7 +23,6 @@ class ExpensesController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the incoming data
         $request->validate([
             'purpose' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0',
@@ -77,9 +66,6 @@ class ExpensesController extends Controller
 
         return Qs::updateOk('expenses.index');
     }
-
-
-
 
     public function destroy($id)
     {
