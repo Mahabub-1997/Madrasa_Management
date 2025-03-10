@@ -32,10 +32,10 @@ class PaymentController extends Controller
 
     public function index()
     {
-        $d['selected'] = false;
-        $d['years'] = $this->pay->getPaymentYears();
+//        $d['selected'] = false;
+        $d = $this->pay->getPaymentYears();
 
-        return view('pages.support_team.payments.index', $d);
+        return view('pages.support_team.payments.index', ['p' => $d]);
     }
 
     public function show($year)
@@ -62,7 +62,7 @@ class PaymentController extends Controller
 
     public function create()
     {
-        $d['my_classes'] = $this->my_class->all();
+        $d['p'] = $this->pay->getPaymentYears();
         return view('pages.support_team.payments.create', $d);
     }
 
@@ -202,7 +202,9 @@ class PaymentController extends Controller
     public function store(PaymentCreate $req)
     {
         $data = $req->all();
+        $data['title'] = 'Monthly Payment';
         $data['year'] = $this->year;
+        $data['amount'] = $req->admission_fee + $req->tution_fee + $req->khoraki_fee;
         $data['ref_no'] = Pay::genRefCode();
         $this->pay->create($data);
 

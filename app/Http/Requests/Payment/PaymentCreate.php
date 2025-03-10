@@ -20,8 +20,9 @@ class PaymentCreate extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|min:3',
-            'amount' => 'required',
+            'admission_fee' => 'required|integer',
+            'tution_fee' => 'required|integer',
+            'khoraki' => 'required|integer'
         ];
     }
 

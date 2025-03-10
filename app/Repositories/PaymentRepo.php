@@ -32,7 +32,8 @@ class PaymentRepo
 
     public function getPaymentYears()
     {
-        return Payment::select('year')->distinct()->get();
+//        return Payment::select('year')->distinct()->get();
+        return Payment::orderBy('id', 'desc')->first();
     }
 
     public function find($id)

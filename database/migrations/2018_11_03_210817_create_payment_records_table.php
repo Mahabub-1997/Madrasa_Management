@@ -15,14 +15,22 @@ class CreatePaymentRecordsTable extends Migration
     {
         Schema::create('payment_records', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('payment_id');
+            $table->unsignedInteger('payment_id')->default(1);
             $table->unsignedInteger('student_id');
             $table->string('ref_no', 100)->unique()->nullable();
-            $table->integer('amt_paid')->nullable();
-            $table->integer('balance')->nullable();
+            $table->integer('amt_paid')->default(0);
+            $table->integer('due')->default(0);
+            $table->integer('balance')->default(0);
             $table->tinyInteger('paid')->default(0);
-            $table->string('month');
-            $table->string('year');
+            $table->integer('admission_fee')->default(0);
+            $table->integer('tution_fee')->default(0);
+            $table->integer('tution_fee')->default(0);
+            $table->integer('other_expense')->default(0);
+            $table->integer('khoraki')->default(0);
+            $table->integer('discount')->default(0);
+            $table->string('department')->nullable();
+            $table->string('month')->nullable();
+            $table->string('year')->nullable();
             $table->timestamps();
         });
     }
