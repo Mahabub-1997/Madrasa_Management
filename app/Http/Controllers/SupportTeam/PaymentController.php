@@ -73,6 +73,7 @@ class PaymentController extends Controller
         $inv = $year ? $this->pay->getAllMyPR($st_id, $year) : $this->pay->getAllMyPR($st_id);
 
         $d['sr'] = $this->student->findByUserId($st_id)->first();
+        $d['payments'] = $this->pay->getPaymentYears();
         $pr = $inv->get();
         $d['uncleared'] = $pr->where('paid', 0);
         $d['cleared'] = $pr->where('paid', 1);
@@ -204,11 +205,12 @@ class PaymentController extends Controller
         $data = $req->all();
         $data['title'] = 'Monthly Payment';
         $data['year'] = $this->year;
-        $data['amount'] = $req->admission_fee + $req->tution_fee + $req->khoraki_fee;
+        $data['amount'] = $req->admission_fee + $req->tution_fee + $req->khoraki;
         $data['ref_no'] = Pay::genRefCode();
-        $this->pay->create($data);
+        $id = 1;
+        $this->pay->update($id, $data);
 
-        return Qs::jsonStoreOk();
+        return Qs::updateOk('payments.create');
     }
 
     public function edit($id)
