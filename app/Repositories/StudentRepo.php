@@ -14,6 +14,10 @@ class StudentRepo {
     {
         return $this->activeStudents()->where(['my_class_id' => $class_id])->with(['my_class', 'user'])->get()->sortBy('user.name');
     }
+    public function findActiveStudents()
+    {
+        return $this->activeStudents()->get();
+    }
 
     public function activeStudents()
     {

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Requests\Student;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -7,61 +6,58 @@ use App\Helpers\Qs;
 
 class StudentRecordCreate extends FormRequest
 {
-
     public function authorize()
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
-            'name' => 'required|string|min:6|max:150',
-            'adm_no' => 'sometimes|nullable|alpha_num|min:3|max:150|unique:student_records',
-            'gender' => 'required|string',
+            'student_name' => 'required|string|min:6|max:150',
+            'email' => 'sometimes|nullable|email|max:255|unique:users,email',
+            'gender' => 'required|in:Male,Female',
+            'phone' => 'sometimes|nullable|string|max:20',
+            'phone2' => 'sometimes|nullable|string|max:20',
+            'adm_no' => 'sometimes|nullable|alpha_num|min:3|max:30|unique:student_records',
             'year_admitted' => 'required|string',
-            'phone' => 'sometimes|nullable|string|min:6|max:20',
-            'email' => 'sometimes|nullable|email|max:100|unique:users',
+            'my_class_id' => 'exists:my_classes,id',
+            'section_id' => 'exists:sections,id',
+            'admission_date' => 'sometimes|nullable|date',
+            'age' => 'sometimes|nullable|integer|max:127',
+            'dob' => 'sometimes|nullable|date',
+            'father_name' => 'sometimes|nullable|string|max:255',
+            'mother_name' => 'sometimes|nullable|string|max:255',
+            'permanent_address' => 'sometimes|nullable|string|max:255',
+            'village' => 'sometimes|nullable|string|max:255',
+            'post_office' => 'sometimes|nullable|string|max:255',
+            'police_station' => 'sometimes|nullable|string|max:255',
+            'district' => 'sometimes|nullable|string|max:255',
+            'guardian_name' => 'sometimes|nullable|string|max:255',
+            'guardian_relation' => 'sometimes|nullable|string|max:255',
+            'guardian_occupation' => 'sometimes|nullable|string|max:255',
+            'guardian_mobile' => 'sometimes|nullable|string|max:20',
+            'previous_institution_name' => 'sometimes|nullable|string|max:255',
+            'previous_institution_address' => 'sometimes|nullable|string|max:255',
+            'prev_class_admitted' => 'sometimes|nullable|string|max:255',
+            'examiner' => 'sometimes|nullable|string|max:255',
+            'is_residential' => 'sometimes|nullable|in:0,1',
+            'department' => 'sometimes|nullable|in:noorani,najera,hifz,sunani',
             'photo' => 'sometimes|nullable|image|mimes:jpeg,gif,png,jpg|max:2048',
-            'address' => 'required|string|min:6|max:120',
-            'bg_id' => 'sometimes|nullable',
-            'state_id' => 'required',
-            'lga_id' => 'required',
-            'nal_id' => 'required',
-            'my_class_id' => 'required',
-            'section_id' => 'required',
-            'my_parent_id' => 'sometimes|nullable',
-            'dorm_id' => 'sometimes|nullable',
-        ];
-    }
-
-    public function attributes()
-    {
-        return  [
-            'section_id' => 'Section',
-            'nal_id' => 'Nationality',
-            'my_class_id' => 'Class',
-            'dorm_id' => 'Dormitory',
-            'state_id' => 'State',
-            'lga_id' => 'LGA',
-            'bg_id' => 'Blood Group',
-            'my_parent_id' => 'Parent',
+            'my_parent_id' => 'sometimes|nullable|exists:users,id',
+            'discount' => 'sometimes|nullable|integer',
+            'house' => 'sometimes|nullable|string|max:255',
+            'prev_exam_result' => 'sometimes|nullable|string|max:255',
+            'prev_arabic_result' => 'sometimes|nullable|string|max:255',
+            'prev_academic_result' => 'sometimes|nullable|string|max:255',
         ];
     }
 
     protected function getValidatorInstance()
     {
         $input = $this->all();
-
-        $input['my_parent_id'] = $input['my_parent_id'] ? Qs::decodeHash($input['my_parent_id']) : NULL;
-
+        $input['my_parent_id'] = $input['my_parent_id'] ? Qs::decodeHash($input['my_parent_id']) : null;
         $this->getInputSource()->replace($input);
-
         return parent::getValidatorInstance();
     }
 }

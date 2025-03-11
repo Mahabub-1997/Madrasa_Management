@@ -1,215 +1,297 @@
 @extends('layouts.master')
 @section('page_title', 'Admit Student')
 @section('content')
-        <div class="card">
-            <div class="card-header bg-white header-elements-inline">
-                <h6 class="card-title">Please fill The form Below To Admit A New Student</h6>
+    <div class="card">
+        <div class="card-header bg-white header-elements-inline">
+            <h6 class="card-title">Please fill the form below to admit a new student</h6>
+            {!! Qs::getPanelOptions() !!}
+        </div>
 
-                {!! Qs::getPanelOptions() !!}
-            </div>
-
-            <form id="ajax-reg" method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.store') }}" data-fouc>
-               @csrf
-                <h6>Personal data</h6>
-                <fieldset>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Full Name: <span class="text-danger">*</span></label>
-                                <input value="{{ old('name') }}" required type="text" name="name" placeholder="Full Name" class="form-control">
-                                </div>
-                            </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Address: <span class="text-danger">*</span></label>
-                                <input value="{{ old('address') }}" class="form-control" placeholder="Address" name="address" type="text" required>
-                            </div>
+        <form id="ajax-reg" method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.store') }}" data-fouc>
+            @csrf
+            <!-- PERSONAL INFORMATION -->
+            <h6>Personal Information</h6>
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Student Full Name: <span class="text-danger">*</span></label>
+                            <input value="{{ old('student_name') }}" required type="text" name="student_name" placeholder="Full Name" class="form-control">
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Email address: </label>
-                                <input type="email" value="{{ old('email') }}" name="email" class="form-control" placeholder="Email Address">
-                            </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email Address:</label>
+                            <input value="{{ old('email') }}" type="email" name="email" placeholder="Email Address" class="form-control">
                         </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="gender">Gender: <span class="text-danger">*</span></label>
-                                <select class="select form-control" id="gender" name="gender" required data-fouc data-placeholder="Choose..">
-                                    <option value=""></option>
-                                    <option {{ (old('gender') == 'Male') ? 'selected' : '' }} value="Male">Male</option>
-                                    <option {{ (old('gender') == 'Female') ? 'selected' : '' }} value="Female">Female</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Phone:</label>
-                                <input value="{{ old('phone') }}" type="text" name="phone" class="form-control" placeholder="" >
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Telephone:</label>
-                                <input value="{{ old('phone2') }}" type="text" name="phone2" class="form-control" placeholder="" >
-                            </div>
-                        </div>
-
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Date of Birth:</label>
-                                <input name="dob" value="{{ old('dob') }}" type="text" class="form-control date-pick" placeholder="Select Date...">
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="nal_id">Nationality: <span class="text-danger">*</span></label>
-                                <select data-placeholder="Choose..." required name="nal_id" id="nal_id" class="select-search form-control">
-                                    <option value=""></option>
-                                    @foreach($nationals as $nal)
-                                        <option {{ (old('nal_id') == $nal->id ? 'selected' : '') }} value="{{ $nal->id }}">{{ $nal->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="state_id">State: <span class="text-danger">*</span></label>
-                            <select onchange="getLGA(this.value)" required data-placeholder="Choose.." class="select-search form-control" name="state_id" id="state_id">
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Gender: <span class="text-danger">*</span></label>
+                            <select class="select form-control" name="gender" required data-placeholder="Choose...">
                                 <option value=""></option>
-                                @foreach($states as $st)
-                                    <option {{ (old('state_id') == $st->id ? 'selected' : '') }} value="{{ $st->id }}">{{ $st->name }}</option>
+                                <option {{ (old('gender') == 'Male') ? 'selected' : '' }} value="Male">Male</option>
+                                <option {{ (old('gender') == 'Female') ? 'selected' : '' }} value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Phone:</label>
+                            <input value="{{ old('phone') }}" type="text" name="phone" placeholder="Phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Alternate Phone:</label>
+                            <input value="{{ old('phone2') }}" type="text" name="phone2" placeholder="Alternate Phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Date of Birth:</label>
+                            <input name="dob" value="{{ old('dob') }}" type="date" class="form-control date-pick" placeholder="Select Date...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Father's Name:</label>
+                            <input type="text" name="father_name" value="{{ old('father_name') }}" placeholder="Father's Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Mother's Name:</label>
+                            <input type="text" name="mother_name" value="{{ old('mother_name') }}" placeholder="Mother's Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Guardian Name (if applicable):</label>
+                            <input type="text" name="guardian_name" value="{{ old('guardian_name') }}" placeholder="Guardian Name" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Permanent Address:</label>
+                            <input type="text" name="permanent_address" value="{{ old('permanent_address') }}" placeholder="Permanent Address" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Village:</label>
+                            <input type="text" name="village" value="{{ old('village') }}" placeholder="Village" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Post Office:</label>
+                            <input type="text" name="post_office" value="{{ old('post_office') }}" placeholder="Post Office" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Police Station:</label>
+                            <input type="text" name="police_station" value="{{ old('police_station') }}" placeholder="Police Station" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>District:</label>
+                            <input type="text" name="district" value="{{ old('district') }}" placeholder="District" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Guardian Relation:</label>
+                            <input type="text" name="guardian_relation" value="{{ old('guardian_relation') }}" placeholder="Guardian Relation" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Guardian Occupation:</label>
+                            <input type="text" name="guardian_occupation" value="{{ old('guardian_occupation') }}" placeholder="Guardian Occupation" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Guardian Mobile:</label>
+                            <input type="text" name="guardian_mobile" value="{{ old('guardian_mobile') }}" placeholder="Guardian Mobile" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Upload Passport Photo:</label>
+                            <input type="file" name="photo" accept="image/*" class="form-input-styled" data-fouc>
+                            <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- STUDENT ACADEMIC DATA -->
+            <h6>Student Academic Data</h6>
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="my_class_id">Class: <span class="text-danger">*</span></label>
+                            <select onchange="getClassSections(this.value)" required name="my_class_id" id="my_class_id" class="select-search form-control" data-placeholder="Choose...">
+                                <option value=""></option>
+                                @foreach($my_classes as $c)
+                                    <option {{ (old('my_class_id') == $c->id) ? 'selected' : '' }} value="{{ $c->id }}">{{ $c->name }}</option>
                                 @endforeach
                             </select>
                         </div>
-
-                        <div class="col-md-3">
-                            <label for="lga_id">LGA: <span class="text-danger">*</span></label>
-                            <select required data-placeholder="Select State First" class="select-search form-control" name="lga_id" id="lga_id">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+{{--                            <label for="section_id">Section: <span class="text-danger">*</span></label>--}}
+{{--                            <select required name="section_id" id="section_id" class="select-search form-control" data-placeholder="Select Class First">--}}
+{{--                                <option value=""></option>--}}
+{{--                            </select>--}}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="my_parent_id">Parent:</label>
+                            <select name="my_parent_id" id="my_parent_id" class="select-search form-control" data-placeholder="Choose...">
                                 <option value=""></option>
+                                @foreach($parents as $p)
+                                    <option {{ (old('my_parent_id') == Qs::hash($p->id)) ? 'selected' : '' }} value="{{ Qs::hash($p->id) }}">{{ $p->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
-                    <div class="row">
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="bg_id">Blood Group: </label>
-                                <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
-                                    <option value=""></option>
-                                    @foreach(App\Models\BloodGroup::all() as $bg)
-                                        <option {{ (old('bg_id') == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="d-block">Upload Passport Photo:</label>
-                                <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
-                                <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </fieldset>
-
-                <h6>Student Data</h6>
-                <fieldset>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="my_class_id">Class: <span class="text-danger">*</span></label>
-                                <select onchange="getClassSections(this.value)" data-placeholder="Choose..." required name="my_class_id" id="my_class_id" class="select-search form-control">
-                                    <option value=""></option>
-                                    @foreach($my_classes as $c)
-                                        <option {{ (old('my_class_id') == $c->id ? 'selected' : '') }} value="{{ $c->id }}">{{ $c->name }}</option>
-                                        @endforeach
-                                </select>
-                        </div>
-                            </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="section_id">Section: <span class="text-danger">*</span></label>
-                                <select data-placeholder="Select Class First" required name="section_id" id="section_id" class="select-search form-control">
-                                    <option {{ (old('section_id')) ? 'selected' : '' }} value="{{ old('section_id') }}">{{ (old('section_id')) ? 'Selected' : '' }}</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="my_parent_id">Parent: </label>
-                                <select data-placeholder="Choose..."  name="my_parent_id" id="my_parent_id" class="select-search form-control">
-                                    <option  value=""></option>
-                                    @foreach($parents as $p)
-                                        <option {{ (old('my_parent_id') == Qs::hash($p->id)) ? 'selected' : '' }} value="{{ Qs::hash($p->id) }}">{{ $p->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="year_admitted">Year Admitted: <span class="text-danger">*</span></label>
-                                <select data-placeholder="Choose..." required name="year_admitted" id="year_admitted" class="select-search form-control">
-                                    <option value=""></option>
-                                    @for($y=date('Y', strtotime('- 10 years')); $y<=date('Y'); $y++)
-                                        <option {{ (old('year_admitted') == $y) ? 'selected' : '' }} value="{{ $y }}">{{ $y }}</option>
-                                    @endfor
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3">
-                            <label for="dorm_id">Dormitory: </label>
-                            <select data-placeholder="Choose..."  name="dorm_id" id="dorm_id" class="select-search form-control">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="year_admitted">Admission date: <span class="text-danger">*</span></label>
+                            <select required name="year_admitted" id="year_admitted" class="select-search form-control" data-placeholder="Choose...">
                                 <option value=""></option>
-                                @foreach($dorms as $d)
-                                    <option {{ (old('dorm_id') == $d->id) ? 'selected' : '' }} value="{{ $d->id }}">{{ $d->name }}</option>
-                                    @endforeach
+                                @for($y = date('Y', strtotime('-10 years')); $y <= date('Y'); $y++)
+                                    <option {{ (old('year_admitted') == $y) ? 'selected' : '' }} value="{{ $y }}">{{ $y }}</option>
+                                @endfor
                             </select>
-
                         </div>
-
-                        <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Admission Number:</label>
+                            <input type="text" name="adm_no" placeholder="Admission Number" class="form-control" value="{{ old('adm_no') }}">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Discount:</label>
+                            <input type="number" name="discount" placeholder="Discount" class="form-control" value="{{ old('discount', 0) }}">
+                        </div>
+                    </div>
+{{--                    <div class="col-md-3">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label>Sport House:</label>--}}
+{{--                            <input type="text" name="house" placeholder="Sport House" class="form-control" value="{{ old('house') }}">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Age:</label>
+                            <input type="number" name="age" placeholder="Age" class="form-control" value="{{ old('age') }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Admission Date:</label>
+                            <input type="text" name="admission_date" value="{{ old('admission_date') }}" class="form-control date-pick" placeholder="Select Date...">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Previous Institution Name:</label>
+                            <input type="text" name="previous_institution_name" value="{{ old('previous_institution_name') }}" placeholder="Previous Institution Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Previous Institution Address:</label>
+                            <input type="text" name="previous_institution_address" value="{{ old('previous_institution_address') }}" placeholder="Previous Institution Address" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Previous Class Admitted:</label>
+                            <input type="text" name="prev_class_admitted" placeholder="Previous Class/Section" class="form-control" value="{{ old('prev_class_admitted') }}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Examiner:</label>
+                            <input type="text" name="examiner" placeholder="Examiner Name" class="form-control" value="{{ old('examiner') }}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label>Dormitory Room No:</label>
-                                <input type="text" name="dorm_room_no" placeholder="Dormitory Room No" class="form-control" value="{{ old('dorm_room_no') }}">
+                                <label>Previous Exam Result:</label>
+                                <input type="text" name="prev_exam_result" placeholder="Previous Exam Result" class="form-control" value="{{ old('prev_exam_result') }}">
                             </div>
                         </div>
-
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label>Sport House:</label>
-                                <input type="text" name="house" placeholder="Sport House" class="form-control" value="{{ old('house') }}">
+                                <label>Previous Arabic Result:</label>
+                                <input type="text" name="prev_arabic_result" placeholder="Previous Arabic Result" class="form-control" value="{{ old('prev_arabic_result') }}">
                             </div>
                         </div>
-
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label>Admission Number:</label>
-                                <input type="text" name="adm_no" placeholder="Admission Number" class="form-control" value="{{ old('adm_no') }}">
+                                <label>Previous Academic Result:</label>
+                                <input type="text" name="prev_academic_result" placeholder="Previous Academic Result" class="form-control" value="{{ old('prev_academic_result') }}">
                             </div>
                         </div>
                     </div>
-                </fieldset>
 
-            </form>
-        </div>
-    @endsection
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Department:</label>
+                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">
+                                <option value=""></option>
+                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>
+                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>
+                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>
+                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Residential Status:</label>
+                            <select name="is_residential" class="select-search form-control" data-placeholder="Select">
+                                <option value="0" {{ (old('is_residential', 0) == 0) ? 'selected' : '' }}>Non Residential</option>
+                                <option value="1" {{ (old('is_residential') == 1) ? 'selected' : '' }}>Residential</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+@endsection
