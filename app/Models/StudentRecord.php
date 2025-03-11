@@ -11,7 +11,47 @@ class StudentRecord extends Eloquent
     use HasFactory;
 
     protected $fillable = [
-        'session', 'user_id', 'my_class_id', 'section_id', 'my_parent_id', 'dorm_id', 'dorm_room_no', 'adm_no', 'year_admitted', 'wd', 'wd_date', 'grad', 'grad_date', 'house', 'age'
+        'student_name',
+        'email',
+        'gender',
+        'phone' ,
+        'phone2' ,
+        'adm_no' ,
+        'year_admitted' ,
+        'my_class_id' ,
+        'section_id' ,
+        'admission_date' ,
+        'age' ,
+        'dob' ,
+        'father_name' ,
+        'mother_name' ,
+        'permanent_address' ,
+        'village' ,
+        'post_office' ,
+        'police_station' ,
+        'district' ,
+        'guardian_name' ,
+        'guardian_relation',
+        'guardian_occupation' ,
+        'guardian_mobile',
+        'previous_institution_name',
+        'previous_institution_address' ,
+        'prev_class_admitted',
+        'examiner' ,
+        'is_residential',
+        'department' ,
+        'photo' ,
+        'user_id' ,
+        'session' ,
+        'my_parent_id' ,
+        'discount',
+        'house' ,
+        'prev_exam_result' ,
+        'prev_arabic_result' ,
+        'prev_academic_result' ,
+
+
+
     ];
 
     public function user()
