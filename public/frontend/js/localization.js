@@ -4,8 +4,8 @@ const translations = {
         day:"Mon - Sat: 09:00 am - 05:30 pm",
         date:"Call Us: +088 01768198718",
         email:" Email: Mahabub_madrasa@gmail.com",
-        bismillah: "Bismillah ir-Rahman ir-Rahim",
-        welcome: "Welcome to My Website",
+        bismillah: "Bismillahir Rahmanir Rahim",
+        welcome: "Welcome to Muslihul Ummah Hifz Madrasah",
         description: "Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.",
         button: "Join Us",
         readButton:"Read ME",
@@ -31,6 +31,7 @@ const translations = {
         manuDirectors2:"Other Staff",
         manuMadrasaGallery:"Madrasa Gallery",
         manuContact:"Contact",
+        manuAdministration:"Administration",
         bestTitle:"Best Knowledge from Us",
         bestSubTitle:"Have the courage to have firm belief in Allah",
         bestDescription:"Having firm belief in Allah is the" +
@@ -83,12 +84,15 @@ const translations = {
     formerStudentDescription1:"I am extremely proud to have worked as a teacher at this institution. <br> While working here, I not only spread the light of knowledge among students but also taught them humanitarian values",
     formerStudentDescription2:".Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history",
     formerStudentDescription3:"The main purpose of madrasa education is to promote Islamic education and the development of the Muslim community.",
+
+    footerOurService:"Our Service",
+
     bn: {
         day:"সোমবার - শনিবার: সকাল ০৯:০০ টা - বিকাল ০৫:৩০ টা",
         date:"যোগাযোগ : +৮৮০ ০১৭৬৮১৯৮৭১৮",
         email:"ইমেইল: Mahabub_madrasa@gmail.com ",
         bismillah: "বিসমিল্লাহির রহমানির রহিম",
-        welcome: "আমার ওয়েবসাইটে স্বাগতম",
+        welcome: "মুসলিহুল উম্মাহ হিফজ মাদ্রাসায় স্বাগতম",
         description: "আল্লাহর রহমত অসীম; তোমার পথ যতই অন্ধকার মনে হোক না কেন, তার দিকে ফিরে যাও। প্রতিটি প্রার্থনার সাথে, আপনার হৃদয় শান্তি খুঁজে পায়, এবং আপনার আত্মা শক্তি খুঁজে পায়।",
         button: "যোগ দিন",
         readButton:"আমাকে পড়ুন",
@@ -114,6 +118,7 @@ const translations = {
         manuDirectors2:"অন্যান্য স্টাফ",
         manuMadrasaGallery:"মাদ্রাসা গ্যালারি",
         manuContact:"যোগাযোগ",
+        manuAdministration:"অ্যাডমিন",
         bestTitle:"সেরা জ্ঞান আমাদের থেকে",
         bestSubTitle:"আল্লাহর প্রতি দৃঢ় বিশ্বাস রাখার সাহস রাখুন",
         bestDescription:"আল্লাহর প্রতি দৃঢ় বিশ্বাস আমাদের ঈমানের ভিত্তি। তিনিই সর্বশক্তিমান, আমাদের সকল সমস্যার সমাধানকারী। জীবনের কঠিন সময়ে ধৈর্য ধরুন এবং আল্লাহর কাছে সাহায্য প্রার্থনা করুন। আল্লাহ সর্বদা" +
@@ -163,21 +168,23 @@ const translations = {
         formerStudentDescription1:"আমি এই প্রতিষ্ঠানে শিক্ষক হিসেবে কাজ করে অত্যন্ত গর্বিত। এখানে কাজ করার সময়, আমি শুধু ছাত্রদের মধ্যে জ্ঞানের আলো ছড়িয়ে দিয়েই সন্তুষ্ট হইনি, বরং তাদের মানবিক মূল্যবোধও শিখিয়েছি",
         formerStudentDescription2:"ইসলামিক ইতিহাস সমৃদ্ধ এবং বৈচিত্র্যময়। ইসলামের উত্থান শুরু হয়েছিল হজরত মুহাম্মদ (সঃ)-এর আগমনের মাধ্যমে এবং ইসলাম প্রচারের মাধ্যমে। প্রথম খলিফা আবু বকর (রাঃ) থেকে উমাইয়া, আব্বাসি এবং অটোমান যুগ পর্যন্ত, ইসলামী বিশ্বে ধর্ম, বিজ্ঞান, সংস্কৃতি এবং শিল্পের বিকাশ ঘটেছিল। ইসলামিক ইতিহাস মানব ইতিহাসের একটি গুরুত্বপূর্ণ অধ্যায়।",
         formerStudentDescription3:"মাদ্রাসা শিক্ষার প্রধান উদ্দেশ্য হলো ইসলামী শিক্ষা প্রচার এবং মুসলিম সম্প্রদায়ের উন্নয়ন।",
+
+        footerOurService:"সেবা প্রদান",
     }
 };
 function toggleLanguage() {
-    if (currentLanguage === 'en') {
-        currentLanguage = 'bn';
-        document.getElementById('languageToggle').innerHTML = `en<i class="fa fa-toggle-on fa-2x" style="margin-right: 7px;margin-left: 7px;"></i>bn`;
-        changeLanguage('bn'); // Call your language-changing function
-    } else {
+    if (currentLanguage === 'bn') {
         currentLanguage = 'en';
-        document.getElementById('languageToggle').innerHTML = `en<i class="fa fa-toggle-off fa-2x" style="margin-right: 7px;margin-left: 7px;"></i>bn`;
+        document.getElementById('languageToggle').innerHTML = `en<i class="fa fa-toggle-on fa-2x" style="margin-right: 7px;margin-left: 7px;color: #ffffff"></i>bn`;
         changeLanguage('en'); // Call your language-changing function
+    } else {
+        currentLanguage = 'bn';
+        document.getElementById('languageToggle').innerHTML = `en<i class="fa fa-toggle-off fa-2x" style="margin-right: 7px;margin-left: 7px;color: #ffffff"></i>bn`;
+        changeLanguage('bn'); // Call your language-changing function
     }
 }
 
-let currentLanguage = 'en'; // Default language
+let currentLanguage = 'bn'; // Default language
 
 // Function to change language
 function changeLanguage(lang) {
@@ -218,6 +225,7 @@ function loadLanguage() {
     document.querySelectorAll('.manuDirectors2').forEach(el => el.textContent = data.manuDirectors2);
     document.querySelectorAll('.manuMadrasaGallery').forEach(el => el.textContent = data.manuMadrasaGallery);
     document.querySelectorAll('.manuContact').forEach(el => el.textContent = data.manuContact);
+    document.querySelectorAll('.manuAdministration').forEach(el => el.textContent = data.manuAdministration);
     document.querySelectorAll('.bestTitle').forEach(el => el.textContent = data.bestTitle);
     document.querySelectorAll('.bestSubTitle').forEach(el => el.textContent = data. bestSubTitle);
     document.querySelectorAll('.bestDescription').forEach(el => el.textContent = data.  bestDescription);
@@ -265,6 +273,8 @@ function loadLanguage() {
     document.querySelectorAll('.formerStudentDescription1').forEach(el => el.textContent = data.formerStudentDescription1);
     document.querySelectorAll('.formerStudentDescription2').forEach(el => el.textContent = data.formerStudentDescription2);
     document.querySelectorAll('.formerStudentDescription3').forEach(el => el.textContent = data.formerStudentDescription3);
+    document.querySelectorAll('.footerOurService').forEach(el => el.textContent = data.footerOurService);
+
 }
 
 // Load default language on page load

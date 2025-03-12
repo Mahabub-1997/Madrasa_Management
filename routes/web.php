@@ -1,9 +1,15 @@
 <?php
 
 Auth::routes();
-Route::get('/', function(){
-    return view('Frontend.Landing.landing');
-});
+Route::get('/', 'LandingController@dashboard')->name('landing');
+Route::get('/admission-notice', 'LandingController@admissionNotice')->name('admission-notice');
+Route::get('/admission-process', 'LandingController@admissionProcess')->name('admission-process');
+Route::get('/admission-terms', 'LandingController@admissionTerms')->name('admission-terms');
+Route::get('/gallary', 'LandingController@gallaryUs')->name('gallary');
+
+Route::get('/contact-us', 'LandingController@ContactUs')->name('contact-us');
+
+
 //Route::get('/test', 'TestController@index')->name('test');
 Route::get('/privacy-policy', 'HomeController@privacy_policy')->name('privacy_policy');
 Route::get('/terms-of-use', 'HomeController@terms_of_use')->name('terms_of_use');

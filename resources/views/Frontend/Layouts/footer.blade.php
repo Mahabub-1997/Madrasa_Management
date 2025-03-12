@@ -20,7 +20,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="widget widget_archive">
                     <!--Widget Title Start-->
-                    <h5 class="widget-title"><span>Our</span> Services</h5>
+                    <h5 class="footerOurService widget-title"><span>Our</span> Services</h5>
                     <!--Widget Title End-->
                     <!--Social Media Start-->
                     <ul>
@@ -105,7 +105,7 @@
 <!--Footer Wrap End-->
 <!--Copy Right Start-->
 <div class="footer_strip">
-    <h5><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></h5>
+    <h5><a target="_blank" href="https://chokrojan.com">Chokrojan Limited</a></h5>
 </div>
 <!--Copy Right End-->
 <!-- Modal -->
