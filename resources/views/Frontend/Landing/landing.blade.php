@@ -1,6 +1,6 @@
 @extends('Frontend.Layouts.master')
 @section('title')
-    Muslihul Ummah
+    Muslihul Ummah Hifz Madrasah
 @endsection
 @section('links')
     <link href="{{asset('/')}}frontend/css/bootstrap.css" rel="stylesheet">
@@ -30,7 +30,62 @@
 
 @endsection
 
+@section('banner')
+    <div class="iq_banner">
+        <ul class="slider">
+            <li class="">
+                <!--Banner Thumb START-->
+                <a href="#" data-rel="prettyphoto[]" target="_blank">
+                    <img src="{{ asset('frontend/extra-images/banner-100.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;max-height: 700px" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">                <div class="iq-caption-wrapper text-left">
+                        <div class="iq_banner_caption container">
+                            <div class="iq-caption">
+                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div  class="welcome iq-caption-text" style="font-weight: bold"></div>
+                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
+                                <div class=" readButton iq_link_1" style="background-color: #43A047"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!--Banner Thumb End-->
+            </li>
+            <li class="">
+                <!--Banner Thumb START-->
+                <a href="#" data-rel="prettyphoto[]" target="_blank">
+                    <img src="{{ asset('frontend/extra-images/banner-101.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;max-height: 700px" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+                    <div class="iq-caption-wrapper text-left">
+                        <div class="iq_banner_caption container">
+                            <div class="iq-caption">
+                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div id="" class="welcome iq-caption-text" style="font-weight: bold"></div>
+                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
+                                <div class="readButton iq_link_1" style="background-color: #43A047"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!--Banner Thumb End-->
+            </li>
+            <li class="">
+                <!--Banner Thumb START-->
+                <a href="#" data-rel="prettyphoto[]" target="_blank">
+                    <img src="{{ asset('frontend/extra-images/banner-103.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out; max-height: 700px;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+                    <div class="iq-caption-wrapper">
+                        <div class="iq_banner_caption container">
+                            <div class="iq-caption text-left">
+                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div   class="welcome iq-caption-text" style="font-weight: bold"></div>
+                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
+                                <div class="readButton iq_link_1" style="background-color: #43A047">Read More</div>                                    </div>
+                        </div>
+                    </div>
+                </a>
+                <!--Banner Thumb End-->
+            </li>
+        </ul>
 
+    </div>
+@endsection
 @section('content')
     <div class="iq_content_wrap">
 
@@ -46,7 +101,7 @@
                     <!--Heading Wrap End-->
                     <h5 class="bestSubTitle">Have the courage to have firm belief in Allah</h5>
                     <p class="bestDescription">Having firm belief in Allah is the foundation of our faith. He is the Almighty, the solver of all our problems. During the toughest times in life, be patient and seek help from Allah. Allah is always with His servants and will never disappoint you. Keep your faith, success will come.</p>
-                    <a class="button iq_link_1" href="#">Join Us</a>
+                    <a class="button iq_link_1" style="background-color: #43A047"  href="#">Join Us</a>
                 </div>
             </div>
             <!--Best Knowledge Description Wrap End-->
@@ -64,12 +119,12 @@
                 <!--Heading Wrap End-->
 
                 <!--Tab Menu Wrap Start-->
-                <div class="iq_tab_menu">
-                    <ul id="tabs" data-tabs="tabs">
-                        <li class=" active"><a class="ourFeaturedDescriptionList1" data-toggle="tab" href="#featured">Featured</a></li>
-                        <li><a class="ourFeaturedDescriptionList1 " data-toggle="tab" href="#popular">Popular</a></li>
-                    </ul>
-                </div>
+{{--                <div class="iq_tab_menu">--}}
+{{--                    <ul id="tabs" data-tabs="tabs">--}}
+{{--                        <li class=" active"><a class="ourFeaturedDescriptionList1" data-toggle="tab" href="#featured">Featured</a></li>--}}
+{{--                        <li><a class="ourFeaturedDescriptionList1 " data-toggle="tab" href="#popular">Popular</a></li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
                 <!--Tab Menu Wrap End-->
 
                 <!--Tab Menu Detail Wrap Start-->
@@ -256,125 +311,173 @@
             </div>
             <!--Heading Wrap End-->
 
-            <!--Gallery Menu Wrap Start-->
-            <div id="filters" class="iq_gallery_menu">
-                <ul id="filterable-item-filter-1">
-                    <li><a class="galleryDescription1 active" data-value="all">All</a></li>
-                    <li><a  class="galleryDescription2" data-value="1">Ibtedayi Program</a></li>
-                    <li><a  class="galleryDescription3" data-value="2">Dakhil Program</a></li>
-                    <li><a class="galleryDescription4" data-value="3">Alim Program</a></li>
-                    <li><a class="galleryDescription5" data-value="4">Fazil Program</a></li>
-                    <li><a class="galleryDescription6" data-value="5">Kamil Program</a></li>
-                </ul>
-            </div>
-            <!--Gallery Menu Wrap End-->
-
-            <div id="filterable-item-holder-1" class="filterable_container main-gallery">
-                <!--Gallery List Wrap Start-->
-                <div class="col-md-4 col-sm-6 filterable-item all 1 2 3">
-                    <div class="thumb">
-                        <figure>
-                            <img src="{{ asset('frontend/extra-images/teacher-09.jpg') }}" style="max-height: 400px" alt="Image Here">
-                            <figcaption class="overlay1">
-                                <div class="link-wrapper">
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                    <h6>Lorem Ipsum</h6>
-                                </div>
-                            </figcaption>
-                        </figure>
+            <div class="iq_content_wrap">
+                <!--Our Gallery Wrap Start-->
+                <section class="iq_gallery_bg">
+                    <div class="main-gallery">
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-1.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">                            <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-2.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">
+                                    <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-3.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">                              <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-4.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">                              <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-5.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">                              <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-6.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">                              <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-7.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">                              <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-8.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">
+                                    <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
+                        <!--Gallery List Wrap Start-->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="thumb">
+                                <figure>
+                                    <img src="{{ asset('frontend/extra-images/gall-9.jpeg') }}"
+                                         alt="Image Here"
+                                         style="max-width:420px; max-height: 230px;">                              <figcaption class="overlay1">
+                                        <div class="link-wrapper">
+                                            <a href="#"><i class="fa fa-search"></i></a>
+                                            <a href="#"><i class="fa fa-link"></i></a>
+                                            <h6>Lorem Ipsum</h6>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <!--Gallery List Wrap End-->
                     </div>
-                </div>
-                <!--Gallery List Wrap End-->
 
-                <!--Gallery List Wrap Start-->
-                <div class="col-md-4 col-sm-6 filterable-item all 1 5">
-                    <div class="thumb">
-                        <figure>
-                            <img src="{{ asset('frontend/extra-images/teacher-10.jpg') }}" style="max-height: 400px" alt="Image Here">
-                            <figcaption class="overlay1">
-                                <div class="link-wrapper">
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                    <h6>Lorem Ipsum</h6>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <!--Gallery List Wrap End-->
-
-                <!--Gallery List Wrap Start-->
-                <div class="col-md-4 col-sm-6 filterable-item all 1 2 5">
-                    <div class="thumb">
-                        <figure>
-                            <img src="{{ asset('frontend/extra-images/teacher-11.jpg') }}" style="max-height: 400px" alt="Image Here">
-                            <figcaption class="overlay1">
-                                <div class="link-wrapper">
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                    <h6>Lorem Ipsum</h6>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <!--Gallery List Wrap End-->
-
-                <!--Gallery List Wrap Start-->
-                <div class="col-md-4 col-sm-6 filterable-item all 2 4">
-                    <div class="thumb">
-                        <figure>
-                            <img src="{{ asset('frontend/extra-images/teacher-13.jpg') }}" style="max-height: 400px" alt="Image Here">
-                            <figcaption class="overlay1">
-                                <div class="link-wrapper">
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                    <h6>Lorem Ipsum</h6>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <!--Gallery List Wrap End-->
-
-                <!--Gallery List Wrap Start-->
-                <div class="col-md-4 col-sm-6 filterable-item all 1 2">
-                    <div class="thumb">
-                        <figure>
-                            <img src="{{ asset('frontend/extra-images/teacher-14.jpg') }}" style="max-height: 400px" alt="Image Here">
-                            <figcaption class="overlay1">
-                                <div class="link-wrapper">
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                    <h6>Lorem Ipsum</h6>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <!--Gallery List Wrap End-->
-
-                <!--Gallery List Wrap Start-->
-                <div class="col-md-4 col-sm-6 filterable-item all 1 3">
-                    <div class="thumb">
-                        <figure>
-                            <img src="{{ asset('frontend/extra-images/galary-06.jpg') }}" style="max-height: 400px" alt="Image Here">
-                            <figcaption class="overlay1">
-                                <div class="link-wrapper">
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                    <a href="#"><i class="fa fa-link"></i></a>
-                                    <h6>Lorem Ipsum</h6>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <!--Gallery List Wrap End-->
+                </section>
+                <!--Our Gallery Wrap End-->
             </div>
 
             <div class="load-more">
-                <a class="button iq_link_1" href="#">Load More</a>
+                <a class="button iq_link_1" style="background-color: #43A047" href="#">Load More</a>
             </div>
         </section>
 

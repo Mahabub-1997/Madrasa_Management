@@ -8,7 +8,9 @@
             {!! Qs::getPanelOptions() !!}
         </div>
 
+
         <div class="card-body">
+            {{$uncleared}}
                 <ul class="nav nav-tabs nav-tabs-highlight">
                     <li class="nav-item"><a href="#all-uc" class="nav-link active" data-toggle="tab">Incomplete Payments</a></li>
                     <li class="nav-item"><a href="#all-cl" class="nav-link" data-toggle="tab">Completed Payments</a></li>
