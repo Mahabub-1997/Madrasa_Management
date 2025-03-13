@@ -152,6 +152,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     });
     Route::resource('salaries', 'SalaryController');
 
+
     /************************ AJAX ****************************/
     Route::group(['prefix' => 'ajax'], function() {
         Route::get('get_lga/{state_id}', 'AjaxController@get_lga')->name('get_lga');

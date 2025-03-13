@@ -21,19 +21,18 @@ class StudentRecordUpdate extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:6|max:150',
-            'gender' => 'required|string',
+            'name' => 'string|min:6|max:150',
+            'gender' => 'string',
             'phone' => 'sometimes|nullable|string|min:6|max:20',
             'email' => 'sometimes|nullable|email|max:100|unique:users,id',
             'photo' => 'sometimes|nullable|image|mimes:jpeg,gif,png,jpg|max:2048',
-            'address' => 'required|string|min:6|max:120',
+            'address' => 'string|min:6|max:120',
             'bg_id' => 'sometimes|nullable',
-            'my_class_id' => 'required',
-            'section_id' => 'required',
-            'state_id' => 'required',
-            'lga_id' => 'required',
-            'nal_id' => 'required',
-            'my_parent_id' => 'sometimes|nullable',
+            'my_class_id' => '',
+            'section_id' => '',
+            'state_id' => '',
+            'lga_id' => '',
+            'nal_id' => '',
             'dorm_id' => 'sometimes|nullable',
         ];
     }
@@ -46,7 +45,6 @@ class StudentRecordUpdate extends FormRequest
             'state_id' => 'State',
             'lga_id' => 'LGA',
             'bg_id' => 'Blood Group',
-            'my_parent_id' => 'Parent',
             'my_class_id' => 'Class',
             'section_id' => 'Section',
         ];
@@ -56,7 +54,7 @@ class StudentRecordUpdate extends FormRequest
     {
         $input = $this->all();
 
-        $input['my_parent_id'] = $input['my_parent_id'] ? Qs::decodeHash($input['my_parent_id']) : NULL;
+//        $input['my_parent_id'] = $input['my_parent_id'] ? Qs::decodeHash($input['my_parent_id']) : NULL;
 
         $this->getInputSource()->replace($input);
 

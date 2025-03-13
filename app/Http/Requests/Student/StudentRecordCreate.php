@@ -20,7 +20,7 @@ class StudentRecordCreate extends FormRequest
             'phone' => 'sometimes|nullable|string|max:20',
             'phone2' => 'sometimes|nullable|string|max:20',
             'adm_no' => 'sometimes|nullable|alpha_num|min:3|max:30|unique:student_records',
-            'year_admitted' => 'required|string',
+            'year_admitted' => 'string',
             'my_class_id' => 'exists:my_classes,id',
             'section_id' => 'exists:sections,id',
             'admission_date' => 'sometimes|nullable|date',
@@ -56,7 +56,7 @@ class StudentRecordCreate extends FormRequest
     protected function getValidatorInstance()
     {
         $input = $this->all();
-        $input['my_parent_id'] = $input['my_parent_id'] ? Qs::decodeHash($input['my_parent_id']) : null;
+//        $input['my_parent_id'] = $input['my_parent_id'] ? Qs::decodeHash($input['my_parent_id']) : null;
         $this->getInputSource()->replace($input);
         return parent::getValidatorInstance();
     }

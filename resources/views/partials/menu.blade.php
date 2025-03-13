@@ -117,13 +117,8 @@
                             @endif
 
                             {{--Student Information--}}
-                            <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['students.list', 'students.edit', 'students.show']) ? 'nav-item-expanded' : '' }}">
-                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['students.list', 'students.edit', 'students.show']) ? 'active' : '' }}">Student Information</a>
-                                <ul class="nav nav-group-sub">
-                                    @foreach(App\Models\MyClass::orderBy('name')->get() as $c)
-                                        <li class="nav-item"><a href="{{ route('students.list', $c->id) }}" class="nav-link ">{{ $c->name }}</a></li>
-                                    @endforeach
-                                </ul>
+                            <li class="nav-item  {{ in_array(Route::currentRouteName(), ['students.index','students.list', 'students.edit', 'students.show']) ? 'nav-item-expanded' : '' }}">
+                                <a href="{{ route('students.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['students.list', 'students.edit', 'students.show']) ? 'active' : '' }}">Student Information</a>
                             </li>
 
                             @if(Qs::userIsTeamSA())
