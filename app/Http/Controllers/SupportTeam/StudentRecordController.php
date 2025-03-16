@@ -88,9 +88,11 @@ class StudentRecordController extends Controller
         $srData['photo'] = $userData['photo'];
         $this->student->createRecord($srData);
 
-        return redirect()->route('students.index')->with('success', 'Student created successfully');
+//        return redirect()->route('students.index')->with('success', 'Student created successfully');
 
 //        return Qs::jsonStoreOk('Student added successfully');
+        return Qs::storeOk('students.index'); // Updated to use Qs helper
+
     }
 
 
@@ -203,7 +205,9 @@ class StudentRecordController extends Controller
 
         $this->student->updateRecord($sr_id, $srData);
 
-        return Qs::jsonUpdateOk('Student record updated successfully');
+//        return Qs::jsonUpdateOk('Student record updated successfully');
+        return Qs::updateOk('students.index'); // Updated to use Qs helper
+
     }
 
     /**

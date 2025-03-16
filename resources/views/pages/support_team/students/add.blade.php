@@ -7,7 +7,7 @@
             {!! Qs::getPanelOptions() !!}
         </div>
 
-        <form id="ajax-reg" method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.store') }}" >
+        <form method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.store') }}" >
             @csrf
             <!-- PERSONAL INFORMATION -->
             <h6>Personal Information</h6>
@@ -157,13 +157,18 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="form-group">
-{{--                            <label for="section_id">Section: <span class="text-danger">*</span></label>--}}
-{{--                            <select required name="section_id" id="section_id" class="select-search form-control" data-placeholder="Select Class First">--}}
-{{--                                <option value=""></option>--}}
-{{--                            </select>--}}
+                            <label>Department:</label>
+                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">
+                                <option value=""></option>
+                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>
+                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>
+                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>
+                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>
+                            </select>
                         </div>
+                    </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
@@ -176,8 +181,7 @@
 {{--                            </select>--}}
                         </div>
                     </div>
-                </div>
-                <div class="row">
+                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Discount:</label>
@@ -251,18 +255,20 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Department:</label>
-                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">
-                                <option value=""></option>
-                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>
-                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>
-                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>
-                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>
-                            </select>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-4">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label>Department:</label>--}}
+{{--                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">--}}
+{{--                                <option value=""></option>--}}
+{{--                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>--}}
+{{--                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>--}}
+{{--                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>--}}
+{{--                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+
                 </div>
                 <div class="row">
                     <div class="col-md-4">

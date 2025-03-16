@@ -7,7 +7,7 @@
             {!! Qs::getPanelOptions() !!}
         </div>
 
-        <form id="ajax-reg" method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.update', Qs::hash($sr->id)) }}" data-fouc>
+        <form method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.update', Qs::hash($sr->id)) }}" >
             @csrf
             @method('PUT')
             <!-- PERSONAL INFORMATION -->
