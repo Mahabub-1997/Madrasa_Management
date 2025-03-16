@@ -91,7 +91,8 @@ class PaymentController extends Controller
         $payableMonths = [];
 
         // Loop through all months from admission date till current month
-        for ($date = clone $admissionDate->copy(); $date->lessThanOrEqualTo($currentDate); $date->addMonth()) {
+        for ($date = $admissionDate->copy()->startOfMonth(); $date->lessThanOrEqualTo($currentDate->copy()->startOfMonth()); $date->addMonth()) {
+            Log::debug('date'.$date);
             $month = $date->format('F');
             $year = $date->format('Y');
             $existingRecord = PaymentRecord::where('student_id', $d['sr']->id)
