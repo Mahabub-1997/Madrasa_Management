@@ -71,7 +71,7 @@
                 <div class="tab-pane fade" id="add-expense">
                     <div class="row">
                         <div class="col-md-6">
-                            <form class="ajax-store" method="post" action="{{ route('expenses.store') }}">
+                            <form class="" method="post" action="{{ route('expenses.store') }}">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
@@ -91,25 +91,10 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Month <span class="text-danger">*</span>
+                                        Date <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-9">
-                                        <select required class="form-control select" name="month">
-                                            @foreach(range(1,12) as $m)
-                                                @php $monthName = date("F", mktime(0, 0, 0, $m, 1)); @endphp
-                                                <option value="{{ $monthName }}" {{ old('month') == $monthName ? 'selected' : '' }}>
-                                                    {{ $monthName }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Year <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-9">
-                                        <input name="year" value="{{ old('year') }}" required type="number" class="form-control" placeholder="Year">
+                                        <input name="date" value="{{ old('date') }}" required type="date" class="form-control" placeholder="date">
                                     </div>
                                 </div>
                                 <div class="form-group row">

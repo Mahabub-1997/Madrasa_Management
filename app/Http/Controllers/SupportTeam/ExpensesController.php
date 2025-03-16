@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SupportTeam;
 use App\Helpers\Qs;
 use App\Http\Controllers\Controller;
 use App\Models\Expense;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ExpensesController extends Controller
@@ -26,17 +27,22 @@ class ExpensesController extends Controller
         $request->validate([
             'purpose' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0',
-            'month' => 'required|string',
-            'year' => 'required|integer',
+            'date' => 'required|date',
             'type' => 'required|in:monthly,yearly',
         ]);
+        $date = $request->input('date', Carbon::now()->toDateString()); // Default to current date if not provided
+        $carbonDate = Carbon::parse($date);
+        $month = $carbonDate->format('F'); // Example: "March"
+        $year = $carbonDate->format('Y');  // Example: "2025"
+
 
         // Prepare the data
         $data = [
             'purpose' => $request->purpose,
             'amount' => $request->amount,
-            'month' => $request->month,
-            'year' => $request->year,
+            'month' => $month,
+            'year' => $year,
+            'date' => $carbonDate,
             'type' => $request->type,
             'user_id' => auth()->user()->id, // Store the authenticated user's ID
         ];

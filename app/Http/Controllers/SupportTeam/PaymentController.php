@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Log;
 use PDF;
+use function PHPUnit\Framework\isEmpty;
 
 class PaymentController extends Controller
 {
@@ -98,7 +99,7 @@ class PaymentController extends Controller
             $existingRecord = PaymentRecord::where('student_id', $d['sr']->id)
                 ->where('month', $month)
                 ->where('year', $year)
-                ->select(['id', 'month', 'year', 'student_id', 'tution_fee', 'khoraki', 'discount', 'due', 'amt_paid'])
+                ->select(['id', 'month', 'year', 'student_id', 'tution_fee', 'khoraki', 'discount', 'due', 'paid', 'amt_paid'])
                 ->first();
             if(!$existingRecord) {
                 $payableMonths[] = [
@@ -139,19 +140,33 @@ class PaymentController extends Controller
         return view('pages.support_team.payments.invoice', $d);
     }
 
-    public function profit_loss_report()
+    public function profit_loss_report(Request $request)
     {
         $d['payments'] = $this->pay->getPaymentYears();
-        $month = $month ?? Carbon::now()->format('F');
-        $year = $year ?? Carbon::now()->format('Y');
-        $year1 = Carbon::now()->format('Y');   // Get current year (e.g., 2025)
-        $month1 = Carbon::now()->format('m');  // Get current month (e.g., 03 for March)
 
+        // Get request values for month and year
+        $month = $request->input('month', Carbon::now()->format('F'));  // Default to current month
+        $year = $request->input('year', Carbon::now()->format('Y'));    // Default to current year if not provided
+
+        // Check if the month or year is empty (' ' or '')
+        if (empty($month) || $month === '' || $month === ' ') {
+            $month = Carbon::now()->format('F'); // Default to current month
+        }
+
+        if (empty($year)|| $year === '' || $year === ' ') {
+            $year = Carbon::now()->format('Y'); // Default to current year if empty
+        }
+
+        // Convert month name ('January') to number ('01') for database filtering
+        $monthNumber = date('m', strtotime($month));
+
+        // Total admissions for selected month & year
         $totalAdmissionThisMonth = DB::table('student_records')
-            ->whereYear('admission_date', $year)   // Extracts year from `admission_date`
-            ->whereMonth('admission_date', $month) // Extracts month from `admission_date`
+            ->whereYear('admission_date', $year)
+            ->whereMonth('admission_date', $monthNumber)
             ->count();
 
+        // Income, salaries, and expenses for selected month & year
         $totalIncome = DB::table('payment_records')
             ->where('month', $month)
             ->where('year', $year)
@@ -167,13 +182,10 @@ class PaymentController extends Controller
             ->where('year', $year)
             ->sum('amount');
 
-        $totalAdmissionThisMonth = DB::table('student_records')
-            ->whereYear('admission_date', $year1)   // Extracts year from `admission_date`
-            ->whereMonth('admission_date', $month1) // Extracts month from `admission_date`
-            ->count();
-
+        // Profit or Loss calculation
         $profitOrLoss = $totalIncome - ($totalSalaries + $totalExpenses) + ($totalAdmissionThisMonth * $d['payments']->admission_fee);
 
+        // Prepare data for the view
         $d['report'] = [
             'id' => 1,
             'month' => $month,
@@ -184,8 +196,10 @@ class PaymentController extends Controller
             'totalAdmissionThisMonth' => $totalAdmissionThisMonth * $d['payments']->admission_fee,
             'profit_or_loss' => $profitOrLoss
         ];
+
         return view('pages.support_team.Report.profit_loss', $d);
     }
+
     public function receipts($pr_id)
     {
         if(!$pr_id) {return Qs::goWithDanger();}

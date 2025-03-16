@@ -8,23 +8,10 @@
         </div>
 
         <div class="card-body">
-            <form method="post" action="{{ route('salaries.store') }}" class="ajax-store">
+            <form method="post" action="{{ route('salaries.store') }}" class="">
 {{--            <form method="post" action="{{ route('salaries.store') }}">--}}
 
             @csrf
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label font-weight-semibold">User <span class="text-danger">*</span></label>
-                    <div class="col-lg-9">
-                        <select required class="form-control select" name="user_id">
-                            <option value="">Select User</option>
-                            @foreach($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                            @endforeach
-                        </select>
-                        @error('user_id') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                </div>
-
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label font-weight-semibold">Receiver <span class="text-danger">*</span></label>
                     <div class="col-lg-9">
@@ -45,20 +32,12 @@
                         @error('amount') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </div>
-
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label font-weight-semibold">Month <span class="text-danger">*</span></label>
+                    <label class="col-lg-3 col-form-label font-weight-semibold">
+                        Date <span class="text-danger">*</span>
+                    </label>
                     <div class="col-lg-9">
-                        <input name="month" required type="text" class="form-control" placeholder="e.g., January">
-                        @error('month') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label font-weight-semibold">Year <span class="text-danger">*</span></label>
-                    <div class="col-lg-9">
-                        <input name="year" required type="text" class="form-control" placeholder="e.g., 2025">
-                        @error('year') <span class="text-danger">{{ $message }}</span> @enderror
+                        <input name="date" value="{{ old('date') }}" required type="date" class="form-control" placeholder="date">
                     </div>
                 </div>
 

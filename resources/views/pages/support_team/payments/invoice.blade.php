@@ -55,12 +55,19 @@
                             {{--Pay Now Form--}}
                             <td>
                                 <div class="row">
-                                    <div class="col-md-7">
-                                        <input min="1" max="{{ $payments->amount}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
-                                    </div>
+                                    @if($p['paid'] == 0)
+                                        <div class="col-md-7">
+                                            <input min="1" max="{{ $payments->amount}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
+                                        </div>
+                                    @else
+                                        <div class="col-md-5">
+                                            <i class="icon-check text-success"></i><i class="icon-check text-success"></i><i class="icon-check text-success"></i>Completed
+                                        </div>
+                                    @endif
+
                                 </div>
                             </td>
                             </form>

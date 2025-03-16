@@ -7,7 +7,7 @@ use App\User; // Import the correct User model
 
 class Salary extends Model
 {
-    protected $fillable = ['user_id', 'receiver', 'purpose', 'amount', 'month', 'year', 'type'];
+    protected $fillable = ['user_id', 'receiver', 'purpose', 'amount', 'month', 'year', 'date', 'type'];
 
     // Relationship to the user who created the salary
     public function user()

@@ -75,6 +75,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Salary;
 use App\User;
@@ -101,13 +102,18 @@ class SalaryController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'user_id' => 'required|integer|exists:users,id',
             'receiver' => 'required|integer|exists:users,id',
             'amount' => 'required|numeric|min:0',
-            'month' => 'required|string|max:20',
-            'year' => 'required|string|max:4',
+            'date' => 'required|date',
             'type' => 'required|in:yearly,monthly',
         ]);
+        $date = $request->input('date', Carbon::now()->toDateString()); // Default to current date if not provided
+        $carbonDate = Carbon::parse($date);
+        $month = $carbonDate->format('F');
+        $year = $carbonDate->format('Y');
+        $validated['user_id'] = auth()->user()->id;
+        $validated['month'] = $month;
+        $validated['year'] = $year;
 
         Salary::create($validated);
         return Qs::storeOk('salaries.index'); // Updated to use Qs helper

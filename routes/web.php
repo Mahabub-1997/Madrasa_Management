@@ -158,7 +158,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::resource('exams', 'ExamController');
         Route::resource('dorms', 'DormController');
         Route::resource('payments', 'PaymentController');
-        Route::get('/profit_loss_report', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
+        Route::get('/profit_loss_report/{month?}/{year?}', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
 
     });
     Route::resource('salaries', 'SalaryController');

@@ -20,6 +20,7 @@ class CreateExpensesTable extends Migration
             $table->bigInteger('amount')->default(0);
             $table->string('month');
             $table->string('year');
+            $table->string('date');
             $table->enum('type',['yearly', 'monthly'])->default('monthly');
             $table->timestamps();
         });
