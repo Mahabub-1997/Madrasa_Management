@@ -25,22 +25,22 @@
                     <!--Social Media Start-->
                     <ul>
                         <li>
-                            <a href="#">Security & Risk Management</a>
+                            <a class="footerOurService1" href="#"></a>
                         </li>
                         <li>
-                            <a href="#">Facility Services</a>
+                            <a class="footerOurService2" href="#"></a>
                         </li>
                         <li>
-                            <a href="#">University Police</a>
+                            <a class="footerOurService3" href="#"></a>
                         </li>
                         <li>
-                            <a href="#">Campus Planning</a>
+                            <a class="footerOurService4" href="#"></a>
                         </li>
                         <li>
-                            <a href="#">Mail Services</a>
+                            <a class="footerOurService5" href="#"></a>
                         </li>
                         <li>
-                            <a href="#">Facility IT</a>
+                            <a class="footerOurService6" href="#"></a>
                         </li>
                     </ul>
                     <!--Social Media End-->
@@ -71,15 +71,15 @@
             <div class="col-md-3 col-sm-6">
                 <div class="widget iq_footer_newsletter">
                     <!--Widget Title Start-->
-                    <h5 class="widget-title"><span>Our</span> Newsletter</h5>
+                    <h5 class="widget-title footerOurNewsletter1"><span>Our</span> Newsletter</h5>
                     <!--Widget Title End-->
-                    <p>People learn a lot by feeling the problems and pain in the way they work.</p>
+                    <p class="footerOurNewsletter"></p>
                     <form class="iq-input">
                         <input placeholder="Search..." type="text">
                         <label class="iq-input-icon"><input type="submit"></label>
                     </form>
                     <!--Widget Title Start-->
-                    <h5 class="widget-title border-none"><span>Stay</span> Connected</h5>
+                    <h5 class="widget-title border-none"><span>সংযুক্ত</span>  থাকুন</h5>
                     <!--Widget Title Start-->
                     <ul class="iq_footer_social">
                         <li>

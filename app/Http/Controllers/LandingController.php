@@ -25,4 +25,13 @@ class LandingController extends Controller
     public function gallaryUs(){
         return view('Frontend.Gallary.gallary');
     }
+    public function paymentFee(){
+        return view('Frontend.admission.payment-fee');
+    }
+    public function teacherInfo(){
+        return view('Frontend.Directors.teacher-info');
+    }
+    public function staffInfo(){
+        return view('Frontend.Directors.staff-info');
+    }
 }

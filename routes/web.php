@@ -6,6 +6,10 @@ Route::get('/admission-notice', 'LandingController@admissionNotice')->name('admi
 Route::get('/admission-process', 'LandingController@admissionProcess')->name('admission-process');
 Route::get('/admission-terms', 'LandingController@admissionTerms')->name('admission-terms');
 Route::get('/gallary', 'LandingController@gallaryUs')->name('gallary');
+Route::get('/payment-fee', 'LandingController@paymentFee')->name('payment-fee');
+Route::get('/teacher-info', 'LandingController@teacherInfo')->name('teacher-info');
+Route::get('/staff-info', 'LandingController@staffInfo')->name('staff-info');
+
 
 Route::get('/contact-us', 'LandingController@ContactUs')->name('contact-us');
 

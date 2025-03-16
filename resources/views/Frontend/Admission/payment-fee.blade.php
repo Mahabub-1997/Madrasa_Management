@@ -34,11 +34,11 @@
     <!--Banner Wrap Start-->
     <div class="iner_banner">
         <div class="container">
-            <h5 class="admissionProcess">Admission Process</h5>
+            <h5 class="paymentProcess">Payment Process</h5>
             <div class="banner_iner_capstion">
                 <ul>
-                    <li><a class="admissionProcessHome" href="#">Home</a></li>
-                    <li><a class="admissionProcess" href="#">Admission Process</a></li>
+                    <li><a class="paymentProcessHome" href="#"></a></li>
+                    <li><a class="paymentProcess"  href="#"></a></li>
                 </ul>
             </div>
         </div>
@@ -50,7 +50,7 @@
 
 
 @section('scripts')
-    <script src="{{asset('/')}}frontend/js/admission.process.localization.js"></script>
+    <script src="{{asset('/')}}frontend/js/admission.payment.localization.js"></script>
     <script src="{{asset('/')}}frontend/js/localization.js"></script>
     <!--iqoniq Wrapper End-->
     <!--Javascript Library-->

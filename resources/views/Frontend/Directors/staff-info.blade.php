@@ -31,26 +31,32 @@
 
 
 @section('content')
-    <!--Banner Wrap Start-->
-    <div class="iner_banner">
-        <div class="container">
-            <h5 class="admissionProcess">Admission Process</h5>
-            <div class="banner_iner_capstion">
-                <ul>
-                    <li><a class="admissionProcessHome" href="#">Home</a></li>
-                    <li><a class="admissionProcess" href="#">Admission Process</a></li>
-                </ul>
+    <div class="iq_wrapper">
+        <!-- Header Section -->
+        <header class="iq_header_1">
+            <!-- Header content here -->
+        </header>
+
+        <!-- Banner Section -->
+        <div class="iner_banner ent_detail">
+            <div class="container">
+                <h5 class="staffTitle"></h5>
+                <div class="banner_iner_capstion">
+                    <ul>
+                        <li><a class="staffTitle2" href="#"></a></li>
+                        <li><a class="staffTitle1"  href="#"></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <!--Banner Wrap End-->
 
 
-@endsection
+        @endsection
 
 
 @section('scripts')
-    <script src="{{asset('/')}}frontend/js/admission.process.localization.js"></script>
+
+    <script src="{{asset('/')}}frontend/js/staff.localization.js"></script>
     <script src="{{asset('/')}}frontend/js/localization.js"></script>
     <!--iqoniq Wrapper End-->
     <!--Javascript Library-->
