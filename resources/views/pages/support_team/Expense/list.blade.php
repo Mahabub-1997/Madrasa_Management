@@ -39,7 +39,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $val->purpose }}</td>
                                 <td>{{ number_format($val->amount, 2) }}</td>
-                                <td>{{ date("F", mktime(0, 0, 0, $val->month, 1)) }}</td>
+                                <td>{{ $val->month }}</td>
                                 <td>{{ $val->year }}</td>
                                 <td>{{ ucfirst($val->type) }}</td>
                                 <td class="text-center">
@@ -96,8 +96,9 @@
                                     <div class="col-lg-9">
                                         <select required class="form-control select" name="month">
                                             @foreach(range(1,12) as $m)
-                                                <option value="{{ $m }}" {{ old('month') == $m ? 'selected' : '' }}>
-                                                    {{ date("F", mktime(0, 0, 0, $m, 1)) }}
+                                                @php $monthName = date("F", mktime(0, 0, 0, $m, 1)); @endphp
+                                                <option value="{{ $monthName }}" {{ old('month') == $monthName ? 'selected' : '' }}>
+                                                    {{ $monthName }}
                                                 </option>
                                             @endforeach
                                         </select>

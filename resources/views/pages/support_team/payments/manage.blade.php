@@ -18,9 +18,16 @@
                                   <label for="my_class_id" class="col-form-label font-weight-bold">Class:</label>
                                   <select required id="my_class_id" name="my_class_id" class="form-control select">
                                       <option value="">Select Class</option>
-                                      @foreach($my_classes as $c)
-                                          <option {{ ($selected && $my_class_id == $c->id) ? 'selected' : '' }} value="{{ $c->id }}">{{ $c->name }}</option>
-                                      @endforeach
+                                      @if(isset($my_class_id))
+                                          @foreach($my_classes as $c)
+                                              <option {{ ($selected && $my_class_id == $c->id) ? 'selected' : '' }} value="{{ $c->id }}">{{ $c->name }}</option>
+                                          @endforeach
+                                      @else
+                                          @foreach($my_classes as $c)
+                                              <option value="{{ $c->id }}">{{ $c->name }}</option>
+                                          @endforeach
+                                      @endif
+
                                   </select>
                               </div>
                           </div>

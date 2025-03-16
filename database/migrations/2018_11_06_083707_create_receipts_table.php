@@ -17,7 +17,10 @@ class CreateReceiptsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('pr_id');
             $table->Integer('amt_paid');
-            $table->Integer('balance');
+            $table->Integer('balance')->nullable();
+            $table->Integer('due');
+            $table->Integer('total');
+            $table->string('month');
             $table->string('year');
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class StudentRecordCreate extends FormRequest
     public function rules()
     {
         return [
-            'student_name' => 'required|string|min:6|max:150',
+            'student_name' => 'required',
             'email' => 'sometimes|nullable|email|max:255|unique:users,email',
             'gender' => 'required|in:Male,Female',
             'phone' => 'sometimes|nullable|string|max:20',

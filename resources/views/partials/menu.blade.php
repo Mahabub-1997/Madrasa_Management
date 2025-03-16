@@ -94,9 +94,12 @@
                             <li class="nav-item {{ in_array(Route::currentRouteName(), ['expense.index', 'expense.create', 'expense.edit', 'expense.manage', 'expense.show', 'expense.invoice']) ? 'nav-item-expanded' : '' }}">
                                 <a href="{{route('expenses.index')}}" class="nav-link {{ in_array(Route::currentRouteName(), ['expense.index', 'expense.edit', 'expense.create', 'expense.manage', 'expense.show', 'expense.invoice']) ? 'active' : '' }}">Expense</a>
                             </li>
-                                <li class="nav-item {{ in_array(Route::currentRouteName(), ['salaries.index', 'salaries.create', 'salaries.edit', 'salaries.show']) ? 'nav-item-expanded' : '' }}">
-                                    <a href="{{ route('salaries.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['salaries.index', 'salaries.edit', 'salaries.create', 'salaries.list']) ? 'active' : '' }}">Salary</a>
-                                </li>
+                            <li class="nav-item {{ in_array(Route::currentRouteName(), ['salaries.index', 'salaries.create', 'salaries.edit', 'salaries.show']) ? 'nav-item-expanded' : '' }}">
+                                <a href="{{ route('salaries.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['salaries.index', 'salaries.edit', 'salaries.create', 'salaries.list']) ? 'active' : '' }}">Salary</a>
+                            </li>
+                            <li class="nav-item {{ in_array(Route::currentRouteName(), ['profit_loss_report.index']) ? 'nav-item-expanded' : '' }}">
+                                <a href="{{ route('profit_loss_report.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['profit_loss_report.index']) ? 'active' : '' }}">Profit/Loss Report</a>
+                            </li>
                             @endif
                         </ul>
                     </li>

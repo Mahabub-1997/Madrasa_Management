@@ -62,7 +62,7 @@ class StudentRecordController extends Controller
     {
         $userData = $req->only(['email', 'phone', 'phone2', 'gender']);
         $userData['user_type'] = 'student';
-        $userData['name'] = ucwords($req->student_name);
+        $userData['name'] = $req->student_name;
         $userData['password'] = Hash::make('student');
         $userData['photo'] = Qs::getDefaultUserImage();
 

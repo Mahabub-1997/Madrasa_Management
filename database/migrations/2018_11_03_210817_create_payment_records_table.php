@@ -24,7 +24,6 @@ class CreatePaymentRecordsTable extends Migration
             $table->tinyInteger('paid')->default(0);
             $table->integer('admission_fee')->default(0);
             $table->integer('tution_fee')->default(0);
-            $table->integer('tution_fee')->default(0);
             $table->integer('other_expense')->default(0);
             $table->integer('khoraki')->default(0);
             $table->integer('discount')->default(0);

@@ -10,7 +10,8 @@
 
 
         <div class="card-body">
-            {{$uncleared}}
+            {{json_encode($payable_months)}}
+            {{$sr->admission_date}}
                 <ul class="nav nav-tabs nav-tabs-highlight">
                     <li class="nav-item"><a href="#all-uc" class="nav-link active" data-toggle="tab">Incomplete Payments</a></li>
                     <li class="nav-item"><a href="#all-cl" class="nav-link" data-toggle="tab">Completed Payments</a></li>
@@ -22,51 +23,49 @@
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Title</th>
-                        <th>Pay_Ref</th>
-                        <th>Amount</th>
+                        <th>Tution Fee</th>
+                        <th>Khoraki</th>
+                        <th>Discount</th>
                         <th>Paid</th>
-                        <th>Balance</th>
+                        <th>due</th>
                         <th>Pay Now</th>
-                        <th>Receipt_No</th>
-                        <th>Year</th>
+                        <th>Month/Year</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($uncleared as $uc)
+                    @foreach($payable_months as $p)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $payments->title }}</td>
-                            <td>{{ $payments->ref_no }}</td>
-
-                            {{--Amount--}}
-                            <td class="font-weight-bold" id="amt-{{ Qs::hash($uc->id) }}" data-amount="{{ $payments->amount }}">{{ $payments->amount }}</td>
-
-                            {{--Amount Paid--}}
-                            <td id="amt_paid-{{ Qs::hash($uc->id) }}" data-amount="{{ $uc->amt_paid ?: 0 }}" class="text-blue font-weight-bold">{{ $uc->amt_paid ?: '0.00' }}</td>
-
-                            {{--Balance--}}
-                            <td id="bal-{{ Qs::hash($uc->id) }}" class="text-danger font-weight-bold">{{ $uc->balance ?: $payments->amount }}</td>
-
+                            <td>#</td>
+                            <td>{{ $p['tution_fee'] }}</td>
+                            <td>{{ $p['khoraki'] }}</td>
+                            <form method="post" class="ajax-pay" action="{{route('payments.pay_now')}}">
+                                @csrf
+                                <input value="{{ $sr->user->id }}" class="form-control" required name="student_id" type="hidden">
+                                <input value="{{ $p['month'] }}" class="form-control" required name="month" type="hidden">
+                                <input value="{{ $p['year'] }}" class="form-control" required name="year" type="hidden">
+                                @if(isset($p['pr_id']))
+                                    <input value="{{ $p['pr_id'] }}" class="form-control" required name="pr_id" type="hidden">
+                                @endif
+                            <td>
+                                <input min="0" max="{{ $p['amount']}}" value="{{ $sr->discount}}" class="form-control" required name="discount" type="number">
+                            </td>
+                            <td>{{ $p['amt_paid'] }}</td>
+                            <td>{{ $p['due'] }}</td>
                             {{--Pay Now Form--}}
                             <td>
-                                <form id="{{ Qs::hash($uc->id) }}" method="post" class="ajax-pay" action="{{ route('payments.pay_now', Qs::hash($uc->id)) }}">
-                                    @csrf
-                             <div class="row">
-                                 <div class="col-md-7">
-                                     <input min="1" max="{{ $uc->balance ?: $payments->amount }}" id="val-{{ Qs::hash($uc->id) }}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
-                                 </div>
-                                 <div class="col-md-5">
-                                     <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
-                                 </div>
-                             </div>
-                                </form>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <input min="1" max="{{ $payments->amount}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
+                                    </div>
+                                </div>
                             </td>
+                            </form>
+                            <td>{{ $p['month']}}, {{$p['year'] }}</td>
                             {{--Receipt No--}}
-                            <td>{{ $uc->ref_no }}</td>
-
-                            <td>{{ $uc->year }}</td>
 
                             {{--Action--}}
                             <td class="text-center">
@@ -77,14 +76,13 @@
 
                                         <div class="dropdown-menu dropdown-menu-left">
 
-                                            {{--Reset Payment--}}
-                                            <a id="{{ Qs::hash($uc->id) }}" onclick="confirmReset(this.id)" href="#" class="dropdown-item"><i class="icon-reset"></i> Reset Payment</a>
-                                            <form method="post" id="item-reset-{{ Qs::hash($uc->id) }}" action="{{ route('payments.reset_record', Qs::hash($uc->id)) }}" class="hidden">@csrf @method('delete')</form>
+                                            {{--                                        Reset Payment--}}
+                                            {{--                                        <a id="{{ Qs::hash($uc->id) }}" onclick="confirmReset(this.id)" href="#" class="dropdown-item"><i class="icon-reset"></i> Reset Payment</a>--}}
+                                            {{--                                        <form method="post" id="item-reset-{{ Qs::hash($uc->id) }}" action="{{ route('payments.reset_record', Qs::hash($uc->id)) }}" class="hidden">@csrf @method('delete')</form>--}}
 
-                                            {{--Receipt--}}
-                                                <a target="_blank" href="{{ route('payments.receipts', Qs::hash($uc->id)) }}" class="dropdown-item"><i class="icon-printer"></i> Print Receipt</a>
-                                            {{--PDF Receipt--}}
-                            {{--                    <a  href="{{ route('payments.pdf_receipts', Qs::hash($uc->id)) }}" class="dropdown-item download-receipt"><i class="icon-download"></i> Download Receipt</a>--}}
+
+                                            <a target="_blank" href="{{ route('payments.receipts', 1) }}" class="dropdown-item"><i class="icon-printer"></i> Print Receipt</a>
+                                            <a  href="{{ route('payments.pdf_receipts', 1) }}" class="dropdown-item download-receipt"><i class="icon-download"></i> Download Receipt</a>
 
                                         </div>
                                     </div>

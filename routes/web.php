@@ -99,7 +99,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
             Route::post('select_year', 'PaymentController@select_year')->name('payments.select_year');
             Route::post('select_class', 'PaymentController@select_class')->name('payments.select_class');
             Route::delete('reset_record/{id}', 'PaymentController@reset_record')->name('payments.reset_record');
-            Route::post('pay_now/{id}', 'PaymentController@pay_now')->name('payments.pay_now');
+            Route::post('pay_now', 'PaymentController@pay_now')->name('payments.pay_now');
         });
 
         /*************** Pins *****************/
@@ -154,9 +154,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::resource('exams', 'ExamController');
         Route::resource('dorms', 'DormController');
         Route::resource('payments', 'PaymentController');
+        Route::get('/profit_loss_report', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
 
     });
     Route::resource('salaries', 'SalaryController');
+
 
     /************************ AJAX ****************************/
     Route::group(['prefix' => 'ajax'], function() {

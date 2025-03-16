@@ -7,7 +7,20 @@ use Eloquent;
 
 class PaymentRecord extends Eloquent
 {
-    protected $fillable =['student_id', 'payment_id', 'amt_paid', 'year', 'paid', 'balance', 'ref_no'];
+    protected $fillable =[
+        'student_id',
+        'payment_id',
+        'amt_paid',
+        'month',
+        'year',
+        'balance',
+        'tution_fee',
+        'khoraki',
+        'discount',
+        'due',
+        'paid',
+        'ref_no'
+    ];
 
     public function payment()
     {
