@@ -3,6 +3,7 @@ namespace App\Http\Controllers\SupportTeam;
 
 use App\Helpers\Qs;
 use App\Helpers\Mk;
+use App\Http\Middleware\Custom\Student;
 use App\Http\Requests\Student\StudentRecordCreate;
 use App\Http\Requests\Student\StudentRecordUpdate;
 use App\Repositories\LocationRepo;
@@ -19,9 +20,7 @@ class StudentRecordController extends Controller
 {
     protected $loc, $my_class, $user, $student;
 
-    /**
-     * Constructor to initialize repositories and middleware
-     */
+
     public function __construct(LocationRepo $loc, MyClassRepo $my_class, UserRepo $user, StudentRepo $student)
     {
         $this->middleware('teamSA', ['only' => ['edit', 'update', 'reset_pass', 'create', 'store', 'graduated']]);
@@ -32,9 +31,7 @@ class StudentRecordController extends Controller
         $this->student = $student;
     }
 
-    /**
-     * Reset a student's password to default
-     */
+
     public function reset_pass($st_id)
     {
         $st_id = Qs::decodeHash($st_id);
@@ -49,7 +46,7 @@ class StudentRecordController extends Controller
     public function create()
     {
         $data['my_classes'] = $this->my_class->all();
-        $data['parents'] = $this->user->getUserByType('parent');
+//        $data['parents'] = $this->user->getUserByType('parent');
         $data['states'] = $this->loc->getStates();
         $data['nationals'] = $this->loc->getAllNationals();
         return view('pages.support_team.students.add', $data);
@@ -71,45 +68,46 @@ class StudentRecordController extends Controller
             $f = Qs::getFileMetaData($photo);
             $f['name'] = 'photo_' . time() . '.' . $f['ext'];
 
-            // Store in the public disk under storage/app/public/students/{student_name}
-            $filePath = $photo->storeAs('public/students/' . $userData['name'], $f['name']);
+            $filePath = $photo->storeAs('students/' . $userData['name'], $f['name'], 'public');
 
-            // Convert storage path to public URL
-            $userData['photo'] = 'students/' . $userData['name'] . '/' . $f['name'];
+            $userData['photo'] = 'storage/students/' . $userData['name'] . '/' . $f['name'];
         }
-
         $userData['code'] = strtoupper(Str::random(10));
         $user = $this->user->create($userData);
-
         $srData = $req->except(['email', 'phone', 'phone2', 'gender', 'photo']);
         $srData['user_id'] = $user->id;
         $srData['session'] = Qs::getSetting('current_session');
-
-        if(!$req->adm_no) {
+        if (!$req->adm_no) {
             $ct = $this->my_class->findTypeByClass($req->my_class_id)->code;
-            $srData['adm_no'] = strtoupper(Qs::getAppCode() . '/' . $ct . '/' . $srData['year_admitted'] . '/' . mt_rand(1000, 99999));
+            $srData['adm_no'] = strtoupper(Qs::getAppCode() . '/' . $ct . '/' . '/' . mt_rand(1000, 99999));
         }
-
         $srData['student_code'] = $userData['code'];
         $srData['dob'] = date('Y-m-d', strtotime($req->dob));
         $srData['admission_date'] = date('Y-m-d', strtotime($req->admission_date));
-
         // Store photo in student record as well
         $srData['photo'] = $userData['photo'];
-
         $this->student->createRecord($srData);
 
-        return Qs::jsonStoreOk('Student added successfully');
+//        return redirect()->route('students.index')->with('success', 'Student created successfully');
+
+//        return Qs::jsonStoreOk('Student added successfully');
+        return Qs::storeOk('students.index'); // Updated to use Qs helper
+
     }
+
 
     /**
      * List students by class
      */
     public function listByClass($class_id)
     {
-//        $data['my_class'] = $mc = $this->my_class->getMC(['id' => $class_id])->first();
-//        $data['students'] = $this->student->findStudentsByClass($class_id);
-//        $data['sections'] = $this->my_class->getClassSections($class_id);
+        $data['my_class'] = $mc = $this->my_class->getMC(['id' => $class_id])->first();
+        $data['students'] = $this->student->findStudentsByClass($class_id);
+        $data['sections'] = $this->my_class->getClassSections($class_id);
+        return is_null($mc) ? Qs::goWithDanger() : view('pages.support_team.students.list', $data);
+    }
+    public function index()
+    {
         $data['students'] = $mc = $this->student->findActiveStudents();
         return is_null($mc) ? Qs::goWithDanger() : view('pages.support_team.students.list', $data);
     }
@@ -124,9 +122,6 @@ class StudentRecordController extends Controller
         return view('pages.support_team.students.graduated', $data);
     }
 
-    /**
-     * Mark a student as not graduated
-     */
     public function not_graduated($sr_id)
     {
         $d['grad'] = 0;
@@ -165,56 +160,54 @@ class StudentRecordController extends Controller
         if (!$sr_id) {
             return Qs::goWithDanger();
         }
-
         $data['sr'] = $this->student->getRecord(['id' => $sr_id])->first();
+        if (!$data['sr']) {
+            return Qs::goWithDanger();
+        }
         $data['my_classes'] = $this->my_class->all();
-        $data['parents'] = $this->user->getUserByType('parent');
+//        $data['parents'] = $this->user->getUserByType('parent');
         $data['states'] = $this->loc->getStates();
         $data['nationals'] = $this->loc->getAllNationals();
         return view('pages.support_team.students.edit', $data);
     }
 
-    /**
-     * Update a student's record
-     */
     public function update(StudentRecordUpdate $req, $sr_id)
     {
         $sr_id = Qs::decodeHash($sr_id);
         if (!$sr_id) {
             return Qs::goWithDanger();
         }
+        $studentRecord = $this->student->getRecord(['id' => $sr_id])->first();
+        if (!$studentRecord) {
+            return Qs::goWithDanger();
+        }
 
-        $sr = $this->student->getRecord(['id' => $sr_id])->first();
-
-        // Update user record data
+        // Update user information
         $userData = $req->only(['email', 'phone', 'phone2', 'gender']);
         $userData['name'] = ucwords($req->student_name);
 
         if ($req->hasFile('photo')) {
             $photo = $req->file('photo');
             $f = Qs::getFileMetaData($photo);
-            $f['name'] = 'photo.' . $f['ext'];
-            $f['path'] = $photo->storeAs(Qs::getUploadPath('student') . $sr->user->name, $f['name']);
-            $userData['photo'] = asset('storage/' . $f['path']);
+            $f['name'] = 'photo_' . time() . '.' . $f['ext'];
+            $photo->storeAs('students/' . $userData['name'], $f['name'], 'public');
+            $userData['photo'] = 'storage/students/' . $userData['name'] . '/' . $f['name'];
         }
-
-        $this->user->update($sr->user->id, $userData);
+        $this->user->update($studentRecord->user_id, $userData);
 
         // Update student record data
-        $srData = $req->only([
-            'my_class_id', 'section_id', 'adm_no', 'my_parent_id', 'discount', 'age', 'year_admitted',
-            'admission_date', 'student_name', 'dob', 'father_name', 'mother_name', 'permanent_address',
-            'village', 'post_office', 'police_station', 'district', 'guardian_name', 'guardian_relation',
-            'guardian_occupation', 'guardian_mobile', 'previous_institution_name', 'previous_institution_address',
-            'prev_class_admitted', 'examiner', 'is_residential', 'department'
-        ]);
-        $srData['session'] = Qs::getSetting('current_session');
+        $srData = $req->except(['email', 'phone', 'phone2', 'gender', 'photo']);
+        $srData['dob'] = date('Y-m-d', strtotime($req->dob));
+        $srData['admission_date'] = date('Y-m-d', strtotime($req->admission_date));
+        if (isset($userData['photo'])) {
+            $srData['photo'] = $userData['photo'];
+        }
 
         $this->student->updateRecord($sr_id, $srData);
 
-        Mk::deleteOldRecord($sr->user->id, $srData['my_class_id']);
+//        return Qs::jsonUpdateOk('Student record updated successfully');
+        return Qs::updateOk('students.index'); // Updated to use Qs helper
 
-        return Qs::jsonUpdateOk();
     }
 
     /**
@@ -226,12 +219,21 @@ class StudentRecordController extends Controller
         if (!$st_id) {
             return Qs::goWithDanger();
         }
-
         $sr = $this->student->getRecord(['user_id' => $st_id])->first();
+        if (!$sr) {
+            return back()->with('flash_danger', 'Student record not found');
+        }
+        if (!$sr->user) {
+            return back()->with('flash_danger', 'User relationship not found for student');
+        }
         $path = Qs::getUploadPath('student') . $sr->user->name;
-        Storage::exists($path) ? Storage::deleteDirectory($path) : false;
+        if (Storage::exists($path)) {
+            Storage::deleteDirectory($path);
+        }
         $this->user->delete($sr->user->id);
+        $sr->delete();
 
         return back()->with('flash_success', __('msg.del_ok'));
     }
 }
+

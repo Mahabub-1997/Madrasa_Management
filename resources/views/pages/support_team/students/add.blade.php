@@ -7,7 +7,7 @@
             {!! Qs::getPanelOptions() !!}
         </div>
 
-        <form id="ajax-reg" method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.store') }}" data-fouc>
+        <form method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.store') }}" >
             @csrf
             <!-- PERSONAL INFORMATION -->
             <h6>Personal Information</h6>
@@ -52,7 +52,8 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Date of Birth:</label>
-                            <input name="dob" value="{{ old('dob') }}" type="date" class="form-control date-pick" placeholder="Select Date...">
+
+                            <input name="dob" value="{{ old('dob') }}" type="date" class="form-control" placeholder="Select Date...">
                         </div>
                     </div>
                 </div>
@@ -156,44 +157,31 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Department:</label>
+                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">
+                                <option value=""></option>
+                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>
+                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>
+                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>
+                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
                     <div class="col-md-3">
                         <div class="form-group">
-{{--                            <label for="section_id">Section: <span class="text-danger">*</span></label>--}}
-{{--                            <select required name="section_id" id="section_id" class="select-search form-control" data-placeholder="Select Class First">--}}
+{{--                            <label for="my_parent_id">Parent:</label>--}}
+{{--                            <select name="my_parent_id" id="my_parent_id" class="select-search form-control" data-placeholder="Choose...">--}}
 {{--                                <option value=""></option>--}}
+{{--                                @foreach($parents as $p)--}}
+{{--                                    <option {{ (old('my_parent_id') == Qs::hash($p->id)) ? 'selected' : '' }} value="{{ Qs::hash($p->id) }}">{{ $p->name }}</option>--}}
+{{--                                @endforeach--}}
 {{--                            </select>--}}
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="my_parent_id">Parent:</label>
-                            <select name="my_parent_id" id="my_parent_id" class="select-search form-control" data-placeholder="Choose...">
-                                <option value=""></option>
-                                @foreach($parents as $p)
-                                    <option {{ (old('my_parent_id') == Qs::hash($p->id)) ? 'selected' : '' }} value="{{ Qs::hash($p->id) }}">{{ $p->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="year_admitted">Admission date: <span class="text-danger">*</span></label>
-                            <select required name="year_admitted" id="year_admitted" class="select-search form-control" data-placeholder="Choose...">
-                                <option value=""></option>
-                                @for($y = date('Y', strtotime('-10 years')); $y <= date('Y'); $y++)
-                                    <option {{ (old('year_admitted') == $y) ? 'selected' : '' }} value="{{ $y }}">{{ $y }}</option>
-                                @endfor
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Admission Number:</label>
-                            <input type="text" name="adm_no" placeholder="Admission Number" class="form-control" value="{{ old('adm_no') }}">
-                        </div>
-                    </div>
+                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Discount:</label>
@@ -267,18 +255,20 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Department:</label>
-                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">
-                                <option value=""></option>
-                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>
-                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>
-                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>
-                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>
-                            </select>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-4">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label>Department:</label>--}}
+{{--                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">--}}
+{{--                                <option value=""></option>--}}
+{{--                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>--}}
+{{--                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>--}}
+{{--                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>--}}
+{{--                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+
                 </div>
                 <div class="row">
                     <div class="col-md-4">

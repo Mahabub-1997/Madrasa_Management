@@ -8,9 +8,7 @@
             <h6 class="card-title">Edit Expense</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
-
         <div class="card-body">
-
 
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="edit-expense">

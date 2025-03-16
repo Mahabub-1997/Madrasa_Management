@@ -17,7 +17,6 @@ class StudentRecord extends Eloquent
         'phone' ,
         'phone2' ,
         'adm_no' ,
-        'year_admitted' ,
         'my_class_id' ,
         'section_id' ,
         'admission_date' ,
@@ -43,15 +42,11 @@ class StudentRecord extends Eloquent
         'photo' ,
         'user_id' ,
         'session' ,
-        'my_parent_id' ,
         'discount',
         'house' ,
         'prev_exam_result' ,
         'prev_arabic_result' ,
         'prev_academic_result' ,
-
-
-
     ];
 
     public function user()
@@ -78,4 +73,5 @@ class StudentRecord extends Eloquent
     {
         return $this->belongsTo(Dorm::class);
     }
+
 }
