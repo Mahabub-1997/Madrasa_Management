@@ -45,11 +45,10 @@
 
                         <li><a class="manuCurriculum" href="#" style="font-weight: bold">Curriculum</a>
                             <ul class="children ">
-                                <li><a  class="manuCurriculum1" href="">Ibtidai Curriculum</a></li>
-                                <li><a class="manuCurriculum2" href="">Dakhil Curriculum</a></li>
-                                <li><a class="manuCurriculum3" href="">Alim Curriculum</a></li>
-                                <li><a class="manuCurriculum4" href="">Fazil Curriculum</a></li>
-                                <li><a class="manuCurriculum5" href="">Kamil Curriculum</a></li>
+                                <li><a  class="manuCurriculum1" href=""></a></li>
+                                <li><a class="manuCurriculum2" href=""></a></li>
+                                <li><a class="manuCurriculum3" href=""></a></li>
+                                <li><a class="manuCurriculum4" href=""></a></li>
                             </ul>
                         </li>
 
@@ -58,13 +57,13 @@
                                 <li><a class="manuAdmissionProcess1" href="{{route('admission-notice')}}">Admission Notice</a></li>
                                 <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>
                                 <li><a class="manuAdmissionProcess3" href="{{route('admission-terms')}}">Admission Terms and Conditions</a></li>
-                                <li><a class="manuAcademic5"  href="">Fee Payment</a></li>
+                                <li><a class="manuAcademic5"  href="{{route('payment-fee')}}">Fee Payment</a></li>
                             </ul>
                         </li>
                         <li><a class="manuDirectors" href="#" style="font-weight: bold">Directors</a>
                             <ul class="children">
-                                <li><a class="manuDirectors1" href="our-teachers.html" >Teachers</a></li>
-                                <li><a class="manuDirectors2" href="staff-detail.html">Other Staff</a></li>
+                                <li><a class="manuDirectors1" href="{{route('teacher-info')}}" >Teachers</a></li>
+                                <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
                             </ul>
                         </li>
                         <li><a class="manuMadrasaGallery" href="{{route('gallary')}}" style="font-weight: bold">Madrasa Gallery</a></li>
@@ -93,13 +92,13 @@
                                 <li><a class="manuAdmissionProcess1" href="{{route('admission-notice')}}">Admission Notice</a></li>
                                 <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>
                                 <li><a class="manuAdmissionProcess3" href="{{route('admission-terms')}}">Admission Terms and Conditions</a></li>
-                                <li><a class="manuAcademic5" href="#">Fee Payment</a></li>
+                                <li><a class="manuAcademic5" href="{{route('payment-fee')}}"> Payment Fee</a></li>
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu"><a class="manuDirectors" href="#">Directors</a>
                             <ul class="dl-submenu">
-                                <li><a class="manuDirectors1" href="our-teachers.html">Teachers</a></li>
-                                <li><a class="manuDirectors2" href="staff-detail.html">Other Staff</a></li>
+                                <li><a class="manuDirectors1" href="{{route('teacher-info')}}">Teachers</a></li>
+                                <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu">
@@ -108,6 +107,7 @@
                         <li class="menu-item mg-parent-menu">
                             <a class="manuContact" href="{{route('contact-us')}}">Contact</a>
                         </li>
+
                         <li class="menu-item mg-parent-menu">
                             <a class="manuAdministration" href="{{route('login')}}">Administration</a>
                         </li>
@@ -119,7 +119,7 @@
                 <div >
 {{--                    <button data-toggle="modal" style="background-color: orange;color: white; margin-right: 7px" data-target="#search-box"><i class="fa fa-search " ></i></button>--}}
                     <!-- Search Wrap End -->
-                    <a id="languageToggle" class="pull-right" style="color: #000000" onclick="toggleLanguage()">en<i class="fa fa-toggle-off fa-2x" style="margin-right: 7px;margin-left: 7px;color: #000000"></i>bn</a>
+                    <a id="languageToggle" class="pull-right" style="color: #000000" onclick="toggleLanguage()">En<i class="fa fa-toggle-on fa-2x" style="margin-right: 7px;margin-left: 7px;color: #000000"></i>bn</a>
                 </div>
             </div>
             <!-- Navigation wrap End -->

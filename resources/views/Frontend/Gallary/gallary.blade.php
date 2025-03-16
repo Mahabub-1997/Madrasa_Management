@@ -33,11 +33,11 @@
 @section('content')
     <div class="iner_banner ent_detail">
         <div class="container">
-            <h5>Gallery Medium</h5>
+            <h5 class="ourGallery"></h5>
             <div class="banner_iner_capstion">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Gallery Medium</a></li>
+                    <li><a class="galleryHome" href="#"></a></li>
+                    <li><a class="gallery" href="#"></a></li>
                 </ul>
             </div>
         </div>
@@ -205,7 +205,7 @@
                 <!--Gallery List Wrap End-->
             </div>
             <div class="load-more">
-                <a class="iq_link_1" href="#">LOAD MORE</a>
+                <a class="iq_link_1 loadMore" href="#">LOAD MORE</a>
             </div>
         </section>
         <!--Our Gallery Wrap End-->
@@ -214,6 +214,7 @@
 
 
 @section('scripts')
+    <script src="{{asset('/')}}frontend/js/gallary.localization.js"></script>
     <script src="{{asset('/')}}frontend/js/localization.js"></script>
     <!--iqoniq Wrapper End-->
     <!--Javascript Library-->

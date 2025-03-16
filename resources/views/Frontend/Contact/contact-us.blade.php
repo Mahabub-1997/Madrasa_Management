@@ -40,11 +40,11 @@
         <!-- Banner Section -->
         <div class="iner_banner ent_detail">
             <div class="container">
-                <h5>Contact</h5>
+                <h5 class="contact contactTitle">Home</h5>
                 <div class="banner_iner_capstion">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a class="contactSubtitle1" href="#"></a></li>
+                        <li><a class="contactSubtitle2" href="#"></a></li>
                     </ul>
                 </div>
             </div>
@@ -53,18 +53,18 @@
         <!-- Contact Information Section -->
         <div class="contact-info">
             <div class="container">
-                <h2>Contact Information</h2>
+                <h2 class="contactInfo" style="padding: 10px;">Contact Information</h2>
                 <div class="row">
                     <div class="col-md-4">
-                        <h4>Our Address</h4>
-                        <p>Madrasa Education System, House: 50 (4th floor), Road: 17, Sector: 11, Uttara, Dhaka-1230</p>
+                        <h4 class="contactAddress">Our Address</h4>
+                        <p class="Address">Madrasa Education System, House: 50 (4th floor), Road: 17, Sector: 11, Uttara, Dhaka-1230</p>
                     </div>
                     <div class="col-md-4">
-                        <h4>Phone Number</h4>
-                        <p>+088 01768198718</p>
+                        <h4 class="ContactPhone"></h4>
+                        <p class="Phone"></p>
                     </div>
                     <div class="col-md-4">
-                        <h4>Email</h4>
+                        <h4 class="contactEmail"></h4>
                         <p>Mahabub_madrasa@gmail.com</p>
                     </div>
                 </div>
@@ -73,20 +73,20 @@
         <!-- Contact Form Section -->
         <div class="contact-form">
             <div class="container">
-                <h2>Contact Us</h2>
+                <h2 class="ContactUs">Contact Us</h2>
                 <form action="#" method="POST">
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" name="name" placeholder="তোমার নাম..." required>
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" name="email" placeholder="তোমার ইমেইল" required>
                         </div>
                         <div class="col-md-12">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
+                            <textarea name="message" placeholder="তোমার বার্তা" required></textarea>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit">Send Message</button>
+                            <button type="submit">বার্তা পাঠান</button>
                         </div>
                     </div>
                 </form>
@@ -96,7 +96,7 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('/')}}frontend/js/localization.js"></script>
+    <script src="{{asset('/')}}frontend/js/contact.localization.js"></script>
     <!--iqoniq Wrapper End-->
     <!--Javascript Library-->
     <script src="{{asset('/')}}frontend/js/jquery.js"></script>
@@ -148,6 +148,16 @@
             font-size: 36px;
             margin-bottom: 30px;
         }
+
+         .iner_banner {
+             margin-bottom: 30px; /* Adds spacing below the banner */
+         }
+
+        .contactInfo {
+            padding: 10px;
+            margin-top: 20px; /* Ensures space between sections */
+        }
+
 
         .contact-info .col-md-4 {
             margin-bottom: 20px;

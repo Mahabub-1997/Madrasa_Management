@@ -35,11 +35,11 @@
         <!--Banner Wrap Start-->
         <div class="iner_banner">
             <div class="container">
-                <h5>Admission Notice</h5>
+                <h5 class="admissionNotice"></h5>
                 <div class="banner_iner_capstion">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Admission Notice</a></li>
+                        <li><a class="admissionNoticeHome" href="#">Home</a></li>
+                        <li><a class="admissionNotice" href="#">Admission Notice</a></li>
                     </ul>
                 </div>
             </div>
@@ -117,7 +117,7 @@
 
 
 @section('scripts')
-    <script src="{{asset('/')}}frontend/js/localization.js"></script>
+    <script src="{{asset('/')}}frontend/js/admission.notice.localization.js"></script>
     <!--iqoniq Wrapper End-->
     <!--Javascript Library-->
     <script src="{{asset('/')}}frontend/js/jquery.js"></script>

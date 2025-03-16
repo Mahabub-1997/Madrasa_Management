@@ -89,6 +89,65 @@
 @section('content')
     <div class="iq_content_wrap">
 
+        <!--Testimonial Slider Wrap Start-->
+        <section>
+            <div class="container">
+                <!--Heading 1 Start-->
+                <div class="iq_heading_1 text-center">
+                    <h4 class="formerTeacherTitle">Former Teacher's <span> Expression </span></h4>
+                    <p class="formerTeacherDescription">I am extremely proud to have worked as a teacher at this institution. <br> While working here, I not only spread the light of knowledge among students but also taught them humanitarian values.</p>
+                </div>
+                <!--Heading 1 End-->
+                <!--Testimonial Slider Start-->
+                <div class="testimonial-slider">
+                    <!--Testimonial Start-->
+                    <div>
+                        <div>
+                            <div class="testimonial">
+                                <div class="coures_instractor_thumb">
+                                    <div class="thumb_capstion">
+                                        <h5 style="text-align: center; margin-bottom: 20px;"><a class="teacherName2" href="#"></a></h5>
+                                    </div>
+                                </div>
+                                <p class="testimonial1"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Testimonial End-->
+                    <!--Testimonial Start-->
+                    <div>
+                        <div>
+                            <div class="testimonial">
+                                <div class="coures_instractor_thumb">
+                                    <div class="thumb_capstion">
+                                        <h5 style="text-align: center; margin-bottom: 20px;"><a class="teacherName3" href="#"></a></h5>
+                                    </div>
+                                </div>
+                                <p class="testimonial2"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Testimonial End-->
+                    <!--Testimonial Start-->
+                    <div>
+                        <div>
+                            <div class="testimonial">
+                                <div class="coures_instractor_thumb">
+                                    <div class="thumb_capstion">
+                                        <h5 style="text-align: center; margin-bottom: 20px;"><a class="teacherName1" href="#"></a></h5>
+                                    </div>
+                                </div>
+                                <p class="testimonial3"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Testimonial End-->
+                </div>
+                <!--Testimonial Slider End-->
+            </div>
+        </section>
+        <!--Testimonial Slider Wrap End-->
+
         <!--Get Best Knowledge Wrap Start-->
         <section class="iq_best_knowledge_bg">
             <!--Best Knowledge Description Wrap Start-->
@@ -106,8 +165,8 @@
             </div>
             <!--Best Knowledge Description Wrap End-->
         </section>
-
         <!--Get Best Knowledge Wrap End-->
+
         <!--Our Featured Courses Wrap Start-->
         <section>
             <div class="container">
@@ -118,14 +177,7 @@
                 </div>
                 <!--Heading Wrap End-->
 
-                <!--Tab Menu Wrap Start-->
-{{--                <div class="iq_tab_menu">--}}
-{{--                    <ul id="tabs" data-tabs="tabs">--}}
-{{--                        <li class=" active"><a class="ourFeaturedDescriptionList1" data-toggle="tab" href="#featured">Featured</a></li>--}}
-{{--                        <li><a class="ourFeaturedDescriptionList1 " data-toggle="tab" href="#popular">Popular</a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-                <!--Tab Menu Wrap End-->
+
 
                 <!--Tab Menu Detail Wrap Start-->
                 <div id="my-tab-content" class="tab-content">
@@ -615,71 +667,6 @@
 
         <!--Our Teacher Wrap End-->
 
-        <!--Testimonial Slider Wrap Start-->
-        <section>
-            <div class="container">
-                <!--Heading 1 Start-->
-                <div class="iq_heading_1 text-center">
-                    <h4 class="formerTeacherTitle">Former Teacher's <span> Expression </span></h4>
-                    <p class="formerTeacherDescription">I am extremely proud to have worked as a teacher at this institution. <br> While working here, I not only spread the light of knowledge among students but also taught them humanitarian values.</p>
-                </div>
-                <!--Heading 1 End-->
-                <!--Testimonial Slider Start-->
-                <div class="testimonial-slider">
-                    <!--Testimonial Start-->
-                    <div>
-                        <div class="testimonial">
-                            <p>“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
-                            <div class="coures_instractor_thumb">
-                                <figure>
-                                    <img src="{{ asset('frontend/extra-images/teacher-11.jpg') }}" style="max-height: 50px" alt="">
-                                </figure>
-                                <div class="thumb_capstion">
-                                    <h5><a class="teacherName3" href="#">Dr. Mostak Ahmed</a></h5>
-                                    <p class="formerStudent">Former Student</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial End-->
-                    <!--Testimonial Start-->
-                    <div>
-                        <div class="testimonial">
-                            <p class="formerStudentDescription1">“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
-                            <div class="coures_instractor_thumb">
-                                <figure>
-                                    <img src="{{ asset('frontend/extra-images/teacher-10.jpg') }}" style="max-height: 50px" alt="">
-                                </figure>
-                                <div class="thumb_capstion">
-                                    <h5><a class="teacherName1" href="#">Dr. Mamunul Haque</a></h5>
-                                    <p class="formerStudent">Former Student</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial End-->
-                    <!--Testimonial Start-->
-                    <div>
-                        <div class="testimonial">
-                            <p class="formerStudentDescription2">“Islamic history is rich and diverse. The rise of Islamic civilization began with the arrival of Prophet Muhammad (PBUH) and the spread of Islam. From the first caliph Abu Bakr (RA) to the Umayyad, Abbasid, and Ottoman periods, the Islamic world saw the development of religion, science, culture, and arts. Islamic history is a significant chapter in human history.”</p>
-                            <div class="coures_instractor_thumb">
-                                <figure>
-                                    <img src="{{ asset('frontend/extra-images/teacher-09.jpg') }}" style="max-height: 50px" alt="">
-                                </figure>
-                                <div class="thumb_capstion">
-                                    <h5><a class="teacherName2" href="#">Khalid Saifullah</a></h5>
-                                    <p class="formerStudent" >Former Student</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Testimonial End-->
-                </div>
-                <!--Testimonial Slider End-->
-            </div>
-        </section>
-
-        <!--Testimonial Slider Wrap End-->
     </div>
 @endsection
 
