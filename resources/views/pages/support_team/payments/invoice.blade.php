@@ -72,6 +72,7 @@
                             </td>
                             </form>
                             <td>{{ $p['month']}}, {{$p['year'] }}</td>
+                            <td>{{ $p['pr_id']??'kk'}} }}</td>
                             {{--Receipt No--}}
 
                             {{--Action--}}
@@ -88,7 +89,9 @@
                                             {{--                                        <form method="post" id="item-reset-{{ Qs::hash($uc->id) }}" action="{{ route('payments.reset_record', Qs::hash($uc->id)) }}" class="hidden">@csrf @method('delete')</form>--}}
 
 
-                                            <a target="_blank" href="{{ route('payments.receipts', 1) }}" class="dropdown-item"><i class="icon-printer"></i> Print Receipt</a>
+                                            @if(isset($p['pr_id']))
+                                                <a target="_blank" href="{{ route('payments.receipts', $p['pr_id']) }}" class="dropdown-item"><i class="icon-printer"></i> Print Receipt</a>
+                                            @endif
                                             <a  href="{{ route('payments.pdf_receipts', 1) }}" class="dropdown-item download-receipt"><i class="icon-download"></i> Download Receipt</a>
 
                                         </div>
