@@ -72,7 +72,6 @@
                             </td>
                             </form>
                             <td>{{ $p['month']}}, {{$p['year'] }}</td>
-                            <td>{{ $p['pr_id']??'kk'}} }}</td>
                             {{--Receipt No--}}
 
                             {{--Action--}}
@@ -90,7 +89,9 @@
 
 
                                             @if(isset($p['pr_id']))
-                                                <a target="_blank" href="{{ route('payments.receipts', $p['pr_id']) }}" class="dropdown-item"><i class="icon-printer"></i> Print Receipt</a>
+                                                <a href="{{ route('payments.receipts', ['pr_id'=>$p['pr_id']]) }}" class="dropdown-item">
+                                                    <i class="icon-printer"></i> Print Receipt
+                                                </a>
                                             @endif
                                             <a  href="{{ route('payments.pdf_receipts', 1) }}" class="dropdown-item download-receipt"><i class="icon-download"></i> Download Receipt</a>
 

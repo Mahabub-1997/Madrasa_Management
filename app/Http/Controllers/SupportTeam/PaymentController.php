@@ -11,6 +11,7 @@ use App\Models\Expense;
 use App\Models\PaymentRecord;
 use App\Models\Receipt;
 use App\Models\Setting;
+use App\Models\StudentRecord;
 use App\Repositories\MyClassRepo;
 use App\Repositories\PaymentRepo;
 use App\Repositories\StudentRepo;
@@ -211,11 +212,10 @@ class PaymentController extends Controller
         }
         $d['receipts'] = $pr->receipt;
         $d['payment'] = $pr->payment;
-        $d['sr'] = $this->student->findByUserId($pr->student_id)->first();
+        $d['sr'] = StudentRecord::where('id', $pr->student_id)->first();
         $d['s'] = Setting::all()->flatMap(function($s){
             return [$s->type => $s->description];
         });
-
         return view('pages.support_team.payments.receipt', $d);
     }
 
