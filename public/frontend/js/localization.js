@@ -78,6 +78,14 @@ const translations = {
         ourTeacherDescription:"Our teachers provide deep knowledge about the peace, justice, and humanitarian values of Islam.</p>\n" +
             "                            <p>They are our guides to move forward on the path of the beauty and knowledge of Islam.</p>",
 
+
+
+
+        NameTeacher1:"Hafiz Maulana Rabiul Islam",
+        NameTeacher2:"Hafiz Maulana Qari Yusuf.",
+        NameTeacher3:"Hafiz Md. Yusuf",
+
+
         footerOurService:"Our Service",
         footerOurService1:"Islamic Knowledge",
         footerOurService2:"Way of thinking",
@@ -109,18 +117,19 @@ const translations = {
             "The main objective of the madrasa is to create ideal and just citizens in the " +
             "Muslim community who will follow the path of Allah.",
         Nametestimonial1:"Institute Introduction",
-
-
-    },
         teacherName1:"Dr. Mamunul Haque",
         teacherName2:" Khalid Saifullah",
         teacherName3:"Dr. Mostak Ahmed",
-        teacherSubTitle1:"Language Instructor ",
-        teacherSubTitle2:"Vice Principal",
-        teacherSubTitle3:"Manager",
-        teacherDescription1:"This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris",
-        teacherDescription2:"This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris",
-        teacherDescription3:"This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris",
+        teacherSubTitle1:"Deputy Director",
+        teacherSubTitle2:"Founder Director",
+        teacherSubTitle3:"Senior Teacher",
+        teacherDescription1:"Hafiz Maulana Rabiul Islam, as Nayeb-e-Muhtamim, plays a vital role in promoting Islamic education and is dedicated to religious teaching.",
+        teacherDescription2:"Founder Director Hafiz Maulana Qari Yusuf is a renowned Islamic scholar dedicated to Quranic education and religious propagation.",
+        teacherDescription3:"A Senior Teacher is an experienced educator who has acquired special skills in teaching and is dedicated to the improvement of students"
+
+
+    },
+
 
 
 
@@ -137,10 +146,10 @@ const translations = {
         manuCurriculum:"পাঠ্যক্রম",
 
 
-        manuCurriculum1:"নূরানী পাঠ্যক্রম",
-        manuCurriculum2:"নাজেরা পাঠ্যক্রম ",
-        manuCurriculum3:"হিফজ পাঠ্যক্রম",
-        manuCurriculum4:"সুনানি পাঠ্যক্রম",
+        manuCurriculum1:"নূরানী বিভাগ",
+        manuCurriculum2:"নাজেরা বিভাগ ",
+        manuCurriculum3:"হিফজ বিভাগ",
+        manuCurriculum4:"সুনানি বিভাগ",
 
 
         manuAdmissionProcess:"ভর্তি প্রক্রিয়া",
@@ -177,7 +186,7 @@ const translations = {
         Reviews:"১০১টি পর্যালোচনা",
         gallaryTitle:"আমাদের গ্যালারি",
         galleryDescription:"আমাদের গ্যালারিতে ইসলামের গভীর জ্ঞান, মূল্যবোধ এবং জীবনধারাকে প্রতিফলিত করার জন্য ইসলামিক বক্তৃতা, পবিত্র কুরআনের উদ্ধৃতি এবং হাদিসের সুন্দর বাণী রয়েছে।\n" +
-            "                            <br>প্রতিটি মূর্তির মধ্যে লুকিয়ে আছে ইসলামের শান্তি, ভালোবাসা ও মমতা। অনুপ্রাণিত হতে এবং জ্ঞান এবং অনুপ্রেরণা পেতে আমাদের গ্যালারি দেখুন।",
+            "                            প্রতিটি মূর্তির মধ্যে লুকিয়ে আছে ইসলামের শান্তি, ভালোবাসা ও মমতা। অনুপ্রাণিত হতে এবং জ্ঞান এবং অনুপ্রেরণা পেতে আমাদের গ্যালারি দেখুন।",
         galleryDescription1:"সবগুলো",
         galleryDescription2:"ইবতেদায়ী প্রোগ্রাম",
         galleryDescription3:"দাখিল প্রোগ্রাম",
@@ -198,14 +207,16 @@ const translations = {
         teacherName2:"প্রতিষ্ঠানের পরিচিতি",
         teacherName3:"প্রতিষ্ঠানের লক্ষ্য",
 
+        NameTeacher1:" হাফেজ মাওলানা রবিউল ইসলাম ",
+        NameTeacher2:"হাফেজ মাওলানা ক্বারী ইউসুফ ",
+        NameTeacher3:"হাফেজ মোঃ ইউসুফ",
 
-
-        teacherSubTitle1:"ভাষা প্রশিক্ষক",
-        teacherSubTitle2:"সহকারী প্রধান শিক্ষক",
-        teacherSubTitle3:" ব্যবস্থাপক",
-        teacherDescription1:"এটি ফটোশপের লোরেম ইপসামের সংস্করণ। প্রইন গ্রাভিডা নিব ভেল ভেলিট অউটর আলিকুইট। অ্যেনিয়েন সোল্লিসিটুদিনরিস।",
-        teacherDescription2:"এটি ফটোশপের লোরেম ইপসামের সংস্করণ। প্রইন গ্রাভিডা নিব ভেল ভেলিট অউটর আলিকুইট। অ্যেনিয়েন সোল্লিসিটুদিনরিস।",
-        teacherDescription3:"এটি ফটোশপের লোরেম ইপসামের সংস্করণ। প্রইন গ্রাভিডা নিব ভেল ভেলিট অউটর আলিকুইট। অ্যেনিয়েন সোল্লিসিটুদিনরিস।",
+        teacherSubTitle1:"পদবী নায়েবে মুহতামিম",
+        teacherSubTitle2:"প্রতিষ্ঠাতা পরিচালক",
+        teacherSubTitle3:"উচ্চতর শিক্ষক",
+        teacherDescription1:"হাফেজ মাওলানা রবিউল ইসলাম নায়েবে মুহতামিম হিসেবে ইসলামিক শিক্ষা প্রসারে গুরুত্বপূর্ণ ভূমিকা রাখছেন এবং ধর্মীয় শিক্ষার প্রচারে নিবেদিত।",
+        teacherDescription2:"প্রতিষ্ঠাতা পরিচালক হাফেজ মাওলানা ক্বারী ইউসুফ একজন বিশিষ্ট ইসলামিক শিক্ষাবিদ, যিনি কুরআন শিক্ষা ও ধর্মীয় প্রচারে নিবেদিত।",
+        teacherDescription3:"উচ্চতর শিক্ষক হলেন একজন অভিজ্ঞ শিক্ষক, যিনি শিক্ষায় বিশেষ দক্ষতা অর্জন করেছেন এবং শিক্ষার্থীদের উন্নতির জন্য নিবেদিত।",
         formerTeacherTitle:"আমাদের মাদ্রাসার পরিচিতি, লক্ষ্য ও উদ্দেশ্য",
 
         testimonial1:"মুসলিহুল উম্মাহ হিফজ মাদ্রাসা একটি ইসলামী শিক্ষা প্রতিষ্ঠান, যা শিক্ষার্থীদের কুরআন হিফজ, তাজবিদ এবং ইসলামী জ্ঞান " +
@@ -352,6 +363,9 @@ function loadLanguage() {
     document.querySelectorAll('.testimonial1').forEach(el => el.textContent = data.testimonial1);
     document.querySelectorAll('.testimonial2').forEach(el => el.textContent = data.testimonial2);
     document.querySelectorAll('.testimonial3').forEach(el => el.textContent = data.testimonial3);
+    document.querySelectorAll('.NameTeacher1').forEach(el => el.textContent = data.NameTeacher1);
+    document.querySelectorAll('.NameTeacher2').forEach(el => el.textContent = data.NameTeacher2);
+    document.querySelectorAll('.NameTeacher3').forEach(el => el.textContent = data.NameTeacher3);
 
 }
 

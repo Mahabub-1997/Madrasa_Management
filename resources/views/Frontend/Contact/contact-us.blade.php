@@ -94,7 +94,6 @@
         </div>
     </div>
 @endsection
-
 @section('scripts')
     <script src="{{asset('/')}}frontend/js/contact.localization.js"></script>
     <!--iqoniq Wrapper End-->
@@ -115,9 +114,7 @@
     <script src="{{asset('/')}}frontend/js/waypoints-min.js"></script>
     <!--Custom JavaScript-->
     <script src="{{asset('/')}}frontend/js/custom.js"></script>
-
     <script>
-
         $(document).ready(function() {
             $('.slider').slick({
                 slidesToShow: 1, // Show one slide at a time
@@ -128,9 +125,6 @@
                 dots: true, // Enable dots for navigation
                 arrows: true // Show navigation arrows
             });
-
-
-
             console.log('chutiye');
             $('#mg-responsive-navigation').dlmenu();
         })
@@ -142,48 +136,38 @@
             padding: 40px 0;
             margin-top: 30px;
         }
-
         .contact-info h2 {
             text-align: center;
             font-size: 36px;
             margin-bottom: 30px;
         }
-
          .iner_banner {
              margin-bottom: 30px; /* Adds spacing below the banner */
          }
-
         .contactInfo {
             padding: 10px;
             margin-top: 20px; /* Ensures space between sections */
         }
-
-
         .contact-info .col-md-4 {
             margin-bottom: 20px;
         }
-
         .contact-info h4 {
             font-size: 24px;
             color: #333;
         }
-
         .contact-info p {
             color: #777;
         }
-
         /* Contact Form Styles */
         .contact-form {
             padding: 40px 0;
             background-color: #fff;
         }
-
         .contact-form h2 {
             text-align: center;
             font-size: 36px;
             margin-bottom: 30px;
         }
-
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -192,7 +176,6 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-
         .contact-form button {
             width: 100%;
             padding: 12px;
@@ -202,13 +185,10 @@
             border: none;
             cursor: pointer;
         }
-
         .contact-form button:hover {
             background-color: #218838;
         }
     </style>
-
-
 @endsection
 
 

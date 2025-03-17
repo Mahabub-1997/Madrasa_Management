@@ -29,7 +29,6 @@
 
 @endsection
 
-
 @section('content')
     <!--Banner Wrap Start-->
     <div class="iner_banner">
@@ -45,9 +44,7 @@
     </div>
     <!--Banner Wrap End-->
     <div class="col-md-8" style="margin-left: 25% ; margin-top: 15px">
-
         <table class="table">
-
             <tr>
                 <th class="col-md-1">Title</th>
                 <th class="col-md-7">Description</th>
@@ -74,10 +71,8 @@
                     General knowledge or academic questions (for higher levels).
                     Oral interview to assess discipline and preparation.</td>
             </tr>
-
         </table>
     </div>
-
 @endsection
 
 
