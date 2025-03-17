@@ -29,7 +29,6 @@
 
 @endsection
 
-
 @section('content')
     <!--Banner Wrap Start-->
     <div class="iner_banner">

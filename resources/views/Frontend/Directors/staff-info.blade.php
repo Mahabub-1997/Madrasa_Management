@@ -28,15 +28,12 @@
     <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
 
 @endsection
-
-
 @section('content')
     <div class="iq_wrapper">
         <!-- Header Section -->
         <header class="iq_header_1">
             <!-- Header content here -->
         </header>
-
         <!-- Banner Section -->
         <div class="iner_banner ent_detail">
             <div class="container">
@@ -49,13 +46,9 @@
                 </div>
             </div>
         </div>
-
-
         @endsection
 
-
 @section('scripts')
-
     <script src="{{asset('/')}}frontend/js/staff.localization.js"></script>
     <script src="{{asset('/')}}frontend/js/localization.js"></script>
     <!--iqoniq Wrapper End-->
@@ -76,9 +69,7 @@
     <script src="{{asset('/')}}frontend/js/waypoints-min.js"></script>
     <!--Custom JavaScript-->
     <script src="{{asset('/')}}frontend/js/custom.js"></script>
-
     <script>
-
         $(document).ready(function() {
             $('.slider').slick({
                 slidesToShow: 1, // Show one slide at a time
@@ -89,15 +80,10 @@
                 dots: true, // Enable dots for navigation
                 arrows: true // Show navigation arrows
             });
-
-
-
             console.log('chutiye');
             $('#mg-responsive-navigation').dlmenu();
         })
     </script>
-
-
 @endsection
 
 

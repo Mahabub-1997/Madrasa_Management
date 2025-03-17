@@ -186,7 +186,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img src="{{ asset('frontend/extra-images/pic-2.webp') }}" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/madrsa-1.jpg') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -213,7 +213,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img src="{{ asset('frontend/extra-images/pic-3.jpg') }}" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/madrsa-2.AVIF') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -240,7 +240,7 @@
                         <div class="col-md-4 hidden-sm">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img src="{{ asset('frontend/extra-images/pic-4.jpg') }}" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/madrasa.AVIF') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -528,9 +528,6 @@
                 <!--Our Gallery Wrap End-->
             </div>
 
-            <div class="load-more">
-                <a class="button iq_link_1" style="background-color: #43A047" href="#">Load More</a>
-            </div>
         </section>
 
         <!--Our Gallery Wrap End-->
@@ -604,12 +601,12 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-10.jpg') }}" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-101.jpeg') }}" alt="Image Here" style="max-height: 400px;">
                             </figure>
                             <div class="text">
-                                <h4><a class="teacherName1" href="#">Dr. Mamunul Haque</a></h4>
-                                <h6 class="teacherSubTitle1">Language Instructor</h6>
-                                <p class="teacherDescription1">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h4><a class="NameTeacher1" href="#"></a></h4>
+                                <h6 class="teacherSubTitle1"></h6>
+                                <p class="teacherDescription1"></p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -624,9 +621,9 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <div class="text">
-                                <h4><a class="teacherName2" href="#">Khalid Saifullah</a></h4>
-                                <h6 class="teacherSubTitle2">Vice Principal</h6>
-                                <p class="teacherDescription2">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h4><a class="NameTeacher2" href="#">22</a></h4>
+                                <h6 class="teacherSubTitle2"></h6>
+                                <p class="teacherDescription2"></p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -635,7 +632,7 @@
                                 </ul>
                             </div>
                             <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-09.jpg') }}" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-100.jpg') }}" alt="Image Here"  style="max-height: 400px;">
                             </figure>
                         </div>
                     </div>
@@ -644,11 +641,11 @@
                     <div class="col-md-4 hidden-sm">
                         <div class="iq_teacher_style_1">
                             <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-11.jpg') }}" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 427px;">
                             </figure>
                             <div class="text">
-                                <h4><a class="teacherName3" href="#">Dr. Mostak Ahmed</a></h4>
-                                <h6 class="teacherSubTitle3" >Manager</h6>
+                                <h4><a class="NameTeacher3" href="#"></a></h4>
+                                <h6 class="teacherSubTitle3" ></h6>
                                 <p class="teacherDescription3">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -664,9 +661,7 @@
                 <!--Teacher Wrap List End-->
             </div>
         </section>
-
         <!--Our Teacher Wrap End-->
-
     </div>
 @endsection
 
