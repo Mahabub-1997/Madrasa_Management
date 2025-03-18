@@ -63,7 +63,7 @@
                         <li><a class="manuDirectors" href="#" style="font-weight: bold">Directors</a>
                             <ul class="children">
                                 <li><a class="manuDirectors1" href="{{route('teacher-info')}}" >Teachers</a></li>
-{{--                                <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>--}}
+                                <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
                             </ul>
                         </li>
                         <li><a class="manuMadrasaGallery" href="{{route('gallary')}}" style="font-weight: bold">Madrasa Gallery</a></li>
@@ -80,11 +80,10 @@
                         </li>
                         <li class="menu-item mg-parent-menu"><a class="manuCurriculum" href="#">Curriculum</a>
                             <ul class="dl-submenu">
-                                <li><a href="#">Ibtidai Curriculum</a></li>
-                                <li><a href="#">Dakhil Curriculum</a></li>
-                                <li><a href="#">Alim Curriculum</a></li>
-                                <li><a href="#">Fazil Curriculum</a></li>
-                                <li><a href="#">Kamil Curriculum</a></li>
+                                <li><a class="manuCurriculum1" href="#"></a></li>
+                                <li><a  class="manuCurriculum2" href="#"></a></li>
+                                <li><a  class="manuCurriculum3" href="#"></a></li>
+                                <li><a  class="manuCurriculum4" href="#"></a></li>
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu"><a class="manuAdmissionProcess"  href="#">Admission Process</a>
@@ -98,7 +97,7 @@
                         <li class="menu-item mg-parent-menu"><a class="manuDirectors" href="#">Directors</a>
                             <ul class="dl-submenu">
                                 <li><a class="manuDirectors1" href="{{route('teacher-info')}}">Teachers</a></li>
-{{--                                <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>--}}
+                                <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu">
