@@ -622,7 +622,7 @@
                                 </ul>
                             </div>
                             <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-101.jpeg') }}" alt="Image Here" style="max-height: 400px;">
+                                <img src="{{ asset('frontend/extra-images/teacher-101.jpeg') }}" alt="Image Here" style="max-height: 500px;">
                             </figure>
                         </div>
                     </div>
@@ -631,7 +631,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-100.jpg') }}" alt="Image Here"  style="max-height: 400px;">
+                                <img src="{{ asset('frontend/extra-images/teacher-100.jpg') }}" alt="Image Here"  style="max-height: 439px;">
                             </figure>
                             <div class="text">
                                 <h4><a class="NameTeacher2" href="#">22</a></h4>
@@ -662,7 +662,7 @@
                                 </ul>
                             </div>
                             <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 427px;">
+                                <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 465px;">
                             </figure>
                         </div>
                     </div>

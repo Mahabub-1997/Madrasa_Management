@@ -16,10 +16,7 @@ class ExpensesController extends Controller
         return view('pages.support_team.Expense.list',['expenses'=>$expenses]);
     }
 
-    public function create()
-    {
-        //
-    }
+
 
 
     public function store(Request $request)
@@ -35,7 +32,6 @@ class ExpensesController extends Controller
         $month = $carbonDate->format('F'); // Example: "March"
         $year = $carbonDate->format('Y');  // Example: "2025"
 
-
         // Prepare the data
         $data = [
             'purpose' => $request->purpose,
@@ -44,10 +40,10 @@ class ExpensesController extends Controller
             'year' => $year,
             'date' => $carbonDate,
             'type' => $request->type,
-            'user_id' => auth()->user()->id, // Store the authenticated user's ID
+            'user_id' => auth()->user()->id,
         ];
         Expense::insert($data);
-        return Qs::jsonStoreOk();
+        return Qs::storeOk('expenses.index');
     }
 
 
@@ -59,19 +55,31 @@ class ExpensesController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'purpose' => 'required|string|max:255',
-            'amount' => 'required|numeric|min:0',
-            'month' => 'required|integer|between:1,12',
-            'year' => 'required|integer',
-            'type' => 'required|in:monthly,yearly',
+            'amount' => 'required|numeric',
+            'date' => 'required|date',
+            'type' => 'nullable|string',
         ]);
 
+        $date = $request->input('date', Carbon::now()->toDateString()); // Default to current date if not provided
+        $carbonDate = Carbon::parse($date);
+        $month = $carbonDate->format('F'); // Example: "March"
+        $year = $carbonDate->format('Y');  // Example: "2025"
+
         $expense = Expense::findOrFail($id);
-        $expense->update($validatedData);
+        $expense->update([
+            'purpose' => $request->input('purpose'),
+            'amount' => $request->input('amount'),
+            'date' => $request->input('date'),
+            'type' => $request->input('type'),
+            'month' => $month,
+            'year' => $year,
+        ]);
 
         return Qs::updateOk('expenses.index');
     }
+
 
     public function destroy($id)
     {
