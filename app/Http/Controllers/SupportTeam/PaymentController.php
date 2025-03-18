@@ -268,7 +268,7 @@ class PaymentController extends Controller
 
         if ($req->pr_id) {
             $pr = $this->pay->findRecord($req->pr_id);
-            $subtotal = $pr->tution_fee + $pr->khoraki - $req->discount - $pr->amt_paid;
+            $subtotal = $student->is_residential==1?$pr->tution_fee + $pr->khoraki - $req->discount - $pr->amt_paid:$pr->tution_fee - $req->discount - $pr->amt_paid;
             $due = $subtotal - $req->amt_paid;
 
             $data['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
@@ -279,7 +279,7 @@ class PaymentController extends Controller
             $record = $this->pay->updateRecord($pr->id, $data);
             $d2['pr_id'] = $pr->id;
         }else{
-            $subtotal = $payments->tution_fee + $payments->khoraki - $req->discount ;
+            $subtotal = $student->is_residential==1?$payments->tution_fee + $payments->khoraki - $req->discount:$payments->tution_fee - $req->discount ;
             $due = $subtotal - $req->amt_paid;
             $due <= 0 ? $pay_status = 1 : $pay_status = 0;
 
@@ -304,7 +304,7 @@ class PaymentController extends Controller
         $rcpt = Receipt::where('pr_id', $req->pr_id)->delete();
         $d2['amt_paid'] = $data['amt_paid'];
         $d2['due'] = $data['due'];
-        $d2['total'] = $data['tution_fee'] + $data['khoraki'];
+        $d2['total'] = $student->is_residential==1?$data['tution_fee'] + $data['khoraki']: $data['tution_fee'];
         $d2['year'] = $req->year;
         $d2['month'] = $req->month;
 

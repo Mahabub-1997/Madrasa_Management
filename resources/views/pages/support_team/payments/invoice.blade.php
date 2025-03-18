@@ -8,15 +8,7 @@
             {!! Qs::getPanelOptions() !!}
         </div>
 
-
         <div class="card-body">
-            {{json_encode($payable_months)}}
-            {{$sr->admission_date}}
-                <ul class="nav nav-tabs nav-tabs-highlight">
-                    <li class="nav-item"><a href="#all-uc" class="nav-link active" data-toggle="tab">Incomplete Payments</a></li>
-                    <li class="nav-item"><a href="#all-cl" class="nav-link" data-toggle="tab">Completed Payments</a></li>
-                </ul>
-
         <div class="tab-content">
             <div class="tab-pane fade show active" id="all-uc">
                 <table class="table datatable-button-html5-columns table-responsive">
