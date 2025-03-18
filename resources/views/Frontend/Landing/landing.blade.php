@@ -90,12 +90,15 @@
     <div class="iq_content_wrap">
 
         <!--Testimonial Slider Wrap Start-->
-        <section>
+        <section style="background-color: #f0f0f0; padding: 40px 0;">
             <div class="container">
                 <!--Heading 1 Start-->
                 <div class="iq_heading_1 text-center">
                     <h4 class="formerTeacherTitle">Former Teacher's <span> Expression </span></h4>
-                    <p class="formerTeacherDescription">I am extremely proud to have worked as a teacher at this institution. <br> While working here, I not only spread the light of knowledge among students but also taught them humanitarian values.</p>
+                    <p class="formerTeacherDescription">
+                        I am extremely proud to have worked as a teacher at this institution. <br>
+                        While working here, I not only spread the light of knowledge among students but also taught them humanitarian values.
+                    </p>
                 </div>
                 <!--Heading 1 End-->
                 <!--Testimonial Slider Start-->
@@ -106,7 +109,9 @@
                             <div class="testimonial">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
-                                        <h5 style="text-align: center; margin-bottom: 20px;"><a class="teacherName2" href="#"></a></h5>
+                                        <h5 style="text-align: center; margin-bottom: 20px;">
+                                            <a class="teacherName2" href="#"></a>
+                                        </h5>
                                     </div>
                                 </div>
                                 <p class="testimonial1"></p>
@@ -120,7 +125,9 @@
                             <div class="testimonial">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
-                                        <h5 style="text-align: center; margin-bottom: 20px;"><a class="teacherName3" href="#"></a></h5>
+                                        <h5 style="text-align: center; margin-bottom: 20px;">
+                                            <a class="teacherName3" href="#"></a>
+                                        </h5>
                                     </div>
                                 </div>
                                 <p class="testimonial2"></p>
@@ -134,7 +141,9 @@
                             <div class="testimonial">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
-                                        <h5 style="text-align: center; margin-bottom: 20px;"><a class="teacherName1" href="#"></a></h5>
+                                        <h5 style="text-align: center; margin-bottom: 20px;">
+                                            <a class="teacherName1" href="#"></a>
+                                        </h5>
                                     </div>
                                 </div>
                                 <p class="testimonial3"></p>
@@ -146,6 +155,7 @@
                 <!--Testimonial Slider End-->
             </div>
         </section>
+
         <!--Testimonial Slider Wrap End-->
 
         <!--Get Best Knowledge Wrap Start-->
@@ -168,7 +178,7 @@
         <!--Get Best Knowledge Wrap End-->
 
         <!--Our Featured Courses Wrap Start-->
-        <section>
+        <section style="background-color: #f0f0f0; padding: 40px 0;">
             <div class="container">
                 <!--Heading Wrap Start-->
                 <div class="iq_heading_1 text-center">
@@ -354,7 +364,7 @@
 
         <!--Our Featured Courses Wrap End-->
         <!--Our Gallery Wrap Start-->
-        <section class="iq_gallery_bg">
+        <section class="iq_gallery_bg" style="background-color: #f0f0f0; padding: 40px 0;">
             <!--Heading Wrap Start-->
             <div class="iq_heading_1 text-center">
                 <h4 class="gallaryTitle">Our <span>Gallery</span></h4>
@@ -533,7 +543,7 @@
         <!--Our Gallery Wrap End-->
 
         <!--Number Counter Wrap Start-->
-        <section class="iq_number_count_bg">
+        <section class="iq_number_count_bg" style="background-color: #f0f0f0; padding: 40px 0;">
             <div class="container">
                 <div class="row">
                     <!--Number Counter Start-->
@@ -586,7 +596,7 @@
 
         <!--Number Counter Wrap End-->
         <!--Our Teacher Wrap Start-->
-        <section>
+        <section style="background-color: #f0f0f0; padding: 40px 0;">
             <div class="container">
                 <!--Heading Wrap Start-->
                 <div class="iq_heading_1 text-center">
@@ -600,9 +610,6 @@
                     <!--Teacher Thumb Start-->
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
-                            <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-101.jpeg') }}" alt="Image Here" style="max-height: 400px;">
-                            </figure>
                             <div class="text">
                                 <h4><a class="NameTeacher1" href="#"></a></h4>
                                 <h6 class="teacherSubTitle1"></h6>
@@ -614,12 +621,18 @@
                                     <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                 </ul>
                             </div>
+                            <figure>
+                                <img src="{{ asset('frontend/extra-images/teacher-101.jpeg') }}" alt="Image Here" style="max-height: 400px;">
+                            </figure>
                         </div>
                     </div>
                     <!--Teacher Thumb End-->
                     <!--Teacher Thumb Start-->
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
+                            <figure>
+                                <img src="{{ asset('frontend/extra-images/teacher-100.jpg') }}" alt="Image Here"  style="max-height: 400px;">
+                            </figure>
                             <div class="text">
                                 <h4><a class="NameTeacher2" href="#">22</a></h4>
                                 <h6 class="teacherSubTitle2"></h6>
@@ -631,18 +644,12 @@
                                     <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                 </ul>
                             </div>
-                            <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-100.jpg') }}" alt="Image Here"  style="max-height: 400px;">
-                            </figure>
                         </div>
                     </div>
                     <!--Teacher Thumb End-->
                     <!--Teacher Thumb Start-->
                     <div class="col-md-4 hidden-sm">
                         <div class="iq_teacher_style_1">
-                            <figure>
-                                <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 427px;">
-                            </figure>
                             <div class="text">
                                 <h4><a class="NameTeacher3" href="#"></a></h4>
                                 <h6 class="teacherSubTitle3" ></h6>
@@ -654,6 +661,9 @@
                                     <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                 </ul>
                             </div>
+                            <figure>
+                                <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 427px;">
+                            </figure>
                         </div>
                     </div>
                     <!--Teacher Thumb End-->

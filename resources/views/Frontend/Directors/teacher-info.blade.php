@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <section class="our-teachers-page">
+        <section class="our-teachers-page" style="background-color: #f0f0f0; padding: 40px 0;">
             <div class="container">
                 <!--Teacher Wrap List Start-->
                 <div class="row">
