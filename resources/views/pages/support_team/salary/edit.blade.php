@@ -8,21 +8,21 @@
         </div>
 
         <div class="card-body">
-            <form method="post" action="{{ route('salaries.update', $salary->id) }}" class="ajax-update">
+            <form method="post" action="{{ route('salaries.update', $salary->id) }}" >
                 @csrf
                 @method('PUT')
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label font-weight-semibold">User <span class="text-danger">*</span></label>
-                    <div class="col-lg-9">
-                        <select required class="form-control select" name="user_id">
-                            <option value="">Select User</option>
-                            @foreach($users as $user)
-                                <option value="{{ $user->id }}" {{ $salary->user_id == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
-                            @endforeach
-                        </select>
-                        @error('user_id') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                </div>
+{{--                <div class="form-group row">--}}
+{{--                    <label class="col-lg-3 col-form-label font-weight-semibold">User <span class="text-danger">*</span></label>--}}
+{{--                    <div class="col-lg-9">--}}
+{{--                        <select required class="form-control select" name="user_id">--}}
+{{--                            <option value="">Select User</option>--}}
+{{--                            @foreach($users as $user)--}}
+{{--                                <option value="{{ $user->id }}" {{ $salary->user_id == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                        @error('user_id') <span class="text-danger">{{ $message }}</span> @enderror--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label font-weight-semibold">Receiver <span class="text-danger">*</span></label>
@@ -45,19 +45,12 @@
                     </div>
                 </div>
 
+                <!-- Replaced Month and Year with Date -->
                 <div class="form-group row">
-                    <label class="col-lg-3 col-form-label font-weight-semibold">Month <span class="text-danger">*</span></label>
+                    <label class="col-lg-3 col-form-label font-weight-semibold">Date <span class="text-danger">*</span></label>
                     <div class="col-lg-9">
-                        <input name="month" value="{{ $salary->month }}" required type="text" class="form-control">
-                        @error('month') <span class="text-danger">{{ $message }}</span> @enderror
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label font-weight-semibold">Year <span class="text-danger">*</span></label>
-                    <div class="col-lg-9">
-                        <input name="year" value="{{ $salary->year }}" required type="text" class="form-control">
-                        @error('year') <span class="text-danger">{{ $message }}</span> @enderror
+                        <input name="date" value="{{ old('date', $salary->date) }}" required type="date" class="form-control">
+                        @error('date') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 </div>
 

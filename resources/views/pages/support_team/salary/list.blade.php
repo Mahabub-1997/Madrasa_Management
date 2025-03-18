@@ -19,25 +19,22 @@
                         <thead>
                         <tr>
                             <th>S/N</th>
-                            <th>User ID</th>
+{{--                            <th>User ID</th>--}}
                             <th>Receiver</th>
                             <th>Amount</th>
-                            <th>Month</th>
-                            <th>Year</th>
+                            <th>Date</th>
                             <th>Type</th>
                             <th>Action</th>
                         </tr>
                         </thead>
-                        <!-- Keep the rest as is, update only the table body -->
                         <tbody>
                         @forelse($salaries as $salary)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $salary->user ? $salary->user->name : 'N/A' }}</td>
+{{--                                <td>{{ $salary->user ? $salary->user->name : 'N/A' }}</td>--}}
                                 <td>{{ $salary->receiverUser ? $salary->receiverUser->name : 'N/A' }}</td>
                                 <td>{{ number_format($salary->amount, 2) }}</td>
-                                <td>{{ $salary->month }}</td>
-                                <td>{{ $salary->year }}</td>
+                                <td>{{ \Carbon\Carbon::parse($salary->date)->format('d M Y') }}</td> <!-- Display the formatted date -->
                                 <td>{{ ucfirst($salary->type) }}</td>
                                 <td class="text-center">
                                     <div class="list-icons">
@@ -58,7 +55,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <tr><td colspan="8">No salary records found.</td></tr>
+                            <tr><td colspan="7">No salary records found.</td></tr>
                         @endforelse
                         </tbody>
                     </table>
