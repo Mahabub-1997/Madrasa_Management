@@ -15,8 +15,10 @@
                 </div>
                 <div class="col-md-8">
                     <div class="mb-3">
-                        <button id="exportExcel" class="btn btn-success">Export to Excel</button>
-                        <button id="exportPDF" class="btn btn-danger">Export to PDF</button>
+{{--                        <button id="exportExcel" class="btn btn-success">Export to Excel</button>--}}
+{{--                        <button id="exportPDF" class="btn btn-danger">Export to PDF</button>--}}
+                        <a href="{{route('student.print',['sr_id'=>$sr->id])}}" class="btn btn-primary">Print Profile</a> <!-- Print Button -->
+
                     </div>
                     <table class="table table-striped" id="studentProfileTable">
                         <thead>
@@ -29,6 +31,7 @@
                         <tr class="table-secondary">
                             <th colspan="2"><strong>Personal Information</strong></th>
                         </tr>
+                        <tr><th>Name</th><td>{{ $sr->user->name ?? 'N/A' }}</td></tr>
                         <tr><th>Email</th><td>{{ $sr->user->email ?? 'N/A' }}</td></tr>
                         <tr><th>Gender</th><td>{{ $sr->user->gender ?? 'N/A' }}</td></tr>
                         <tr><th>Phone</th><td>{{ $sr->user->phone ?? 'N/A' }}</td></tr>
@@ -69,65 +72,30 @@
 @endsection
 
 @section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js">
 
-    </script>
     <script>
-        document.getElementById("exportExcel").addEventListener("click", function () {
-            let table = document.getElementById("studentProfileTable");
-            let wb = XLSX.utils.table_to_book(table, {sheet: "Student Profile"});
-            XLSX.writeFile(wb, "Student_Profile.xlsx");
-        });
+        {{--    document.getElementById("printProfile").addEventListener("click", function () {--}}
+        {{--    let printWindow = window.open('', '', 'height=600,width=800');--}}
+        {{--    printWindow.document.write('<html><head><title>Print Student Profile</title></head><body style="font-family: Arial, sans-serif; text-align: center;">');--}}
 
-        document.getElementById("exportPDF").addEventListener("click", function () {
-            const { jsPDF } = window.jspdf;
-            let doc = new jsPDF();
+        {{--    // Adding logo--}}
+        {{--    printWindow.document.write('<img src="{{ asset('logo.png') }}" style="width:100px; height:auto; margin-bottom: 10px;" alt="School Logo">');--}}
 
-            doc.addImage("{{ asset('logo.png') }}", "PNG", 10, 10, 30, 30); // Adjust coordinates as necessary
+        {{--    // Adding school information--}}
+        {{--    printWindow.document.write('<h2 style="margin: 5px 0;">মুসলিহুল উম্মাহ হিফজ মাদ্রাসা </h2>');--}}
+        {{--    printWindow.document.write('<p style="margin: 0;">১৪০ আজমপুর কাঁচা বাজার, দক্ষিণখান,উত্তরা, ঢাকা -১২৩০</p>');--}}
+        {{--    printWindow.document.write('<p style="margin: 0;">Phone: ০১৯১৬৩৫৪৭৭০</p>');--}}
 
-            // School information (align text with logo)
-            doc.setFontSize(12);
+        {{--    // Adding student profile table--}}
+        {{--    printWindow.document.write('<hr style="margin: 10px 0;">');--}}
+        {{--    printWindow.document.write(document.getElementById("studentProfileTable").outerHTML);--}}
+        {{--    printWindow.document.write('</body></html>');--}}
 
-// School name in English
-            doc.text("Muslihul Ummah Hifz Madrasah", 50, 20);
-
-// Address
-            doc.text("140 Azampur Kacha Bazar, Dakshin Khan, Uttara, Dhaka - 1230", 50, 30);
-            doc.text("Phone: 01916354770", 50, 35);
+        {{--    printWindow.document.close();--}}
+        {{--    printWindow.print();--}}
+        {{--});--}}
 
 
-            let element = document.getElementById("studentProfileTable");
-            let data = [];
-            let headers = [];
+</script>
 
-            // Extract table headers
-            element.querySelectorAll("thead tr th").forEach(th => {
-                headers.push(th.innerText);
-            });
-
-            // Extract table data
-            element.querySelectorAll("tbody tr").forEach(tr => {
-                let row = [];
-                tr.querySelectorAll("th, td").forEach(td => {
-                    row.push(td.innerText);
-                });
-                data.push(row);
-            });
-
-            // Add the table to the PDF
-            doc.autoTable({
-                head: [headers],
-                body: data,
-                startY: 40, // Adjusting the Y position for table
-                theme: 'grid',
-                styles: { fontSize: 10 },
-                headStyles: { fillColor: [22, 160, 133] },
-                bodyStyles: { valign: 'middle' }
-            });
-
-            doc.save("Student_Profile.pdf");
-        });
-    </script>
 @endsection
