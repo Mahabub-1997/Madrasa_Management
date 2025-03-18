@@ -230,16 +230,17 @@ class PaymentController extends Controller
         }
         $d['receipts'] = $pr->receipt;
         $d['payment'] = $pr->payment;
-        $d['sr'] = $sr =$this->student->findByUserId($pr->student_id)->first();
+        $d['sr'] = $sr =StudentRecord::where('id', $pr->student_id)->first();
         $d['s'] = Setting::all()->flatMap(function($s){
             return [$s->type => $s->description];
         });
+
 
         $pdf_name = 'Receipt_'.$pr->ref_no;
 
         return PDF::loadView('pages.support_team.payments.receipt', $d)->download($pdf_name);
 
-        //return $this->downloadReceipt('pages.support_team.payments.receipt', $d, $pdf_name);
+//        return $this->downloadReceipt('pages.support_team.payments.receipt', $d, $pdf_name);
     }
 
     protected function downloadReceipt($page, $data, $name = NULL){

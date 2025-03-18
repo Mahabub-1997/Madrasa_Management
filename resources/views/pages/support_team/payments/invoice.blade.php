@@ -76,28 +76,11 @@
 
                             {{--Action--}}
                             <td class="text-center">
-                                <div class="list-icons">
-                                    <div class="dropdown">
-                                        <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu9"></i>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-left">
-
-                                            {{--                                        Reset Payment--}}
-                                            {{--                                        <a id="{{ Qs::hash($uc->id) }}" onclick="confirmReset(this.id)" href="#" class="dropdown-item"><i class="icon-reset"></i> Reset Payment</a>--}}
-                                            {{--                                        <form method="post" id="item-reset-{{ Qs::hash($uc->id) }}" action="{{ route('payments.reset_record', Qs::hash($uc->id)) }}" class="hidden">@csrf @method('delete')</form>--}}
-
-
-                                            @if(isset($p['pr_id']))
-                                                <a href="{{ route('payments.receipts', ['pr_id'=>$p['pr_id']]) }}" class="dropdown-item">
-                                                    <i class="icon-printer"></i> Print Receipt
-                                                </a>
-                                            @endif
-                                            <a  href="{{ route('payments.pdf_receipts', 1) }}" class="dropdown-item download-receipt"><i class="icon-download"></i> Download Receipt</a>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                @if(isset($p['pr_id']))
+                                    <a href="{{ route('payments.receipts', ['pr_id'=>$p['pr_id']]) }}" class="">
+                                        <i class="icon-printer text-primary"></i>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach
