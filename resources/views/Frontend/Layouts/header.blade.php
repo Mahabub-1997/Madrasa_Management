@@ -68,7 +68,7 @@
                         </li>
                         <li><a class="manuMadrasaGallery" href="{{route('gallary')}}" style="font-weight: bold">Madrasa Gallery</a></li>
                         <li><a class="manuContact" href="{{route('contact-us')}}" style="font-weight: bold">Contact</a></li>
-                        <li><a class="manuAdministration" href="{{route('/admin')}}" style="font-weight: bold"></a></li>
+                        <li><a class="manuAdministration" href="{{route('home')}}" style="font-weight: bold"></a></li>
                     </ul>
                 </div>
                 <!-- DL Menu Start -->
