@@ -55,9 +55,9 @@
                         <li><a class="manuAdmissionProcess" href="#" style="font-weight: bold">Admission Process</a>
                             <ul class="children">
                                 <li><a class="manuAdmissionProcess1" href="{{route('admission-notice')}}">Admission Notice</a></li>
-                                <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>
+{{--                                <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>--}}
                                 <li><a class="manuAdmissionProcess3" href="{{route('admission-terms')}}">Admission Terms and Conditions</a></li>
-                                <li><a class="manuAcademic5"  href="{{route('payment-fee')}}">Fee Payment</a></li>
+{{--                                <li><a class="manuAcademic5"  href="{{route('payment-fee')}}">Fee Payment</a></li>--}}
                             </ul>
                         </li>
                         <li><a class="manuDirectors" href="#" style="font-weight: bold">Directors</a>
@@ -80,19 +80,18 @@
                         </li>
                         <li class="menu-item mg-parent-menu"><a class="manuCurriculum" href="#">Curriculum</a>
                             <ul class="dl-submenu">
-                                <li><a href="#">Ibtidai Curriculum</a></li>
-                                <li><a href="#">Dakhil Curriculum</a></li>
-                                <li><a href="#">Alim Curriculum</a></li>
-                                <li><a href="#">Fazil Curriculum</a></li>
-                                <li><a href="#">Kamil Curriculum</a></li>
+                                <li><a class="manuCurriculum1" href="#"></a></li>
+                                <li><a  class="manuCurriculum2" href="#"></a></li>
+                                <li><a  class="manuCurriculum3" href="#"></a></li>
+                                <li><a  class="manuCurriculum4" href="#"></a></li>
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu"><a class="manuAdmissionProcess"  href="#">Admission Process</a>
                             <ul class="dl-submenu">
                                 <li><a class="manuAdmissionProcess1" href="{{route('admission-notice')}}">Admission Notice</a></li>
-                                <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>
+{{--                                <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>--}}
                                 <li><a class="manuAdmissionProcess3" href="{{route('admission-terms')}}">Admission Terms and Conditions</a></li>
-                                <li><a class="manuAcademic5" href="{{route('payment-fee')}}"> Payment Fee</a></li>
+{{--                                <li><a class="manuAcademic5" href="{{route('payment-fee')}}"> Payment Fee</a></li>--}}
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu"><a class="manuDirectors" href="#">Directors</a>
@@ -109,7 +108,7 @@
                         </li>
 
                         <li class="menu-item mg-parent-menu">
-                            <a class="manuAdministration" href="{{route('login')}}">Administration</a>
+                            <a class="manuAdministration" href="{{route('home')}}">Administration</a>
                         </li>
                     </ul>
                 </div>

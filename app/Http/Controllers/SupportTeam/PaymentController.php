@@ -11,6 +11,7 @@ use App\Models\Expense;
 use App\Models\PaymentRecord;
 use App\Models\Receipt;
 use App\Models\Setting;
+use App\Models\StudentRecord;
 use App\Repositories\MyClassRepo;
 use App\Repositories\PaymentRepo;
 use App\Repositories\StudentRepo;
@@ -21,6 +22,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Log;
 use PDF;
+use function PHPUnit\Framework\isEmpty;
 
 class PaymentController extends Controller
 {
@@ -98,7 +100,7 @@ class PaymentController extends Controller
             $existingRecord = PaymentRecord::where('student_id', $d['sr']->id)
                 ->where('month', $month)
                 ->where('year', $year)
-                ->select(['id', 'month', 'year', 'student_id', 'tution_fee', 'khoraki', 'discount', 'due', 'amt_paid'])
+                ->select(['id', 'month', 'year', 'student_id', 'tution_fee', 'khoraki', 'discount', 'due', 'paid', 'amt_paid'])
                 ->first();
             if(!$existingRecord) {
                 $payableMonths[] = [
@@ -139,19 +141,33 @@ class PaymentController extends Controller
         return view('pages.support_team.payments.invoice', $d);
     }
 
-    public function profit_loss_report()
+    public function profit_loss_report(Request $request)
     {
         $d['payments'] = $this->pay->getPaymentYears();
-        $month = $month ?? Carbon::now()->format('F');
-        $year = $year ?? Carbon::now()->format('Y');
-        $year1 = Carbon::now()->format('Y');   // Get current year (e.g., 2025)
-        $month1 = Carbon::now()->format('m');  // Get current month (e.g., 03 for March)
 
+        // Get request values for month and year
+        $month = $request->input('month', Carbon::now()->format('F'));  // Default to current month
+        $year = $request->input('year', Carbon::now()->format('Y'));    // Default to current year if not provided
+
+        // Check if the month or year is empty (' ' or '')
+        if (empty($month) || $month === '' || $month === ' ') {
+            $month = Carbon::now()->format('F'); // Default to current month
+        }
+
+        if (empty($year)|| $year === '' || $year === ' ') {
+            $year = Carbon::now()->format('Y'); // Default to current year if empty
+        }
+
+        // Convert month name ('January') to number ('01') for database filtering
+        $monthNumber = date('m', strtotime($month));
+
+        // Total admissions for selected month & year
         $totalAdmissionThisMonth = DB::table('student_records')
-            ->whereYear('admission_date', $year)   // Extracts year from `admission_date`
-            ->whereMonth('admission_date', $month) // Extracts month from `admission_date`
+            ->whereYear('admission_date', $year)
+            ->whereMonth('admission_date', $monthNumber)
             ->count();
 
+        // Income, salaries, and expenses for selected month & year
         $totalIncome = DB::table('payment_records')
             ->where('month', $month)
             ->where('year', $year)
@@ -167,13 +183,10 @@ class PaymentController extends Controller
             ->where('year', $year)
             ->sum('amount');
 
-        $totalAdmissionThisMonth = DB::table('student_records')
-            ->whereYear('admission_date', $year1)   // Extracts year from `admission_date`
-            ->whereMonth('admission_date', $month1) // Extracts month from `admission_date`
-            ->count();
-
+        // Profit or Loss calculation
         $profitOrLoss = $totalIncome - ($totalSalaries + $totalExpenses) + ($totalAdmissionThisMonth * $d['payments']->admission_fee);
 
+        // Prepare data for the view
         $d['report'] = [
             'id' => 1,
             'month' => $month,
@@ -184,8 +197,10 @@ class PaymentController extends Controller
             'totalAdmissionThisMonth' => $totalAdmissionThisMonth * $d['payments']->admission_fee,
             'profit_or_loss' => $profitOrLoss
         ];
+
         return view('pages.support_team.Report.profit_loss', $d);
     }
+
     public function receipts($pr_id)
     {
         if(!$pr_id) {return Qs::goWithDanger();}
@@ -197,11 +212,10 @@ class PaymentController extends Controller
         }
         $d['receipts'] = $pr->receipt;
         $d['payment'] = $pr->payment;
-        $d['sr'] = $this->student->findByUserId($pr->student_id)->first();
+        $d['sr'] = StudentRecord::where('id', $pr->student_id)->first();
         $d['s'] = Setting::all()->flatMap(function($s){
             return [$s->type => $s->description];
         });
-
         return view('pages.support_team.payments.receipt', $d);
     }
 
@@ -216,16 +230,17 @@ class PaymentController extends Controller
         }
         $d['receipts'] = $pr->receipt;
         $d['payment'] = $pr->payment;
-        $d['sr'] = $sr =$this->student->findByUserId($pr->student_id)->first();
+        $d['sr'] = $sr =StudentRecord::where('id', $pr->student_id)->first();
         $d['s'] = Setting::all()->flatMap(function($s){
             return [$s->type => $s->description];
         });
+
 
         $pdf_name = 'Receipt_'.$pr->ref_no;
 
         return PDF::loadView('pages.support_team.payments.receipt', $d)->download($pdf_name);
 
-        //return $this->downloadReceipt('pages.support_team.payments.receipt', $d, $pdf_name);
+//        return $this->downloadReceipt('pages.support_team.payments.receipt', $d, $pdf_name);
     }
 
     protected function downloadReceipt($page, $data, $name = NULL){
@@ -253,7 +268,7 @@ class PaymentController extends Controller
 
         if ($req->pr_id) {
             $pr = $this->pay->findRecord($req->pr_id);
-            $subtotal = $pr->tution_fee + $pr->khoraki - $req->discount - $pr->amt_paid;
+            $subtotal = $student->is_residential==1?$pr->tution_fee + $pr->khoraki - $req->discount - $pr->amt_paid:$pr->tution_fee - $req->discount - $pr->amt_paid;
             $due = $subtotal - $req->amt_paid;
 
             $data['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
@@ -264,7 +279,7 @@ class PaymentController extends Controller
             $record = $this->pay->updateRecord($pr->id, $data);
             $d2['pr_id'] = $pr->id;
         }else{
-            $subtotal = $payments->tution_fee + $payments->khoraki - $req->discount ;
+            $subtotal = $student->is_residential==1?$payments->tution_fee + $payments->khoraki - $req->discount:$payments->tution_fee - $req->discount ;
             $due = $subtotal - $req->amt_paid;
             $due <= 0 ? $pay_status = 1 : $pay_status = 0;
 
@@ -289,7 +304,7 @@ class PaymentController extends Controller
         $rcpt = Receipt::where('pr_id', $req->pr_id)->delete();
         $d2['amt_paid'] = $data['amt_paid'];
         $d2['due'] = $data['due'];
-        $d2['total'] = $data['tution_fee'] + $data['khoraki'];
+        $d2['total'] = $student->is_residential==1?$data['tution_fee'] + $data['khoraki']: $data['tution_fee'];
         $d2['year'] = $req->year;
         $d2['month'] = $req->month;
 

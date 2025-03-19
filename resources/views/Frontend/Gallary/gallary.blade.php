@@ -28,8 +28,6 @@
     <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
 
 @endsection
-
-
 @section('content')
     <div class="iner_banner ent_detail">
         <div class="container">
@@ -203,9 +201,6 @@
                     </div>
                 </div>
                 <!--Gallery List Wrap End-->
-            </div>
-            <div class="load-more">
-                <a class="iq_link_1 loadMore" href="#">LOAD MORE</a>
             </div>
         </section>
         <!--Our Gallery Wrap End-->

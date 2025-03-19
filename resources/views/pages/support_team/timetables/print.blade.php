@@ -59,7 +59,7 @@
         <table cellpadding="20" style="width:100%; border-collapse:collapse; border: 1px solid #000; margin: 10px auto;" border="1">
             <thead>
             <tr>
-                <th rowspan="2">Time <i class="icon-arrow-right7 ml-2"></i> <br> Date<i class="icon-arrow-down7 ml-2"></i>
+                <th rowspan="2">Time <i class="icon-arrow-right7 ml-2"></i> <br>দফফস <i class="icon-arrow-down7 ml-2"></i>
                 </th>
                 @foreach($time_slots as $tms)
                     <th rowspan="2">{{ $tms->time_from }} <br>

@@ -54,15 +54,15 @@
                     <h5 class="widget-title"><span>Our</span> Photos</h5>
                     <!-- Widget Title End-->
                     <div class="flickr-wrap">
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/galary-01.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/galary-02.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/galary-03.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/galary-04.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/galary-05.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/galary-06.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/teacher-11.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/teacher-10.jpg') }}" alt=""></a>
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/teacher-09.jpg') }}" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-1.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-2.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-3.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-4.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-5.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-6.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-1.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-3.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-4.jpeg') }}" style="min-height:80px;" alt=""></a>
                     </div>
                 </div>
             </div>

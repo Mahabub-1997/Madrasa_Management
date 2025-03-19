@@ -26,9 +26,7 @@
     <link href="{{asset('/')}}frontend/css/color.css" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
-
 @endsection
-
 
 @section('content')
     <!--Banner Wrap Start-->
@@ -45,10 +43,7 @@
     </div>
     <!--Banner Wrap End-->
 
-
 @endsection
-
-
 @section('scripts')
     <script src="{{asset('/')}}frontend/js/admission.payment.localization.js"></script>
     <script src="{{asset('/')}}frontend/js/localization.js"></script>
@@ -83,9 +78,6 @@
                 dots: true, // Enable dots for navigation
                 arrows: true // Show navigation arrows
             });
-
-
-
             console.log('chutiye');
             $('#mg-responsive-navigation').dlmenu();
         })

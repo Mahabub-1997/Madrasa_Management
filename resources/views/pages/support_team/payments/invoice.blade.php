@@ -8,15 +8,7 @@
             {!! Qs::getPanelOptions() !!}
         </div>
 
-
         <div class="card-body">
-            {{json_encode($payable_months)}}
-            {{$sr->admission_date}}
-                <ul class="nav nav-tabs nav-tabs-highlight">
-                    <li class="nav-item"><a href="#all-uc" class="nav-link active" data-toggle="tab">Incomplete Payments</a></li>
-                    <li class="nav-item"><a href="#all-cl" class="nav-link" data-toggle="tab">Completed Payments</a></li>
-                </ul>
-
         <div class="tab-content">
             <div class="tab-pane fade show active" id="all-uc">
                 <table class="table datatable-button-html5-columns table-responsive">
@@ -55,12 +47,19 @@
                             {{--Pay Now Form--}}
                             <td>
                                 <div class="row">
-                                    <div class="col-md-7">
-                                        <input min="1" max="{{ $payments->amount}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
-                                    </div>
+                                    @if($p['paid'] == 0)
+                                        <div class="col-md-7">
+                                            <input min="1" max="{{ $payments->amount}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
+                                        </div>
+                                    @else
+                                        <div class="col-md-5">
+                                            <i class="icon-check text-success"></i><i class="icon-check text-success"></i><i class="icon-check text-success"></i>Completed
+                                        </div>
+                                    @endif
+
                                 </div>
                             </td>
                             </form>
@@ -69,24 +68,11 @@
 
                             {{--Action--}}
                             <td class="text-center">
-                                <div class="list-icons">
-                                    <div class="dropdown">
-                                        <a href="#" class="list-icons-item" data-toggle="dropdown"><i class="icon-menu9"></i>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-left">
-
-                                            {{--                                        Reset Payment--}}
-                                            {{--                                        <a id="{{ Qs::hash($uc->id) }}" onclick="confirmReset(this.id)" href="#" class="dropdown-item"><i class="icon-reset"></i> Reset Payment</a>--}}
-                                            {{--                                        <form method="post" id="item-reset-{{ Qs::hash($uc->id) }}" action="{{ route('payments.reset_record', Qs::hash($uc->id)) }}" class="hidden">@csrf @method('delete')</form>--}}
-
-
-                                            <a target="_blank" href="{{ route('payments.receipts', 1) }}" class="dropdown-item"><i class="icon-printer"></i> Print Receipt</a>
-                                            <a  href="{{ route('payments.pdf_receipts', 1) }}" class="dropdown-item download-receipt"><i class="icon-download"></i> Download Receipt</a>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                @if(isset($p['pr_id']))
+                                    <a href="{{ route('payments.receipts', ['pr_id'=>$p['pr_id']]) }}" class="">
+                                        <i class="icon-printer text-primary"></i>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

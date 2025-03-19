@@ -104,17 +104,10 @@
 
             </div>
         </div>
-
-        <!--Banner Wrap End-->
-
-
-
-
-
     </div>
+    <!--Banner Wrap End-->
 
 @endsection
-
 
 @section('scripts')
     <script src="{{asset('/')}}frontend/js/admission.notice.localization.js"></script>
@@ -149,7 +142,6 @@
                 dots: true, // Enable dots for navigation
                 arrows: true // Show navigation arrows
             });
-
 
 
             console.log('chutiye');

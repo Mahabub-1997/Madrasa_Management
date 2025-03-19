@@ -24,7 +24,7 @@ const translations = {
         manuAcademic5:"Free Payment",
         manuDirectors:"Directors",
         manuDirectors1:"Teachers",
-        manuDirectors2:"Other Staff",
+        manuDirectors2:"institute  Introduction",
         manuMadrasaGallery:"Madrasa Gallery",
         manuContact:"Contact",
         manuAdministration:"Administration",
@@ -45,6 +45,14 @@ const translations = {
 
         teacherTitle:"Our Teacher",
         teacherTitle1:"Home",
+        NameTeacher1:"Hafiz Maulana Rabiul Islam",
+        NameTeacher2:"Hafiz Maulana Qari Yusuf.",
+        teacherDescription1:"Hafiz Maulana Rabiul Islam, as Nayeb-e-Muhtamim, plays a vital role in promoting Islamic education and is dedicated to religious teaching.",
+        teacherDescription2:"Founder Director Hafiz Maulana Qari Yusuf is a renowned Islamic scholar dedicated to Quranic education and religious propagation.",
+        teacherDescription3:"A Senior Teacher is an experienced educator who has acquired special skills in teaching and is dedicated to the improvement of students",
+        NameTeacher3:"Hafiz Md. Yusuf",
+        teacherSubTitle3:"Senior Teacher",
+
     },
 
     bn: {
@@ -53,7 +61,7 @@ const translations = {
         date:"যোগাযোগ : +৮৮০ ০১৯১৬৩৫৪৭৭০",
         email:"ইমেইল: Mahabub_madrasa@gmail.com ",
         // -----manu-----//
-        manuHome1: "হোম",
+        manuHome1: "হোমপেজ",
         manuCurriculum:"পাঠ্যক্রম",
         manuCurriculum1:"নূরানী পাঠ্যক্রম",
         manuCurriculum2:"নাজেরা পাঠ্যক্রম ",
@@ -72,7 +80,7 @@ const translations = {
         manuAcademic5:"ফি প্রদান",
         manuDirectors:"পরিচালক",
         manuDirectors1:"শিক্ষকবৃন্দ",
-        manuDirectors2:"অন্যান্য স্টাফ",
+        manuDirectors2:"প্রতিষ্ঠানের পরিচিতি",
         manuMadrasaGallery:"মাদ্রাসা গ্যালারি",
         manuContact:"যোগাযোগ",
         manuAdministration:"অ্যাডমিন",
@@ -93,6 +101,17 @@ const translations = {
         //-----Teacher-----//
         teacherTitle: "আমাদের শিক্ষক",
         teacherTitle1: "হোম",
+        NameTeacher1:" হাফেজ মাওলানা রবিউল ইসলাম ",
+        NameTeacher2:"হাফেজ মাওলানা ক্বারী ইউসুফ ",
+        NameTeacher3:"হাফেজ মোঃ ইউসুফ",
+
+        teacherSubTitle1:"পদবী নায়েবে মুহতামিম",
+        teacherSubTitle2:"প্রতিষ্ঠাতা পরিচালক",
+        teacherSubTitle3:"উচ্চতর শিক্ষক",
+        teacherDescription1:"হাফেজ মাওলানা রবিউল ইসলাম নায়েবে মুহতামিম হিসেবে ইসলামিক শিক্ষা প্রসারে গুরুত্বপূর্ণ ভূমিকা রাখছেন এবং ধর্মীয় শিক্ষার প্রচারে নিবেদিত।",
+        teacherDescription2:"প্রতিষ্ঠাতা পরিচালক হাফেজ মাওলানা ক্বারী ইউসুফ একজন বিশিষ্ট ইসলামিক শিক্ষাবিদ, যিনি কুরআন শিক্ষা ও ধর্মীয় প্রচারে নিবেদিত।",
+        teacherDescription3:"উচ্চতর শিক্ষক হলেন একজন অভিজ্ঞ শিক্ষক, যিনি শিক্ষায় বিশেষ দক্ষতা অর্জন করেছেন এবং শিক্ষার্থীদের উন্নতির জন্য নিবেদিত।",
+
     }
 };
 function toggleLanguage() {
@@ -162,6 +181,15 @@ function loadLanguage() {
 
     document.querySelectorAll('.teacherTitle').forEach(el => el.textContent = data.teacherTitle);
     document.querySelectorAll('.teacherTitle1').forEach(el => el.textContent = data.teacherTitle1);
+    document.querySelectorAll('.NameTeacher1').forEach(el => el.textContent = data.NameTeacher1);
+    document.querySelectorAll('.NameTeacher2').forEach(el => el.textContent = data.NameTeacher2);
+    document.querySelectorAll('.teacherSubTitle1').forEach(el => el.textContent = data.teacherSubTitle1);
+    document.querySelectorAll('.teacherSubTitle2').forEach(el => el.textContent = data.teacherSubTitle2);
+    document.querySelectorAll('.teacherDescription1').forEach(el => el.textContent = data.teacherDescription1);
+    document.querySelectorAll('.teacherDescription2').forEach(el => el.textContent = data.teacherDescription2);
+    document.querySelectorAll('.teacherDescription3').forEach(el => el.textContent = data.teacherDescription3);
+    document.querySelectorAll('.NameTeacher3').forEach(el => el.textContent = data.NameTeacher3);
+    document.querySelectorAll('.teacherSubTitle3').forEach(el => el.textContent = data.teacherSubTitle3);
 
 }
 

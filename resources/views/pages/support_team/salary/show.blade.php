@@ -15,10 +15,10 @@
                         <div class="tab-pane fade show active" id="basic-info">
                             <table class="table table-bordered">
                                 <tbody>
-                                <tr>
-                                    <td class="font-weight-bold">User ID</td>
-                                    <td>{{ $salary->user_id }}</td>
-                                </tr>
+{{--                                <tr>--}}
+{{--                                    <td class="font-weight-bold">User ID</td>--}}
+{{--                                    <td>{{ $salary->user_id }}</td>--}}
+{{--                                </tr>--}}
                                 <tr>
                                     <td class="font-weight-bold">Receiver ID</td>
                                     <td>{{ $salary->receiver }}</td>

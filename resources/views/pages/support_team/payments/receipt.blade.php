@@ -1,5 +1,6 @@
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Receipt_{{ $pr->ref_no.'_'.$sr->user->name }}</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/receipt.css') }}"/>
 </head>
@@ -78,14 +79,16 @@
                 <tr>
                     <td class="bold">REFERENCE:</td>
                     <td>{{ $payment->ref_no }}</td>
-                    <td class="bold">TITLE:</td>
-                    <td>{{ $payment->title }}</td>
+                    <td class="bold">Payment Month/Year:</td>
+                    <td>{{ $pr->month.'-'.$pr->year }}</td>
                 </tr>
                 <tr>
                     <td class="bold">AMOUNT:</td>
                     <td>{{ $payment->amount }}</td>
-                    <td class="bold">DESCRIPTION:</td>
-                    <td>{{ $payment->description }}</td>
+                    <td class="bold">DISCOUNT:</td>
+                    <td>{{ $pr->discount }}</td>
+                    <td class="bold">GRAND TOTAL:</td>
+                    <td>{{  $payment->amount - $pr->discount }}</td>
                 </tr>
             </table>
 
@@ -99,7 +102,7 @@
            <tr>
                <td class="bold">Date</td>
                <td class="bold">Amount Paid <del style="text-decoration-style: double">N</del></td>
-               <td class="bold">Balance <del style="text-decoration-style: double">N</del></td>
+               <td class="bold">Due <del style="text-decoration-style: double">N</del></td>
            </tr>
            </thead>
             <tbody>
@@ -107,7 +110,7 @@
                 <tr>
                     <td>{{ date('D\, j F\, Y', strtotime($r->created_at)) }}</td>
                     <td>{{ $r->amt_paid }}</td>
-                    <td>{{ $r->balance }}</td>
+                    <td>{{ $r->due }}</td>
                 </tr>
                 @endforeach
             </tbody>
@@ -119,7 +122,7 @@
                 <span  style="font-size: 16px;">{{ $pr->paid ? 'PAYMENT STATUS' : 'TOTAL DUE' }}</span>
             </div>
             <div  style="padding: 10px 20px; width: 200px; background-color: lightyellow;">
-                <span  style="font-size: 25px;">{{ $pr->paid ? 'CLEARED' : $pr->balance }}</span>
+                <span  style="font-size: 25px;">{{ $pr->paid ? 'CLEARED' : $pr->due }}</span>
             </div>
         </div>
         <div class="clear"></div>

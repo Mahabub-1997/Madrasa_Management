@@ -27,8 +27,7 @@
                             <th>S/N</th>
                             <th>Purpose</th>
                             <th>Amount</th>
-                            <th>Month</th>
-                            <th>Year</th>
+                            <th>Date</th> <!-- New Date Column -->
                             <th>Type</th>
                             <th>Action</th>
                         </tr>
@@ -39,8 +38,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $val->purpose }}</td>
                                 <td>{{ number_format($val->amount, 2) }}</td>
-                                <td>{{ $val->month }}</td>
-                                <td>{{ $val->year }}</td>
+                                <td>{{ \Carbon\Carbon::parse($val->date)->format('d M, Y') }}</td> <!-- New Date Column -->
                                 <td>{{ ucfirst($val->type) }}</td>
                                 <td class="text-center">
                                     <div class="list-icons">
@@ -48,15 +46,16 @@
                                             <a href="#" class="list-icons-item" data-toggle="dropdown">
                                                 <i class="icon-menu9"></i>
                                             </a>
-
                                             <div class="dropdown-menu dropdown-menu-left">
-                                                <a href="{{ route('expenses.edit', $val->id) }}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
-
-                                                {{-- Delete --}}
-                                                <a id="{{ $val->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> Delete</a>
-
-                                                    <form method="post" id="item-delete-{{ $val->id }}" action="{{ route('expenses.destroy', $val->id) }}" class="hidden">@csrf @method('delete')
-                                                    </form>
+                                                <a href="{{ route('expenses.edit', $val->id) }}" class="dropdown-item">
+                                                    <i class="icon-pencil"></i> Edit
+                                                </a>
+                                                <a id="{{ $val->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item">
+                                                    <i class="icon-trash"></i> Delete
+                                                </a>
+                                                <form method="post" id="item-delete-{{ $val->id }}" action="{{ route('expenses.destroy', $val->id) }}" class="hidden">
+                                                    @csrf @method('delete')
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -71,56 +70,56 @@
                 <div class="tab-pane fade" id="add-expense">
                     <div class="row">
                         <div class="col-md-6">
-                            <form class="ajax-store" method="post" action="{{ route('expenses.store') }}">
+                            <form method="post" action="{{ route('expenses.store') }}">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
                                         Purpose <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-9">
-                                        <input name="purpose" value="{{ old('purpose') }}" required type="text" class="form-control" placeholder="Purpose">
+                                        <input name="purpose" value="{{ old('purpose') }}" required type="text" class="form-control @error('purpose') is-invalid @enderror" placeholder="Purpose">
+                                        @error('purpose')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
                                         Amount <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-9">
-                                        <input name="amount" value="{{ old('amount') }}" required type="number" class="form-control" placeholder="Amount">
+                                        <input name="amount" value="{{ old('amount') }}" required type="number" class="form-control @error('amount') is-invalid @enderror" placeholder="Amount">
+                                        @error('amount')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Month <span class="text-danger">*</span>
+                                        Date <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-9">
-                                        <select required class="form-control select" name="month">
-                                            @foreach(range(1,12) as $m)
-                                                @php $monthName = date("F", mktime(0, 0, 0, $m, 1)); @endphp
-                                                <option value="{{ $monthName }}" {{ old('month') == $monthName ? 'selected' : '' }}>
-                                                    {{ $monthName }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <input name="date" value="{{ old('date') }}" required type="date" class="form-control @error('date') is-invalid @enderror">
+                                        @error('date')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Year <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="col-lg-9">
-                                        <input name="year" value="{{ old('year') }}" required type="number" class="form-control" placeholder="Year">
-                                    </div>
-                                </div>
+
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
                                         Type
                                     </label>
                                     <div class="col-lg-9">
-                                        <select class="form-control select" name="type">
+                                        <select class="form-control select @error('type') is-invalid @enderror" name="type">
                                             <option value="monthly" {{ old('type') == 'monthly' ? 'selected' : '' }}>Monthly</option>
                                             <option value="yearly" {{ old('type') == 'yearly' ? 'selected' : '' }}>Yearly</option>
                                         </select>
+                                        @error('type')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -130,10 +129,11 @@
                             </form>
                         </div>
                     </div>
-                </div>
-
+                </div> <!-- End Add Expense Tab -->
             </div>
         </div>
     </div>
+
+
 
 @endsection

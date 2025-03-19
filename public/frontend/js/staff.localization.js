@@ -24,7 +24,7 @@ const translations = {
         manuAcademic5:"Free Payment",
         manuDirectors:"Directors",
         manuDirectors1:"Teachers",
-        manuDirectors2:"Other Staff",
+        manuDirectors2:"institute  Introduction",
         manuMadrasaGallery:"Madrasa Gallery",
         manuContact:"Contact",
         manuAdministration:"Administration",
@@ -43,9 +43,24 @@ const translations = {
 
         //-----Staff-----//
 
-        staffTitle:"Our Staff",
+        staffTitle:"institute Information",
         staffTitle2:"Home",
-        staffTitle1:"Staff",
+        staffTitle1:"Information",
+        formerTeacherTitle:"Our Madrasa About,Mission And Vision",
+        formerTeacherDescription:"Our madrasa is established with the integration of Islamic education, ethics, and modern knowledge. Here, students are guided on the right path, character building, and encouraged to serve society.",
+        testimonial1:"Muslihul Ummah Hifz Madrasa is an Islamic educational institution that provides students with Quran Hifz, Tajweed, and Islamic knowledge. The madrasa was established for the spiritual and moral development of children, so that they can shape their lives in the light of Islamic education. It integrates modern education with Islamic teachings and encourages " +
+            "character building and the establishment of justice in society." +
+            " The institution places special emphasis on Islamic values and ethics.",
+        testimonial2:"The goal of Muslihul Ummah Hifz Madrasa is to provide students with proper" +
+            " education in Quran Hifz, Tajweed, and Islamic knowledge." +
+            " The madrasa aims to foster the spiritual, moral, and character development of children so that they can establish justice in society through Islamic teachings. By integrating modern educational methods with Islamic education, it helps in the holistic development of students." +
+            " The primary objective of the institution is to create ideal citizens for the Muslim community who will follow the path of Allah.\n",
+        testimonial3:"The purpose of Muslihul Ummah Hifz Madrasa is to provide students with proper education in Quran Hifz, Tajweed, and Islamic knowledge. The madrasa aims to foster the spiritual and moral development of students, enabling them to build their character through Islamic teachings. It combines modern education with Islamic teachings to help students develop their intellect and mindset. " +
+            "The main objective of the madrasa is to create ideal and just citizens in the " +
+            "Muslim community who will follow the path of Allah.",
+        teacherName1:"Institute vision ",
+        teacherName2:" Institute About",
+        teacherName3:"Institute  Goal",
 
 
     },
@@ -56,7 +71,7 @@ const translations = {
         date:"যোগাযোগ : +৮৮০ ০১৯১৬৩৫৪৭৭০",
         email:"ইমেইল: Mahabub_madrasa@gmail.com ",
         // -----manu-----//
-        manuHome1: "হোম",
+        manuHome1: "হোমপেজ",
         manuCurriculum:"পাঠ্যক্রম",
         manuCurriculum1:"নূরানী পাঠ্যক্রম",
         manuCurriculum2:"নাজেরা পাঠ্যক্রম ",
@@ -75,7 +90,7 @@ const translations = {
         manuAcademic5:"ফি প্রদান",
         manuDirectors:"পরিচালক",
         manuDirectors1:"শিক্ষকবৃন্দ",
-        manuDirectors2:"অন্যান্য স্টাফ",
+        manuDirectors2:"প্রতিষ্ঠানের পরিচিতি",
         manuMadrasaGallery:"মাদ্রাসা গ্যালারি",
         manuContact:"যোগাযোগ",
         manuAdministration:"অ্যাডমিন",
@@ -93,11 +108,27 @@ const translations = {
         footerOurNewsletter1: "মাদ্রাসার সর্বশেষ আপডেট",
 
 
+
         //-----Staff-----//
 
-        staffTitle: "আমাদের স্টাফ",
+        staffTitle: "প্রতিষ্ঠানের পরিচিতি",
         staffTitle2:"হোম",
-        staffTitle1: "স্টাফ",
+        staffTitle1: "পরিচিতি",
+
+        formerTeacherTitle:"আমাদের মাদ্রাসার পরিচিতি, লক্ষ্য ও উদ্দেশ্য",
+        formerTeacherDescription:"আমাদের মাদ্রাসা ইসলামী শিক্ষা, নৈতিকতা, এবং আধুনিক জ্ঞানের সমন্বয়ে প্রতিষ্ঠিত। এখানে শিক্ষার্থীদের সঠিক দিশা, চরিত্র গঠন এবং সমাজসেবায় উৎসাহিত করা হয়।",
+        testimonial1:"মুসলিহুল উম্মাহ হিফজ মাদ্রাসা একটি ইসলামী শিক্ষা প্রতিষ্ঠান, যা শিক্ষার্থীদের কুরআন হিফজ, তাজবিদ এবং ইসলামী জ্ঞান " +
+            "প্রদান করে। মাদ্রাসাটি প্রতিষ্ঠিত হয়েছে শিশুদের আধ্যাত্মিক ও নৈতিক উন্নতির জন্য, যাতে তারা ইসলামী শিক্ষার আলোকে নিজেদের জীবন গড়ে তুলতে পারে। এখানে আধুনিক শিক্ষা ব্যবস্থার সঙ্গে ইসলামী শিক্ষার সমন্বয় করা হয়, এবং শিক্ষার্থীদের চরিত্র গঠন" +
+            " ও সমাজে ন্যায়পরায়ণতা প্রতিষ্ঠায় উৎসাহিত করা হয়। প্রতিষ্ঠানটি ইসলামী মূল্যবোধ এবং শুদ্ধাচারের দিকে বিশেষ গুরুত্ব দেয়।",
+        testimonial2:"মুসলিহুল উম্মাহ হিফজ মাদ্রাসার লক্ষ্য হলো শিক্ষার্থীদের কুরআন হিফজ, তাজবিদ এবং ইসলামী জ্ঞান শুদ্ধভাবে শিক্ষা প্রদান করা। মাদ্রাসাটি শিশুদের আধ্যাত্মিক, নৈতিক ও চরিত্রগত উন্নতি সাধন করতে চায়, যাতে তারা ইসলামী শিক্ষার মাধ্যমে সমাজে ন্যায়পরায়ণতা প্রতিষ্ঠা করতে পারে। আধুনিক শিক্ষা পদ্ধতির সাথে" +
+            " ইসলামী শিক্ষা সমন্বয় করে শিক্ষার্থীদের পূর্ণাঙ্গ বিকাশে সহায়তা করা হয়। প" +
+            "্রতিষ্ঠানের মূল লক্ষ্য হলো মুসলিম সমাজের জন্য আদর্শ নাগরিক গড়ে তোলা, যারা আল্লাহর পথে চলবে।",
+        testimonial3:"মুসলিহুল উম্মাহ হিফজ মাদ্রাসার উদ্দেশ্য হলো শিক্ষার্থীদের কুরআন হিফজ, তাজবিদ এবং ইসলামী জ্ঞান শুদ্ধভাবে শিক্ষা প্রদান করা। মাদ্রাসাটি শিক্ষার্থীদের আধ্যাত্মিক ও নৈতিক উন্নতি সাধন করতে চায়, যাতে তারা ইসলামী শিক্ষার মাধ্যমে নিজেদের চরিত্র গঠন করতে পারে। প্রতিষ্ঠানটি আধুনিক শিক্ষার সাথে ইসলামী শিক্ষার সমন্বয" +
+            "় করে শিক্ষার্থীদের মেধা ও মনন বিকাশে সহায়তা প্রদান করে। " +
+            "মাদ্রাসার মূল উদ্দেশ্য হলো মুসলিম সমাজে আদর্শ এবং ন্যায়পরায়ণ নাগরিক তৈরি করা, যারা আল্লাহর পথ অনুসরণ করবে।",
+        teacherName1:"প্রতিষ্ঠানের উদ্দেশ্য",
+        teacherName2:"প্রতিষ্ঠানের পরিচিতি",
+        teacherName3:"প্রতিষ্ঠানের লক্ষ্য",
 
     }
 };
@@ -169,6 +200,14 @@ function loadLanguage() {
     document.querySelectorAll('.staffTitle').forEach(el => el.textContent = data.staffTitle);
     document.querySelectorAll('.staffTitle2').forEach(el => el.textContent = data.staffTitle2);
     document.querySelectorAll('.staffTitle1').forEach(el => el.textContent = data.staffTitle1);
+    document.querySelectorAll('.formerTeacherTitle').forEach(el => el.textContent = data.formerTeacherTitle);
+    document.querySelectorAll('.formerTeacherDescription').forEach(el => el.textContent = data.formerTeacherDescription);
+    document.querySelectorAll('.testimonial1').forEach(el => el.textContent = data.testimonial1);
+    document.querySelectorAll('.testimonial2').forEach(el => el.textContent = data.testimonial2);
+    document.querySelectorAll('.testimonial3').forEach(el => el.textContent = data.testimonial3);
+    document.querySelectorAll('.teacherName1').forEach(el => el.textContent = data.teacherName1);
+    document.querySelectorAll('.teacherName2').forEach(el => el.textContent = data.teacherName2);
+    document.querySelectorAll('.teacherName3').forEach(el => el.textContent = data.teacherName3);
 
 }
 

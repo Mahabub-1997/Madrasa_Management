@@ -98,8 +98,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
             Route::get('manage/{class_id?}', 'PaymentController@manage')->name('payments.manage');
             Route::get('invoice/{id}/{year?}', 'PaymentController@invoice')->name('payments.invoice');
-            Route::get('receipts/{id}', 'PaymentController@receipts')->name('payments.receipts');
-            Route::get('pdf_receipts/{id}', 'PaymentController@pdf_receipts')->name('payments.pdf_receipts');
+            Route::get('receipts/{pr_id}', 'PaymentController@receipts')->name('payments.receipts');
+            Route::get('pdf_receipts/{pr_id}', 'PaymentController@pdf_receipts')->name('payments.pdf_receipts');
             Route::post('select_year', 'PaymentController@select_year')->name('payments.select_year');
             Route::post('select_class', 'PaymentController@select_class')->name('payments.select_class');
             Route::delete('reset_record/{id}', 'PaymentController@reset_record')->name('payments.reset_record');
@@ -158,7 +158,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::resource('exams', 'ExamController');
         Route::resource('dorms', 'DormController');
         Route::resource('payments', 'PaymentController');
-        Route::get('/profit_loss_report', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
+        Route::get('/profit_loss_report/{month?}/{year?}', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
         Route::get('student_info/print/{sr_id}', 'StudentRecordController@info_print')->name('student.print');
 
 

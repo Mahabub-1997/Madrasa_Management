@@ -26,17 +26,13 @@
     <link href="{{asset('/')}}frontend/css/color.css" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
-
 @endsection
-
-
 @section('content')
     <div class="iq_wrapper">
         <!-- Header Section -->
         <header class="iq_header_1">
             <!-- Header content here -->
         </header>
-
         <!-- Banner Section -->
         <div class="iner_banner ent_detail">
             <div class="container">
@@ -49,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <section class="our-teachers-page">
+        <section class="our-teachers-page" style="background-color: #f0f0f0; padding: 40px 0;">
             <div class="container">
                 <!--Teacher Wrap List Start-->
                 <div class="row">
@@ -57,12 +53,12 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <figure>
-                                <img src="extra-images/teacher-09.jpg" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-101.jpeg') }}" alt="Image Here" style="max-height: 400px;">
                             </figure>
                             <div class="text">
-                                <h4><a href="#">Khalid Saifulah</a></h4>
-                                <h6>Language Instructor</h6>
-                                <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h4><a class="NameTeacher1" href="#"></a></h4>
+                                <h6 class="teacherSubTitle1" ></h6>
+                                <p class="teacherDescription1">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -77,9 +73,9 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <div class="text">
-                                <h4><a href="#">Dr. Mamunul Haque</a></h4>
-                                <h6>Vice President</h6>
-                                <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h4><a class="NameTeacher2"  href="#"></a></h4>
+                                <h6 class="teacherSubTitle2"></h6>
+                                <p class="teacherDescription2">.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -88,7 +84,7 @@
                                 </ul>
                             </div>
                             <figure>
-                                <img src="extra-images/teacher-10.jpg" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-100.jpg') }}" alt="Image Here" style="max-height: 400px;">
                             </figure>
                         </div>
                     </div>
@@ -97,72 +93,12 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <figure>
-                                <img src="extra-images/teacher-11.jpg" alt="Image Here">
+                                <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 427px;">
                             </figure>
                             <div class="text">
-                                <h4><a href="#">Dr. Mostak Ahmed</a></h4>
-                                <h6>Manager</h6>
-                                <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
-                                <ul class="iq_footer_social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Teacher Thumb End-->
-                    <!--Teacher Thumb Start-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="iq_teacher_style_1">
-                            <figure>
-                                <img src="extra-images/teacher-12.webp" alt="Image Here">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="#">Nurul Islam Olipuri</a></h4>
-                                <h6>Language Instructor</h6>
-                                <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
-                                <ul class="iq_footer_social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Teacher Thumb End-->
-                    <!--Teacher Thumb Start-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="iq_teacher_style_1">
-                            <div class="text">
-                                <h4><a href="#">Mufti Harun Izhar</a></h4>
-                                <h6>Vice President</h6>
-                                <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
-                                <ul class="iq_footer_social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-                            <figure>
-                                <img src="extra-images/teacher-13.jpg" alt="Image Here">
-                            </figure>
-                        </div>
-                    </div>
-                    <!--Teacher Thumb End-->
-                    <!--Teacher Thumb Start-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="iq_teacher_style_1">
-                            <figure>
-                                <img src="extra-images/teacher-14.jpg" alt="Image Here">
-                            </figure>
-                            <div class="text">
-                                <h4><a href="#">Mizanur Rahman Azhari</a></h4>
-                                <h6>Manager</h6>
-                                <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h4><a class="NameTeacher3" href="#">Dr. Mostak Ahmed</a></h4>
+                                <h6 class="teacherSubTitle3">Manager</h6>
+                                <p class="teacherDescription3">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -175,13 +111,9 @@
                     <!--Teacher Thumb End-->
                 </div>
                 <!--Teacher Wrap List End-->
-
             </div>
         </section>
-
         @endsection
-
-
 @section('scripts')
 
     <script src="{{asset('/')}}frontend/js/teacher.localization.js"></script>
@@ -217,15 +149,10 @@
                 dots: true, // Enable dots for navigation
                 arrows: true // Show navigation arrows
             });
-
-
-
             console.log('chutiye');
             $('#mg-responsive-navigation').dlmenu();
         })
     </script>
-
-
 @endsection
 
 
