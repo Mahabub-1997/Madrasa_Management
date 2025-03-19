@@ -6,6 +6,7 @@ use App\Helpers\Mk;
 use App\Http\Middleware\Custom\Student;
 use App\Http\Requests\Student\StudentRecordCreate;
 use App\Http\Requests\Student\StudentRecordUpdate;
+use App\Models\StudentRecord;
 use App\Repositories\LocationRepo;
 use App\Repositories\MyClassRepo;
 use App\Repositories\StudentRepo;
@@ -149,6 +150,16 @@ class StudentRecordController extends Controller
 
         $data['sr']->load('user', 'my_class', 'section');
         return view('pages.support_team.students.show', $data);
+    }
+    public function info_print($sr_id)
+    {
+        $data['sr'] = StudentRecord::where('id', $sr_id)->first();
+        if (!Qs::userIsTeamSAT() && !Qs::userIsMyChild($data['sr']->user_id, Auth::user()->id)) {
+            return redirect(route('dashboard'))->with('pop_error', __('msg.denied'));
+        }
+
+        $data['sr']->load('user', 'my_class', 'section');
+        return view('pages.support_team.students.print', $data);
     }
 
     /**

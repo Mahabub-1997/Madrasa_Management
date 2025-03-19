@@ -159,10 +159,19 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::resource('dorms', 'DormController');
         Route::resource('payments', 'PaymentController');
         Route::get('/profit_loss_report/{month?}/{year?}', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
+        Route::get('student_info/print/{sr_id}', 'StudentRecordController@info_print')->name('student.print');
+
 
     });
     Route::resource('salaries', 'SalaryController');
 
+    Route::get('/fonts/{font}', function ($font) {
+        $path = storage_path('fonts/' . $font);
+        if (!file_exists($path)) {
+            abort(404);
+        }
+        return response()->file($path);
+    })->where('font', '.*\.ttf');
 
     /************************ AJAX ****************************/
     Route::group(['prefix' => 'ajax'], function() {
