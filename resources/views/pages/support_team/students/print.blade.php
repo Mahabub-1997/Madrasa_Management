@@ -79,7 +79,7 @@
 <div class="container">
     <div class="header-container">
         <div class="student-info">
-            <img src="{{ 'http://127.0.0.1:8000/'.$sr->photo }}" class="student-photo" alt="Student Photo">
+            <img src="{{asset($sr->photo)}}" class="student-photo" style="max-height: 200px" alt="Student Photo">
             <div>
                 <h2>{{ $sr->user->name }}</h2>
                 <p><strong>Admission No:</strong> {{ $sr->adm_no }}</p>

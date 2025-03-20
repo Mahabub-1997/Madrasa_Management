@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use PHPUnit\Exception;
 
 class StudentRecordController extends Controller
 {
@@ -184,41 +185,44 @@ class StudentRecordController extends Controller
 
     public function update(StudentRecordUpdate $req, $sr_id)
     {
-        $sr_id = Qs::decodeHash($sr_id);
-        if (!$sr_id) {
-            return Qs::goWithDanger();
-        }
-        $studentRecord = $this->student->getRecord(['id' => $sr_id])->first();
-        if (!$studentRecord) {
-            return Qs::goWithDanger();
-        }
+        try {
+            $sr_id = Qs::decodeHash($sr_id);
+            if (!$sr_id) {
+                return Qs::goWithDanger();
+            }
+            $studentRecord = $this->student->getRecord(['id' => $sr_id])->first();
+            if (!$studentRecord) {
+                return Qs::goWithDanger();
+            }
 
-        // Update user information
-        $userData = $req->only(['email', 'phone', 'phone2', 'gender']);
-        $userData['name'] = ucwords($req->student_name);
+            // Update user information
+            $userData = $req->only(['email', 'phone', 'phone2', 'gender', 'photo']);
+            $userData['name'] = $req->student_name;
 
-        if ($req->hasFile('photo')) {
-            $photo = $req->file('photo');
-            $f = Qs::getFileMetaData($photo);
-            $f['name'] = 'photo_' . time() . '.' . $f['ext'];
-            $photo->storeAs('students/' . $userData['name'], $f['name'], 'public');
-            $userData['photo'] = 'storage/students/' . $userData['name'] . '/' . $f['name'];
-        }
-        $this->user->update($studentRecord->user_id, $userData);
+            if ($req->hasFile('photo')) {
+                $photo = $req->file('photo');
+                $f = Qs::getFileMetaData($photo);
+                $f['name'] = 'photo_' . time() . '.' . $f['ext'];
+                $photo->storeAs('students/' . $userData['name'], $f['name'], 'public');
+                $userData['photo'] = 'storage/students/' . $userData['name'] . '/' . $f['name'];
+            }
+            $this->user->update($studentRecord->user_id, $userData);
 
-        // Update student record data
-        $srData = $req->except(['email', 'phone', 'phone2', 'gender', 'photo']);
-        $srData['dob'] = date('Y-m-d', strtotime($req->dob));
-        $srData['admission_date'] = date('Y-m-d', strtotime($req->admission_date));
-        if (isset($userData['photo'])) {
-            $srData['photo'] = $userData['photo'];
-        }
+            // Update student record data
+            $srData = $req->except(['email', 'phone', 'phone2', 'gender']);
+            $srData['dob'] = date('Y-m-d', strtotime($req->dob));
+            $srData['admission_date'] = date('Y-m-d', strtotime($req->admission_date));
+            if (isset($userData['photo'])) {
+                $srData['photo'] = $userData['photo'];
+            }
 
-        $this->student->updateRecord($sr_id, $srData);
+            $this->student->updateRecord($sr_id, $srData);
 
 //        return Qs::jsonUpdateOk('Student record updated successfully');
-        return Qs::updateOk('students.index'); // Updated to use Qs helper
-
+            return Qs::updateOk('students.index'); // Updated to use Qs helper
+        }catch (Exception $e){
+            return $e;
+        }
     }
 
     /**
