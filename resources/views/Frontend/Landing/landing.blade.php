@@ -405,7 +405,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -422,7 +422,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -439,7 +439,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -456,7 +456,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -473,7 +473,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -490,7 +490,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -508,7 +508,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -525,7 +525,6 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
                                         </div>
                                     </figcaption>
                                 </figure>

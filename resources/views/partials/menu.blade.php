@@ -52,7 +52,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('notice_board.index') }}" class="nav-link {{ (Route::is('NoticeBoard.index')) ? 'active' : '' }}">
-                        <i class="icon-home4"></i>
+                        <i class="icon-bubble-notification"></i>
                         <span>Notice Board</span>
                     </a>
                 </li>
@@ -130,9 +130,9 @@
 
                 @if(Qs::userIsTeamSA())
                     {{--Manage Users--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ route('users.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['users.index', 'users.show', 'users.edit']) ? 'active' : '' }}"><i class="icon-users4"></i> <span> Users</span></a>--}}
-{{--                    </li>--}}
+                    <li class="nav-item">
+                        <a href="{{ route('users.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['users.index', 'users.show', 'users.edit']) ? 'active' : '' }}"><i class="icon-users4"></i> <span> Users</span></a>
+                    </li>
 
                     {{--Manage Classes--}}
                     <li class="nav-item">
