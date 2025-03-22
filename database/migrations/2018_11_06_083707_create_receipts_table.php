@@ -22,6 +22,7 @@ class CreateReceiptsTable extends Migration
             $table->Integer('total');
             $table->string('month');
             $table->string('year');
+            $table->tinyInteger('is_residential')->default(1);
             $table->timestamps();
         });
     }

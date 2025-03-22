@@ -100,7 +100,7 @@ class PaymentController extends Controller
             $existingRecord = PaymentRecord::where('student_id', $d['sr']->id)
                 ->where('month', $month)
                 ->where('year', $year)
-                ->select(['id', 'month', 'year', 'student_id', 'tution_fee', 'khoraki', 'discount', 'due', 'paid', 'amt_paid'])
+                ->select(['id', 'month', 'year', 'student_id', 'tution_fee', 'khoraki', 'discount', 'due', 'paid', 'amt_paid', 'is_residential'])
                 ->first();
             if(!$existingRecord) {
                 $payableMonths[] = [
@@ -111,7 +111,8 @@ class PaymentController extends Controller
                     'amount' => $d['payments']->amount,
                     'paid' => 0,
                     'amt_paid' => 0,
-                    'due' => $d['payments']->tution_fee + $d['payments']->khoraki - $d['sr']->discount,
+                    'due' => $d['sr']->is_residential==1?$d['payments']->tution_fee + $d['payments']->khoraki - $d['sr']->discount: $d['payments']->tution_fee - $d['sr']->discount,
+                    'is_residential' =>  $d['sr']->is_residential,
                     'date_sort' => $date->format('Y-m'),
                 ];
             }else{
@@ -125,6 +126,7 @@ class PaymentController extends Controller
                     'amt_paid' => $existingRecord->amt_paid,
                     'due' => $existingRecord->due ,
                     'pr_id' => $existingRecord->id ,
+                    'is_residential' =>  $existingRecord->is_residential,
                     'date_sort' => $date->format('Y-m'),
                 ];
             }
@@ -259,6 +261,7 @@ class PaymentController extends Controller
             'student_id' => 'required',
             'month' => 'required',
             'year' => 'required',
+            'is_residential' => 'required',
             'pr_id' => 'nullable'
         ], [], ['amt_paid' => 'Amount Paid']);
 
@@ -271,6 +274,7 @@ class PaymentController extends Controller
             $subtotal = $student->is_residential==1?$pr->tution_fee + $pr->khoraki - $req->discount - $pr->amt_paid:$pr->tution_fee - $req->discount - $pr->amt_paid;
             $due = $subtotal - $req->amt_paid;
 
+            $data['is_residential'] = $validated['is_residential'];
             $data['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
             $data['due'] = $due;
             $data['tution_fee'] = $pr->tution_fee;
@@ -295,6 +299,7 @@ class PaymentController extends Controller
                 'payment_id' => $payments->id,
                 'month' => $req->month,
                 'year' => $req->year,
+                'is_residential' => $validated['is_residential']
             ];
             $data['ref_no'] = Pay::genRefCode();
             $record = $this->pay->createRecord($data);
@@ -307,26 +312,27 @@ class PaymentController extends Controller
         $d2['total'] = $student->is_residential==1?$data['tution_fee'] + $data['khoraki']: $data['tution_fee'];
         $d2['year'] = $req->year;
         $d2['month'] = $req->month;
+        $d2['is_residential'] = $validated['is_residential'];
 
         $this->pay->createReceipt($d2);
         return Qs::jsonUpdateOk();
 
 
-//        $pr = $this->pay->findRecord($req->pr_id);
-//        $payment = $this->pay->find($pr->payment_id);
-//        $d['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
-//        $d['balance'] = $bal = $payment->amount - $amt_p;
-//        $d['paid'] = $bal < 1 ? 1 : 0;
-//
-//        $this->pay->updateRecord($req->pr_id, $d);
-//
-//        $d2['amt_paid'] = $req->amt_paid;
-//        $d2['balance'] = $bal;
-//        $d2['pr_id'] = $req->pr_id;
-//        $d2['year'] = $this->year;
-//
-//        $this->pay->createReceipt($d2);
-//        return Qs::jsonUpdateOk();
+        $pr = $this->pay->findRecord($req->pr_id);
+        $payment = $this->pay->find($pr->payment_id);
+        $d['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
+        $d['balance'] = $bal = $payment->amount - $amt_p;
+        $d['paid'] = $bal < 1 ? 1 : 0;
+
+        $this->pay->updateRecord($req->pr_id, $d);
+
+        $d2['amt_paid'] = $req->amt_paid;
+        $d2['balance'] = $bal;
+        $d2['pr_id'] = $req->pr_id;
+        $d2['year'] = $this->year;
+
+        $this->pay->createReceipt($d2);
+        return Qs::jsonUpdateOk();
     }
 
     public function manage($class_id = NULL)
