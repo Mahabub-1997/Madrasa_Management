@@ -28,7 +28,6 @@ class SalaryController extends Controller
             'receiver' => 'required|integer|exists:users,id',
             'amount' => 'required|numeric|min:0',
             'date' => 'required|date',
-            'type' => 'required|in:yearly,monthly',
         ]);
         $date = $request->input('date', Carbon::now()->toDateString());
         $carbonDate = Carbon::parse($date);
@@ -63,7 +62,6 @@ class SalaryController extends Controller
             'receiver' => 'required|integer|exists:users,id',
             'amount' => 'required|numeric|min:0',
             'date' => 'required|date',
-            'type' => 'required|in:yearly,monthly',
         ]);
 
         $salary = Salary::findOrFail($id);
