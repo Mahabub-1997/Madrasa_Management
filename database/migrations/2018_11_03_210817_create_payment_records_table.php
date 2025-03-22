@@ -28,6 +28,7 @@ class CreatePaymentRecordsTable extends Migration
             $table->integer('khoraki')->default(0);
             $table->integer('discount')->default(0);
             $table->string('department')->nullable();
+            $table->tinyInteger('is_residential')->default(1);
             $table->string('month')->nullable();
             $table->string('year')->nullable();
             $table->timestamps();

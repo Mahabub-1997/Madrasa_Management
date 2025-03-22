@@ -269,10 +269,10 @@
                             <label>Department:</label>
                             <select name="department" class="select-search form-control" data-placeholder="Choose Department">
                                 <option value=""></option>
-                                <option {{ (old('department', $sr->department) == 'noorani') ? 'selected' : '' }} value="noorani">নূরাণী</option>
-                                <option {{ (old('department', $sr->department) == 'najera') ? 'selected' : '' }} value="najera">নাজেরা</option>
-                                <option {{ (old('department', $sr->department) == 'hifz') ? 'selected' : '' }} value="hifz">হিফয</option>
-                                <option {{ (old('department', $sr->department) == 'sunani') ? 'selected' : '' }} value="sunani">শুনানি</option>
+                                <option {{ (old('department', $sr->department) == 'noorani') ? 'selected' : '' }} value="noorani">নূরাণী বিভাগ</option>
+                                <option {{ (old('department', $sr->department) == 'najera') ? 'selected' : '' }} value="najera">নাজেরা বিভাগ</option>
+                                <option {{ (old('department', $sr->department) == 'hifz') ? 'selected' : '' }} value="hifz">হিফয বিভাগ</option>
+                                <option {{ (old('department', $sr->department) == 'sunani') ? 'selected' : '' }} value="sunani">শুনানি বিভাগ</option>
                             </select>
                         </div>
                     </div>
@@ -280,8 +280,8 @@
                         <div class="form-group">
                             <label>Residential Status:</label>
                             <select name="is_residential" class="select-search form-control" data-placeholder="Select">
-                                <option value="0" {{ (old('is_residential', $sr->is_residential) == 0) ? 'selected' : '' }}>Non Residential</option>
-                                <option value="1" {{ (old('is_residential', $sr->is_residential) == 1) ? 'selected' : '' }}>Residential</option>
+                                <option value="0" {{ (old('is_residential', $sr->is_residential) == 0) ? 'selected' : '' }}>অনাবাসিক</option>
+                                <option value="1" {{ (old('is_residential', $sr->is_residential) == 1) ? 'selected' : '' }}>আবাসিক</option>
                             </select>
                         </div>
                     </div>

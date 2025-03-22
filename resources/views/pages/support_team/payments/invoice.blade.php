@@ -28,14 +28,23 @@
                     <tbody>
                     @foreach($payable_months as $p)
                         <tr>
+
                             <td>#</td>
                             <td>{{ $p['tution_fee'] }}</td>
-                            <td>{{ $p['khoraki'] }}</td>
+                            <td>
+                                @if($p['is_residential'] == 1)
+                                    {{ $p['khoraki'] }}
+                                @else
+                                    অনাবাসিক
+                                @endif
+
+                            </td>
                             <form method="post" class="ajax-pay" action="{{route('payments.pay_now')}}">
                                 @csrf
                                 <input value="{{ $sr->user->id }}" class="form-control" required name="student_id" type="hidden">
                                 <input value="{{ $p['month'] }}" class="form-control" required name="month" type="hidden">
                                 <input value="{{ $p['year'] }}" class="form-control" required name="year" type="hidden">
+                                <input value="{{ $p['is_residential'] }}" class="form-control" required name="is_residential" type="hidden">
                                 @if(isset($p['pr_id']))
                                     <input value="{{ $p['pr_id'] }}" class="form-control" required name="pr_id" type="hidden">
                                 @endif
@@ -49,7 +58,7 @@
                                 <div class="row">
                                     @if($p['paid'] == 0)
                                         <div class="col-md-7">
-                                            <input min="1" max="{{ $payments->amount}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
+                                            <input min="1" max="{{ $p['due']}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
                                         </div>
                                         <div class="col-md-5">
                                             <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
