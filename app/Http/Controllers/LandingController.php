@@ -34,4 +34,7 @@ class LandingController extends Controller
     public function staffInfo(){
         return view('Frontend.Directors.staff-info');
     }
+    public function foodFacilities(){
+        return view('Frontend.Directors.food-facilities');
+    }
 }

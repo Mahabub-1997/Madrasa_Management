@@ -24,7 +24,8 @@ const translations = {
         manuAcademic5:"Free Payment",
         manuDirectors:"Directors",
         manuDirectors1:"Teachers",
-        manuDirectors2:"institute  Introduction",
+        manuDirectors2:"Institute  Introduction",
+        manuDirectors3:"Food Facilities",
         manuMadrasaGallery:"Madrasa Gallery",
         manuContact:"Contact",
         manuAdministration:"Administration",
@@ -81,6 +82,7 @@ const translations = {
         manuDirectors:"পরিচালক",
         manuDirectors1:"শিক্ষকবৃন্দ",
         manuDirectors2:"প্রতিষ্ঠানের পরিচিতি",
+        manuDirectors3:"খাদ্য সুবিধা",
         manuMadrasaGallery:"মাদ্রাসা গ্যালারি",
         manuContact:"যোগাযোগ",
         manuAdministration:"অ্যাডমিন",
@@ -190,6 +192,7 @@ function loadLanguage() {
     document.querySelectorAll('.teacherDescription3').forEach(el => el.textContent = data.teacherDescription3);
     document.querySelectorAll('.NameTeacher3').forEach(el => el.textContent = data.NameTeacher3);
     document.querySelectorAll('.teacherSubTitle3').forEach(el => el.textContent = data.teacherSubTitle3);
+    document.querySelectorAll('.manuDirectors3').forEach(el => el.textContent = data.manuDirectors3);
 
 }
 

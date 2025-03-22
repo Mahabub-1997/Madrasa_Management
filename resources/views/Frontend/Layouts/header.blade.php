@@ -64,6 +64,7 @@
                             <ul class="children">
                                 <li><a class="manuDirectors1" href="{{route('teacher-info')}}" >Teachers</a></li>
                                 <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
+                                <li><a class="manuDirectors3" href="{{route('food-facilities')}}">Food Facilities</a></li>
                             </ul>
                         </li>
                         <li><a class="manuMadrasaGallery" href="{{route('gallary')}}" style="font-weight: bold">Madrasa Gallery</a></li>
@@ -98,6 +99,7 @@
                             <ul class="dl-submenu">
                                 <li><a class="manuDirectors1" href="{{route('teacher-info')}}">Teachers</a></li>
                                 <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
+                                <li><a class="" href="{{route('food-facilities')}}">Food Facilities</a></li>
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu">

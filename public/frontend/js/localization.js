@@ -33,7 +33,8 @@ const translations = {
         manuAcademic5:"Free Payment",
         manuDirectors:"Directors",
         manuDirectors1:"Teachers",
-        manuDirectors2:"institute Introduction",
+        manuDirectors2:"Institute Introduction",
+        manuDirectors3:"Food Facilities",
         manuMadrasaGallery:"Madrasa Gallery",
         manuContact:"Contact",
         manuAboutUs:"About",
@@ -165,6 +166,7 @@ const translations = {
         manuDirectors:"পরিচালক",
         manuDirectors1:"শিক্ষকবৃন্দ",
         manuDirectors2:"প্রতিষ্ঠানের পরিচিতি",
+        manuDirectors3:"খাদ্য সুবিধা",
         manuMadrasaGallery:"মাদ্রাসা গ্যালারি",
         manuContact:"যোগাযোগ",
         manuAboutUs:"পরিচিতি",
@@ -299,6 +301,8 @@ function loadLanguage() {
     document.querySelectorAll('.manuDirectors').forEach(el => el.textContent = data.manuDirectors);
     document.querySelectorAll('.manuDirectors1').forEach(el => el.textContent = data.manuDirectors1);
     document.querySelectorAll('.manuDirectors2').forEach(el => el.textContent = data.manuDirectors2);
+    document.querySelectorAll('.manuDirectors3').forEach(el => el.textContent = data.manuDirectors3);
+
     document.querySelectorAll('.manuMadrasaGallery').forEach(el => el.textContent = data.manuMadrasaGallery);
     document.querySelectorAll('.manuContact').forEach(el => el.textContent = data.manuContact);
     document.querySelectorAll('.manuAboutUs').forEach(el => el.textContent = data.manuAboutUs);

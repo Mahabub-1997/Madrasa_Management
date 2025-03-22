@@ -25,6 +25,7 @@ const translations = {
         manuDirectors:"Directors",
         manuDirectors1:"Teachers",
         manuDirectors2:"institute  Introduction",
+        manuDirectors3:"Food Facilities",
         manuMadrasaGallery:"Madrasa Gallery",
         manuContact:"Contact",
         manuAdministration:"Administration",
@@ -84,6 +85,7 @@ const translations = {
         manuDirectors:"পরিচালক",
         manuDirectors1:"শিক্ষকবৃন্দ",
         manuDirectors2:"প্রতিষ্ঠানের পরিচিতি",
+        manuDirectors3:"খাদ্য সুবিধা",
         manuMadrasaGallery:"মাদ্রাসা গ্যালারি",
         manuContact:"যোগাযোগ",
         manuAdministration:"অ্যাডমিন",
@@ -194,6 +196,7 @@ function loadLanguage() {
     document.querySelectorAll('.Phone').forEach(el => el.textContent = data.Phone);
     document.querySelectorAll('.contactEmail').forEach(el => el.textContent = data.contactEmail);
     document.querySelectorAll('.ContactUs').forEach(el => el.textContent = data.ContactUs);
+    document.querySelectorAll('.manuDirectors3').forEach(el => el.textContent = data.manuDirectors3);
 
 }
 

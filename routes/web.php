@@ -9,6 +9,7 @@ Route::get('/gallary', 'LandingController@gallaryUs')->name('gallary');
 Route::get('/payment-fee', 'LandingController@paymentFee')->name('payment-fee');
 Route::get('/teacher-info', 'LandingController@teacherInfo')->name('teacher-info');
 Route::get('/staff-info', 'LandingController@staffInfo')->name('staff-info');
+Route::get('/food-facilities', 'LandingController@foodFacilities')->name('food-facilities');
 
 
 Route::get('/contact-us', 'LandingController@ContactUs')->name('contact-us');
