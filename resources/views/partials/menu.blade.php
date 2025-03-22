@@ -58,7 +58,7 @@
                 </li>
                 {{--Administrative--}}
                 @if(Qs::userIsAdministrative())
-                    <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'expenses.index', 'profit_loss_report.index', 'salaries.index', 'payments.invoice', 'payments.receipts', 'payments.edit', 'payments.manage', 'payments.manage.dued', 'payments.show',]) ? 'nav-item-expanded nav-item-open' : '' }} ">
+                    <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'expenses.index', 'profit_loss_report.index', 'salaries.index', 'payments.invoice', 'payments.receipts', 'payments.edit', 'payments.manage', 'payments.manage.dued', 'payments.show', 'yearly_profit_loss_report.index', 'profit_loss_report.index']) ? 'nav-item-expanded nav-item-open' : '' }} ">
                         <a href="#" class="nav-link"><i class="icon-office"></i> <span> Administrative</span></a>
 
                         <ul class="nav nav-group-sub" data-submenu-title="Administrative">
@@ -85,6 +85,7 @@
                             </li>
                             <li class="nav-item {{ in_array(Route::currentRouteName(), ['profit_loss_report.index']) ? 'nav-item-expanded' : '' }}">
                                 <a href="{{ route('profit_loss_report.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['profit_loss_report.index']) ? 'active' : '' }}">Profit/Loss Report</a>
+                                <a href="{{ route('yearly_profit_loss_report.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['yearly_profit_loss_report.index']) ? 'active' : '' }}">Yearly Profit/Loss Report</a>
                             </li>
                             @endif
                         </ul>

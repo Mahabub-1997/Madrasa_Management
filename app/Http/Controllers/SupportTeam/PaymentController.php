@@ -197,7 +197,7 @@ class PaymentController extends Controller
             'total_salaries' => $totalSalaries,
             'total_expenses' => $totalExpenses,
             'totalAdmissionThisMonth' => $totalAdmissionThisMonth * $d['payments']->admission_fee,
-            'profit_or_loss' => $profitOrLoss
+            'profit_or_loss' => $profitOrLoss,
         ];
 
         return view('pages.support_team.Report.profit_loss', $d);
@@ -222,44 +222,42 @@ class PaymentController extends Controller
         // Convert month name ('January') to number ('01') for database filtering
         $monthNumber = date('m', strtotime($month));
 
-        // Total admissions for selected month & year
-        $totalAdmissionThisMonth = DB::table('student_records')
+
+        $totalAdmissionYearly = DB::table('student_records')
             ->whereYear('admission_date', $year)
-            ->whereMonth('admission_date', $monthNumber)
             ->count();
 
-        // Income, salaries, and expenses for selected month & year
-        $totalIncome = DB::table('payment_records')
-            ->where('month', $month)
+
+        $totalIncomeYearly = DB::table('payment_records')
             ->where('year', $year)
             ->sum('amt_paid');
 
-        $totalSalaries = DB::table('salaries')
-            ->where('month', $month)
+
+        $totalSalariesYearly = DB::table('salaries')
             ->where('year', $year)
             ->sum('amount');
 
-        $totalExpenses = DB::table('expenses')
-            ->where('month', $month)
+
+        $totalExpensesYearly = DB::table('expenses')
             ->where('year', $year)
             ->sum('amount');
 
         // Profit or Loss calculation
-        $profitOrLoss = $totalIncome - ($totalSalaries + $totalExpenses) + ($totalAdmissionThisMonth * $d['payments']->admission_fee);
+        $profitOrLossYearly = $totalIncomeYearly - ($totalSalariesYearly + $totalExpensesYearly) + ($totalAdmissionYearly * $d['payments']->admission_fee);
 
         // Prepare data for the view
         $d['report'] = [
             'id' => 1,
             'month' => $month,
             'year' => $year,
-            'total_income' => $totalIncome,
-            'total_salaries' => $totalSalaries,
-            'total_expenses' => $totalExpenses,
-            'totalAdmissionThisMonth' => $totalAdmissionThisMonth * $d['payments']->admission_fee,
-            'profit_or_loss' => $profitOrLoss
+            'total_income' => $totalIncomeYearly,
+            'total_salaries' => $totalSalariesYearly,
+            'total_expenses' => $totalExpensesYearly,
+            'totalAdmissionThisMonth' => $totalAdmissionYearly * $d['payments']->admission_fee,
+            'profit_or_loss' => $profitOrLossYearly,
         ];
 
-        return view('pages.support_team.Report.profit_loss', $d);
+        return view('pages.support_team.Report.yearly_profit_loss', $d);
     }
 
     public function receipts($pr_id)
