@@ -1,4 +1,43 @@
 <?php
+Route::get('/symlink', function () {
+    $target =$_SERVER['DOCUMENT_ROOT'].'/Madrasa/storage/app/public';
+    $link = $_SERVER['DOCUMENT_ROOT'].'/public_html/storage';
+    try {
+        symlink($target, $link);
+    }catch (Exception $e){
+        echo $e;
+    }
+
+    echo "Done";
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/migrate', function () {
+        if (auth()->user()->user_type !== 'super_admin') {
+            abort(403, 'Unauthorized');
+        }
+        Artisan::call('migrate');
+        return 'Migration completed!';
+    });
+
+    Route::get('/optimize', function () {
+        if (auth()->user()->user_type !== 'super_admin') {
+            abort(403, 'Unauthorized');
+        }
+        Artisan::call('optimize:clear');
+        return 'Optimization completed!';
+    });
+
+    Route::get('/seed', function () {
+        if (auth()->user()->user_type !== 'super_admin') {
+            abort(403, 'Unauthorized');
+        }
+        Artisan::call('db:seed');
+        return 'Database seeding completed!';
+    });
+});
+
+
+
 
 Auth::routes();
 Route::get('/', 'LandingController@dashboard')->name('landing');

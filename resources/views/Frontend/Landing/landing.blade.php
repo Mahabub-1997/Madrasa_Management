@@ -223,7 +223,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img src="{{ asset('frontend/extra-images/madrsa-2.AVIF') }}" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/madrsa-2.jpg') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -250,7 +250,7 @@
                         <div class="col-md-4 hidden-sm">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img src="{{ asset('frontend/extra-images/madrasa.AVIF') }}" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/madrasa.jpg') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
