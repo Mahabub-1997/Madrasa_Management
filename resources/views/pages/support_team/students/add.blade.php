@@ -162,10 +162,10 @@
                             <label>Department:</label>
                             <select name="department" class="select-search form-control" data-placeholder="Choose Department">
                                 <option value=""></option>
-                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">Noorani</option>
-                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">Najera</option>
-                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">Hifz</option>
-                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">Sunani</option>
+                                <option {{ (old('department') == 'noorani') ? 'selected' : '' }} value="noorani">নূরাণী</option>
+                                <option {{ (old('department') == 'najera') ? 'selected' : '' }} value="najera">নাজেরা</option>
+                                <option {{ (old('department') == 'hifz') ? 'selected' : '' }} value="hifz">হিফয</option>
+                                <option {{ (old('department') == 'sunani') ? 'selected' : '' }} value="sunani">শুনানি</option>
                             </select>
                         </div>
                     </div>

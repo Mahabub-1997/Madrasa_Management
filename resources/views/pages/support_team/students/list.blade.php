@@ -10,18 +10,16 @@
         <div class="card-body">
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="all-students">
-                    <table class="table datatable-button-html5-columns">
+                    <table class="table datatable-button-html5-columns" style="width: 100% !important; table-layout: auto !important;">
                         <thead>
                         <tr>
                             <th>S/N</th>
                             <th>Photo</th>
                             <th>Name</th>
-                            <th>ADM_No</th>
+                            <th>Admission_No</th>
                             <th>Section</th>
-                            <th>Email</th>
                             <th>Phone</th>
                             <th>Department</th>
-                            <th>Permanent Address</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -41,10 +39,8 @@
                                 <td>{{ $s->user->name }}</td>
                                 <td>{{ $s->adm_no }}</td>
                                 <td>{{ $s->section ? $s->section->name : 'N/A' }}</td>
-                                <td>{{ $s->user->email }}</td>
                                 <td>{{ $s->user->phone }}</td>
                                 <td>{{ $s->department ?? 'N/A' }}</td>
-                                <td>{{ $s->permanent_address ?? 'N/A' }}</td>
                                 <td class="text-center">
                                     <div class="list-icons">
                                         <div class="dropdown">

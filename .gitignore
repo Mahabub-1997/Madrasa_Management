@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /.idea
+composer.lock
 Homestead.json
 Homestead.yaml
 npm-debug.log
