@@ -73,5 +73,9 @@ class StudentRecord extends Eloquent
     {
         return $this->belongsTo(Dorm::class);
     }
+    public function payment_records()
+    {
+        return $this->belongsTo(PaymentRecord::class, 'id','student_id');
+    }
 
 }

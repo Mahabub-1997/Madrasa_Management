@@ -24,12 +24,6 @@
             </tr>
         </table>
 
-        {{--Background Logo--}}
-        <div style="position: relative;  text-align: center; ">
-            <img src="{{ $s['logo'] }}"
-                 style="max-width: 500px; max-height:600px; margin-top: 60px; position:absolute ; opacity: 0.1; margin-left: auto;margin-right: auto; left: 0; right: 0;"/>
-        </div>
-
         {{--Receipt No --}}
     <div class="bold arial" style="text-align: center; float:right; width: 200px; padding: 5px; margin-right:30px">
         <div style="padding: 10px 20px; width: 200px; background-color: lightcyan;">
@@ -49,7 +43,7 @@
 
         {{--Photo--}}
         <div style="margin: 15px;">
-            <img style="width: 100px; height: 100px; float: left;" src="{{ $sr->user->photo }}" alt="...">
+            <img style="width: 100px; height: 100px; float: left;" src="{{asset($sr->user->photo) }}" alt="...">
         </div>
 
        <div style="float: left; margin-left: 20px">
@@ -64,7 +58,7 @@
                </tr>
                <tr>
                    <td class="bold">CLASS:</td>
-                   <td>{{ $sr->my_class->name }}</td>
+                   <td>{{ $sr->my_class->name??'none' }}</td>
                </tr>
            </table>
        </div>
@@ -78,17 +72,23 @@
         <table class="td-left" style="font-size: 16px" cellspacing="2" cellpadding="2">
                 <tr>
                     <td class="bold">REFERENCE:</td>
-                    <td>{{ $payment->ref_no }}</td>
+                    <td>{{ $pr->ref_no }}</td>
                     <td class="bold">Payment Month/Year:</td>
                     <td>{{ $pr->month.'-'.$pr->year }}</td>
                 </tr>
                 <tr>
                     <td class="bold">AMOUNT:</td>
-                    <td>{{ $payment->amount }}</td>
+                    <td>
+                        @if($pr->is_residential == 1)
+                            {{ $payment->tution_fee + $payment->khoraki }}
+                        @else
+                            {{ $payment->tution_fee }}
+                        @endif
+                    </td>
                     <td class="bold">DISCOUNT:</td>
                     <td>{{ $pr->discount }}</td>
                     <td class="bold">GRAND TOTAL:</td>
-                    <td>{{  $payment->amount - $pr->discount }}</td>
+                    <td>{{  $receipts[0]->total }}</td>
                 </tr>
             </table>
 

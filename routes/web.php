@@ -98,6 +98,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::group(['prefix' => 'payments'], function(){
 
             Route::get('manage/{class_id?}', 'PaymentController@manage')->name('payments.manage');
+            Route::get('manage_dued/{month?}/{year?}', 'PaymentController@manageDuedStudents')->name('payments.manage.dued');
+            Route::get('print_dued/{month?}/{year?}', 'PaymentController@duedPrint')->name('payments.dued.print');
             Route::get('invoice/{id}/{year?}', 'PaymentController@invoice')->name('payments.invoice');
             Route::get('receipts/{pr_id}', 'PaymentController@receipts')->name('payments.receipts');
             Route::get('pdf_receipts/{pr_id}', 'PaymentController@pdf_receipts')->name('payments.pdf_receipts');

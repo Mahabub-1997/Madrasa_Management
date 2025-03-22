@@ -23,6 +23,10 @@ class StudentRepo {
     {
         return StudentRecord::where(['grad' => 0]);
     }
+    public function activeStudentsWithPaymentRecords()
+    {
+        return StudentRecord::where(['grad' => 0])->with('payment_records');
+    }
 
     public function gradStudents()
     {
