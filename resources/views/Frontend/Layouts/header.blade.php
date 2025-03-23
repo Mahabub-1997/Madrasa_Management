@@ -17,7 +17,7 @@
                             @endphp
                             @if(isset($noticeboard))
                                 <div class="text-carousel">
-                                    <div class="text-carousel-inner" style="animation: slideText {{ count($noticeboard) * 8 }}s linear infinite;">
+                                    <div class="text-carousel-inner" style="animation: slideText {{ count($noticeboard) * 14 }}s linear infinite;">
                                         @foreach($noticeboard as $notice)
                                             <span>{{ $notice }}</span>
                                             @if(!$loop->last) <span class="separator">|</span> @endif
@@ -41,9 +41,9 @@
             <div class="navigation-wrapper pull-left">
                 <div class="navigation pull-left">
                     <ul>
-                        <li ><a class="manuHome1" href="{{route('landing')}}" style="font-weight: bold">Home</a></li>
+                        <li ><a class="manuHome1" href="{{route('landing')}}" style="font-weight: bold"></a></li>
 
-                        <li><a class="manuCurriculum" href="#" style="font-weight: bold">Curriculum</a>
+                        <li><a class="manuCurriculum" href="#" style="font-weight: bold"></a>
                             <ul class="children ">
                                 <li><a  class="manuCurriculum1" href=""></a></li>
                                 <li><a class="manuCurriculum2" href=""></a></li>
@@ -52,7 +52,7 @@
                             </ul>
                         </li>
 
-                        <li><a class="manuAdmissionProcess" href="#" style="font-weight: bold">Admission Process</a>
+                        <li><a class="manuAdmissionProcess" href="#" style="font-weight: bold"></a>
                             <ul class="children">
                                 <li><a class="manuAdmissionProcess1" href="{{route('admission-notice')}}">Admission Notice</a></li>
 {{--                                <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>--}}
@@ -60,15 +60,15 @@
 {{--                                <li><a class="manuAcademic5"  href="{{route('payment-fee')}}">Fee Payment</a></li>--}}
                             </ul>
                         </li>
-                        <li><a class="manuDirectors" href="#" style="font-weight: bold">Directors</a>
+                        <li><a class="manuDirectors" href="#" style="font-weight: bold"></a>
                             <ul class="children">
                                 <li><a class="manuDirectors1" href="{{route('teacher-info')}}" >Teachers</a></li>
                                 <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
                                 <li><a class="manuDirectors3" href="{{route('food-facilities')}}">Food Facilities</a></li>
                             </ul>
                         </li>
-                        <li><a class="manuMadrasaGallery" href="{{route('gallary')}}" style="font-weight: bold">Madrasa Gallery</a></li>
-                        <li><a class="manuContact" href="{{route('contact-us')}}" style="font-weight: bold">Contact</a></li>
+                        <li><a class="manuMadrasaGallery" href="{{route('gallary')}}" style="font-weight: bold"></a></li>
+                        <li><a class="manuContact" href="{{route('contact-us')}}" style="font-weight: bold"></a></li>
                         <li><a class="manuAdministration" href="{{route('home')}}" style="font-weight: bold"></a></li>
                     </ul>
                 </div>
@@ -77,9 +77,9 @@
                     <button class="dl-trigger">Open Menu</button>
                     <ul class="dl-menu">
                         <li class="menu-item mg-parent-menu">
-                            <a class="manuHome1" href="{{route('landing')}}">Home</a>
+                            <a class="manuHome1" href="{{route('landing')}}"></a>
                         </li>
-                        <li class="menu-item mg-parent-menu"><a class="manuCurriculum" href="#">Curriculum</a>
+                        <li class="menu-item mg-parent-menu"><a class="manuCurriculum" href="#"></a>
                             <ul class="dl-submenu">
                                 <li><a class="manuCurriculum1" href="#"></a></li>
                                 <li><a  class="manuCurriculum2" href="#"></a></li>
@@ -87,7 +87,7 @@
                                 <li><a  class="manuCurriculum4" href="#"></a></li>
                             </ul>
                         </li>
-                        <li class="menu-item mg-parent-menu"><a class="manuAdmissionProcess"  href="#">Admission Process</a>
+                        <li class="menu-item mg-parent-menu"><a class="manuAdmissionProcess"  href="#"></a>
                             <ul class="dl-submenu">
                                 <li><a class="manuAdmissionProcess1" href="{{route('admission-notice')}}">Admission Notice</a></li>
 {{--                                <li><a class="manuAdmissionProcess2" href="{{route('admission-process')}}">Admission Procedure</a></li>--}}
@@ -95,7 +95,7 @@
 {{--                                <li><a class="manuAcademic5" href="{{route('payment-fee')}}"> Payment Fee</a></li>--}}
                             </ul>
                         </li>
-                        <li class="menu-item mg-parent-menu"><a class="manuDirectors" href="#">Directors</a>
+                        <li class="menu-item mg-parent-menu"><a class="manuDirectors" href="#"></a>
                             <ul class="dl-submenu">
                                 <li><a class="manuDirectors1" href="{{route('teacher-info')}}">Teachers</a></li>
                                 <li><a class="manuDirectors2" href="{{route('staff-info')}}">Other Staff</a></li>
@@ -103,14 +103,14 @@
                             </ul>
                         </li>
                         <li class="menu-item mg-parent-menu">
-                            <a  class="manuMadrasaGallery" href="{{route('gallary')}}">Madrasa Gallery</a>
+                            <a  class="manuMadrasaGallery" href="{{route('gallary')}}"></a>
                         </li>
                         <li class="menu-item mg-parent-menu">
-                            <a class="manuContact" href="{{route('contact-us')}}">Contact</a>
+                            <a class="manuContact" href="{{route('contact-us')}}"></a>
                         </li>
 
                         <li class="menu-item mg-parent-menu">
-                            <a class="manuAdministration" href="{{route('home')}}">Administration</a>
+                            <a class="manuAdministration" href="{{route('home')}}"></a>
                         </li>
                     </ul>
                 </div>

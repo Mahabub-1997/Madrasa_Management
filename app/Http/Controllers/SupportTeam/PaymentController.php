@@ -197,10 +197,67 @@ class PaymentController extends Controller
             'total_salaries' => $totalSalaries,
             'total_expenses' => $totalExpenses,
             'totalAdmissionThisMonth' => $totalAdmissionThisMonth * $d['payments']->admission_fee,
-            'profit_or_loss' => $profitOrLoss
+            'profit_or_loss' => $profitOrLoss,
         ];
 
         return view('pages.support_team.Report.profit_loss', $d);
+    }
+    public function yearly_profit_loss_report(Request $request)
+    {
+        $d['payments'] = $this->pay->getPaymentYears();
+
+        // Get request values for month and year
+        $month = $request->input('month', Carbon::now()->format('F'));  // Default to current month
+        $year = $request->input('year', Carbon::now()->format('Y'));    // Default to current year if not provided
+
+        // Check if the month or year is empty (' ' or '')
+        if (empty($month) || $month === '' || $month === ' ') {
+            $month = Carbon::now()->format('F'); // Default to current month
+        }
+
+        if (empty($year)|| $year === '' || $year === ' ') {
+            $year = Carbon::now()->format('Y'); // Default to current year if empty
+        }
+
+        // Convert month name ('January') to number ('01') for database filtering
+        $monthNumber = date('m', strtotime($month));
+
+
+        $totalAdmissionYearly = DB::table('student_records')
+            ->whereYear('admission_date', $year)
+            ->count();
+
+
+        $totalIncomeYearly = DB::table('payment_records')
+            ->where('year', $year)
+            ->sum('amt_paid');
+
+
+        $totalSalariesYearly = DB::table('salaries')
+            ->where('year', $year)
+            ->sum('amount');
+
+
+        $totalExpensesYearly = DB::table('expenses')
+            ->where('year', $year)
+            ->sum('amount');
+
+        // Profit or Loss calculation
+        $profitOrLossYearly = $totalIncomeYearly - ($totalSalariesYearly + $totalExpensesYearly) + ($totalAdmissionYearly * $d['payments']->admission_fee);
+
+        // Prepare data for the view
+        $d['report'] = [
+            'id' => 1,
+            'month' => $month,
+            'year' => $year,
+            'total_income' => $totalIncomeYearly,
+            'total_salaries' => $totalSalariesYearly,
+            'total_expenses' => $totalExpensesYearly,
+            'totalAdmissionThisMonth' => $totalAdmissionYearly * $d['payments']->admission_fee,
+            'profit_or_loss' => $profitOrLossYearly,
+        ];
+
+        return view('pages.support_team.Report.yearly_profit_loss', $d);
     }
 
     public function receipts($pr_id)
@@ -264,6 +321,7 @@ class PaymentController extends Controller
             'is_residential' => 'required',
             'pr_id' => 'nullable'
         ], [], ['amt_paid' => 'Amount Paid']);
+        Log::debug('start chutiye');
 
         $student = $this->student->findByUserId($req->student_id)->first();
         $payments = $this->pay->getPaymentYears();
@@ -271,10 +329,10 @@ class PaymentController extends Controller
 
         if ($req->pr_id) {
             $pr = $this->pay->findRecord($req->pr_id);
-            $subtotal = $student->is_residential==1?$pr->tution_fee + $pr->khoraki - $req->discount - $pr->amt_paid:$pr->tution_fee - $req->discount - $pr->amt_paid;
+            $subtotal = $validated['is_residential']=='1'?$pr->tution_fee + $pr->khoraki - $req->discount - $pr->amt_paid:$pr->tution_fee - $req->discount - $pr->amt_paid;
             $due = $subtotal - $req->amt_paid;
 
-            $data['is_residential'] = $validated['is_residential'];
+            $data['is_residential'] = (int)$validated['is_residential'];
             $data['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
             $data['due'] = $due;
             $data['tution_fee'] = $pr->tution_fee;
@@ -282,8 +340,9 @@ class PaymentController extends Controller
             $data['paid'] = $due < 1 ? 1 : 0;
             $record = $this->pay->updateRecord($pr->id, $data);
             $d2['pr_id'] = $pr->id;
+            Log::debug($validated['is_residential']);
         }else{
-            $subtotal = $student->is_residential==1?$payments->tution_fee + $payments->khoraki - $req->discount:$payments->tution_fee - $req->discount ;
+            $subtotal = $validated['is_residential']=='1'?$payments->tution_fee + $payments->khoraki - $req->discount:$payments->tution_fee - $req->discount ;
             $due = $subtotal - $req->amt_paid;
             $due <= 0 ? $pay_status = 1 : $pay_status = 0;
 
@@ -299,8 +358,9 @@ class PaymentController extends Controller
                 'payment_id' => $payments->id,
                 'month' => $req->month,
                 'year' => $req->year,
-                'is_residential' => $validated['is_residential']
+                'is_residential' => (int)$validated['is_residential']
             ];
+            Log::debug($validated['is_residential']);
             $data['ref_no'] = Pay::genRefCode();
             $record = $this->pay->createRecord($data);
             $d2['pr_id'] = $record->id;
@@ -309,30 +369,31 @@ class PaymentController extends Controller
         $rcpt = Receipt::where('pr_id', $req->pr_id)->delete();
         $d2['amt_paid'] = $data['amt_paid'];
         $d2['due'] = $data['due'];
-        $d2['total'] = $student->is_residential==1?$data['tution_fee'] + $data['khoraki']: $data['tution_fee'];
+        $d2['total'] = $validated['is_residential']=='1'?$data['tution_fee'] + $data['khoraki']: $data['tution_fee'];
         $d2['year'] = $req->year;
         $d2['month'] = $req->month;
-        $d2['is_residential'] = $validated['is_residential'];
+        $d2['is_residential'] = (int)$validated['is_residential'];
+        Log::debug($validated['is_residential']);
 
         $this->pay->createReceipt($d2);
-        return Qs::jsonUpdateOk();
+        return Qs::updateOk(['payments.invoice', Qs::hash($req->student_id)]);
 
 
-        $pr = $this->pay->findRecord($req->pr_id);
-        $payment = $this->pay->find($pr->payment_id);
-        $d['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
-        $d['balance'] = $bal = $payment->amount - $amt_p;
-        $d['paid'] = $bal < 1 ? 1 : 0;
-
-        $this->pay->updateRecord($req->pr_id, $d);
-
-        $d2['amt_paid'] = $req->amt_paid;
-        $d2['balance'] = $bal;
-        $d2['pr_id'] = $req->pr_id;
-        $d2['year'] = $this->year;
-
-        $this->pay->createReceipt($d2);
-        return Qs::jsonUpdateOk();
+//        $pr = $this->pay->findRecord($req->pr_id);
+//        $payment = $this->pay->find($pr->payment_id);
+//        $d['amt_paid'] = $amt_p = $pr->amt_paid + $req->amt_paid;
+//        $d['balance'] = $bal = $payment->amount - $amt_p;
+//        $d['paid'] = $bal < 1 ? 1 : 0;
+//
+//        $this->pay->updateRecord($req->pr_id, $d);
+//
+//        $d2['amt_paid'] = $req->amt_paid;
+//        $d2['balance'] = $bal;
+//        $d2['pr_id'] = $req->pr_id;
+//        $d2['year'] = $this->year;
+//
+//        $this->pay->createReceipt($d2);
+//        return Qs::jsonUpdateOk();
     }
 
     public function manage($class_id = NULL)
@@ -357,6 +418,86 @@ class PaymentController extends Controller
 
         return view('pages.support_team.payments.manage', $d);
     }
+    public function manageDuedStudents(Request $request)
+    {
+        // Get request values for month and year
+        $month = $request->input('month', Carbon::now()->format('F'));
+        $year = $request->input('year', Carbon::now()->format('Y'));
+
+        // Check if the month or year is empty (' ' or '')
+        if (empty($month) || $month === '' || $month === ' ') {
+            $month = Carbon::now()->format('F');
+        }
+
+        if (empty($year)|| $year === '' || $year === ' ') {
+            $year = Carbon::now()->format('Y');
+        }
+        $monthNumber = date('m', strtotime($month));
+        $d['my_classes'] = $this->my_class->all();
+        $d['fee_info'] = $this->pay->getPaymentYears();
+        $d['selected'] = false;
+
+        $studentsWithDue = $this->student->activeStudentsWithPaymentRecords()
+            ->whereYear('admission_date', '<=', $year)
+            ->whereHas('payment_records', function ($query) use ($month, $year) {
+                $query->where('month', $month)
+                    ->where('year', $year)
+                    ->where('due', '>', 0);
+            })->get();
+
+        // Get students who have NO payment records at all
+        $studentsWithoutRecords = $this->student->activeStudents()
+            ->whereYear('admission_date', '<=', $year)
+            ->whereDoesntHave('payment_records')->get();
+
+        // Combine both queries
+        $d['students'] = $st = $studentsWithDue->merge($studentsWithoutRecords)->sortBy('user.name');
+
+        if ($st->count() < 1) {
+            return Qs::goWithDanger('payments.manage.dued');
+        }
+
+        $d['selected'] = true;
+        $d['month'] = $month;
+        $d['year'] = $year;
+
+        return view('pages.support_team.payments.manage_dued', $d);
+    }
+    public function duedPrint($class_id = NULL)
+    {
+        $d['my_classes'] = $this->my_class->all();
+        $d['fee_info'] = $this->pay->getPaymentYears();
+        $d['selected'] = false;
+
+        $currentMonth = now()->format('F');
+        $currentYear = now()->year;
+
+        $studentsWithDue = $this->student->activeStudentsWithPaymentRecords()
+            ->whereHas('payment_records', function ($query) use ($currentMonth, $currentYear) {
+                $query->where('month', $currentMonth)
+                    ->where('year', $currentYear)
+                    ->where('due', '>', 0);
+            });
+
+        // Get students who have NO payment records at all
+        $studentsWithoutRecords = $this->student->activeStudents()
+            ->whereDoesntHave('payment_records');
+
+        // Combine both queries
+        $d['students'] = $st = $studentsWithDue
+            ->union($studentsWithoutRecords)
+            ->get()
+            ->sortBy('user.name');
+
+        if ($st->count() < 1) {
+            return Qs::goWithDanger('payments.manage.dued');
+        }
+
+        $d['selected'] = true;
+
+        return view('pages.support_team.payments.dued_print', $d);
+    }
+
 
     public function select_class(Request $req)
     {

@@ -52,26 +52,27 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('notice_board.index') }}" class="nav-link {{ (Route::is('NoticeBoard.index')) ? 'active' : '' }}">
-                        <i class="icon-home4"></i>
+                        <i class="icon-bubble-notification"></i>
                         <span>Notice Board</span>
                     </a>
                 </li>
                 {{--Administrative--}}
                 @if(Qs::userIsAdministrative())
-                    <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'expenses.index', 'profit_loss_report.index', 'salaries.index', 'payments.invoice', 'payments.receipts', 'payments.edit', 'payments.manage', 'payments.show',]) ? 'nav-item-expanded nav-item-open' : '' }} ">
+                    <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'expenses.index', 'profit_loss_report.index', 'salaries.index', 'payments.invoice', 'payments.receipts', 'payments.edit', 'payments.manage', 'payments.manage.dued', 'payments.show', 'yearly_profit_loss_report.index', 'profit_loss_report.index']) ? 'nav-item-expanded nav-item-open' : '' }} ">
                         <a href="#" class="nav-link"><i class="icon-office"></i> <span> Administrative</span></a>
 
                         <ul class="nav nav-group-sub" data-submenu-title="Administrative">
 
                             {{--Payments--}}
                             @if(Qs::userIsTeamAccount())
-                            <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.edit', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'nav-item-expanded' : '' }}">
+                            <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.edit', 'payments.manage', 'payments.manage.dued', 'payments.show', 'payments.invoice']) ? 'nav-item-expanded' : '' }}">
 
-                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.create', 'payments.manage', 'payments.show', 'payments.invoice']) ? 'active' : '' }}">Payments</a>
+                                <a href="#" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.edit', 'payments.create', 'payments.manage', 'payments.manage.dued', 'payments.show', 'payments.invoice']) ? 'active' : '' }}">Payments</a>
 
                                 <ul class="nav nav-group-sub">
                                     <li class="nav-item"><a href="{{ route('payments.create') }}" class="nav-link {{ Route::is('payments.create') ? 'active' : '' }}">Payments Info</a></li>
                                     <li class="nav-item"><a href="{{ route('payments.manage') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.manage', 'payments.invoice', 'payments.receipts']) ? 'active' : '' }}">Student Payments</a></li>
+                                    <li class="nav-item"><a href="{{ route('payments.manage.dued') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['payments.manage.dued', 'payments.invoice', 'payments.receipts']) ? 'active' : '' }}">Dued Students</a></li>
 
                                 </ul>
 
@@ -84,6 +85,7 @@
                             </li>
                             <li class="nav-item {{ in_array(Route::currentRouteName(), ['profit_loss_report.index']) ? 'nav-item-expanded' : '' }}">
                                 <a href="{{ route('profit_loss_report.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['profit_loss_report.index']) ? 'active' : '' }}">Profit/Loss Report</a>
+                                <a href="{{ route('yearly_profit_loss_report.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['yearly_profit_loss_report.index']) ? 'active' : '' }}">Yearly Profit/Loss Report</a>
                             </li>
                             @endif
                         </ul>
@@ -130,9 +132,9 @@
 
                 @if(Qs::userIsTeamSA())
                     {{--Manage Users--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{ route('users.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['users.index', 'users.show', 'users.edit']) ? 'active' : '' }}"><i class="icon-users4"></i> <span> Users</span></a>--}}
-{{--                    </li>--}}
+                    <li class="nav-item">
+                        <a href="{{ route('users.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['users.index', 'users.show', 'users.edit']) ? 'active' : '' }}"><i class="icon-users4"></i> <span> Users</span></a>
+                    </li>
 
                     {{--Manage Classes--}}
                     <li class="nav-item">

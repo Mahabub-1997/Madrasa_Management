@@ -234,10 +234,77 @@
                                 </tbody>
                             </table>
                         </div>
+{{--                <h2 style="padding: 10px; >খাদ্য তালিকা</h2>--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-12 text-center">--}}
+{{--                        <img src="{{ asset('frontend/extra-images/food.jpg') }}" alt="Contact Image" style="max-width: 70%; height: auto;">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+                <div class="col-md-8">
+
+
+                    <div class="iq_search_courses" style="margin-left: 25%">
+
+                        <table class="table">
+                            <h4>Madrasa Admission Information 2025</h4>
+                            <tr>
+                                <th class="col-md-2 text-center"   style="font-weight: bold;">বার</th>
+                                <th class="col-md-2 text-center"   style="font-weight: bold;"> সকাল</th>
+                                <th class="col-md-2 text-center"   style="font-weight: bold;">দুপুর</th>
+                                <th class="col-md-2 text-center"   style="font-weight: bold;">রাত </th>
+                            </tr>
+                            <tr>
+                                <td class="col-md-2">শনিবার</td>
+                                <td class="col-md-2">ভাত, ভর্তা, ডাল</td>
+                                <td class="col-md-2">ভাত, মাছ/ডিম ভাজি, ডাল</td>
+                                <td class="col-md-2"> ভাত, মুরগি দিয়ে সবজি, ডাল</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-2">রবিবার</td>
+                                <td class="col-md-2">ভুনা খিচুরী</td>
+                                <td class="col-md-2">ভাত, গোস্ত, ডাল</td>
+                                <td class="col-md-2">ভাত, ডিম ভাজি, ডাল</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-2">সোমবার </td>
+                                <td class="col-md-2">ভাত, ভাজি, ডাল</td>
+                                <td class="col-md-2"> ভাত, ডিম, ডাল</td>
+                                <td class="col-md-2"> ভাত, সবজি, ডাল</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-2">মঙ্গলবার  </td>
+                                <td class="col-md-2">ভাত, ভর্তা, ডাল</td>
+                                <td class="col-md-2">  বিরিয়ানী/মোরগ পোলাও</td>
+                                <td class="col-md-2">ভাত, গিলা-কলিজা দিয়ে বুটের ডাল।</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-2">বুধবার </td>
+                                <td class="col-md-2">ভুনা খিচুরী</td>
+                                <td class="col-md-2"> ভাত, মাছ/ডিম ভাজি, ডাল</td>
+                                <td class="col-md-2">  ভাত, ভর্তা, ডাল</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-2">বৃহস্পতিবার  </td>
+                                <td class="col-md-2">ভাত, বুটের ডাল</td>
+                                <td class="col-md-2"> ভাত, গোস্ত, ডাল</td>
+                                <td class="col-md-2">ভাত, ডিম ভাজি, ডাল</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-2">শুক্রবার </td>
+                                <td class="col-md-2">ভাত, ভাজি, ডাল</td>
+                                <td class="col-md-2">মুরগি দিয়ে বিরিয়ানি</td>
+                                <td class="col-md-2"> ভাত, ভাজি, ডাল</td>
+                            </tr>
+
+
+                        </table>
+
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
 @endsection
 

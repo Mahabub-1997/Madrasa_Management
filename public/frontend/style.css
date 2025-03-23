@@ -98,6 +98,17 @@
         text-align: center;
         margin-top: 10px;
     }
+    .iq_banner {
+        height: 35vh; /* Allow flexible height */
+        max-height: 300px; /* Set a reasonable max height */
+        overflow: hidden; /* Prevent content overflow */
+    }
+    .iq_banner ul {
+        height: 35vh; /* Allow the list to resize based on content */
+    }
+    .iq_banner ul li img {
+        max-height: 300px; /* Reduce banner size on mobile */
+    }
 }
 .iq_wrapper,
 header,
@@ -367,28 +378,33 @@ a:focus{
 .iq_banner {
     float: left;
     width: 100%;
-    height: 100vh; /* Ensure full-screen height */
+    max-height: 600px;
     position: relative;
-    background-color: #000; /* You can remove this if it causes black space */
-    overflow: hidden; /* Prevent extra space */
+    background-color: #000; /* Optional: Remove if causing black space */
+    overflow: hidden;
 }
 
 .iq_banner ul {
-    height: 100%; /* Ensure the list takes full height */
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column; /* Ensure each slide aligns vertically */
 }
 
 .iq_banner ul li {
     width: 100%;
-    height: 100vh; /* Make sure each slide is full-screen */
     list-style: none;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    height: auto; /* Allow each slide to adjust to image size */
 }
 
 .iq_banner ul li img {
+    display: block;
     width: 100%;
-    height: 100vh; /* Force the image to cover full height */
-    object-fit: cover; /* Ensures image covers the area without distortion */
+    max-height: 700px; /* Ensure images do not exceed this height on large screens */
+    object-fit: cover; /* Crop image if necessary */
     opacity: 0.8;
 }
 

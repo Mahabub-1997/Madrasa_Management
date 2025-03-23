@@ -33,7 +33,7 @@
                                 <td>{{ $sn++ }}</td>
                                 <td>
                                     <img class="rounded-circle" style="height: 40px; width: 40px;"
-                                         src="{{ asset($s->user->photo ?? 'storage/default-user.png') }}"
+                                         src="{{ asset($s->user->photo) }}"
                                          alt="photo" onerror="this.onerror=null; this.src='{{ asset('storage/default-user.png') }}';">
                                 </td>
                                 <td>{{ $s->user->name }}</td>

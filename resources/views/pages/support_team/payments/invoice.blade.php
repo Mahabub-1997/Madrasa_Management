@@ -39,7 +39,7 @@
                                 @endif
 
                             </td>
-                            <form method="post" class="ajax-pay" action="{{route('payments.pay_now')}}">
+                            <form method="post" class="" action="{{route('payments.pay_now')}}">
                                 @csrf
                                 <input value="{{ $sr->user->id }}" class="form-control" required name="student_id" type="hidden">
                                 <input value="{{ $p['month'] }}" class="form-control" required name="month" type="hidden">

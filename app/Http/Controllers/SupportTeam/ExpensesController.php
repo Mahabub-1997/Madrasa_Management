@@ -25,7 +25,6 @@ class ExpensesController extends Controller
             'purpose' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0',
             'date' => 'required|date',
-            'type' => 'required|in:monthly,yearly',
         ]);
         $date = $request->input('date', Carbon::now()->toDateString()); // Default to current date if not provided
         $carbonDate = Carbon::parse($date);
@@ -39,7 +38,7 @@ class ExpensesController extends Controller
             'month' => $month,
             'year' => $year,
             'date' => $carbonDate,
-            'type' => $request->type,
+            'type' => 'monthly',
             'user_id' => auth()->user()->id,
         ];
         Expense::insert($data);
@@ -59,7 +58,6 @@ class ExpensesController extends Controller
             'purpose' => 'required|string|max:255',
             'amount' => 'required|numeric',
             'date' => 'required|date',
-            'type' => 'nullable|string',
         ]);
 
         $date = $request->input('date', Carbon::now()->toDateString()); // Default to current date if not provided
@@ -72,7 +70,7 @@ class ExpensesController extends Controller
             'purpose' => $request->input('purpose'),
             'amount' => $request->input('amount'),
             'date' => $request->input('date'),
-            'type' => $request->input('type'),
+//            'type' => $request->input('type'),
             'month' => $month,
             'year' => $year,
         ]);

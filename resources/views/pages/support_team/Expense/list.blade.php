@@ -108,20 +108,20 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Type
-                                    </label>
-                                    <div class="col-lg-9">
-                                        <select class="form-control select @error('type') is-invalid @enderror" name="type">
-                                            <option value="monthly" {{ old('type') == 'monthly' ? 'selected' : '' }}>Monthly</option>
-                                            <option value="yearly" {{ old('type') == 'yearly' ? 'selected' : '' }}>Yearly</option>
-                                        </select>
-                                        @error('type')
-                                        <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                </div>
+{{--                                <div class="form-group row">--}}
+{{--                                    <label class="col-lg-3 col-form-label font-weight-semibold">--}}
+{{--                                        Type--}}
+{{--                                    </label>--}}
+{{--                                    <div class="col-lg-9">--}}
+{{--                                        <select class="form-control select @error('type') is-invalid @enderror" name="type">--}}
+{{--                                            <option value="monthly" {{ old('type') == 'monthly' ? 'selected' : '' }}>Monthly</option>--}}
+{{--                                            <option value="yearly" {{ old('type') == 'yearly' ? 'selected' : '' }}>Yearly</option>--}}
+{{--                                        </select>--}}
+{{--                                        @error('type')--}}
+{{--                                        <small class="text-danger">{{ $message }}</small>--}}
+{{--                                        @enderror--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-2"></i></button>

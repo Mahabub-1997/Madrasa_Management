@@ -19,7 +19,8 @@ class PaymentRecord extends Eloquent
         'discount',
         'due',
         'paid',
-        'ref_no'
+        'ref_no',
+        'is_residential'
     ];
 
     public function payment()

@@ -36,12 +36,12 @@
             <li class="">
                 <!--Banner Thumb START-->
                 <a href="#" data-rel="prettyphoto[]" target="_blank">
-                    <img src="{{ asset('frontend/extra-images/banner-100.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;max-height: 700px" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">                <div class="iq-caption-wrapper text-left">
+                    <img src="{{ asset('frontend/extra-images/banner-100.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">                <div class="iq-caption-wrapper text-left">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption">
-                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div class="bismillah iq-caption-title"></div>
                                 <div  class="welcome iq-caption-text" style="font-weight: bold"></div>
-                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
+                                <div class="description iq-caption-contant"></div>
                                 <div class=" readButton iq_link_1" style="background-color: #43A047"></div>
                             </div>
                         </div>
@@ -52,13 +52,13 @@
             <li class="">
                 <!--Banner Thumb START-->
                 <a href="#" data-rel="prettyphoto[]" target="_blank">
-                    <img src="{{ asset('frontend/extra-images/banner-101.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;max-height: 700px" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+                    <img src="{{ asset('frontend/extra-images/banner-101.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
                     <div class="iq-caption-wrapper text-left">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption">
-                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div class="bismillah iq-caption-title"></div>
                                 <div id="" class="welcome iq-caption-text" style="font-weight: bold"></div>
-                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
+                                <div class="description iq-caption-contant"></div>
                                 <div class="readButton iq_link_1" style="background-color: #43A047"></div>
                             </div>
                         </div>
@@ -69,14 +69,14 @@
             <li class="">
                 <!--Banner Thumb START-->
                 <a href="#" data-rel="prettyphoto[]" target="_blank">
-                    <img src="{{ asset('frontend/extra-images/banner-103.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out; max-height: 700px;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+                    <img src="{{ asset('frontend/extra-images/banner-103.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
                     <div class="iq-caption-wrapper">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption text-left">
-                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div class="bismillah iq-caption-title"></div>
                                 <div   class="welcome iq-caption-text" style="font-weight: bold"></div>
-                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
-                                <div class="readButton iq_link_1" style="background-color: #43A047">Read More</div>                                    </div>
+                                <div class="description iq-caption-contant"></div>
+                                <div class="readButton iq_link_1" style="background-color: #43A047"></div>                                    </div>
                         </div>
                     </div>
                 </a>
@@ -223,7 +223,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img src="{{ asset('frontend/extra-images/madrsa-2.AVIF') }}" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/madrsa-2.jpg') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -250,7 +250,7 @@
                         <div class="col-md-4 hidden-sm">
                             <div class="iq_course_list">
                                 <figure>
-                                    <img src="{{ asset('frontend/extra-images/madrasa.AVIF') }}" style="max-height: 180px" alt="Image Here">
+                                    <img src="{{ asset('frontend/extra-images/madrasa.jpg') }}" style="max-height: 180px" alt="Image Here">
                                 </figure>
                                 <div class="iq_course_list_des">
                                     <div class="iq_course_icon">
@@ -405,7 +405,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -422,7 +422,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -439,7 +439,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -456,7 +456,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -473,7 +473,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -490,7 +490,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -508,7 +508,7 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
+
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -525,7 +525,6 @@
                                         <div class="link-wrapper">
                                             <a href="#"><i class="fa fa-search"></i></a>
                                             <a href="#"><i class="fa fa-link"></i></a>
-                                            <h6>Lorem Ipsum</h6>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -711,8 +710,6 @@
             });
 
 
-
-            console.log('chutiye');
             $('#mg-responsive-navigation').dlmenu();
         })
     </script>

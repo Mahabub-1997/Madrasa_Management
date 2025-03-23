@@ -1,4 +1,43 @@
 <?php
+Route::get('/symlink', function () {
+    $target =$_SERVER['DOCUMENT_ROOT'].'/Madrasa/storage/app/public';
+    $link = $_SERVER['DOCUMENT_ROOT'].'/public_html/storage';
+    try {
+        symlink($target, $link);
+    }catch (Exception $e){
+        echo $e;
+    }
+
+    echo "Done";
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/migrate', function () {
+        if (auth()->user()->user_type !== 'super_admin') {
+            abort(403, 'Unauthorized');
+        }
+        Artisan::call('migrate');
+        return 'Migration completed!';
+    });
+
+    Route::get('/optimize', function () {
+        if (auth()->user()->user_type !== 'super_admin') {
+            abort(403, 'Unauthorized');
+        }
+        Artisan::call('optimize:clear');
+        return 'Optimization completed!';
+    });
+
+    Route::get('/seed', function () {
+        if (auth()->user()->user_type !== 'super_admin') {
+            abort(403, 'Unauthorized');
+        }
+        Artisan::call('db:seed');
+        return 'Database seeding completed!';
+    });
+});
+
+
+
 
 Auth::routes();
 Route::get('/', 'LandingController@dashboard')->name('landing');
@@ -98,6 +137,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::group(['prefix' => 'payments'], function(){
 
             Route::get('manage/{class_id?}', 'PaymentController@manage')->name('payments.manage');
+            Route::get('manage_dued/{month?}/{year?}', 'PaymentController@manageDuedStudents')->name('payments.manage.dued');
+            Route::get('print_dued/{month?}/{year?}', 'PaymentController@duedPrint')->name('payments.dued.print');
             Route::get('invoice/{id}/{year?}', 'PaymentController@invoice')->name('payments.invoice');
             Route::get('receipts/{pr_id}', 'PaymentController@receipts')->name('payments.receipts');
             Route::get('pdf_receipts/{pr_id}', 'PaymentController@pdf_receipts')->name('payments.pdf_receipts');
@@ -160,6 +201,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::resource('dorms', 'DormController');
         Route::resource('payments', 'PaymentController');
         Route::get('/profit_loss_report/{month?}/{year?}', 'PaymentController@profit_loss_report')->name('profit_loss_report.index');
+        Route::get('/yearly_profit_loss_report/{month?}/{year?}', 'PaymentController@yearly_profit_loss_report')->name('yearly_profit_loss_report.index');
         Route::get('student_info/print/{sr_id}', 'StudentRecordController@info_print')->name('student.print');
 
 
