@@ -28,62 +28,51 @@
     <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
 
     <style>
-        /* For small screens, make table scrollable horizontally */
-        .table-responsive {
-            overflow-x: auto;
+        /* Added table styling */
+        .table.table-bordered {
+            border: 2px solid white !important;
+        }
+        .table.table-bordered th,
+        .table.table-bordered td {
+            border: 1px solid white !important;
         }
 
-        /* Mobile version adjustments */
-        @media (max-width: 768px) {
-            table {
-                font-size: 14px; /* smaller font on mobile */
-            }
-
-            th, td {
-                white-space: nowrap; /* prevent wrapping */
-                padding: 10px; /* better spacing */
-            }
-        }
-
-        /* For very small screens (below 480px), further tweak */
+        /* Existing mobile styles */
         @media (max-width: 480px) {
-            table {
-                font-size: 12px; /* even smaller font */
+            .table {
+                border: none;
             }
-
-            th, td {
-                padding: 8px; /* smaller padding */
+            .table thead {
+                display: none;
             }
-
-            td {
-                display: block; /* Stack each cell */
-                width: 100%; /* full-width block display */
+            .table tbody tr {
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                padding: 10px;
+                background: #fff;
+                border-radius: 5px;
+            }
+            .table td {
+                display: block;
                 text-align: left;
-                margin-bottom: 10px; /* spacing between rows */
+                padding: 8px;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+                position: relative;
             }
-
-            th {
-                display: none; /* Hide table headers on very small screens */
+            .table td:last-child {
+                border-bottom: none;
             }
-
-            /* Show Title in bold and as labels above the description */
-            td:before {
-                content: attr(data-title); /* Add a custom title before each description */
+            .table td::before {
+                content: attr(data-title);
                 font-weight: bold;
                 display: block;
-                margin-top: 10px;
+                color: #333;
+                margin-bottom: 5px;
             }
         }
-
-        /* Optional: Customize the first column for mobile */
-        td:first-child {
-            font-weight: bold;
-        }
     </style>
-
-
-
-
 @endsection
 
 @section('content')
@@ -100,53 +89,55 @@
         </div>
     </div>
     <!--Banner Wrap End-->
-    <div class="col-md-8 mx-auto mt-3">
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th class="col-md-3">শিরোনাম</th>
-                    <th class="col-md-9">বর্ণনা</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>ডকুমেন্ট সংগ্রহ</td>
-                    <td>
-                        - জন্ম সনদপত্র (বয়স যাচাইয়ের জন্য)।<br>
-                        - পিতামাতা/অভিভাবকের জাতীয় পরিচয়পত্রের কপি।<br>
-                        - পাসপোর্ট সাইজের ছবি (৪-৬ কপি)।<br>
-                        - পূর্ববর্তী শিক্ষাগত সনদপত্র (যদি উচ্চতর স্তরে ভর্তি হয়)।<br>
-                        - মেডিকেল সনদপত্র (যদি মাদ্রাসার দ্বারা প্রয়োজন হয়)।
-                    </td>
-                </tr>
-                <tr>
-                    <td>ফি পরিশোধ</td>
-                    <td>
-                        - নির্ধারিত ভর্তি ফি পরিশোধ করুন (যদি প্রযোজ্য হয়) মাদ্রাসার অফিসে অথবা অনলাইন ব্যাংকিংয়ের মাধ্যমে (যদি উপলব্ধ থাকে)।<br>
-                        - পরিশোধের রশিদ সংগ্রহ করুন প্রমাণ হিসেবে।
-                    </td>
-                </tr>
-                <tr>
-                    <td>ভর্তি পরীক্ষা/সাক্ষাৎকার</td>
-                    <td>
-                        - ভর্তি পরীক্ষায় অংশগ্রহণ করুন, যা অন্তর্ভুক্ত করতে পারে:<br>
-                        &nbsp;&nbsp;• মৌলিক কুরআন তেলাওয়াতের দক্ষতা।<br>
-                        &nbsp;&nbsp;• সাধারণ জ্ঞান অথবা শিক্ষাগত প্রশ্নাবলি (উচ্চতর স্তরের জন্য)।<br>
-                        &nbsp;&nbsp;• শৃঙ্খলা এবং প্রস্তুতি মূল্যায়ন করার জন্য মৌখিক সাক্ষাৎকার।
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+
+    <!-- Centered Table Section -->
+    <div class="container mt-4 mb-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">  <!-- Adjusted column width -->
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th class="col-md-3">শিরোনাম</th>
+                        <th class="col-md-9">বর্ণনা</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-title="শিরোনাম">ডকুমেন্ট সংগ্রহ</td>
+                        <td data-title="বর্ণনা">
+                            - জন্ম সনদপত্র (বয়স যাচাইয়ের জন্য)।<br>
+                            - পিতামাতা/অভিভাবকের জাতীয় পরিচয়পত্রের কপি।<br>
+                            - পাসপোর্ট সাইজের ছবি (৪-৬ কপি)।<br>
+                            - পূর্ববর্তী শিক্ষাগত সনদপত্র (যদি উচ্চতর স্তরে ভর্তি হয়)।<br>
+                            - মেডিকেল সনদপত্র (যদি মাদ্রাসার দ্বারা প্রয়োজন হয়)।
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-title="শিরোনাম">ফি পরিশোধ</td>
+                        <td data-title="বর্ণনা">
+                            - নির্ধারিত ভর্তি ফি পরিশোধ করুন (যদি প্রযোজ্য হয়) মাদ্রাসার অফিসে অথবা অনলাইন ব্যাংকিংয়ের মাধ্যমে (যদি উপলব্ধ থাকে)।<br>
+                            - পরিশোধের রশিদ সংগ্রহ করুন প্রমাণ হিসেবে।
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-title="শিরোনাম">ভর্তি পরীক্ষা/সাক্ষাৎকার</td>
+                        <td data-title="বর্ণনা">
+                            - ভর্তি পরীক্ষায় অংশগ্রহণ করুন, যা অন্তর্ভুক্ত করতে পারে:<br>
+                            &nbsp;&nbsp;• মৌলিক কুরআন তেলাওয়াতের দক্ষতা।<br>
+                            &nbsp;&nbsp;• সাধারণ জ্ঞান অথবা শিক্ষাগত প্রশ্নাবলি (উচ্চতর স্তরের জন্য)।<br>
+                            &nbsp;&nbsp;• শৃঙ্খলা এবং প্রস্তুতি মূল্যায়ন করার জন্য মৌখিক সাক্ষাৎকার।
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
 @endsection
 
-
 @section('scripts')
     <script src="{{asset('/')}}frontend/js/admission.terms.localization.js"></script>
-
     <script src="{{asset('/')}}frontend/js/localization.js"></script>
     <!--iqoniq Wrapper End-->
     <!--Javascript Library-->
@@ -168,24 +159,18 @@
     <script src="{{asset('/')}}frontend/js/custom.js"></script>
 
     <script>
-
         $(document).ready(function() {
             $('.slider').slick({
-                slidesToShow: 1, // Show one slide at a time
-                slidesToScroll: 1, // Scroll one slide at a time
-                autoplay: true, // Enable auto sliding
-                autoplaySpeed: 5000, // Delay before the next slide (5000ms = 5 seconds)
-                speed: 1000, // Transition speed between slides (1000ms = 1 second)
-                dots: true, // Enable dots for navigation
-                arrows: true // Show navigation arrows
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 1000,
+                dots: true,
+                arrows: true
             });
 
-
-
-            console.log('chutiye');
             $('#mg-responsive-navigation').dlmenu();
         })
     </script>
-
-
 @endsection
