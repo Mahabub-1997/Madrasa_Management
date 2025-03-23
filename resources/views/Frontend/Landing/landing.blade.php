@@ -36,7 +36,7 @@
             <li class="">
                 <!--Banner Thumb START-->
                 <a href="#" data-rel="prettyphoto[]" target="_blank">
-                    <img src="{{ asset('frontend/extra-images/banner-100.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;max-height: 700px" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">                <div class="iq-caption-wrapper text-left">
+                    <img src="{{ asset('frontend/extra-images/banner-100.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">                <div class="iq-caption-wrapper text-left">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption">
                                 <div class="bismillah iq-caption-title"></div>
@@ -52,7 +52,7 @@
             <li class="">
                 <!--Banner Thumb START-->
                 <a href="#" data-rel="prettyphoto[]" target="_blank">
-                    <img src="{{ asset('frontend/extra-images/banner-101.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;max-height: 700px" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+                    <img src="{{ asset('frontend/extra-images/banner-101.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
                     <div class="iq-caption-wrapper text-left">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption">
@@ -69,7 +69,7 @@
             <li class="">
                 <!--Banner Thumb START-->
                 <a href="#" data-rel="prettyphoto[]" target="_blank">
-                    <img src="{{ asset('frontend/extra-images/banner-103.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out; max-height: 700px;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+                    <img src="{{ asset('frontend/extra-images/banner-103.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
                     <div class="iq-caption-wrapper">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption text-left">
