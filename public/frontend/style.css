@@ -109,6 +109,7 @@
     .iq_banner ul li img {
         max-height: 300px; /* Reduce banner size on mobile */
     }
+
 }
 .iq_wrapper,
 header,
@@ -401,7 +402,7 @@ a:focus{
 }
 
 .iq_banner ul li img {
-    display: block;
+    display: flex;
     width: 100%;
     max-height: 700px; /* Ensure images do not exceed this height on large screens */
     object-fit: cover; /* Crop image if necessary */

@@ -3,7 +3,7 @@
 =================================================
 				UP FROM 1200PX
 =================================================
-*/ 
+*/
 @media (min-width: 1367px) and (max-width: 1680px) {
 
 }
@@ -11,7 +11,7 @@
 =================================================
 				UP FROM 1200PX
 =================================================
-*/ 
+*/
 @media (min-width: 1200px) and (max-width: 1366px) {
 	.iq_knowledge_des{
 		padding-right: 100px;
@@ -21,7 +21,7 @@
 =================================================
 			FROM 992PX TO 1199PX
 =================================================
-*/ 
+*/
 @media (min-width: 992px) and (max-width: 1199px) {
 	.iqoniq2-info ul li span,
 	.iqoniq2-info ul li a{
@@ -53,11 +53,11 @@
 	}
 	.center-dec .text{
 		padding-right:20px;
-		padding-left: 20px; 
+		padding-left: 20px;
 	}
 	.iq_contact_info ul li{
-		padding-right:40px; 
-		padding-left:40px; 
+		padding-right:40px;
+		padding-left:40px;
 	}
 	.flickr-wrap .flickrbadges{
 		width: 64px;
@@ -68,7 +68,7 @@
 =================================================
 			FROM 0PX TO 979PX    0300 7785536
 =================================================
-*/ 
+*/
 @media (max-width: 991px) {
 	.iqoniq2-info ul li{
 		width: 33.3%;
@@ -99,7 +99,7 @@
 	}
 	.navigation ul li a{
 		padding-right:9px;
-		padding-left: 9px; 
+		padding-left: 9px;
 	}
 	.navigation .children{
 		min-width: 200px;
@@ -136,8 +136,8 @@
 		font-size: 16px;
 	}
 	.iq_contact_info ul li{
-		padding-right:5px; 
-		padding-left:5px; 
+		padding-right:5px;
+		padding-left:5px;
 	}
 	.about-us-section .iq_heading_1 h4{
 		font-size: 26px;
@@ -165,8 +165,8 @@
 */
 
 @media (min-width: 768px) and (max-width: 979px) {
-	
-  
+
+
 }
 /*
 =================================================
@@ -178,7 +178,7 @@
 		display: block;
 	}
 	.iq_search.pull-right{
-		float: left !important; 
+		float: left !important;
 	}
 	.iqoniq2-leave-message{
 		text-align: center;
@@ -206,7 +206,7 @@
 	}
 	.blog_quotes{
 		margin-right:0;
-		width: 100%; 
+		width: 100%;
 	}
 	.blog-title{
 		font-size: 22px;
@@ -240,8 +240,8 @@
 		text-align: center;
 	}
 	.iq_professional_services span{
-		margin-left:auto; 
-		margin-right:auto; 
+		margin-left:auto;
+		margin-right:auto;
 	}
 	.iq_professional_services h5::before{
 		right: 0;
@@ -260,7 +260,7 @@
 		background-image: none;
 	}
 	.iq_gallery_menu ul li{
-		margin-left:5px; 
+		margin-left:5px;
 	}
 	.iq_gallery_menu ul li a{
 		font-size: 12px;
@@ -315,8 +315,8 @@
 =================================================
 */
 @media (min-width: 360px) and (max-width: 640px) {
-	
-  
+
+
 }
 /*
 =================================================
@@ -388,7 +388,7 @@
 		display: none;
 	}
 	.iq-caption-text{
-		font-size: 30px;
+		font-size: 15px;
 	}
 	.iq_search_courses .iq-input{
 		width: 100%;
@@ -402,10 +402,15 @@
 	.iq_gallery_menu ul li{
 		margin: 0 3px 6px;
 	}
-	.center-dec .iq_link_1{
+	.center-dec {
 		min-width:inherit;
 		padding-right: 20px;
 		padding-left: 20px;
+	}
+	.iq_link_1{
+        padding-top: 1px;
+        padding-bottom: 1px;
+        font-size: 9px;  /* Reduce font size */
 	}
 	.testimonial{
 		padding-right: 10px;

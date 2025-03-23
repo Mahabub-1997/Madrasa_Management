@@ -705,7 +705,7 @@
                 autoplay: true, // Enable auto sliding
                 autoplaySpeed: 5000, // Delay before the next slide (5000ms = 5 seconds)
                 speed: 1000, // Transition speed between slides (1000ms = 1 second)
-                dots: true, // Enable dots for navigation
+                dots: false, // Enable dots for navigation
                 arrows: true // Show navigation arrows
             });
 
