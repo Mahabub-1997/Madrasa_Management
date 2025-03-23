@@ -8,7 +8,7 @@ class LandingController extends Controller
 {
     public function dashboard(){
 
-        return view('FrontEnd.Landing.landing');
+        return view('Frontend.Landing.landing');
     }
     public function admissionNotice(){
         return view('Frontend.Admission.admission-notice');

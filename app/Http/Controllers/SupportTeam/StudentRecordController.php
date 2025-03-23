@@ -69,10 +69,12 @@ class StudentRecordController extends Controller
             $photo = $req->file('photo');
             $f = Qs::getFileMetaData($photo);
             $f['name'] = 'photo_' . time() . '.' . $f['ext'];
-
-            $filePath = $photo->storeAs('students/' . $userData['name'], $f['name'], 'public');
-
-            $userData['photo'] = 'storage/students/' . $userData['name'] . '/' . $f['name'];
+            $destinationPath = public_path('uploads/students/' . $userData['name']);
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0775, true);
+            }
+            $photo->move($destinationPath, $f['name']);
+            $userData['photo'] = 'uploads/students/' . $userData['name'] . '/' . $f['name'];
         }
         $userData['code'] = strtoupper(Str::random(10));
         $user = $this->user->create($userData);
@@ -203,9 +205,14 @@ class StudentRecordController extends Controller
                 $photo = $req->file('photo');
                 $f = Qs::getFileMetaData($photo);
                 $f['name'] = 'photo_' . time() . '.' . $f['ext'];
-                $photo->storeAs('students/' . $userData['name'], $f['name'], 'public');
-                $userData['photo'] = 'storage/students/' . $userData['name'] . '/' . $f['name'];
+                $destinationPath = public_path('uploads/students/' . $userData['name']);
+                if (!file_exists($destinationPath)) {
+                    mkdir($destinationPath, 0775, true);
+                }
+                $photo->move($destinationPath, $f['name']);
+                $userData['photo'] = 'uploads/students/' . $userData['name'] . '/' . $f['name'];
             }
+
             $this->user->update($studentRecord->user_id, $userData);
 
             // Update student record data

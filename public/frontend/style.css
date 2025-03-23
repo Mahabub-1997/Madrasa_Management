@@ -99,12 +99,39 @@
         margin-top: 10px;
     }
     .iq_banner {
-        height: 30vh; /* Allow flexible height */
+        height: 27vh; /* Allow flexible height */
         max-height: 300px; /* Set a reasonable max height */
         overflow: hidden; /* Prevent content overflow */
     }
     .iq_banner ul {
-        height: 30vh; /* Allow the list to resize based on content */
+        height: 27vh; /* Allow the list to resize based on content */
+    }
+    .iq_banner ul li img {
+        max-height: 300px; /* Reduce banner size on mobile */
+    }
+
+}
+@media (max-width: 480px) {
+    .iq_top_contact span {
+        display: block;
+    }
+
+    .iq_top_contact a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .iq_time_wrap {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .iq_banner {
+        height: 26vh; /* Allow flexible height */
+        max-height: 300px; /* Set a reasonable max height */
+        overflow: hidden; /* Prevent content overflow */
+    }
+    .iq_banner ul {
+        height: 26vh; /* Allow the list to resize based on content */
     }
     .iq_banner ul li img {
         max-height: 300px; /* Reduce banner size on mobile */

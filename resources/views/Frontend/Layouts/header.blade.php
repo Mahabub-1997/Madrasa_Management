@@ -2,7 +2,7 @@
     <div class="container">
         <!-- Logo Wrap Start -->
         <div class="iq_logo " style="margin-top: 10px">
-            <a href="#"><img src="{{ asset('frontend/images/logo.png')}}" alt="Iqoniq Themes" height="95" width="85"></a>
+            <a href="{{route('landing')}}"><img src="{{ asset('frontend/images/logo.png')}}" alt="Iqoniq Themes" height="95" width="85"></a>
         </div>
         <!-- Logo Wrap Start -->
         <!-- Top Strip Wrap Start -->
@@ -10,7 +10,7 @@
             <!-- Top Strip Wrap Start -->
             <div class="iq_top_strip">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown dropdown-user" style="width: 100px">
+                    <li class="nav-item dropdown dropdown-user" style="width: 100pxlogo">
                         <a href="#" class="navbar-nav-link d-flex align-items-center">
                             @php
                                 $noticeboard = Qs::getNotices();

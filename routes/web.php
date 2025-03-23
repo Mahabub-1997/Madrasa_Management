@@ -1,14 +1,7 @@
 <?php
-Route::get('/symlink', function () {
-    $target =$_SERVER['DOCUMENT_ROOT'].'/Madrasa/storage/app/public';
-    $link = $_SERVER['DOCUMENT_ROOT'].'/public_html/storage';
-    try {
-        symlink($target, $link);
-    }catch (Exception $e){
-        echo $e;
-    }
-
-    echo "Done";
+Route::get('/optimize', function () {
+    Artisan::call('optimize:clear');
+    return 'Optimization completed!';
 });
 Route::middleware(['auth'])->group(function () {
     Route::get('/migrate', function () {
@@ -19,13 +12,7 @@ Route::middleware(['auth'])->group(function () {
         return 'Migration completed!';
     });
 
-    Route::get('/optimize', function () {
-        if (auth()->user()->user_type !== 'super_admin') {
-            abort(403, 'Unauthorized');
-        }
-        Artisan::call('optimize:clear');
-        return 'Optimization completed!';
-    });
+
 
     Route::get('/seed', function () {
         if (auth()->user()->user_type !== 'super_admin') {
