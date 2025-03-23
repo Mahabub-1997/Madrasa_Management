@@ -115,6 +115,7 @@
         <div class="column">
             <div class="details-section">
                 <h3>Academic Information</h3>
+                <p class="details"><strong>Admission No.:</strong> {{ $sr->adm_no ?? 'N/A' }}</p>
                 <p class="details"><strong>Class:</strong> {{ $sr->my_class->name ?? 'N/A' }}</p>
                 <p class="details"><strong>Section:</strong> {{ $sr->section->name ?? 'N/A' }}</p>
                 <p class="details"><strong>Admission Date:</strong> {{ $sr->admission_date ?? 'N/A' }}</p>

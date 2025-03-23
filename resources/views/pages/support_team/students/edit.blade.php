@@ -150,10 +150,10 @@
                 </div>
             </fieldset>
             <!-- STUDENT ACADEMIC DATA -->
+            <!-- STUDENT ACADEMIC DATA -->
             <h6>Student Academic Data</h6>
             <fieldset>
                 <div class="row">
-                    <!-- Class, Parent and Admission Year -->
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="my_class_id">Class: <span class="text-danger">*</span></label>
@@ -165,23 +165,28 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-3">
+
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <!-- Section (if needed) can be added here -->
+                            <label>Department:</label>
+                            <select name="department" class="select-search form-control" data-placeholder="Choose Department">
+                                <option value=""></option>
+                                <option {{ (old('department', $sr->department) == 'noorani') ? 'selected' : '' }} value="noorani">নূরাণী বিভাগ</option>
+                                <option {{ (old('department', $sr->department) == 'najera') ? 'selected' : '' }} value="najera">নাজেরা বিভাগ</option>
+                                <option {{ (old('department', $sr->department) == 'hifz') ? 'selected' : '' }} value="hifz">হিফয বিভাগ</option>
+                                <option {{ (old('department', $sr->department) == 'sunani') ? 'selected' : '' }} value="sunani">শুনানি বিভাগ</option>
+                            </select>
                         </div>
                     </div>
+
                     <div class="col-md-3">
                         <div class="form-group">
-{{--                            <label for="my_parent_id">Parent:</label>--}}
-{{--                            <select name="my_parent_id" id="my_parent_id" class="select-search form-control" data-placeholder="Choose...">--}}
-{{--                                <option value=""></option>--}}
-{{--                                @foreach($parents as $p)--}}
-{{--                                    <option {{ (old('my_parent_id', Qs::hash($p->id)) == Qs::hash($sr->my_parent_id)) ? 'selected' : '' }} value="{{ Qs::hash($p->id) }}">{{ $p->name }}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
+                            <label>Admission No.:</label>
+                            <input type="text" name="adm_no" value="{{ old('adm_no', $sr->adm_no) }}" class="form-control" placeholder="Enter Admission No." required>
                         </div>
                     </div>
-                    <div class="col-md-3">
+
+            <div class="col-md-3">
                         <div class="form-group">
 {{--                            <label for="year_admitted">Admission Year: <span class="text-danger">*</span></label>--}}
 {{--                            <select required name="year_admitted" id="year_admitted" class="select-search form-control" data-placeholder="Choose...">--}}

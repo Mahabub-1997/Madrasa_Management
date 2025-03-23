@@ -53,7 +53,8 @@
                         </tr>
                         <tr><th>Class</th><td>{{ $sr->my_class->name ?? 'N/A' }}</td></tr>
                         <tr><th>Section</th><td>{{ $sr->section->name ?? 'N/A' }}</td></tr>
-                        <tr><th>Admission Date</th><td>{{ $sr->admission_date ?? 'N/A' }}</td></tr>
+                        <tr><th>Admission No.</th><td>{{ $sr->adm_no ?? 'N/A' }}</td></tr><tr>
+                        <tr><th>Admission Date</th><td>{{ $sr->admission_date ?? '' }}</td></tr>
                         <tr><th>Discount</th><td>{{ $sr->discount ?? '0' }}</td></tr>
                         <tr><th>Age</th><td>{{ $sr->age ?? 'N/A' }}</td></tr>
                         <tr><th>Previous Institution</th><td>{{ $sr->previous_institution_name ?? 'N/A' }}</td></tr>

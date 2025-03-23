@@ -157,6 +157,7 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Department:</label>
@@ -169,31 +170,22 @@
                             </select>
                         </div>
                     </div>
-                    </div>
+
                     <div class="col-md-3">
                         <div class="form-group">
-{{--                            <label for="my_parent_id">Parent:</label>--}}
-{{--                            <select name="my_parent_id" id="my_parent_id" class="select-search form-control" data-placeholder="Choose...">--}}
-{{--                                <option value=""></option>--}}
-{{--                                @foreach($parents as $p)--}}
-{{--                                    <option {{ (old('my_parent_id') == Qs::hash($p->id)) ? 'selected' : '' }} value="{{ Qs::hash($p->id) }}">{{ $p->name }}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
+                            <label>Admission No.:</label>
+                            <input type="text" name="adm_no" value="{{ old('adm_no') }}" class="form-control" placeholder="Enter Admission No. (or leave blank for auto-generation)" required>
                         </div>
                     </div>
-                 <div class="row">
+                </div>
+
+            <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Discount:</label>
                             <input type="number" name="discount" placeholder="Discount" class="form-control" value="{{ old('discount', 0) }}">
                         </div>
                     </div>
-{{--                    <div class="col-md-3">--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label>Sport House:</label>--}}
-{{--                            <input type="text" name="house" placeholder="Sport House" class="form-control" value="{{ old('house') }}">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Age:</label>
