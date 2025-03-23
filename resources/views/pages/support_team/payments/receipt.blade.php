@@ -8,21 +8,17 @@
 <div class="container">
     <div id="print" xmlns:margin-top="http://www.w3.org/1999/xhtml">
         {{--  School Details--}}
-        <table width="100%">
-            <tr>
-
-                <td>
-                    <strong><span
-                                style="color: #1b0c80; font-size: 25px;">{{ strtoupper(Qs::getSetting('system_name')) }}</span></strong><br/>
-                    {{-- <strong><span style="color: #1b0c80; font-size: 20px;">MINNA, NIGER STATE</span></strong><br/>--}}
-                    <strong><span
-                                style="color: #000; font-size: 15px;"><i>{{ ucwords($s['address']) }}</i></span></strong>
-                    <br/> <br/>
-
-                     <span style="color: #000; font-weight: bold; font-size: 25px;"> PAYMENT RECEIPT</span>
-                </td>
-            </tr>
-        </table>
+                    <tr>
+                        <td style="text-align: center;">
+                            <div style="text-align: center;">
+                                <img src="{{ asset('logo.png') }}" alt="Logo" style="width: 100px; height: 100px;"/>
+                                <h2 style="margin: 5px 0;">মুসলিহুল উম্মাহ হিফজ মাদ্রাসা</h2>
+                                <p>১৪০ আজমপুর কাঁচা বাজার, দক্ষিণখান,উত্তরা, ঢাকা -১২৩০</p>
+                                <p><strong>Phone:</strong> ০১৯১৬৩৫৪৭৭০</p>
+                            </div>
+                        </td>
+                    </tr>
+                     <span style="color: #000; font-weight: bold; font-size: 20px;"> PAYMENT RECEIPT</span>
 
         {{--Receipt No --}}
     <div class="bold arial" style="text-align: center; float:right; width: 200px; padding: 5px; margin-right:30px">
@@ -101,8 +97,8 @@
            <thead>
            <tr>
                <td class="bold">Date</td>
-               <td class="bold">Amount Paid <del style="text-decoration-style: double">N</del></td>
-               <td class="bold">Due <del style="text-decoration-style: double">N</del></td>
+               <td class="bold">Amount Paid <del style="text-decoration-style: double"></del></td>
+               <td class="bold">Due <del style="text-decoration-style: double"></del></td>
            </tr>
            </thead>
             <tbody>

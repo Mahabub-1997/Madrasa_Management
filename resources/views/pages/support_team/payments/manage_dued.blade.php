@@ -6,7 +6,7 @@
             <div class="card-header header-elements-inline">
                 <h6 class="card-title"> Student Payments Due in {{$month, $year}}</h6>
                 {!! Qs::getPanelOptions() !!}
-                <a href="{{route('payments.dued.print')}}" class="btn btn-success">print</a>
+                <a href="{{route('payments.dued.print',['month'=>$month, 'year'=>$year])}}" class="btn btn-success">print</a>
             </div>
             <div class="card-body">
                 <form method="GET" action="{{ route('payments.manage.dued') }}">
@@ -48,7 +48,7 @@
                         <th>S/N</th>
                         <th>Photo</th>
                         <th>Name</th>
-                        <th>ADM_No</th>
+                        <th>date</th>
                         <th>Due</th>
                         <th>Payments</th>
                     </tr>
