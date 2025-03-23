@@ -420,19 +420,17 @@ class PaymentController extends Controller
     }
     public function manageDuedStudents(Request $request)
     {
-        // Get request values for month and year
         $month = $request->input('month', Carbon::now()->format('F'));
         $year = $request->input('year', Carbon::now()->format('Y'));
 
-        // Check if the month or year is empty (' ' or '')
         if (empty($month) || $month === '' || $month === ' ') {
             $month = Carbon::now()->format('F');
         }
 
-        if (empty($year)|| $year === '' || $year === ' ') {
+        if (empty($year) || $year === '' || $year === ' ') {
             $year = Carbon::now()->format('Y');
         }
-        $monthNumber = date('m', strtotime($month));
+
         $d['my_classes'] = $this->my_class->all();
         $d['fee_info'] = $this->pay->getPaymentYears();
         $d['selected'] = false;
@@ -443,15 +441,17 @@ class PaymentController extends Controller
                 $query->where('month', $month)
                     ->where('year', $year)
                     ->where('due', '>', 0);
-            })->get();
+            });
 
-        // Get students who have NO payment records at all
         $studentsWithoutRecords = $this->student->activeStudents()
             ->whereYear('admission_date', '<=', $year)
-            ->whereDoesntHave('payment_records')->get();
+            ->whereDoesntHave('payment_records', function ($query) use ($month, $year) {
+                $query->where('month', $month)->where('year', $year);
+            });
 
-        // Combine both queries
-        $d['students'] = $st = $studentsWithDue->merge($studentsWithoutRecords)->sortBy('user.name');
+        $d['students'] = $st = $studentsWithDue->union($studentsWithoutRecords)
+            ->get()
+            ->sortBy('user.name');
 
         if ($st->count() < 1) {
             return Qs::goWithDanger('payments.manage.dued');
@@ -463,29 +463,41 @@ class PaymentController extends Controller
 
         return view('pages.support_team.payments.manage_dued', $d);
     }
-    public function duedPrint($class_id = NULL)
+    public function duedPrint($month=null, $year=null)
     {
+//        $month = $request->input('month', Carbon::now()->format('F'));
+//        $year = $request->input('year', Carbon::now()->format('Y'));
+
+        if (empty($month) || trim($month) === '') {
+            $month = Carbon::now()->format('F');
+        }
+
+        if (empty($year) || trim($year) === '') {
+            $year = Carbon::now()->format('Y');
+        }
+
         $d['my_classes'] = $this->my_class->all();
         $d['fee_info'] = $this->pay->getPaymentYears();
         $d['selected'] = false;
 
-        $currentMonth = now()->format('F');
-        $currentYear = now()->year;
-
+        // Get students with due payments
         $studentsWithDue = $this->student->activeStudentsWithPaymentRecords()
-            ->whereHas('payment_records', function ($query) use ($currentMonth, $currentYear) {
-                $query->where('month', $currentMonth)
-                    ->where('year', $currentYear)
+            ->whereYear('admission_date', '<=', $year)
+            ->whereHas('payment_records', function ($query) use ($month, $year) {
+                $query->where('month', $month)
+                    ->where('year', $year)
                     ->where('due', '>', 0);
             });
 
-        // Get students who have NO payment records at all
+        // Get students without payment records for the selected period
         $studentsWithoutRecords = $this->student->activeStudents()
-            ->whereDoesntHave('payment_records');
+            ->whereYear('admission_date', '<=', $year)
+            ->whereDoesntHave('payment_records', function ($query) use ($month, $year) {
+                $query->where('month', $month)->where('year', $year);
+            });
 
-        // Combine both queries
-        $d['students'] = $st = $studentsWithDue
-            ->union($studentsWithoutRecords)
+        // Combine and sort results
+        $d['students'] = $st = $studentsWithDue->union($studentsWithoutRecords)
             ->get()
             ->sortBy('user.name');
 
@@ -494,6 +506,8 @@ class PaymentController extends Controller
         }
 
         $d['selected'] = true;
+        $d['month'] = $month;
+        $d['year'] = $year;
 
         return view('pages.support_team.payments.dued_print', $d);
     }

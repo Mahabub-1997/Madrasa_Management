@@ -49,7 +49,7 @@
                                     <input value="{{ $p['pr_id'] }}" class="form-control" required name="pr_id" type="hidden">
                                 @endif
                             <td>
-                                <input min="0" max="{{ $p['amount']}}" value="{{ $sr->discount}}" class="form-control" required name="discount" type="number">
+                                <input min="0" value="{{ $sr->discount}}" class="form-control" required name="discount" type="number">
                             </td>
                             <td>{{ $p['amt_paid'] }}</td>
                             <td>{{ $p['due'] }}</td>
@@ -58,7 +58,7 @@
                                 <div class="row">
                                     @if($p['paid'] == 0)
                                         <div class="col-md-7">
-                                            <input min="1" max="{{ $p['due']}}" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
+                                            <input min="0" class="form-control" required placeholder="Pay Now" title="Pay Now" name="amt_paid" type="number">
                                         </div>
                                         <div class="col-md-5">
                                             <button data-text="Pay" class="btn btn-danger" type="submit">Pay <i class="icon-paperplane ml-2"></i></button>
