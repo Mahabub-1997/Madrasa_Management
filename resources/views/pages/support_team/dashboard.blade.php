@@ -4,7 +4,7 @@
 
     @if(Qs::userIsTeamSA())
        <div class="row">
-           <div class="col-sm-6 col-xl-3">
+           <div class="col-sm-6 col-xl-4">
                <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6)">
                    <div class="media">
                        <div class="media-body">
@@ -19,7 +19,7 @@
                </div>
            </div>
 
-           <div class="col-sm-6 col-xl-3">
+           <div class="col-sm-6 col-xl-4">
                <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6);">
                    <div class="media">
                        <div class="media-body">
@@ -34,7 +34,7 @@
                </div>
            </div>
 
-           <div class="col-sm-6 col-xl-3">
+           <div class="col-sm-6 col-xl-4">
                <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6)">
                    <div class="media">
                        <div class="mr-3 align-self-center">
@@ -49,20 +49,6 @@
                </div>
            </div>
 
-           <div class="col-sm-6 col-xl-3">
-               <div class="card card-body has-bg-image" style="background: linear-gradient(360deg, #1a202c, #3b82f6)">
-                   <div class="media">
-                       <div class="mr-3 align-self-center">
-                           <i class="icon-user icon-3x opacity-75"></i>
-                       </div>
-
-                       <div class="media-body text-right">
-                           <h3 class="mb-0">{{ $users->where('user_type', 'parent')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Total Parents</span>
-                       </div>
-                   </div>
-               </div>
-           </div>
        </div>
        @endif
 

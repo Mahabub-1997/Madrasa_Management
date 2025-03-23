@@ -85,7 +85,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <form class="ajax-store" method="post" action="{{ route('notice_board.store') }}">
+                            <form class="" method="post" action="{{ route('notice_board.store') }}">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">

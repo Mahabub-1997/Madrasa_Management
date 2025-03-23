@@ -28,7 +28,7 @@ class NoticeBoardController extends Controller
             'user_id' => auth()->user()->id,
         ];
         NoticeBoard::insert($data);
-        return Qs::jsonStoreOk();
+        return Qs::storeOk('notice_board.index');
     }
 
     public function edit($id)
