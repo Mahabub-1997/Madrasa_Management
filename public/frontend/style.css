@@ -99,12 +99,12 @@
         margin-top: 10px;
     }
     .iq_banner {
-        height: 35vh; /* Allow flexible height */
+        height: 30vh; /* Allow flexible height */
         max-height: 300px; /* Set a reasonable max height */
         overflow: hidden; /* Prevent content overflow */
     }
     .iq_banner ul {
-        height: 35vh; /* Allow the list to resize based on content */
+        height: 30vh; /* Allow the list to resize based on content */
     }
     .iq_banner ul li img {
         max-height: 300px; /* Reduce banner size on mobile */
@@ -175,7 +175,7 @@ a:focus{
 /* ================== UI ELEMENT WRAP CSS START ==================*/
 .iq_header_1 .iq_ui_element{
 	width: 100%;
-    padding: 0 0 0 170px;
+    padding: 0 0 0 100px;
 }
 /*Top Strip Wrap CSS*/
 .iq_top_strip ul li a{
@@ -664,7 +664,7 @@ a:focus{
     background-color: #43A047;
 }
 .text-carousel {
-    width: 750px; /* Adjust width */
+    width: 820px; /* Adjust width */
     overflow: hidden;
     white-space: nowrap;
     position: relative;

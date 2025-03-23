@@ -10,7 +10,7 @@
             <!-- Top Strip Wrap Start -->
             <div class="iq_top_strip">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown dropdown-user">
+                    <li class="nav-item dropdown dropdown-user" style="width: 100px">
                         <a href="#" class="navbar-nav-link d-flex align-items-center">
                             @php
                                 $noticeboard = Qs::getNotices();
@@ -120,7 +120,7 @@
                 <div >
 {{--                    <button data-toggle="modal" style="background-color: orange;color: white; margin-right: 7px" data-target="#search-box"><i class="fa fa-search " ></i></button>--}}
                     <!-- Search Wrap End -->
-                    <a id="languageToggle" class="pull-right" style="color: #000000" onclick="toggleLanguage()">En<i class="fa fa-toggle-on fa-2x" style="margin-right: 7px;margin-left: 7px;color: #000000"></i>bn</a>
+{{--                    <a id="languageToggle" class="pull-right" style="color: #000000" onclick="toggleLanguage()">En<i class="fa fa-toggle-on fa-2x" style="margin-right: 7px;margin-left: 7px;color: #000000"></i>bn</a>--}}
                 </div>
             </div>
             <!-- Navigation wrap End -->

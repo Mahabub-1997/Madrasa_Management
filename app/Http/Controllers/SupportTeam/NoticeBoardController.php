@@ -24,6 +24,7 @@ class NoticeBoardController extends Controller
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
             'priority' => $request->priority,
+            'status' => $request->status,
             'user_id' => auth()->user()->id,
         ];
         NoticeBoard::insert($data);

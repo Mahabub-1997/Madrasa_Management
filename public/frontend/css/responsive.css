@@ -204,6 +204,19 @@
 		padding: 0 0 0 10px;
 		width: 33.3%;
 	}
+    .iq_header_1 .iq_ui_element{
+        width: 100%;
+        padding: 0 0 0 4px;
+    }
+    .navbar-nav {
+        margin-left: -65px;
+    }
+    .iq_header_1 .iq_top_strip{
+        float:left;
+        width:120%;
+        padding:15px 0px;
+        border-bottom:1px solid #000000;
+    }
 	.blog_quotes{
 		margin-right:0;
 		width: 100%;
