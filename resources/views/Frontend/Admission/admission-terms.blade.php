@@ -27,6 +27,63 @@
     <!-- Responsive CSS -->
     <link href="{{asset('/')}}frontend/css/responsive.css" rel="stylesheet">
 
+    <style>
+        /* For small screens, make table scrollable horizontally */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        /* Mobile version adjustments */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px; /* smaller font on mobile */
+            }
+
+            th, td {
+                white-space: nowrap; /* prevent wrapping */
+                padding: 10px; /* better spacing */
+            }
+        }
+
+        /* For very small screens (below 480px), further tweak */
+        @media (max-width: 480px) {
+            table {
+                font-size: 12px; /* even smaller font */
+            }
+
+            th, td {
+                padding: 8px; /* smaller padding */
+            }
+
+            td {
+                display: block; /* Stack each cell */
+                width: 100%; /* full-width block display */
+                text-align: left;
+                margin-bottom: 10px; /* spacing between rows */
+            }
+
+            th {
+                display: none; /* Hide table headers on very small screens */
+            }
+
+            /* Show Title in bold and as labels above the description */
+            td:before {
+                content: attr(data-title); /* Add a custom title before each description */
+                font-weight: bold;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+
+        /* Optional: Customize the first column for mobile */
+        td:first-child {
+            font-weight: bold;
+        }
+    </style>
+
+
+
+
 @endsection
 
 @section('content')
@@ -43,36 +100,47 @@
         </div>
     </div>
     <!--Banner Wrap End-->
-    <div class="col-md-8" style="margin-left: 25% ; margin-top: 15px">
-        <table class="table">
-            <tr>
-                <th class="col-md-1">Title</th>
-                <th class="col-md-7">Description</th>
-            </tr>
-            <tr>
-                <td class="col-md-1">Document Collection</td>
-                <td class="col-md-7">Birth certificate (for age verification).
-                    Copy of the father/mother/guardian's national ID.
-                    Passport-sized photo (4-6 copies).
-                    Previous academic certificates (if registering for higher level).
-                    Medical certificate (if required by the madrasa).</td>
-            </tr>
-            <tr>
-                <td class="col-md-1">Fee Payment:</td>
-                <td class="col-md-7">
-
-                    Pay the prescribed admission fee (if applicable) at the madrasa office or through online banking (if available).
-                    Collect the payment receipt as proof.</td>
-            </tr>
-            <tr>
-                <td class="col-md-1">Admission Test/Interview:</td>
-                <td class="col-md-7">Attend the admission test, which may include:
-                    Basic Quran recitation skills.
-                    General knowledge or academic questions (for higher levels).
-                    Oral interview to assess discipline and preparation.</td>
-            </tr>
-        </table>
+    <div class="col-md-8 mx-auto mt-3">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th class="col-md-3">শিরোনাম</th>
+                    <th class="col-md-9">বর্ণনা</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ডকুমেন্ট সংগ্রহ</td>
+                    <td>
+                        - জন্ম সনদপত্র (বয়স যাচাইয়ের জন্য)।<br>
+                        - পিতামাতা/অভিভাবকের জাতীয় পরিচয়পত্রের কপি।<br>
+                        - পাসপোর্ট সাইজের ছবি (৪-৬ কপি)।<br>
+                        - পূর্ববর্তী শিক্ষাগত সনদপত্র (যদি উচ্চতর স্তরে ভর্তি হয়)।<br>
+                        - মেডিকেল সনদপত্র (যদি মাদ্রাসার দ্বারা প্রয়োজন হয়)।
+                    </td>
+                </tr>
+                <tr>
+                    <td>ফি পরিশোধ</td>
+                    <td>
+                        - নির্ধারিত ভর্তি ফি পরিশোধ করুন (যদি প্রযোজ্য হয়) মাদ্রাসার অফিসে অথবা অনলাইন ব্যাংকিংয়ের মাধ্যমে (যদি উপলব্ধ থাকে)।<br>
+                        - পরিশোধের রশিদ সংগ্রহ করুন প্রমাণ হিসেবে।
+                    </td>
+                </tr>
+                <tr>
+                    <td>ভর্তি পরীক্ষা/সাক্ষাৎকার</td>
+                    <td>
+                        - ভর্তি পরীক্ষায় অংশগ্রহণ করুন, যা অন্তর্ভুক্ত করতে পারে:<br>
+                        &nbsp;&nbsp;• মৌলিক কুরআন তেলাওয়াতের দক্ষতা।<br>
+                        &nbsp;&nbsp;• সাধারণ জ্ঞান অথবা শিক্ষাগত প্রশ্নাবলি (উচ্চতর স্তরের জন্য)।<br>
+                        &nbsp;&nbsp;• শৃঙ্খলা এবং প্রস্তুতি মূল্যায়ন করার জন্য মৌখিক সাক্ষাৎকার।
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
 @endsection
 
 
@@ -121,4 +189,3 @@
 
 
 @endsection
-
