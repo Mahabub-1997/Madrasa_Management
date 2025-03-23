@@ -39,9 +39,9 @@
                     <img src="{{ asset('frontend/extra-images/banner-100.jpg') }}" alt="Image here" style="opacity: 0.7; transition: opacity 0.5s ease-in-out;max-height: 700px" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">                <div class="iq-caption-wrapper text-left">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption">
-                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div class="bismillah iq-caption-title"></div>
                                 <div  class="welcome iq-caption-text" style="font-weight: bold"></div>
-                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
+                                <div class="description iq-caption-contant"></div>
                                 <div class=" readButton iq_link_1" style="background-color: #43A047"></div>
                             </div>
                         </div>
@@ -56,9 +56,9 @@
                     <div class="iq-caption-wrapper text-left">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption">
-                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div class="bismillah iq-caption-title"></div>
                                 <div id="" class="welcome iq-caption-text" style="font-weight: bold"></div>
-                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
+                                <div class="description iq-caption-contant"></div>
                                 <div class="readButton iq_link_1" style="background-color: #43A047"></div>
                             </div>
                         </div>
@@ -73,10 +73,10 @@
                     <div class="iq-caption-wrapper">
                         <div class="iq_banner_caption container">
                             <div class="iq-caption text-left">
-                                <div class="bismillah iq-caption-title">Bismillahir Rahmanir Rahim</div>
+                                <div class="bismillah iq-caption-title"></div>
                                 <div   class="welcome iq-caption-text" style="font-weight: bold"></div>
-                                <div class="description iq-caption-contant">Allah’s mercy is limitless; no matter how dark your path may seem, turn towards Him. With every prayer, your heart finds peace, and your soul finds strength.</div>
-                                <div class="readButton iq_link_1" style="background-color: #43A047">Read More</div>                                    </div>
+                                <div class="description iq-caption-contant"></div>
+                                <div class="readButton iq_link_1" style="background-color: #43A047"></div>                                    </div>
                         </div>
                     </div>
                 </a>
@@ -710,8 +710,6 @@
             });
 
 
-
-            console.log('chutiye');
             $('#mg-responsive-navigation').dlmenu();
         })
     </script>
