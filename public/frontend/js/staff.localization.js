@@ -49,9 +49,13 @@ const translations = {
         staffTitle1:"Information",
         formerTeacherTitle:"Our Madrasa About,Mission And Vision",
         formerTeacherDescription:"Our madrasa is established with the integration of Islamic education, ethics, and modern knowledge. Here, students are guided on the right path, character building, and encouraged to serve society.",
-        testimonial1:"Muslihul Ummah Hifz Madrasa is an Islamic educational institution that provides students with Quran Hifz, Tajweed, and Islamic knowledge. The madrasa was established for the spiritual and moral development of children, so that they can shape their lives in the light of Islamic education. It integrates modern education with Islamic teachings and encourages " +
-            "character building and the establishment of justice in society." +
-            " The institution places special emphasis on Islamic values and ethics.",
+
+
+
+        testimonial1:"Our madrasa is established with a combination of Islamic education, morality, and modern knowledge. Here, students are encouraged to follow the right direction, build good character, and engage in social service. Muslihul Ummah Hifz Madrasa is an Islamic educational institution that provides students with Quran memorization (Hifz), Tajweed, and Islamic knowledge. The madrasa was established in 2011 for the spiritual and moral development of children, so that they can shape their lives in the light of Islamic teachings. Modern educational methods are integrated with Islamic education here, and students are motivated to build good character and establish justice in society. The institution places special emphasis on Islamic values and ethics.",
+
+
+
         testimonial2:"The goal of Muslihul Ummah Hifz Madrasa is to provide students with proper" +
             " education in Quran Hifz, Tajweed, and Islamic knowledge." +
             " The madrasa aims to foster the spiritual, moral, and character development of children so that they can establish justice in society through Islamic teachings. By integrating modern educational methods with Islamic education, it helps in the holistic development of students." +
@@ -119,9 +123,19 @@ const translations = {
 
         formerTeacherTitle:"আমাদের মাদ্রাসার পরিচিতি, লক্ষ্য ও উদ্দেশ্য",
         formerTeacherDescription:"আমাদের মাদ্রাসা ইসলামী শিক্ষা, নৈতিকতা, এবং আধুনিক জ্ঞানের সমন্বয়ে প্রতিষ্ঠিত। এখানে শিক্ষার্থীদের সঠিক দিশা, চরিত্র গঠন এবং সমাজসেবায় উৎসাহিত করা হয়।",
-        testimonial1:"মুসলিহুল উম্মাহ হিফজ মাদ্রাসা একটি ইসলামী শিক্ষা প্রতিষ্ঠান, যা শিক্ষার্থীদের কুরআন হিফজ, তাজবিদ এবং ইসলামী জ্ঞান " +
-            "প্রদান করে। মাদ্রাসাটি প্রতিষ্ঠিত হয়েছে শিশুদের আধ্যাত্মিক ও নৈতিক উন্নতির জন্য, যাতে তারা ইসলামী শিক্ষার আলোকে নিজেদের জীবন গড়ে তুলতে পারে। এখানে আধুনিক শিক্ষা ব্যবস্থার সঙ্গে ইসলামী শিক্ষার সমন্বয় করা হয়, এবং শিক্ষার্থীদের চরিত্র গঠন" +
-            " ও সমাজে ন্যায়পরায়ণতা প্রতিষ্ঠায় উৎসাহিত করা হয়। প্রতিষ্ঠানটি ইসলামী মূল্যবোধ এবং শুদ্ধাচারের দিকে বিশেষ গুরুত্ব দেয়।",
+
+
+
+
+        testimonial1:
+
+            "আমাদের মাদ্রাসা ইসলামী শিক্ষা, নৈতিকতা, এবং আধুনিক জ্ঞানের সমন্বয়ে প্রতিষ্ঠিত। এখানে শিক্ষার্থীদের সঠিক দিশা, চরিত্র গঠন এবং সমাজসেবায় উৎসাহিত করা হয়। মুসলিহুল উম্মাহ হিফজ মাদ্রাসা একটি ইসলামী শিক্ষা প্রতিষ্ঠান, যা শিক্ষার্থীদের কুরআন হিফজ, তাজবিদ এবং ইসলামী জ্ঞান প্রদান করে। মাদ্রাসাটি ২০১১ সালে" +
+            " প্রতিষ্ঠিত হয়েছে শিশুদের আধ্যাত্মিক ও নৈতিক উন্নতির জন্য, যাতে তারা ইসলামী শিক্ষার আলোকে নিজেদের জীবন গড়ে তুলতে পারে। এখানে আধুনিক শিক্ষা ব্যবস্থার সঙ্গে ইসলামী শিক্ষার সমন্বয় করা হয়, এবং শিক্ষার্থীদের চরিত্র গঠন ও সমাজে ন্যায়পরায়ণতা প্রতিষ্ঠায় উৎসাহিত করা হয়। প্রতিষ্ঠানটি ইসলামী মূল্যবোধ এবং শুদ্ধাচারের দিকে বিশেষ গুরুত্ব দেয়।",
+
+
+
+
+
         testimonial2:"মুসলিহুল উম্মাহ হিফজ মাদ্রাসার লক্ষ্য হলো শিক্ষার্থীদের কুরআন হিফজ, তাজবিদ এবং ইসলামী জ্ঞান শুদ্ধভাবে শিক্ষা প্রদান করা। মাদ্রাসাটি শিশুদের আধ্যাত্মিক, নৈতিক ও চরিত্রগত উন্নতি সাধন করতে চায়, যাতে তারা ইসলামী শিক্ষার মাধ্যমে সমাজে ন্যায়পরায়ণতা প্রতিষ্ঠা করতে পারে। আধুনিক শিক্ষা পদ্ধতির সাথে" +
             " ইসলামী শিক্ষা সমন্বয় করে শিক্ষার্থীদের পূর্ণাঙ্গ বিকাশে সহায়তা করা হয়। প" +
             "্রতিষ্ঠানের মূল লক্ষ্য হলো মুসলিম সমাজের জন্য আদর্শ নাগরিক গড়ে তোলা, যারা আল্লাহর পথে চলবে।",
