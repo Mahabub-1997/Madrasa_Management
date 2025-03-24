@@ -270,7 +270,7 @@
 		right: 0;
 	}
 	.iq_best_knowledge_bg{
-		background-image: none;
+        background-size: 100%;
 	}
 	.iq_gallery_menu ul li{
 		margin-left:5px;
