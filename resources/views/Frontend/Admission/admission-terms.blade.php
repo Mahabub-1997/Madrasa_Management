@@ -97,14 +97,14 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th class="col-md-3">শিরোনাম</th>
-                        <th class="col-md-9">বর্ণনা</th>
+                        <th class="col-md-3" style="font-weight: bold;">শিরোনাম</th>
+                        <th class="col-md-9" style="font-weight: bold;">বর্ণনা</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td data-title="শিরোনাম">ডকুমেন্ট সংগ্রহ</td>
-                        <td data-title="বর্ণনা">
+                        <td data-title="শিরোনাম" style="font-weight: bold;">ডকুমেন্ট সংগ্রহ</td>
+                        <td data-title="বর্ণনা" style="font-weight: bold;">
                             - জন্ম সনদপত্র (বয়স যাচাইয়ের জন্য)।<br>
                             - পিতামাতা/অভিভাবকের জাতীয় পরিচয়পত্রের কপি।<br>
                             - পাসপোর্ট সাইজের ছবি (৪-৬ কপি)।<br>
@@ -113,15 +113,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <td data-title="শিরোনাম">ফি পরিশোধ</td>
-                        <td data-title="বর্ণনা">
+                        <td data-title="শিরোনাম" style="font-weight: bold;">ফি পরিশোধ</td>
+                        <td data-title="বর্ণনা" style="font-weight: bold;">
                             - নির্ধারিত ভর্তি ফি পরিশোধ করুন (যদি প্রযোজ্য হয়) মাদ্রাসার অফিসে অথবা অনলাইন ব্যাংকিংয়ের মাধ্যমে (যদি উপলব্ধ থাকে)।<br>
                             - পরিশোধের রশিদ সংগ্রহ করুন প্রমাণ হিসেবে।
                         </td>
                     </tr>
                     <tr>
-                        <td data-title="শিরোনাম">ভর্তি পরীক্ষা/সাক্ষাৎকার</td>
-                        <td data-title="বর্ণনা">
+                        <td data-title="শিরোনাম" style="font-weight: bold;">ভর্তি পরীক্ষা/সাক্ষাৎকার</td>
+                        <td data-title="বর্ণনা" style="font-weight: bold;">
                             - ভর্তি পরীক্ষায় অংশগ্রহণ করুন, যা অন্তর্ভুক্ত করতে পারে:<br>
                             &nbsp;&nbsp;• মৌলিক কুরআন তেলাওয়াতের দক্ষতা।<br>
                             &nbsp;&nbsp;• সাধারণ জ্ঞান অথবা শিক্ষাগত প্রশ্নাবলি (উচ্চতর স্তরের জন্য)।<br>
@@ -130,6 +130,7 @@
                     </tr>
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>

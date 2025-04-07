@@ -108,56 +108,82 @@
             <div class="iq_search_courses" style="margin-left: 25%">
 
                 <table class="table table-responsive">
-                    <h4>Madrasa Admission Information 2025</h4>
+                    <h4>মাদ্রাসা ভর্তি তথ্য ২০২৫</h4>
                     <thead>
                     <tr>
-                        <th class="col-md-1">Title</th>
-                        <th class="col-md-7">Description</th>
+                        <th class="col-md-1" style="font-weight: bold;">শিরোনাম</th>
+                        <th class="col-md-7" style="font-weight: bold;">বিবরণ</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Age Limit:</td>
-                        <td class="col-md-7" data-label="Description">Minimum 4 years for Nazira and 7 years for Hifz program.</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">বয়সসীমা:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            নাজেরা প্রোগ্রামের জন্য ন্যূনতম ৪ বছর এবং হিফজ প্রোগ্রামের জন্য ন্যূনতম ৭ বছর।
+                        </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Required Documents:</td>
-                        <td class="col-md-7" data-label="Description">Birth certificate. Recent passport-sized photographs (4 copies). Previous academic certificates (if applicable). Copy of guardian's national ID card.</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">প্রয়োজনীয় কাগজপত্র:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            জন্ম সনদ। সাম্প্রতিক পাসপোর্ট সাইজের ছবি (৪ কপি)।
+                            পূর্ববর্তী একাডেমিক সার্টিফিকেট (যদি প্রযোজ্য হয়)।
+                            অভিভাবকের জাতীয় পরিচয়পত্রের কপি।
+                        </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Offered Programs:</td>
-                        <td class="col-md-7" data-label="Description">Nazira Quran (Basic Quran Recitation). Hifz-ul-Quran (Quran memorization). Tafsir & Hadith Studies (Advanced Islamic Studies). Arabic Grammar & Language.</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">প্রদত্ত প্রোগ্রাম:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            নাজেরা কুরআন (প্রাথমিক কুরআন তেলাওয়াত)।
+                            হিফজুল কুরআন (কুরআন মুখস্থকরণ)।
+                            তাফসির ও হাদিস স্টাডিজ (উচ্চতর ইসলামিক স্টাডিজ)।
+                            আরবি ব্যাকরণ ও ভাষা।
+                        </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Admission Deadline:</td>
-                        <td class="col-md-7" data-label="Description">The deadline for online admission for the 2024-25 academic session for the 11th grade has been extended. According to the new schedule, students can complete online admission in colleges and madrasas until August 5.</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ভর্তি শেষ তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            ২০২৪-২৫ শিক্ষাবর্ষের জন্য ১১তম শ্রেণির অনলাইন ভর্তি সময়সীমা বাড়ানো হয়েছে।
+                            নতুন সময়সূচি অনুযায়ী, শিক্ষার্থীরা ৫ আগস্ট পর্যন্ত কলেজ ও মাদ্রাসায় অনলাইনে ভর্তি সম্পন্ন করতে পারবে।
+                        </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Application Start Date:</td>
-                        <td class="col-md-7" data-label="Description">[10/01/2025].</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">আবেদন শুরুর তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[১০/০১/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">End Date:</td>
-                        <td class="col-md-7" data-label="Description">[31/01/2025].</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">শেষ তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[৩১/০১/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Admission Test Date:</td>
-                        <td class="col-md-7" data-label="Description">[02/02/2025].</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ভর্তি পরীক্ষা তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[০২/০২/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Result Declaration:</td>
-                        <td class="col-md-7" data-label="Description">[10/02/2025].</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ফলাফল প্রকাশ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[১০/০২/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Provided Facilities:</td>
-                        <td class="col-md-7" data-label="Description">Well-furnished classrooms in an Islamic environment. Boarding and accommodation facilities for students (if applicable). Qualified and experienced teachers. Focus on both Islamic and modern education.</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">প্রদত্ত সুবিধাসমূহ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            ইসলামিক পরিবেশে সুসজ্জিত শ্রেণিকক্ষ।
+                            শিক্ষার্থীদের জন্য বোর্ডিং ও আবাসন সুবিধা (যদি প্রযোজ্য হয়)।
+                            যোগ্য ও অভিজ্ঞ শিক্ষকবৃন্দ।
+                            ইসলামিক ও আধুনিক শিক্ষার সমন্বয়।
+                        </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">Admission Procedure:</td>
-                        <td class="col-md-7" data-label="Description">Collect the application form from the madrasa office or website. Submit the completed form with required documents. Attend the admission test/interview. Pay the admission fee after confirmation.</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ভর্তি প্রক্রিয়া:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            মাদ্রাসার অফিস বা ওয়েবসাইট থেকে আবেদন ফর্ম সংগ্রহ করুন।
+                            প্রয়োজনীয় কাগজপত্রসহ পূর্ণাঙ্গ আবেদন ফর্ম জমা দিন।
+                            ভর্তি পরীক্ষা/সাক্ষাৎকার দিন।
+                            নিশ্চিতকরণের পর ভর্তি ফি পরিশোধ করুন।
+                        </td>
                     </tr>
                     </tbody>
                 </table>
+
+
 
             </div>
         </div>
