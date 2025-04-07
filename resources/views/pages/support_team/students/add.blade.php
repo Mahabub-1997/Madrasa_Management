@@ -186,13 +186,13 @@
                             <input type="number" name="discount" placeholder="Discount" class="form-control" value="{{ old('discount', 0) }}">
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Age:</label>
-                            <input type="number" name="age" placeholder="Age" class="form-control" value="{{ old('age') }}">
-                        </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Age:</label>
+                        <input type="text" name="age" placeholder="Age" class="form-control" value="{{ old('age') }}">
                     </div>
                 </div>
+            </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">

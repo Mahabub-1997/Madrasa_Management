@@ -24,7 +24,7 @@ class StudentRecordCreate extends FormRequest
             'my_class_id' => 'exists:my_classes,id',
             'section_id' => 'exists:sections,id',
             'admission_date' => 'sometimes|nullable|date',
-            'age' => 'sometimes|nullable|integer|max:127',
+            'age' => 'nullable|string|max:250',
             'dob' => 'sometimes|nullable|date',
             'father_name' => 'sometimes|nullable|string|max:255',
             'mother_name' => 'sometimes|nullable|string|max:255',
