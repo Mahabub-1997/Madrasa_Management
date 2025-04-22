@@ -94,8 +94,8 @@
             <div class="container">
                 <!--Heading 1 Start-->
                 <div class="iq_heading_1 text-center">
-                    <h4 class="formerTeacherTitle">Former Teacher's <span> Expression </span></h4>
-                    <p class="formerTeacherDescription">
+                    <h4 class="formerTeacherTitle" style="font-weight: bold;">Former Teacher's <span> Expression </span></h4>
+                    <p class="formerTeacherDescription" style="font-weight: bold;">
                         I am extremely proud to have worked as a teacher at this institution. <br>
                         While working here, I not only spread the light of knowledge among students but also taught them humanitarian values.
                     </p>
@@ -106,11 +106,11 @@
                     <!--Testimonial Start-->
                     <div>
                         <div>
-                            <div class="testimonial">
+                            <div class="testimonial" style="font-weight: bold;">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
                                         <h5 style="text-align: center; margin-bottom: 20px;">
-                                            <a class="teacherName2" href="#"></a>
+                                            <a class="teacherName2" style="font-weight: bold;" href="#"></a>
                                         </h5>
                                     </div>
                                 </div>
@@ -122,15 +122,15 @@
                     <!--Testimonial Start-->
                     <div>
                         <div>
-                            <div class="testimonial">
+                            <div class="testimonial" style="font-weight: bold;">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
                                         <h5 style="text-align: center; margin-bottom: 20px;">
-                                            <a class="teacherName3" href="#"></a>
+                                            <a class="teacherName3" style="font-weight: bold;" href="#"></a>
                                         </h5>
                                     </div>
                                 </div>
-                                <p class="testimonial2"></p>
+                                <p class="testimonial2" style="font-weight: bold;"></p>
                             </div>
                         </div>
                     </div>
@@ -138,15 +138,15 @@
                     <!--Testimonial Start-->
                     <div>
                         <div>
-                            <div class="testimonial">
+                            <div class="testimonial" style="font-weight: bold;">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
                                         <h5 style="text-align: center; margin-bottom: 20px;">
-                                            <a class="teacherName1" href="#"></a>
+                                            <a class="teacherName1" style="font-weight: bold;" href="#"></a>
                                         </h5>
                                     </div>
                                 </div>
-                                <p class="testimonial3"></p>
+                                <p class="testimonial3" style="font-weight: bold;"></p>
                             </div>
                         </div>
                     </div>
@@ -165,12 +165,12 @@
                 <div class="iq_knowledge_des">
                     <!--Heading Wrap Start-->
                     <div class="iq_heading_1 text-left">
-                        <h4 class="bestTitle">Best <span>Knowledge from Us</span><br></h4>
+                        <h4 class="bestTitle" style="font-weight: bold;">Best <span>Knowledge from Us</span><br></h4>
                     </div>
                     <!--Heading Wrap End-->
-                    <h5 class="bestSubTitle">Have the courage to have firm belief in Allah</h5>
-                    <p class="bestDescription">Having firm belief in Allah is the foundation of our faith. He is the Almighty, the solver of all our problems. During the toughest times in life, be patient and seek help from Allah. Allah is always with His servants and will never disappoint you. Keep your faith, success will come.</p>
-                    <a class="button iq_link_1" style="background-color: #43A047"  href="#">Join Us</a>
+                    <h5 class="bestSubTitle" style="font-weight: bold;">Have the courage to have firm belief in Allah</h5>
+                    <p class="bestDescription" style="font-weight: bold;">Having firm belief in Allah is the foundation of our faith. He is the Almighty, the solver of all our problems. During the toughest times in life, be patient and seek help from Allah. Allah is always with His servants and will never disappoint you. Keep your faith, success will come.</p>
+                    <a class="button iq_link_1" style="background-color: #43A047; font-weight: bold;"  href="#">Join Us</a>
                 </div>
             </div>
             <!--Best Knowledge Description Wrap End-->
@@ -182,8 +182,8 @@
             <div class="container">
                 <!--Heading Wrap Start-->
                 <div class="iq_heading_1 text-center">
-                    <h4 class="ourFeaturedTitle">Our <span>Featured Courses</span></h4>
-                    <p class="ourFeaturedDescription">Our featured courses include Nazira Quran, Hifz-ul-Quran, Tafsir and Hadith education, Arabic language, and an integrated curriculum combining Islamic ethics with modern educational methods.</p>
+                    <h4 class="ourFeaturedTitle" style="font-weight: bold;">Our <span>Featured Courses</span></h4>
+                    <p class="ourFeaturedDescription" style="font-weight: bold;">Our featured courses include Nazira Quran, Hifz-ul-Quran, Tafsir and Hadith education, Arabic language, and an integrated curriculum combining Islamic ethics with modern educational methods.</p>
                 </div>
                 <!--Heading Wrap End-->
 
@@ -202,8 +202,8 @@
                                     <div class="iq_course_icon">
                                         <span class="icon-student"></span>
                                     </div>
-                                    <h5><a class="courseList1" href="#">Ibtidai Course</a></h5>
-                                    <p class="courseListDescription1">The Ibtidai program includes Nazira Quran, prayer education, Arabic alphabets, basic Islamic knowledge, and primary character development education.</p>
+                                    <h5><a class="courseList1" style="font-weight: bold;" href="#">Ibtidai Course</a></h5>
+                                    <p class="courseListDescription1" style="font-weight: bold;">The Ibtidai program includes Nazira Quran, prayer education, Arabic alphabets, basic Islamic knowledge, and primary character development education.</p>
                                     <ul>
                                         <li>
                                             <!--RATING AREA START-->
@@ -229,9 +229,11 @@
                                     <div class="iq_course_icon">
                                         <span class="icon-lecture"></span>
                                     </div>
-                                    <h5><a class="courseList2" href="#">Dakhil Course</a></h5>
-                                    <p class="courseListDescription2">The Dakhil program provides an integrated curriculum including Quran, Hadith, Arabic, Islamic history, Fiqh, Tafsir, and science and general education.</p>
+                                    <h5><a class="courseList2" style="font-weight: bold;" href="#">Dakhil Course</a></h5>
+                                    <p class="courseListDescription2" style="font-weight: bold;">The Dakhil program provides an integrated curriculum including Quran, Hadith, Arabic, Islamic history, Fiqh, Tafsir, and science and general education.</p>
                                     <ul>
+
+
                                         <li>
                                             <!--RATING AREA START-->
                                             <div class="rating_down">
@@ -256,8 +258,8 @@
                                     <div class="iq_course_icon">
                                         <span class="icon-molecule"></span>
                                     </div>
-                                    <h5><a class="courseList3" href="#">Alim Course</a></h5>
-                                    <p class="courseListDescription3">The Alim program provides advanced Tafsir, Hadith, Fiqh, Usulul Fiqh, Arabic literature, Islamic philosophy, and modern subject matter education.</p>
+                                    <h5><a class="courseList3" style="font-weight: bold;" href="#">Alim Course</a></h5>
+                                    <p class="courseListDescription3" style="font-weight: bold;">The Alim program provides advanced Tafsir, Hadith, Fiqh, Usulul Fiqh, Arabic literature, Islamic philosophy, and modern subject matter education.</p>
                                     <ul>
                                         <li>
                                             <!--RATING AREA START-->
@@ -367,8 +369,8 @@
         <section class="iq_gallery_bg" style="background-color: #f0f0f0; padding: 40px 0;">
             <!--Heading Wrap Start-->
             <div class="iq_heading_1 text-center">
-                <h4 class="gallaryTitle">Our <span>Gallery</span></h4>
-                <p class="galleryDescription">Our gallery features Islamic lectures, quotes from the Holy Quran, and beautiful sayings from Hadith to reflect the profound knowledge, values, and way of life in Islam.
+                <h4 class="gallaryTitle" style="font-weight: bold;" >Our <span>Gallery</span></h4>
+                <p class="galleryDescription" style="font-weight: bold;">Our gallery features Islamic lectures, quotes from the Holy Quran, and beautiful sayings from Hadith to reflect the profound knowledge, values, and way of life in Islam.
                     <br>Hidden in each image is the peace, love, and compassion of Islam. Visit our gallery to be inspired and find knowledge and motivation.</p>
             </div>
             <!--Heading Wrap End-->
@@ -549,10 +551,10 @@
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
                             <i class="icon-lecture">
-                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span><span class="path37"></span><span class="path38"></span>
+                                <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span><span class="path37"></span><span class="path38"></span>
                             </i>
-                            <span class="counterTeacher">21</span>
-                            <h6 class="totalTeacher" >Total Teachers</h6>
+                            <span class="counterTeacher" style="font-weight: bold;">21</span>
+                            <h6 class="totalTeacher" style="font-weight: bold;" >Total Teachers</h6>
                         </div>
                     </div>
                     <!--Number Counter End-->
@@ -560,10 +562,10 @@
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
                             <i class="icon-books">
-                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span>
+                                <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span>
                             </i>
-                            <span class="counterSubject">12</span>
-                            <h6 class="totalSubject">Total Subjects</h6>
+                            <span class="counterSubject" style="font-weight: bold;">12</span>
+                            <h6 class="totalSubject" style="font-weight: bold;">Total Subjects</h6>
                         </div>
                     </div>
                     <!--Number Counter End-->
@@ -571,10 +573,10 @@
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
                             <i class="icon-drawing">
-                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span>
+                                <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span>
                             </i>
-                            <span class="counterGold">56</span>
-                            <h6 class="totalGold">Total Gold Medals</h6>
+                            <span class="counterGold" style="font-weight: bold;">56</span>
+                            <h6 class="totalGold" style="font-weight: bold;">Total Gold Medals</h6>
                         </div>
                     </div>
                     <!--Number Counter End-->
@@ -582,10 +584,10 @@
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
                             <i class="icon-diploma-1">
-                                <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span>
+                                <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span>
                             </i>
-                            <span class="counterStudent">7892</span>
-                            <h6 class="totalStudent">Total Ongoing Students</h6>
+                            <span class="counterStudent" style="font-weight: bold;">7892</span>
+                            <h6 class="totalStudent" style="font-weight: bold;">Total Ongoing Students</h6>
                         </div>
                     </div>
                     <!--Number Counter End-->
@@ -599,8 +601,8 @@
             <div class="container">
                 <!--Heading Wrap Start-->
                 <div class="iq_heading_1 text-center">
-                    <h4 class="ourTeacherTitle">Our <span></span> Teachers</h4>
-                    <p class="ourTeacherDescription">Our teachers provide deep knowledge about the peace, justice, and humanitarian values of Islam.</p>
+                    <h4 class="ourTeacherTitle" style="font-weight: bold;">Our <span></span> Teachers</h4>
+                    <p class="ourTeacherDescription" style="font-weight: bold;">Our teachers provide deep knowledge about the peace, justice, and humanitarian values of Islam.</p>
 
                 </div>
                 <!--Heading Wrap End-->
@@ -610,9 +612,9 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <div class="text">
-                                <h4><a class="NameTeacher1" href="#"></a></h4>
-                                <h6 class="teacherSubTitle1"></h6>
-                                <p class="teacherDescription1"></p>
+                                <h4><a class="NameTeacher1" style="font-weight: bold;" href="#"></a></h4>
+                                <h6 class="teacherSubTitle1" style="font-weight: bold;"></h6>
+                                <p class="teacherDescription1" style="font-weight: bold;"></p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -633,9 +635,9 @@
                                 <img src="{{ asset('frontend/extra-images/teacher-100.jpg') }}" alt="Image Here"  style="max-height: 439px;">
                             </figure>
                             <div class="text">
-                                <h4><a class="NameTeacher2" href="#">22</a></h4>
-                                <h6 class="teacherSubTitle2"></h6>
-                                <p class="teacherDescription2"></p>
+                                <h4><a class="NameTeacher2" style="font-weight: bold;" href="#">22</a></h4>
+                                <h6 class="teacherSubTitle2" style="font-weight: bold;"></h6>
+                                <p class="teacherDescription2" style="font-weight: bold;"></p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -651,8 +653,8 @@
                         <div class="iq_teacher_style_1">
                             <div class="text">
                                 <h4><a class="NameTeacher3" href="#"></a></h4>
-                                <h6 class="teacherSubTitle3" ></h6>
-                                <p class="teacherDescription3">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h6 class="teacherSubTitle3" style="font-weight: bold;" ></h6>
+                                <p class="teacherDescription3" style="font-weight: bold;">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>

@@ -37,11 +37,11 @@
         <!-- Banner Section -->
         <div class="iner_banner ent_detail">
             <div class="container">
-                <h5 class="staffTitle"></h5>
+                <h5 class="staffTitle" style="font-weight: bold;"></h5>
                 <div class="banner_iner_capstion">
                     <ul>
-                        <li><a class="staffTitle2" href="#"></a></li>
-                        <li><a class="staffTitle1"  href="#"></a></li>
+                        <li><a class="staffTitle2" style="font-weight: bold;" href="#"></a></li>
+                        <li><a class="staffTitle1" style="font-weight: bold;"  href="#"></a></li>
                     </ul>
                 </div>
             </div>
@@ -50,8 +50,8 @@
             <div class="container">
                 <!--Heading 1 Start-->
                 <div class="iq_heading_1 text-center">
-                    <h4 class="formerTeacherTitle">Former Teacher's <span> Expression </span></h4>
-                    <p class="formerTeacherDescription">
+                    <h4 class="formerTeacherTitle" style="font-weight: bold;">Former Teacher's <span> Expression </span></h4>
+                    <p class="formerTeacherDescription" style="font-weight: bold;">
                         I am extremely proud to have worked as a teacher at this institution. <br>
                         While working here, I not only spread the light of knowledge among students but also taught them humanitarian values.
                     </p>
@@ -66,11 +66,11 @@
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
                                         <h5 style="text-align: center; margin-bottom: 20px;">
-                                            <a class="teacherName2" href="#"></a>
+                                            <a class="teacherName2" style="font-weight: bold;" href="#"></a>
                                         </h5>
                                     </div>
                                 </div>
-                                <p class="testimonial1"></p>
+                                <p class="testimonial1" style="font-weight: bold;"></p>
                             </div>
                         </div>
                     </div>
@@ -78,15 +78,15 @@
                     <!--Testimonial Start-->
                     <div>
                         <div>
-                            <div class="testimonial">
+                            <div class="testimonial" style="font-weight: bold;">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
                                         <h5 style="text-align: center; margin-bottom: 20px;">
-                                            <a class="teacherName3" href="#"></a>
+                                            <a class="teacherName3" style="font-weight: bold;" href="#"></a>
                                         </h5>
                                     </div>
                                 </div>
-                                <p class="testimonial2"></p>
+                                <p class="testimonial2" style="font-weight: bold;"></p>
                             </div>
                         </div>
                     </div>
@@ -94,15 +94,15 @@
                     <!--Testimonial Start-->
                     <div>
                         <div>
-                            <div class="testimonial">
+                            <div class="testimonial" style="font-weight: bold;">
                                 <div class="coures_instractor_thumb">
                                     <div class="thumb_capstion">
                                         <h5 style="text-align: center; margin-bottom: 20px;">
-                                            <a class="teacherName1" href="#"></a>
+                                            <a class="teacherName1" style="font-weight: bold;" href="#"></a>
                                         </h5>
                                     </div>
                                 </div>
-                                <p class="testimonial3"></p>
+                                <p class="testimonial3" style="font-weight: bold;"></p>
                             </div>
                         </div>
                     </div>

@@ -111,26 +111,28 @@
                     <h4>মাদ্রাসা ভর্তি তথ্য ২০২৫</h4>
                     <thead>
                     <tr>
-                        <th class="col-md-1">শিরোনাম</th>
-                        <th class="col-md-7">বিবরণ</th>
+                        <th class="col-md-1" style="font-weight: bold;">শিরোনাম</th>
+                        <th class="col-md-7" style="font-weight: bold;">বিবরণ</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="col-md-1" data-label="Title">বয়সসীমা:</td>
-                        <td class="col-md-7" data-label="Description">নাজেরা প্রোগ্রামের জন্য ন্যূনতম ৪ বছর এবং হিফজ প্রোগ্রামের জন্য ন্যূনতম ৭ বছর।</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">বয়সসীমা:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            নাজেরা প্রোগ্রামের জন্য ন্যূনতম ৪ বছর এবং হিফজ প্রোগ্রামের জন্য ন্যূনতম ৭ বছর।
+                        </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">প্রয়োজনীয় কাগজপত্র:</td>
-                        <td class="col-md-7" data-label="Description">
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">প্রয়োজনীয় কাগজপত্র:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
                             জন্ম সনদ। সাম্প্রতিক পাসপোর্ট সাইজের ছবি (৪ কপি)।
                             পূর্ববর্তী একাডেমিক সার্টিফিকেট (যদি প্রযোজ্য হয়)।
                             অভিভাবকের জাতীয় পরিচয়পত্রের কপি।
                         </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">প্রদত্ত প্রোগ্রাম:</td>
-                        <td class="col-md-7" data-label="Description">
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">প্রদত্ত প্রোগ্রাম:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
                             নাজেরা কুরআন (প্রাথমিক কুরআন তেলাওয়াত)।
                             হিফজুল কুরআন (কুরআন মুখস্থকরণ)।
                             তাফসির ও হাদিস স্টাডিজ (উচ্চতর ইসলামিক স্টাডিজ)।
@@ -138,28 +140,31 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">ভর্তি শেষ তারিখ:</td>
-                        <td class="col-md-7" data-label="Description">২০২৪-২৫ শিক্ষাবর্ষের জন্য ১১তম শ্রেণির অনলাইন ভর্তি সময়সীমা বাড়ানো হয়েছে। নতুন সময়সূচি অনুযায়ী, শিক্ষার্থীরা ৫ আগস্ট পর্যন্ত কলেজ ও মাদ্রাসায় অনলাইনে ভর্তি সম্পন্ন করতে পারবে।</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ভর্তি শেষ তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
+                            ২০২৪-২৫ শিক্ষাবর্ষের জন্য ১১তম শ্রেণির অনলাইন ভর্তি সময়সীমা বাড়ানো হয়েছে।
+                            নতুন সময়সূচি অনুযায়ী, শিক্ষার্থীরা ৫ আগস্ট পর্যন্ত কলেজ ও মাদ্রাসায় অনলাইনে ভর্তি সম্পন্ন করতে পারবে।
+                        </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">আবেদন শুরুর তারিখ:</td>
-                        <td class="col-md-7" data-label="Description">[১০/০১/২০২৫]</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">আবেদন শুরুর তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[১০/০১/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">শেষ তারিখ:</td>
-                        <td class="col-md-7" data-label="Description">[৩১/০১/২০২৫]</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">শেষ তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[৩১/০১/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">ভর্তি পরীক্ষা তারিখ:</td>
-                        <td class="col-md-7" data-label="Description">[০২/০২/২০২৫]</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ভর্তি পরীক্ষা তারিখ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[০২/০২/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">ফলাফল প্রকাশ:</td>
-                        <td class="col-md-7" data-label="Description">[১০/০২/২০২৫]</td>
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ফলাফল প্রকাশ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">[১০/০২/২০২৫]</td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">প্রদত্ত সুবিধাসমূহ:</td>
-                        <td class="col-md-7" data-label="Description">
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">প্রদত্ত সুবিধাসমূহ:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
                             ইসলামিক পরিবেশে সুসজ্জিত শ্রেণিকক্ষ।
                             শিক্ষার্থীদের জন্য বোর্ডিং ও আবাসন সুবিধা (যদি প্রযোজ্য হয়)।
                             যোগ্য ও অভিজ্ঞ শিক্ষকবৃন্দ।
@@ -167,8 +172,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="col-md-1" data-label="Title">ভর্তি প্রক্রিয়া:</td>
-                        <td class="col-md-7" data-label="Description">
+                        <td class="col-md-1" data-label="Title" style="font-weight: bold;">ভর্তি প্রক্রিয়া:</td>
+                        <td class="col-md-7" data-label="Description" style="font-weight: bold;">
                             মাদ্রাসার অফিস বা ওয়েবসাইট থেকে আবেদন ফর্ম সংগ্রহ করুন।
                             প্রয়োজনীয় কাগজপত্রসহ পূর্ণাঙ্গ আবেদন ফর্ম জমা দিন।
                             ভর্তি পরীক্ষা/সাক্ষাৎকার দিন।
@@ -177,6 +182,8 @@
                     </tr>
                     </tbody>
                 </table>
+
+
 
             </div>
         </div>

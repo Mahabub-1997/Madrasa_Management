@@ -72,16 +72,16 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class="text-center">শনিবার</td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="font-weight: bold;">শনিবার</td>
+                                    <td class="text-center" style="font-weight: bold;">
                                         সকাল: ভাত, ভর্তা, ডাল<br>
                                         দুপুর: ভাত, মাছ/ডিম ভাজি, ডাল<br>
                                         রাত: ভাত, মুরগি দিয়ে সবজি, ডাল
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-center">রবিবার</td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="font-weight: bold;">রবিবার</td>
+                                    <td class="text-center" style="font-weight: bold;">
                                          সকাল: ভুনা খিচুরী<br>
                                         দুপুর: ভাত, গোস্ত, ডাল<br>
                                         রাত: ভাত, ডিম ভাজি, ডাল
@@ -89,40 +89,40 @@
 
                                 </tr>
                                 <tr>
-                                    <td class="text-center">সোমবার</td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="font-weight: bold;">সোমবার</td>
+                                    <td class="text-center" style="font-weight: bold;">
                                         সকাল: ভাত, ভাজি, ডাল<br>
                                         দুপুর: ভাত, ডিম, ডাল<br>
                                         রাত: ভাত, সবজি, ডাল
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-center">মঙ্গলবার</td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="font-weight: bold;">মঙ্গলবার</td>
+                                    <td class="text-center" style="font-weight: bold;">
                                         সকাল: ভাত, ভর্তা, ডাল<br>
                                         দুপুর: বিরিয়ানী/মোরগ পোলাও<br>
                                         রাত: ভাত, গিলা-কলিজা দিয়ে বুটের ডাল
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-center">বুধবার</td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="font-weight: bold;">বুধবার</td>
+                                    <td class="text-center" style="font-weight: bold;">
                                         সকাল: ভুনা খিচুরী<br>
                                         দুপুর: ভাত, মাছ/ডিম ভাজি, ডাল<br>
                                         রাত: ভাত, ভর্তা, ডাল
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-center">বৃহস্পতিবার</td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="font-weight: bold;">বৃহস্পতিবার</td>
+                                    <td class="text-center" style="font-weight: bold;">
                                         সকাল:ভাত, বুটের ডাল<br>
                                         দুপুর:ভাত, গোস্ত, ডাল<br>
                                         রাত: ভাত, ডিম ভাজি, ডাল
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-center">শুক্রবার</td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="font-weight: bold;">শুক্রবার</td>
+                                    <td class="text-center" style="font-weight: bold;">
                                         সকাল:ভাত, ভাজি, ডাল<br>
                                         দুপুর:মুরগি দিয়ে বিরিয়ানি<br>
                                         রাত: ভাত, ভাজি, ডাল

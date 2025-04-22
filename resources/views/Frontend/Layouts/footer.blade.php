@@ -5,13 +5,13 @@
             <div class="col-md-3 col-sm-6">
                 <div class="iq_uni_title">
                     <!--Widget Title Start-->
-                    <h4>Madrasa Education <span>System</span></h4>
+                    <h4>মাদ্রাসা শিক্ষা <span>ব্যবস্থা</span></h4>
                     <!--Widget Title End-->
-                    <p class="formerStudentDescription3">The main purpose of madrasa education is to promote Islamic education and the development of the Muslim community.</p>
+                    <p class="formerStudentDescription3" style="font-weight: bold;">মাদ্রাসা শিক্ষার প্রধান উদ্দেশ্য হলো ইসলামী শিক্ষা প্রচার এবং মুসলিম সম্প্রদায়ের উন্নয়ন।"</p>
                     <ul>
                         <li class="day"><span>Monday - Friday</span> 08:00 - 17:00</li>
-                        <li><span>Saturday</span> Closed</li>
-                        <li><span>Friday</span> Closed</li>
+                        <li style="font-weight: bold;"><span>Saturday</span> Closed</li>
+                        <li style="font-weight: bold;"><span>Friday</span> Closed</li>
                     </ul>
                 </div>
             </div>
@@ -24,23 +24,23 @@
                     <!--Widget Title End-->
                     <!--Social Media Start-->
                     <ul>
+{{--                        <li>--}}
+{{--                            <a class="footerOurService1 text-left" href="{{route('contact-us')}}"></a>--}}
+{{--                        </li>--}}
                         <li>
-                            <a class="footerOurService1" href="#"></a>
+                            <a class="footerOurService2 text-left" style="font-weight: bold;" href="{{route('staff-info')}}"></a>
                         </li>
                         <li>
-                            <a class="footerOurService2" href="#"></a>
+                            <a class="footerOurService3 text-left" style="font-weight: bold;" href="{{route('food-facilities')}}"></a>
+                        </li>
+{{--                        <li>--}}
+{{--                            <p class="footerOurService4 text-left" href="#"></p>--}}
+{{--                        </li>--}}
+                        <li>
+                            <a class="footerOurService5 text-left" style="font-weight: bold;" href="{{route('teacher-info')}}"></a>
                         </li>
                         <li>
-                            <a class="footerOurService3" href="#"></a>
-                        </li>
-                        <li>
-                            <a class="footerOurService4" href="#"></a>
-                        </li>
-                        <li>
-                            <a class="footerOurService5" href="#"></a>
-                        </li>
-                        <li>
-                            <a class="footerOurService6" href="#"></a>
+                            <a class="footerOurService6  text-left" style="font-weight: bold;" href="{{route('gallary')}}"></a>
                         </li>
                     </ul>
                     <!--Social Media End-->
@@ -51,10 +51,10 @@
             <div class="col-md-3 col-sm-6">
                 <div class="widget widget-flickr">
                     <!-- Widget Title Start-->
-                    <h5 class="widget-title"><span>Our</span> Photos</h5>
+                    <h5 class="widget-title" style="font-weight: bold;"><span>Our</span> Photos</h5>
                     <!-- Widget Title End-->
                     <div class="flickr-wrap">
-                        <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-1.jpeg') }}" style="min-height:80px;" alt=""></a>
+                        <a class="flickrbadges"  href="#"><img src="{{ asset('frontend/extra-images/gall-1.jpeg') }}" style="min-height:80px;" alt=""></a>
                         <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-2.jpeg') }}" style="min-height:80px;" alt=""></a>
                         <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-3.jpeg') }}" style="min-height:80px;" alt=""></a>
                         <a class="flickrbadges" href="#"><img src="{{ asset('frontend/extra-images/gall-4.jpeg') }}" style="min-height:80px;" alt=""></a>
@@ -71,9 +71,9 @@
             <div class="col-md-3 col-sm-6">
                 <div class="widget iq_footer_newsletter">
                     <!--Widget Title Start-->
-                    <h5 class="widget-title footerOurNewsletter1"><span>Our</span> Newsletter</h5>
+                    <h5 class="widget-title footerOurNewsletter1" style="font-weight: bold;"><span>Our</span> Newsletter</h5>
                     <!--Widget Title End-->
-                    <p class="footerOurNewsletter"></p>
+                    <p class="footerOurNewsletter" style="font-weight: bold;"></p>
                     <form class="iq-input">
                         <input placeholder="Search..." type="text">
                         <label class="iq-input-icon"><input type="submit"></label>

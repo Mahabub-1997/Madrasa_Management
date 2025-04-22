@@ -36,11 +36,11 @@
         <!-- Banner Section -->
         <div class="iner_banner ent_detail">
             <div class="container">
-                <h5 class="teacherTitle">Our Teacher</h5>
+                <h5 class="teacherTitle" style="font-weight: bold;">Our Teacher</h5>
                 <div class="banner_iner_capstion">
                     <ul>
-                        <li><a class="teacherTitle1" href="#"></a></li>
-                        <li><a class="teacherTitle"  href="#"></a></li>
+                        <li><a class="teacherTitle1" style="font-weight: bold;" href="#"></a></li>
+                        <li><a class="teacherTitle" style="font-weight: bold;" href="#"></a></li>
                     </ul>
                 </div>
             </div>
@@ -56,9 +56,9 @@
                                 <img src="{{ asset('frontend/extra-images/teacher-101.jpeg') }}" alt="Image Here" style="max-height: 400px;">
                             </figure>
                             <div class="text">
-                                <h4><a class="NameTeacher1" href="#"></a></h4>
-                                <h6 class="teacherSubTitle1" ></h6>
-                                <p class="teacherDescription1">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h4><a class="NameTeacher1" style="font-weight: bold;" href="#"></a></h4>
+                                <h6 class="teacherSubTitle1" style="font-weight: bold;" ></h6>
+                                <p class="teacherDescription1" style="font-weight: bold;">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -73,9 +73,9 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="iq_teacher_style_1">
                             <div class="text">
-                                <h4><a class="NameTeacher2"  href="#"></a></h4>
-                                <h6 class="teacherSubTitle2"></h6>
-                                <p class="teacherDescription2">.</p>
+                                <h4><a class="NameTeacher2" style="font-weight: bold;"  href="#"></a></h4>
+                                <h6 class="teacherSubTitle2" style="font-weight: bold;"></h6>
+                                <p class="teacherDescription2" style="font-weight: bold;">.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -96,9 +96,9 @@
                                 <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 427px;">
                             </figure>
                             <div class="text">
-                                <h4><a class="NameTeacher3" href="#">Dr. Mostak Ahmed</a></h4>
-                                <h6 class="teacherSubTitle3">Manager</h6>
-                                <p class="teacherDescription3">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
+                                <h4><a class="NameTeacher3" style="font-weight: bold;" href="#">Dr. Mostak Ahmed</a></h4>
+                                <h6 class="teacherSubTitle3" style="font-weight: bold;">Manager</h6>
+                                <p class="teacherDescription3" style="font-weight: bold;">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
                                 <ul class="iq_footer_social">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
