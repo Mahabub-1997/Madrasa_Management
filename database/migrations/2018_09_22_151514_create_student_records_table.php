@@ -24,7 +24,7 @@ class CreateStudentRecordsTable extends Migration
             $table->string('student_code', 30)->unique()->nullable();
             $table->integer('discount')->nullable()->default(0);
             $table->string('house')->nullable();
-            $table->tinyInteger('age')->nullable();
+            $table->string('age')->nullable();
 //            $table->string('year_admitted')->nullable();
             $table->dateTime('admission_date')->nullable();
             $table->tinyInteger('grad')->default(0);

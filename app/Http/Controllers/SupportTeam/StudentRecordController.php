@@ -90,6 +90,8 @@ class StudentRecordController extends Controller
         $srData['admission_date'] = date('Y-m-d', strtotime($req->admission_date));
         // Store photo in student record as well
         $srData['photo'] = $userData['photo'];
+        $srData['age'] = $req->age; // Ensure Bangla text is assigned correctly
+
         $this->student->createRecord($srData);
 
 //        return redirect()->route('students.index')->with('success', 'Student created successfully');

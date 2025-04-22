@@ -102,9 +102,16 @@
                 <p class="details"><strong>Gender:</strong> {{ $sr->user->gender ?? 'N/A' }}</p>
                 <p class="details"><strong>Phone:</strong> {{ $sr->user->phone ?? 'N/A' }}</p>
                 <p class="details"><strong>Date of Birth:</strong> {{ $sr->dob ?? 'N/A' }}</p>
+                <p class="details"><strong>Age: </strong> {{ $sr->age ?? 'N/A' }}</p>
+                <p class="details"><strong>Alternate Phone: </strong> {{ $sr->user->phone2 ?? 'N/A' }}</p>
+
+
             </div>
             <div class="details-section">
                 <h3>Guardian Information</h3>
+                <p class="details"><strong>Father's Name:</strong> {{ $sr->father_name ?? 'N/A' }}</p>
+                <p class="details"><strong>Mother's Name:</strong> {{ $sr->mother_name ?? 'N/A' }}</p>
+
                 <p class="details"><strong>Guardian Name:</strong> {{ $sr->guardian_name ?? 'N/A' }}</p>
                 <p class="details"><strong>Relation:</strong> {{ $sr->guardian_relation ?? 'N/A' }}</p>
                 <p class="details"><strong>Occupation:</strong> {{ $sr->guardian_occupation ?? 'N/A' }}</p>
