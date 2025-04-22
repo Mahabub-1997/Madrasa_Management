@@ -550,7 +550,7 @@
                     <!--Number Counter Start-->
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
-                            <i class="icon-lecture">
+                            <i class="fas fa-chalkboard-teacher">
                                 <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span><span class="path37"></span><span class="path38"></span>
                             </i>
                             <span class="counterTeacher" style="font-weight: bold;">21</span>
@@ -561,7 +561,7 @@
                     <!--Number Counter Start-->
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
-                            <i class="icon-books">
+                            <i class="fas fa-users">
                                 <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span>
                             </i>
                             <span class="counterSubject" style="font-weight: bold;">12</span>
@@ -572,7 +572,7 @@
                     <!--Number Counter Start-->
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
-                            <i class="icon-drawing">
+                            <i class="fas fa-medal">
                                 <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span>
                             </i>
                             <span class="counterGold" style="font-weight: bold;">56</span>
@@ -583,7 +583,7 @@
                     <!--Number Counter Start-->
                     <div class="col-md-3 col-sm-3">
                         <div class="iq_counter">
-                            <i class="icon-diploma-1">
+                            <i class="fas fa-user-graduate">
                                 <span class="path1" style="font-weight: bold;"></span><span class="path2" style="font-weight: bold;"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span>
                             </i>
                             <span class="counterStudent" style="font-weight: bold;">7892</span>

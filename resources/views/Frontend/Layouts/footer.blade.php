@@ -8,11 +8,11 @@
                     <h4>মাদ্রাসা শিক্ষা <span>ব্যবস্থা</span></h4>
                     <!--Widget Title End-->
                     <p class="formerStudentDescription3" style="font-weight: bold;">মাদ্রাসা শিক্ষার প্রধান উদ্দেশ্য হলো ইসলামী শিক্ষা প্রচার এবং মুসলিম সম্প্রদায়ের উন্নয়ন।"</p>
-                    <ul>
-                        <li class="day"><span>Monday - Friday</span> 08:00 - 17:00</li>
-                        <li style="font-weight: bold;"><span>Saturday</span> Closed</li>
-                        <li style="font-weight: bold;"><span>Friday</span> Closed</li>
-                    </ul>
+{{--                    <ul>--}}
+{{--                        <li class="day"><span>Monday - Friday</span> 08:00 - 17:00</li>--}}
+{{--                        <li style="font-weight: bold;"><span>Saturday</span> Closed</li>--}}
+{{--                        <li style="font-weight: bold;"><span>Friday</span> Closed</li>--}}
+{{--                    </ul>--}}
                 </div>
             </div>
             <!--Widget About End-->
@@ -51,7 +51,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="widget widget-flickr">
                     <!-- Widget Title Start-->
-                    <h5 class="widget-title" style="font-weight: bold;"><span>Our</span> Photos</h5>
+                    <h5 class="widget-title" style="font-weight: bold;"><span>আমাদের </span> ছবি</h5>
                     <!-- Widget Title End-->
                     <div class="flickr-wrap">
                         <a class="flickrbadges"  href="#"><img src="{{ asset('frontend/extra-images/gall-1.jpeg') }}" style="min-height:80px;" alt=""></a>
@@ -83,16 +83,12 @@
                     <!--Widget Title Start-->
                     <ul class="iq_footer_social">
                         <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61573755612817"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://g.co/kgs/k8Vupib" target="_blank">
+                                <i class="fa fa-map-marker"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
