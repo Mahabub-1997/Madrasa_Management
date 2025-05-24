@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('page_title', 'report')
+@section('page_title', 'রিপোর্ট')
 @section('content')
 
     <div class="card">
@@ -11,15 +11,13 @@
         <div class="card-body">
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="all-notices">
-                    <!-- Filtering Form -->
+                    <!-- ফিল্টার ফর্ম -->
                     <form method="GET" action="{{ route('yearly_profit_loss_report.index') }}">
                         <div class="row mb-3">
-                            <!-- Month Dropdown -->
-
-                            <!-- Year Dropdown -->
+                            <!-- বছর নির্বাচন -->
                             <div class="col-md-4">
                                 <select class="form-control" name="year">
-                                    <option value="">Select Year</option>
+                                    <option value="">বছর নির্বাচন করুন</option>
                                     @for($y = date('Y'); $y >= 2020; $y--)
                                         <option value="{{ $y }}" {{ request('year') == $y ? 'selected' : '' }}>
                                             {{ $y }}
@@ -28,26 +26,26 @@
                                 </select>
                             </div>
 
-                            <!-- Submit Button -->
+                            <!-- সাবমিট বাটন -->
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary">Filter</button>
+                                <button type="submit" class="btn btn-primary">ফিল্টার করুন</button>
                             </div>
                         </div>
                     </form>
+
+                    <!-- রিপোর্ট টেবিল -->
                     <table class="table">
                         <tbody>
-                        <tr><th>Total Income</th> <td>{{ $report['total_income'] }}</td></tr>
-                        <tr><th>Total Salaries</th> <td>{{ $report['total_salaries'] }}</td></tr>
-                        <tr><th>Total Expenses</th> <td>{{ $report['total_expenses'] }}</td></tr>
-                        <tr><th>Total Admission</th> <td>{{ $report['totalAdmissionThisMonth'] }}</td></tr>
-                        <tr><th>Profit/Loss</th> <td>{{ $report['profit_or_loss'] }}</td></tr>
+                        <tr><th>মোট আয়</th> <td>{{ $report['total_income'] }}</td></tr>
+                        <tr><th>মোট বেতন</th> <td>{{ $report['total_salaries'] }}</td></tr>
+                        <tr><th>মোট খরচ</th> <td>{{ $report['total_expenses'] }}</td></tr>
+                        <tr><th>মোট ভর্তি</th> <td>{{ $report['totalAdmissionThisMonth'] }}</td></tr>
+                        <tr><th>লাভ / ক্ষতি</th> <td>{{ $report['profit_or_loss'] }}</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
-
     </div>
 
 @endsection

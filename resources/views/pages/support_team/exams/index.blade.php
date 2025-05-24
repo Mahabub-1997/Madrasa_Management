@@ -1,65 +1,65 @@
 @extends('layouts.master')
-@section('page_title', 'Manage Exams')
+@section('page_title', 'পরীক্ষা পরিচালনা')
 @section('content')
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">Manage Exams</h6>
+            <h6 class="card-title">পরীক্ষা পরিচালনা</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
-                <li class="nav-item"><a href="#all-exams" class="nav-link active" data-toggle="tab">Manage Exam</a></li>
-                <li class="nav-item"><a href="#new-exam" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Add Exam</a></li>
+                <li class="nav-item"><a href="#all-exams" class="nav-link active" data-toggle="tab">পরীক্ষা পরিচালনা</a></li>
+                <li class="nav-item"><a href="#new-exam" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> নতুন পরীক্ষা যোগ করুন</a></li>
             </ul>
 
             <div class="tab-content">
-                    <div class="tab-pane fade show active" id="all-exams">
-                        <table class="table datatable-button-html5-columns">
-                            <thead>
+                <div class="tab-pane fade show active" id="all-exams">
+                    <table class="table datatable-button-html5-columns">
+                        <thead>
+                        <tr>
+                            <th>ক্র. নং</th>
+                            <th>নাম</th>
+                            <th>টার্ম</th>
+                            <th>সেশন</th>
+                            <th>নির্দেশনা</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($exams as $ex)
                             <tr>
-                                <th>S/N</th>
-                                <th>Name</th>
-                                <th>Term</th>
-                                <th>Session</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($exams as $ex)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $ex->name }}</td>
-                                    <td>{{ 'Term '.$ex->term }}</td>
-                                    <td>{{ $ex->year }}</td>
-                                    <td class="text-center">
-                                        <div class="list-icons">
-                                            <div class="dropdown">
-                                                <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $ex->name }}</td>
+                                <td>{{ 'টার্ম '.$ex->term }}</td>
+                                <td>{{ $ex->year }}</td>
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
                                                 <i class="icon-menu9"></i>
-                                                </a>
+                                            </a>
 
-                                                <div class="dropdown-menu dropdown-menu-left">
-                                                    @if(Qs::userIsTeamSA())
-                                                    {{--Edit--}}
-                                                    <a href="{{ route('exams.edit', $ex->id) }}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
-                                                   @endif
-                                                    @if(Qs::userIsSuperAdmin())
-                                                    {{--Delete--}}
-                                                    <a id="{{ $ex->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> Delete</a>
+                                            <div class="dropdown-menu dropdown-menu-left">
+                                                @if(Qs::userIsTeamSA())
+                                                    {{--সম্পাদনা--}}
+                                                    <a href="{{ route('exams.edit', $ex->id) }}" class="dropdown-item"><i class="icon-pencil"></i> সংশোধন</a>
+                                                @endif
+                                                @if(Qs::userIsSuperAdmin())
+                                                    {{--মুছে ফেলুন--}}
+                                                    <a id="{{ $ex->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item"><i class="icon-trash"></i> মুছে ফেলুন</a>
                                                     <form method="post" id="item-delete-{{ $ex->id }}" action="{{ route('exams.destroy', $ex->id) }}" class="hidden">@csrf @method('delete')</form>
-                                                        @endif
+                                                @endif
 
-                                                </div>
                                             </div>
                                         </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
 
                 <div class="tab-pane fade" id="new-exam">
                     <div class="row">
@@ -67,7 +67,7 @@
                             <div class="alert alert-info border-0 alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
 
-                                <span>You are creating an Exam for the Current Session <strong>{{ Qs::getSetting('current_session') }}</strong></span>
+                                <span>আপনি বর্তমান সেশনের জন্য একটি পরীক্ষা তৈরি করছেন <strong>{{ Qs::getSetting('current_session') }}</strong></span>
                             </div>
                         </div>
                     </div>
@@ -76,25 +76,25 @@
                             <form method="post" action="{{ route('exams.store') }}">
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label font-weight-semibold">Name <span class="text-danger">*</span></label>
+                                    <label class="col-lg-3 col-form-label font-weight-semibold">নাম <span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
-                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="Name of Exam">
+                                        <input name="name" value="{{ old('name') }}" required type="text" class="form-control" placeholder="পরীক্ষার নাম">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="term" class="col-lg-3 col-form-label font-weight-semibold">Term</label>
+                                    <label for="term" class="col-lg-3 col-form-label font-weight-semibold">টার্ম</label>
                                     <div class="col-lg-9">
-                                        <select data-placeholder="Select Teacher" class="form-control select-search" name="term" id="term">
-                                            <option {{ old('term') == 1 ? 'selected' : '' }} value="1">First Term</option>
-                                            <option {{ old('term') == 2 ? 'selected' : '' }} value="2">Second Term</option>
-                                            <option {{ old('term') == 3 ? 'selected' : '' }} value="3">Third Term</option>
+                                        <select data-placeholder="টার্ম নির্বাচন করুন" class="form-control select-search" name="term" id="term">
+                                            <option {{ old('term') == 1 ? 'selected' : '' }} value="1">প্রথম টার্ম</option>
+                                            <option {{ old('term') == 2 ? 'selected' : '' }} value="2">দ্বিতীয় টার্ম</option>
+                                            <option {{ old('term') == 3 ? 'selected' : '' }} value="3">তৃতীয় টার্ম</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Submit form <i class="icon-paperplane ml-2"></i></button>
+                                    <button type="submit" class="btn btn-primary">ফর্ম জমা দিন <i class="icon-paperplane ml-2"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -104,6 +104,5 @@
         </div>
     </div>
 
-    {{--Class List Ends--}}
-
+    {{--পরীক্ষা তালিকা শেষ--}}
 @endsection

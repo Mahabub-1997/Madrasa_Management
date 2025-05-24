@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
-@section('page_title', 'Edit Expense')
+@section('page_title', 'খরচ সম্পাদনা')
 
 @section('content')
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">Edit Expense</h6>
+            <h6 class="card-title">খরচ সম্পাদনা</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
@@ -15,33 +15,36 @@
                 @method('PUT')
                 <div class="row">
                     <div class="col-md-6">
+                        <!-- খরচের উদ্দেশ্য -->
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label font-weight-semibold">
-                                Purpose <span class="text-danger">*</span>
+                                উদ্দেশ্য <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-9">
-                                <input name="purpose" value="{{ old('purpose', $expense->purpose) }}" required type="text" class="form-control @error('purpose') is-invalid @enderror" placeholder="Purpose">
+                                <input name="purpose" value="{{ old('purpose', $expense->purpose) }}" required type="text" class="form-control @error('purpose') is-invalid @enderror" placeholder="উদ্দেশ্য">
                                 @error('purpose')
                                 <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                         </div>
 
+                        <!-- খরচের পরিমাণ -->
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label font-weight-semibold">
-                                Amount <span class="text-danger">*</span>
+                                পরিমাণ <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-9">
-                                <input name="amount" value="{{ old('amount', $expense->amount) }}" required type="number" class="form-control @error('amount') is-invalid @enderror" placeholder="Amount">
+                                <input name="amount" value="{{ old('amount', $expense->amount) }}" required type="number" class="form-control @error('amount') is-invalid @enderror" placeholder="পরিমাণ">
                                 @error('amount')
                                 <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
                         </div>
 
+                        <!-- খরচের তারিখ -->
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label font-weight-semibold">
-                                Date <span class="text-danger">*</span>
+                                তারিখ <span class="text-danger">*</span>
                             </label>
                             <div class="col-lg-9">
                                 <input name="date" value="{{ old('date', \Carbon\Carbon::parse($expense->date)->format('Y-m-d')) }}" required type="date" class="form-control @error('date') is-invalid @enderror">
@@ -51,23 +54,27 @@
                             </div>
                         </div>
 
-{{--                        <div class="form-group row">--}}
-{{--                            <label class="col-lg-3 col-form-label font-weight-semibold">--}}
-{{--                                Type--}}
-{{--                            </label>--}}
-{{--                            <div class="col-lg-9">--}}
-{{--                                <select class="form-control select @error('type') is-invalid @enderror" name="type">--}}
-{{--                                    <option value="monthly" {{ old('type', $expense->type) == 'monthly' ? 'selected' : '' }}>Monthly</option>--}}
-{{--                                    <option value="yearly" {{ old('type', $expense->type) == 'yearly' ? 'selected' : '' }}>Yearly</option>--}}
-{{--                                </select>--}}
-{{--                                @error('type')--}}
-{{--                                <small class="text-danger">{{ $message }}</small>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        {{--
+                                                <!-- খরচের ধরণ (যদি প্রয়োজন হয়) -->
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label font-weight-semibold">
+                                                        ধরণ
+                                                    </label>
+                                                    <div class="col-lg-9">
+                                                        <select class="form-control select @error('type') is-invalid @enderror" name="type">
+                                                            <option value="monthly" {{ old('type', $expense->type) == 'monthly' ? 'selected' : '' }}>মাসিক</option>
+                                                            <option value="yearly" {{ old('type', $expense->type) == 'yearly' ? 'selected' : '' }}>বার্ষিক</option>
+                                                        </select>
+                                                        @error('type')
+                                                        <small class="text-danger">{{ $message }}</small>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                        --}}
 
+                        <!-- সাবমিট বাটন -->
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary">Update <i class="icon-paperplane ml-2"></i></button>
+                            <button type="submit" class="btn btn-primary">আপডেট করুন <i class="icon-paperplane ml-2"></i></button>
                         </div>
                     </div>
                 </div>
