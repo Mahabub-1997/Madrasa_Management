@@ -638,12 +638,12 @@
                                 <h4><a class="NameTeacher2" style="font-weight: bold;" href="#">22</a></h4>
                                 <h6 class="teacherSubTitle2" style="font-weight: bold;"></h6>
                                 <p class="teacherDescription2" style="font-weight: bold;"></p>
-                                <ul class="iq_footer_social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
+{{--                                <ul class="iq_footer_social">--}}
+{{--                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>--}}
+{{--                                </ul>--}}
                             </div>
                         </div>
                     </div>
@@ -655,12 +655,12 @@
                                 <h4><a class="NameTeacher3" href="#"></a></h4>
                                 <h6 class="teacherSubTitle3" style="font-weight: bold;" ></h6>
                                 <p class="teacherDescription3" style="font-weight: bold;">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudinris.</p>
-                                <ul class="iq_footer_social">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
+{{--                                <ul class="iq_footer_social">--}}
+{{--                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>--}}
+{{--                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>--}}
+{{--                                </ul>--}}
                             </div>
                             <figure>
                                 <img src="{{ asset('frontend/extra-images/teacher-102.jpeg') }}" alt="Image Here" style="max-height: 465px;">

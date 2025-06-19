@@ -1,46 +1,46 @@
 /* ------------------------------------------------------------------------------
  *
- *  # Steps wizard
+ *  # স্টেপস উইজার্ড
  *
- *  Demo JS code for form_wizard.html page
+ *  form_wizard.html পৃষ্ঠার জন্য ডেমো JS কোড
  *
  * ---------------------------------------------------------------------------- */
 
 
-// Setup module
+// মডিউল সেটআপ
 // ------------------------------
 
 var FormWizard = function() {
 
 
     //
-    // Setup module components
+    // মডিউল কম্পোনেন্ট সেটআপ
     //
 
-    // Wizard
+    // উইজার্ড
     var _componentWizard = function() {
         if (!$().steps) {
-            console.warn('Warning - steps.min.js is not loaded.');
+            console.warn('সতর্কতা - steps.min.js লোড হয়নি।');
             return;
         }
 
-        // Basic wizard setup
+        // বেসিক উইজার্ড সেটআপ
         $('.steps-basic').steps({
             headerTag: 'h6',
             bodyTag: 'fieldset',
             transitionEffect: 'fade',
             titleTemplate: '<span class="number">#index#</span> #title#',
             labels: {
-                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
-                next: 'Next <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+                previous: '<i class="icon-arrow-left13 mr-2" /> পূর্ববর্তী',
+                next: 'পরবর্তী <i class="icon-arrow-right14 ml-2" />',
+                finish: 'ফর্ম জমা দিন <i class="icon-arrow-right14 ml-2" />'
             },
             onFinished: function (event, currentIndex) {
                 $(this).submit();
             }
         });
 
-        // Async content loading
+        // অ্যাসিঙ্ক কন্টেন্ট লোড
         $('.steps-async').steps({
             headerTag: 'h6',
             bodyTag: 'fieldset',
@@ -48,59 +48,59 @@ var FormWizard = function() {
             titleTemplate: '<span class="number">#index#</span> #title#',
             loadingTemplate: '<div class="card-body text-center"><i class="icon-spinner2 spinner mr-2"></i>  #text#</div>',
             labels: {
-                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
-                next: 'Next <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+                previous: '<i class="icon-arrow-left13 mr-2" /> পূর্ববর্তী',
+                next: 'পরবর্তী <i class="icon-arrow-right14 ml-2" />',
+                finish: 'ফর্ম জমা দিন <i class="icon-arrow-right14 ml-2" />'
             },
             onContentLoaded: function (event, currentIndex) {
                 $(this).find('.card-body').addClass('hide');
 
-                // Re-initialize components
+                // কম্পোনেন্ট পুনরায় চালু
                 _componentSelect2();
                 _componentUniform();
             },
             onFinished: function (event, currentIndex) {
-                //alert('Form submitted.');
+                // alert('ফর্ম জমা দেওয়া হয়েছে।');
             }
         });
 
-        // Saving wizard state
+        // উইজার্ড স্টেট সংরক্ষণ
         $('.steps-state-saving').steps({
             headerTag: 'h6',
             bodyTag: 'fieldset',
             titleTemplate: '<span class="number">#index#</span> #title#',
             labels: {
-                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
-                next: 'Next <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+                previous: '<i class="icon-arrow-left13 mr-2" /> পূর্ববর্তী',
+                next: 'পরবর্তী <i class="icon-arrow-right14 ml-2" />',
+                finish: 'ফর্ম জমা দিন <i class="icon-arrow-right14 ml-2" />'
             },
             transitionEffect: 'fade',
             saveState: true,
             autoFocus: true,
             onFinished: function (event, currentIndex) {
-                alert('Form submitted.');
+                alert('ফর্ম জমা দেওয়া হয়েছে।');
             }
         });
 
-        // Specify custom starting step
+        // কাস্টম শুরু স্টেপ নির্ধারণ
         $('.steps-starting-step').steps({
             headerTag: 'h6',
             bodyTag: 'fieldset',
             titleTemplate: '<span class="number">#index#</span> #title#',
             labels: {
-                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
-                next: 'Next <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+                previous: '<i class="icon-arrow-left13 mr-2" /> পূর্ববর্তী',
+                next: 'পরবর্তী <i class="icon-arrow-right14 ml-2" />',
+                finish: 'ফর্ম জমা দিন <i class="icon-arrow-right14 ml-2" />'
             },
             transitionEffect: 'fade',
             startIndex: 2,
             autoFocus: true,
             onFinished: function (event, currentIndex) {
-                alert('Form submitted.');
+                alert('ফর্ম জমা দেওয়া হয়েছে।');
             }
         });
 
-        // Enable all steps and make them clickable
+        // সব স্টেপ সক্রিয় এবং ক্লিকযোগ্য
         $('.steps-enable-all').steps({
             headerTag: 'h6',
             bodyTag: 'fieldset',
@@ -108,53 +108,44 @@ var FormWizard = function() {
             enableAllSteps: true,
             titleTemplate: '<span class="number">#index#</span> #title#',
             labels: {
-                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
-                next: 'Next <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+                previous: '<i class="icon-arrow-left13 mr-2" /> পূর্ববর্তী',
+                next: 'পরবর্তী <i class="icon-arrow-right14 ml-2" />',
+                finish: 'ফর্ম জমা দিন <i class="icon-arrow-right14 ml-2" />'
             },
             onFinished: function (event, currentIndex) {
-                alert('Form submitted.');
+                alert('ফর্ম জমা দেওয়া হয়েছে।');
             }
         });
 
 
         //
-        // Wizard with validation
+        // যাচাইকরণ সহ উইজার্ড
         //
 
-        // Stop function if validation is missing
         if (!$().validate) {
-            console.warn('Warning - validate.min.js is not loaded.');
+            console.warn('সতর্কতা - validate.min.js লোড হয়নি।');
             return;
         }
 
-        // Show form
+        // ফর্ম দেখান
         var form = $('.steps-validation').show();
 
-
-        // Initialize wizard
+        // উইজার্ড চালু করুন
         $('.steps-validation').steps({
             headerTag: 'h6',
             bodyTag: 'fieldset',
             titleTemplate: '<span class="number">#index#</span> #title#',
             labels: {
-                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
-                next: 'Next <i class="icon-arrow-right14 ml-2" />',
-                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+                previous: '<i class="icon-arrow-left13 mr-2" /> পূর্ববর্তী',
+                next: 'পরবর্তী <i class="icon-arrow-right14 ml-2" />',
+                finish: 'ফর্ম জমা দিন <i class="icon-arrow-right14 ml-2" />'
             },
             transitionEffect: 'fade',
             autoFocus: true,
             onStepChanging: function (event, currentIndex, newIndex) {
+                if (currentIndex > newIndex) return true;
 
-                // Always allow previous action even if the current form is not valid!
-                if (currentIndex > newIndex) {
-                    return true;
-                }
-
-                // Needed in some cases if the user went back (clean up)
                 if (currentIndex < newIndex) {
-
-                    // To remove error styles
                     form.find('.body:eq(' + newIndex + ') label.error').remove();
                     form.find('.body:eq(' + newIndex + ') .error').removeClass('error');
                 }
@@ -171,10 +162,9 @@ var FormWizard = function() {
             }
         });
 
-
-        // Initialize validation
+        // ভ্যালিডেশন চালু করুন
         $('.steps-validation').validate({
-            ignore: 'input[type=hidden], .select2-search__field', // ignore hidden fields
+            ignore: 'input[type=hidden], .select2-search__field',
             errorClass: 'validation-invalid-label',
             highlight: function(element, errorClass) {
                 $(element).removeClass(errorClass);
@@ -182,27 +172,14 @@ var FormWizard = function() {
             unhighlight: function(element, errorClass) {
                 $(element).removeClass(errorClass);
             },
-
-            // Different components require proper error label placement
             errorPlacement: function(error, element) {
-
-                // Unstyled checkboxes, radios
                 if (element.parents().hasClass('form-check')) {
-                    error.appendTo( element.parents('.form-check').parent() );
-                }
-
-                // Input with icons and Select2
-                else if (element.parents().hasClass('form-group-feedback') || element.hasClass('select2-hidden-accessible')) {
-                    error.appendTo( element.parent() );
-                }
-
-                // Input group, styled file input
-                else if (element.parent().is('.uniform-uploader, .uniform-select') || element.parents().hasClass('input-group')) {
-                    error.appendTo( element.parent().parent() );
-                }
-
-                // Other elements
-                else {
+                    error.appendTo(element.parents('.form-check').parent());
+                } else if (element.parents().hasClass('form-group-feedback') || element.hasClass('select2-hidden-accessible')) {
+                    error.appendTo(element.parent());
+                } else if (element.parent().is('.uniform-uploader, .uniform-select') || element.parents().hasClass('input-group')) {
+                    error.appendTo(element.parent().parent());
+                } else {
                     error.insertAfter(element);
                 }
             },
@@ -217,40 +194,34 @@ var FormWizard = function() {
     // Uniform
     var _componentUniform = function() {
         if (!$().uniform) {
-            console.warn('Warning - uniform.min.js is not loaded.');
+            console.warn('সতর্কতা - uniform.min.js লোড হয়নি।');
             return;
         }
 
-        // Initialize
         $('.form-input-styled').uniform({
             fileButtonClass: 'action btn bg-blue'
         });
     };
 
-    // Select2 select
+    // Select2 নির্বাচন
     var _componentSelect2 = function() {
         if (!$().select2) {
-            console.warn('Warning - select2.min.js is not loaded.');
+            console.warn('সতর্কতা - select2.min.js লোড হয়নি।');
             return;
         }
 
-        // Initialize
         var $select = $('.form-control-select2').select2({
             minimumResultsForSearch: Infinity,
             width: '100%'
         });
 
-        // Trigger value change when selection is made
         $select.on('change', function() {
             $(this).trigger('blur');
         });
     };
 
 
-    //
-    // Return objects assigned to module
-    //
-
+    // মডিউলের জন্য অবজেক্ট রিটার্ন করুন
     return {
         init: function() {
             _componentWizard();
@@ -261,7 +232,7 @@ var FormWizard = function() {
 }();
 
 
-// Initialize module
+// মডিউল চালু করুন
 // ------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {

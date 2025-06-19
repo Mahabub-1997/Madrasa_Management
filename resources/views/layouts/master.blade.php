@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta id="csrf-token" name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="author" content="CJ Inspired">
+    <meta name="author" content="CJ">
 
     <title> @yield('page_title') | {{ config('app.name') }} </title>
     <style>
@@ -76,5 +76,22 @@
 
 @include('partials.inc_bottom')
 @yield('scripts')
+
+{{-- Footer --}}
+<footer class="footer mt-2 py-3 bg-blue-400 text-white text-center">
+    <div class="container">
+        <span>© {{ date('Y') }} মাদ্রাসা | Developed by চক্রজান প্রাইভেট লিমিটেড</span>
+    </div>
+</footer>
+
+{{-- Optional inline styles to match your dashboard's color scheme --}}
+<style>
+    .footer {
+        background: linear-gradient(360deg, #1a202c, #3b82f6);
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+    }
+</style>
 </body>
 </html>

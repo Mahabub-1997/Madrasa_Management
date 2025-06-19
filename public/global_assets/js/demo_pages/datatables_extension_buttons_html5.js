@@ -29,17 +29,17 @@ var DatatableButtonsHtml5 = function() {
             autoWidth: false,
             dom: '<"datatable-header"fBl><"datatable-scroll"t><"datatable-footer"ip>',
             language: {
-                search: '<span>Filter:</span> _INPUT_',
-                searchPlaceholder: 'Type to filter...',
-                lengthMenu: '<span>Show:</span> _MENU_',
-                paginate: { 'first': 'First', 'last': 'Last', 'next': $('html').attr('dir') == 'rtl' ? '&larr;' : '&rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr;' : '&larr;' }
+                search: '<span>বাছাই :</span> _INPUT_',
+                searchPlaceholder: 'বাছাই করতে লিখুন...',
+                lengthMenu: '<span>প্রদর্শনী :</span> _MENU_',
+                paginate: { 'first': 'প্রথম', 'last': 'Last', 'next': $('html').attr('dir') == 'rtl' ? '&larr;' : '&rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr;' : '&larr;' }
             }
         });
 
 
         // Basic initialization
         $('.datatable-button-html5-basic').DataTable({
-            buttons: {            
+            buttons: {
                 dom: {
                     button: {
                         className: 'btn btn-light'
@@ -52,7 +52,7 @@ var DatatableButtonsHtml5 = function() {
                     'pdfHtml5',
                     {
                         extend: 'colvis',
-                        text: '<i class="icon-three-bars"></i> Visibility',
+                        text: '<i class="icon-three-bars"></i> দেখা যাওয়া',
                         className: 'btn bg-blue btn-icon dropdown-toggle'
                     }
                 ]
@@ -65,7 +65,7 @@ var DatatableButtonsHtml5 = function() {
             buttons: [
                 {
                     extend: 'pdfHtml5',
-                    text: 'Export to PDF <i class="icon-file-pdf ml-2"></i>',
+                    text: 'পি.ডি.এফ এ বের করা <i class="icon-file-pdf ml-2"></i>',
                     className: 'btn bg-teal-400',
                     customize: function (doc) {
                         doc.content.splice(1, 0, {
@@ -82,7 +82,7 @@ var DatatableButtonsHtml5 = function() {
 
         // Column selectors
         $('.datatable-button-html5-columns').DataTable({
-            buttons: {            
+            buttons: {
                 buttons: [
                     {
                         extend: 'copyHtml5',
@@ -98,7 +98,7 @@ var DatatableButtonsHtml5 = function() {
                     },
                     {
                         extend: 'colvis',
-                        text: '<i class="icon-three-bars"></i> Visibility',
+                        text: '<i class="icon-three-bars"></i> দেখা যাওয়া ',
                         className: 'btn bg-blue btn-icon dropdown-toggle'
                     }
                 ]
@@ -108,17 +108,17 @@ var DatatableButtonsHtml5 = function() {
 
         // Tab separated values
         $('.datatable-button-html5-tab').DataTable({
-            buttons: {            
+            buttons: {
                 buttons: [
                     {
                         extend: 'copyHtml5',
                         className: 'btn btn-light',
-                        text: '<i class="icon-copy3 mr-2"></i> Copy'
+                        text: '<i class="icon-copy3 mr-2"></i> কপি '
                     },
                     {
                         extend: 'csvHtml5',
                         className: 'btn btn-light',
-                        text: '<i class="icon-file-spreadsheet mr-2"></i> CSV',
+                        text: '<i class="icon-file-spreadsheet mr-2"></i> সি ভি সি',
                         fieldSeparator: '\t',
                         extension: '.tsv'
                     }

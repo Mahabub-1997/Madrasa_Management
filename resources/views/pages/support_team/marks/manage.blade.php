@@ -1,10 +1,10 @@
 @extends('layouts.master')
-@section('page_title', 'Manage Marks')
+@section('page_title', 'মার্কস পরিচালনা করুন')
 @section('content')
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title font-weight-bold">Fill The Form To Manage Marks</h6>
+            <h6 class="card-title font-weight-bold">মার্কস পরিচালনার জন্য ফর্মটি পূরণ করুন</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
@@ -17,9 +17,9 @@
 
         <div class="card-header">
             <div class="row">
-                <div class="col-md-4"><h6 class="card-title"><strong>Subject: </strong> {{ $m->subject->name }}</h6></div>
-                <div class="col-md-4"><h6 class="card-title"><strong>Class: </strong> {{ $m->my_class->name.' '.$m->section->name }}</h6></div>
-                <div class="col-md-4"><h6 class="card-title"><strong>Exam: </strong> {{ $m->exam->name.' - '.$m->year }}</h6></div>
+                <div class="col-md-4"><h6 class="card-title"><strong>বিষয়: </strong> {{ $m->subject->name }}</h6></div>
+                <div class="col-md-4"><h6 class="card-title"><strong>ক্লাস: </strong> {{ $m->my_class->name.' '.$m->section->name }}</h6></div>
+                <div class="col-md-4"><h6 class="card-title"><strong>পরীক্ষা: </strong> {{ $m->exam->name.' - '.$m->year }}</h6></div>
             </div>
         </div>
 
@@ -29,6 +29,6 @@
         </div>
     </div>
 
-    {{--Marks Manage End--}}
+    {{--মার্কস পরিচালনা শেষ--}}
 
 @endsection

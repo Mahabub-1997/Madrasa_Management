@@ -1,35 +1,35 @@
 @extends('layouts.master')
-@section('page_title', 'Expense List')
+@section('page_title', 'ব্যয় তালিকা')
 @section('content')
 
     <div class="card">
         <div class="card-header header-elements-inline">
-            <h6 class="card-title">Expense List</h6>
+            <h6 class="card-title">ব্যয় তালিকা</h6>
             {!! Qs::getPanelOptions() !!}
         </div>
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
                 <li class="nav-item">
-                    <a href="#all-expenses" class="nav-link active" data-toggle="tab">Manage Expenses</a>
+                    <a href="#all-expenses" class="nav-link active" data-toggle="tab">ব্যয় পরিচালনা করুন</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#add-expense" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Add Expense</a>
+                    <a href="#add-expense" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> নতুন ব্যয় যোগ করুন</a>
                 </li>
             </ul>
 
             <div class="tab-content">
-                <!-- Expenses Table -->
+                <!-- ব্যয় তালিকা টেবিল -->
                 <div class="tab-pane fade show active" id="all-expenses">
                     <table class="table datatable-button-html5-columns">
                         <thead>
                         <tr>
-                            <th>S/N</th>
-                            <th>Purpose</th>
-                            <th>Amount</th>
-                            <th>Date</th> <!-- New Date Column -->
-                            <th>Type</th>
-                            <th>Action</th>
+                            <th>ক্রমিক</th>
+                            <th>উদ্দেশ্য</th>
+                            <th>পরিমাণ</th>
+                            <th>তারিখ</th>
+                            <th>ধরন</th>
+                            <th>নির্দেশনা</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -38,8 +38,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $val->purpose }}</td>
                                 <td>{{ number_format($val->amount, 2) }}</td>
-                                <td>{{ \Carbon\Carbon::parse($val->date)->format('d M, Y') }}</td> <!-- New Date Column -->
-                                <td>{{ ucfirst($val->type) }}</td>
+                                <td>{{ \Carbon\Carbon::parse($val->date)->format('d M, Y') }}</td>
+                                <td>{{ ($val->type == 'monthly' ? 'মাস': ' বছর') }}</td>
                                 <td class="text-center">
                                     <div class="list-icons">
                                         <div class="dropdown">
@@ -48,10 +48,10 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-left">
                                                 <a href="{{ route('expenses.edit', $val->id) }}" class="dropdown-item">
-                                                    <i class="icon-pencil"></i> Edit
+                                                    <i class="icon-pencil"></i> সংশোধন
                                                 </a>
                                                 <a id="{{ $val->id }}" onclick="confirmDelete(this.id)" href="#" class="dropdown-item">
-                                                    <i class="icon-trash"></i> Delete
+                                                    <i class="icon-trash"></i> মুছে ফেলুন
                                                 </a>
                                                 <form method="post" id="item-delete-{{ $val->id }}" action="{{ route('expenses.destroy', $val->id) }}" class="hidden">
                                                     @csrf @method('delete')
@@ -66,7 +66,7 @@
                     </table>
                 </div>
 
-                <!-- Add Expense Form -->
+                <!-- নতুন ব্যয় যোগ করার ফর্ম -->
                 <div class="tab-pane fade" id="add-expense">
                     <div class="row">
                         <div class="col-md-6">
@@ -74,10 +74,10 @@
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Purpose <span class="text-danger">*</span>
+                                        উদ্দেশ্য <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-9">
-                                        <input name="purpose" value="{{ old('purpose') }}" required type="text" class="form-control @error('purpose') is-invalid @enderror" placeholder="Purpose">
+                                        <input name="purpose" value="{{ old('purpose') }}" required type="text" class="form-control @error('purpose') is-invalid @enderror" placeholder="উদ্দেশ্য লিখুন">
                                         @error('purpose')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -86,10 +86,10 @@
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Amount <span class="text-danger">*</span>
+                                        পরিমাণ <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-9">
-                                        <input name="amount" value="{{ old('amount') }}" required type="number" class="form-control @error('amount') is-invalid @enderror" placeholder="Amount">
+                                        <input name="amount" value="{{ old('amount') }}" required type="number" step="0.01" class="form-control @error('amount') is-invalid @enderror" placeholder="পরিমাণ লিখুন">
                                         @error('amount')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -98,7 +98,7 @@
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label font-weight-semibold">
-                                        Date <span class="text-danger">*</span>
+                                        তারিখ <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-9">
                                         <input name="date" value="{{ old('date') }}" required type="date" class="form-control @error('date') is-invalid @enderror">
@@ -108,32 +108,30 @@
                                     </div>
                                 </div>
 
-{{--                                <div class="form-group row">--}}
-{{--                                    <label class="col-lg-3 col-form-label font-weight-semibold">--}}
-{{--                                        Type--}}
-{{--                                    </label>--}}
-{{--                                    <div class="col-lg-9">--}}
-{{--                                        <select class="form-control select @error('type') is-invalid @enderror" name="type">--}}
-{{--                                            <option value="monthly" {{ old('type') == 'monthly' ? 'selected' : '' }}>Monthly</option>--}}
-{{--                                            <option value="yearly" {{ old('type') == 'yearly' ? 'selected' : '' }}>Yearly</option>--}}
-{{--                                        </select>--}}
-{{--                                        @error('type')--}}
-{{--                                        <small class="text-danger">{{ $message }}</small>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                {{--                                <div class="form-group row">--}}
+                                {{--                                    <label class="col-lg-3 col-form-label font-weight-semibold">--}}
+                                {{--                                        ধরন--}}
+                                {{--                                    </label>--}}
+                                {{--                                    <div class="col-lg-9">--}}
+                                {{--                                        <select class="form-control select @error('type') is-invalid @enderror" name="type">--}}
+                                {{--                                            <option value="monthly" {{ old('type') == 'monthly' ? 'selected' : '' }}>মাসিক</option>--}}
+                                {{--                                            <option value="yearly" {{ old('type') == 'yearly' ? 'selected' : '' }}>বার্ষিক</option>--}}
+                                {{--                                        </select>--}}
+                                {{--                                        @error('type')--}}
+                                {{--                                        <small class="text-danger">{{ $message }}</small>--}}
+                                {{--                                        @enderror--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
 
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Submit <i class="icon-paperplane ml-2"></i></button>
+                                    <button type="submit" class="btn btn-primary">জমা দিন <i class="icon-paperplane ml-2"></i></button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                </div> <!-- End Add Expense Tab -->
+                </div> <!-- নতুন ব্যয় যোগ করার ট্যাব শেষ -->
             </div>
         </div>
     </div>
-
-
 
 @endsection
