@@ -78,6 +78,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
         });
 
+
         /*************** Users *****************/
         Route::group(['prefix' => 'users'], function(){
             Route::get('reset_pass/{id}', 'UserController@reset_pass')->name('users.reset_pass');
@@ -179,6 +180,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         Route::resource('students', 'StudentRecordController');
         Route::resource('notice_board', 'NoticeBoardController');
         Route::resource('expenses', 'ExpensesController');
+
+        Route::resource('communication', 'CommunicationController'); //add
+
         Route::resource('users', 'UserController');
         Route::resource('classes', 'MyClassController');
         Route::resource('sections', 'SectionController');

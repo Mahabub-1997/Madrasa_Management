@@ -92,6 +92,25 @@
                     </li>
                 @endif
 
+{{--                      SMS and Email--}}
+                <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['']) ? 'nav-item-expanded nav-item-open' : '' }}">
+                    <a href="#" class="nav-link"><i class="icon-envelope"></i> <span> ইমেইল ও এসএমএস </span></a>
+
+                    <ul class="nav nav-group-sub" data-submenu-title="Email & SMS">
+                        <li class="nav-item {{ Route::currentRouteName() === 'communication.index' ? 'nav-item-expanded' : '' }}">
+                            <a href="{{ route('communication.index') }}" class="nav-link {{ Route::currentRouteName() === 'communication.index' ? 'active' : '' }}">এসএমএস পরিচালনা করুন</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">ইমেল পরিচালনা করুন</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
                 {{--Academics--}}
                 @if(Qs::userIsAcademic())
                     <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['tt.index', 'ttr.edit', 'ttr.show', 'ttr.manage']) ? 'nav-item-expanded nav-item-open' : '' }} ">
